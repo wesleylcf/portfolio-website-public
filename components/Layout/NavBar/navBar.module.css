@@ -1,0 +1,29 @@
+.Nav {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #222222;
+  position: fixed;
+  top: 0;
+  border-bottom: 0.3vh solid turquoise;
+}
+
+.Profile {
+  border: 2px solid turquoise;
+  border-radius: 30%;
+  background-color: turquoise;
+}
+
+.ProfileWrapper {
+  display: flex;
+  float: left;
+  height: 10vh;
+  text-align: center;
+  align-items: center;
+  justify-content: left;
+  margin: 0 2vw;
+}
+
+.Links {
+  float: right;
+}

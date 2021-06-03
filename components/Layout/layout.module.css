@@ -1,0 +1,23 @@
+.Container {
+  margin: 0 10vw;
+  margin-top: 15vh;
+  word-wrap: break-word;
+}
+
+.Social {
+  position: absolute;
+  bottom: 10vh;
+  width: 100px;
+  left: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ModalOpen .Container {
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+}
