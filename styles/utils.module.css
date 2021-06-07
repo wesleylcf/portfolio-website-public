@@ -1,27 +1,34 @@
-.heading2Xl {
-  font-size: 2.5rem;
+.heading3Xl {
+  font-size: 10vw;
   line-height: 1.2;
   font-weight: 800;
   letter-spacing: -0.05rem;
-  margin: 1rem 0;
+  margin: 1vh 0;
+}
+.heading2Xl {
+  font-size: 8vw;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1vh 0;
 }
 
 .headingXl {
-  font-size: 2rem;
+  font-size: 6vw;
   line-height: 1.3;
   font-weight: 800;
   letter-spacing: -0.05rem;
-  margin: 1rem 0;
+  margin: 1vh 0;
 }
 
 .headingLg {
-  font-size: 1.5rem;
+  font-size: 4vw;
   line-height: 1.4;
   margin: 1rem 0;
 }
 
 .headingMd {
-  font-size: 1.2rem;
+  font-size: 2vw;
   line-height: 1.5;
 }
 
@@ -50,4 +57,16 @@
 
 .lightText {
   color: #666;
+}
+
+@media screen and (max-width: 800px) {
+  .headingXl {
+    font-size: 10vw;
+  }
+  .heading2Xl {
+    font-size: 12vw;
+  }
+  .heading3Xl {
+    font-size: 14vw;
+  }
 }

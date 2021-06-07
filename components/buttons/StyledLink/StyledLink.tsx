@@ -10,7 +10,7 @@ interface StyledLinkProps {
 const StyledLink: React.FC<StyledLinkProps> = ({ content, url }) => {
   return (
     <div className={styles.ListItemWrapper}>
-      <li className={styles.ListItem}>
+      <li>
         <Link href={url}>
           <a className={styles.StyledLink}>{content}</a>
         </Link>

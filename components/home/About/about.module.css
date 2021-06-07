@@ -1,0 +1,23 @@
+.Header {
+  color: turquoise;
+}
+
+.Me {
+  color: turquoise;
+}
+
+.Skills {
+  color: #ffafaf;
+}
+.Work {
+  color: blanchedalmond;
+}
+.Quote {
+  text-align: center;
+  font-size: 2vh;
+  color: blanchedalmond;
+}
+
+.Unordered li::marker {
+  color: slategray;
+}

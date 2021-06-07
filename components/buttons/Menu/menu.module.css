@@ -1,0 +1,58 @@
+.Bar1 {
+  width: 6vw;
+  height: 0.3vh;
+  background-color: slategray;
+  margin: 0.4vh 2vw;
+  transition: 0.4s;
+}
+
+.Bar2 {
+  width: 6vw;
+  height: 0.3vh;
+  background-color: slategray;
+  margin: 0.4vh 2vw;
+  transition: 0.4s;
+}
+
+.Bar3 {
+  width: 6vw;
+  height: 0.3vh;
+  background-color: slategray;
+  margin: 0.4vh 2vw;
+  transition: 0.4s;
+}
+
+.Menu {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  align-items: center;
+  height: 6vh;
+  width: 12.5vw;
+  margin: 1.5vh 3.5vw;
+  background-color: #222222;
+  border: 3px dashed turquoise;
+  transition: 0.3s ease-in-out;
+  position: sticky;
+}
+
+.Menu:hover {
+  cursor: pointer;
+  border: 3px solid #ffafaf;
+}
+
+.Change .Bar1 {
+  -webkit-transform: rotate(-45deg) translate(-8px, 7px);
+  transform: rotate(-45deg) translate(-8px, 7px);
+}
+
+.Change .Bar2 {
+  opacity: 0;
+}
+
+.Change .Bar3 {
+  -webkit-transform: rotate(45deg) translate(-7px, -7px);
+  transform: rotate(45deg) translate(-7px, -7px);
+}

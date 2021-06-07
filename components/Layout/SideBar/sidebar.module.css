@@ -9,19 +9,37 @@
 }
 
 .SidebarOpen {
-  width: 40vw;
+  width: 50vw;
   height: 100%;
   background-color: #333333;
+  transition: 0.3s ease-in-out;
+}
+
+.HideSidebar {
+  transform: translate3d(0, -10%, 0);
+  transition: 0s;
+}
+
+.Social {
+  width: 40vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin: 0 auto;
 }
 
 .Links {
-  margin-top: 10vh;
+  margin-top: 30vh;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
   align-items: center;
   padding: 0;
+  height: 30vh;
+  font-size: 1.25rem;
 }
 
 .Modal {

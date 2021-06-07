@@ -1,17 +1,26 @@
 .Container {
   margin: 0 10vw;
-  margin-top: 15vh;
   word-wrap: break-word;
-}
-
-.Social {
-  position: absolute;
-  bottom: 10vh;
-  width: 100px;
-  left: 2%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80vw;
+}
+
+.Social {
+  position: sticky;
+  bottom: 10vh;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.4s ease-in-out;
+  transform: translate3d(0, 0, 0);
+}
+
+.HideSocial {
+  transition: 0.4s ease-in-out;
+  transform: translate3d(-10vw, 0, 0);
 }
 
 .ModalOpen .Container {

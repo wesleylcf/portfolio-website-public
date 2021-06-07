@@ -12,7 +12,7 @@ const Menu: React.FC<MenuProps> = ({ onClickMenu, isModal }) => {
   };
   return (
     <button
-      className={`${styles.Menu} ${isModal ? styles.Change : null}`}
+      className={`${styles.Menu} ${isModal ? styles.Change : ''}`}
       onClick={onClickHandler}
     >
       <div className={styles.Bar1}></div>

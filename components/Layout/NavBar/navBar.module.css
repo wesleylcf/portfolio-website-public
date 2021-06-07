@@ -3,9 +3,22 @@
   padding: 0;
   width: 100%;
   background-color: #222222;
-  position: fixed;
+  position: sticky;
   top: 0;
-  border-bottom: 0.3vh solid turquoise;
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  transition: 0.4s ease-in-out;
+  transform: translate3d(0, 0, 0);
+}
+
+.HideNav {
+  transition: 0.4s ease-in-out;
+  transform: translate3d(0, -10vh, 0);
+}
+
+.Nav ol {
+  margin: 0;
 }
 
 .Profile {
@@ -26,4 +39,7 @@
 
 .Links {
   float: right;
+  height: 10vh;
+  display: flex;
+  align-items: center;
 }

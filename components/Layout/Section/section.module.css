@@ -1,0 +1,10 @@
+.Section {
+  border-bottom: 0.2vh solid slategray;
+  padding-bottom: 10%;
+  margin-bottom: 10%;
+  min-height: 80vh;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  min-width: 80vw;
+}

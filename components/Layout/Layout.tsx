@@ -13,8 +13,16 @@ const Layout: React.FC = ({ children }) => {
     if (typeof isMobile === 'undefined') return undefined;
     return false;
   });
+  const [scrollY, setScrollY] = useState(() => {
+    if (typeof window === 'undefined') return undefined;
+    return window.scrollY;
+  });
+  const [hideComponents, setHideComponents] = useState(() => {
+    if (typeof scrollY === 'undefined') return undefined;
+    return false;
+  });
   useEffect(() => {
-    const listener = () => {
+    const viewportListener = () => {
       if (window.innerWidth < 800) {
         setIsMobile(true);
         setIsModal(false);
@@ -23,27 +31,48 @@ const Layout: React.FC = ({ children }) => {
         setIsModal(false);
       }
     };
-    window.addEventListener('resize', listener);
-    return () => {
-      window.removeEventListener('resize', listener);
+    const scrollListener = () => {
+      if (window.scrollY > scrollY) {
+        setHideComponents(true);
+      } else {
+        setHideComponents(false);
+      }
+      setScrollY(window.scrollY);
     };
-  }, [setIsMobile]);
+    window.addEventListener('resize', viewportListener);
+    window.addEventListener('scroll', scrollListener);
+    return () => {
+      window.removeEventListener('resize', viewportListener);
+      window.removeEventListener('scroll', scrollListener);
+    };
+  }, [isMobile, hideComponents, isModal, scrollY]);
   const onClickMenu = () => {
     setIsModal(!isModal);
   };
   return (
     <div
-      className={`${isModal ? styles.ModalOpen : null}`}
+      className={`${isModal ? styles.ModalOpen : ''}`}
       suppressHydrationWarning={true}
     >
-      <NavBar isMobile={isMobile} isModal={isModal} onClickMenu={onClickMenu} />
-      <div className={styles.Container}>{children}</div>
-      <div className={styles.Social}>
-        <Social />
-      </div>
+      <NavBar
+        isMobile={isMobile}
+        isModal={isModal}
+        onClickMenu={onClickMenu}
+        hide={hideComponents}
+      />
 
-      {isMobile === true ? (
-        <Sidebar isModal={isModal} onClickMenu={onClickMenu} />
+      <div className={styles.Container}>{children}</div>
+      {typeof isMobile === 'undefined' || isMobile ? null : (
+        <div className={styles.Social}>
+          <Social width="60px" hide={hideComponents} />
+        </div>
+      )}
+      {isMobile ? (
+        <Sidebar
+          isModal={isModal}
+          onClickMenu={onClickMenu}
+          hide={hideComponents}
+        />
       ) : null}
     </div>
   );

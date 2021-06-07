@@ -1,0 +1,32 @@
+.ButtonWrapper {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  float: left;
+  border: 0.15vw solid blanchedalmond;
+  border-radius: 5px;
+  min-height: 4vh;
+  transition: 0.3s ease-in-out;
+  margin: 2vh 0;
+}
+
+.ListItem {
+  list-style: none;
+  height: fit-content;
+}
+
+.Button {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: blanchedalmond;
+  padding: 0 4vw;
+  /* 
+  align-items: center;
+  justify-content: center;
+  width: fit-content; */
+}
+
+.ButtonWrapper:hover {
+  background-color: rgba(255, 235, 205, 0.5);
+}

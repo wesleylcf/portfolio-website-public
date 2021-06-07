@@ -4,7 +4,7 @@ body {
   margin: 0 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 1.7vh;
   background-color: #222222;
   color: slategray;
@@ -20,4 +20,35 @@ img {
 }
 ::marker {
   color: turquoise;
+}
+.slide-right {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide-right h1 {
+  animation: 1.5s slide-right 0s forwards;
+  transform: translateX(-100%);
+}
+
+@keyframes slide-right {
+  to {
+    transform: translateX(0);
+  }
+}
+
+p {
+  font-size: 1.8vh;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 800px) {
+  section {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
