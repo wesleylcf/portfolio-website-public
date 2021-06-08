@@ -46,6 +46,10 @@ section {
   flex-direction: row;
 }
 
+article li {
+  margin: 1vh;
+}
+
 @media screen and (max-width: 800px) {
   section {
     flex-direction: column;

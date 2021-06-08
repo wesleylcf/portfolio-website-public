@@ -1,16 +1,19 @@
 .ButtonWrapper {
   display: flex;
+  justify-content: center;
   align-items: center;
   text-decoration: none;
   float: left;
   border: 0.15vw solid blanchedalmond;
   border-radius: 5px;
-  min-height: 4vh;
+  height: 6vh;
+  width: calc(6vh * 5);
   transition: 0.3s ease-in-out;
-  margin: 2vh 0;
+  margin: 2vh 1vw;
 }
 
 .ListItem {
+  width: 100%;
   list-style: none;
   height: fit-content;
 }
@@ -20,11 +23,7 @@
   text-align: center;
   text-decoration: none;
   color: blanchedalmond;
-  padding: 0 4vw;
-  /* 
-  align-items: center;
-  justify-content: center;
-  width: fit-content; */
+  padding: 0 1vw;
 }
 
 .ButtonWrapper:hover {

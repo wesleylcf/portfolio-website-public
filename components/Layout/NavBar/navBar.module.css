@@ -8,12 +8,13 @@
   display: flex;
   justify-content: space-between;
   height: 10vh;
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-in-out;
   transform: translate3d(0, 0, 0);
+  z-index: 2;
 }
 
 .HideNav {
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-in-out;
   transform: translate3d(0, -10vh, 0);
 }
 

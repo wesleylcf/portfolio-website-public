@@ -4,10 +4,10 @@ import styles from './social.module.css';
 
 interface SocialProps {
   width: string;
-  hide: boolean;
+  hide?: boolean;
 }
 
-const social = ({ width, hide }) => {
+const social: React.FC<SocialProps> = ({ width, hide }) => {
   return (
     <>
       <div className={`${styles.SocialIcon1} ${hide ? styles.Hide1 : ''}`}>

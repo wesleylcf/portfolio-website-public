@@ -35,7 +35,9 @@
   background-color: #222222;
   border: 3px dashed turquoise;
   transition: 0.3s ease-in-out;
-  position: sticky;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 
 .Menu:hover {

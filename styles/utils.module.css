@@ -61,12 +61,43 @@
 
 @media screen and (max-width: 800px) {
   .headingXl {
-    font-size: 10vw;
-  }
-  .heading2Xl {
     font-size: 12vw;
   }
-  .heading3Xl {
+  .heading2Xl {
     font-size: 14vw;
   }
+  .heading3Xl {
+    font-size: 16vw;
+  }
+  .headingLg {
+    font-size: 10vw;
+  }
+  .headingMd {
+    font-size: 7vw;
+  }
+}
+
+.ColorT {
+  color: turquoise;
+}
+
+.ColorP {
+  color: #ffafaf;
+}
+
+.ColorPMild {
+  color: rgb(255, 125, 125);
+}
+
+.ColorA {
+  color: blanchedalmond;
+}
+.Quote {
+  text-align: center;
+  font-size: 2vh;
+  color: blanchedalmond;
+}
+
+.Unordered li::marker {
+  color: slategray;
 }

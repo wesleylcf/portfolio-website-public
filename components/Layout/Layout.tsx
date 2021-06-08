@@ -72,6 +72,7 @@ const Layout: React.FC = ({ children }) => {
           isModal={isModal}
           onClickMenu={onClickMenu}
           hide={hideComponents}
+          isMobile={isMobile}
         />
       ) : null}
     </div>

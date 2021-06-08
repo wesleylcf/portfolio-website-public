@@ -9,15 +9,11 @@
 }
 
 .SidebarOpen {
+  position: fixed;
   width: 50vw;
   height: 100%;
   background-color: #333333;
   transition: 0.3s ease-in-out;
-}
-
-.HideSidebar {
-  transform: translate3d(0, -10%, 0);
-  transition: 0s;
 }
 
 .Social {
@@ -45,7 +41,7 @@
 .Modal {
   width: 60vw;
   height: 100%;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
 }

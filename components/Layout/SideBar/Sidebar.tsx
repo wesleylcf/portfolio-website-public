@@ -8,16 +8,18 @@ interface SidebarProps {
   isModal: boolean;
   onClickMenu: () => void;
   hide: boolean;
+  isMobile: boolean;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isModal, onClickMenu, hide }) => {
+const Sidebar: React.FC<SidebarProps> = ({
+  isModal,
+  onClickMenu,
+  hide,
+  isMobile,
+}) => {
   return (
     <>
-      <div
-        className={`${styles.Sidebar} ${isModal ? styles.SidebarOpen : ''} ${
-          hide ? styles.HideSidebar : ''
-        }`}
-      >
+      <div className={`${styles.Sidebar} ${isModal ? styles.SidebarOpen : ''}`}>
         <Menu onClickMenu={onClickMenu} isModal={isModal} />
         {isModal ? (
           <>

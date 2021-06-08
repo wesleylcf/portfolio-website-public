@@ -1,6 +1,6 @@
 import React from 'react';
 import utilStyles from '../../../styles/utils.module.css';
-import Card from '../../Layout/Card/Card';
+import Card from '../../cards/Card/Card';
 import styles from './intro.module.css';
 import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
 import Section from '../../Layout/Section/Section';

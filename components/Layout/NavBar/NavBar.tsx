@@ -24,17 +24,13 @@ const NavBar: React.FC<NavBarProps> = ({
       <Links />
     </div>
   );
-  if (typeof isMobile === 'undefined') {
+  if (typeof isMobile === 'undefined' || isMobile) {
     links = null;
-  } else {
-    if (isMobile) {
-      links = <Menu isModal={isModal} onClickMenu={onClickMenu} />;
-    }
   }
 
   return (
     <nav
-      className={`${styles.Nav} ${hide ? styles.HideNav : ''}`}
+      className={`${styles.Nav} ${hide && !isMobile ? styles.HideNav : ''}`}
       suppressHydrationWarning={true}
     >
       <Link href="/" passHref>

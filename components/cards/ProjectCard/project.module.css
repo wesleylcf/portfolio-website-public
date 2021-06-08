@@ -1,0 +1,93 @@
+.ImageContainer {
+  min-height: calc(48vw * 0.5625);
+  min-width: 48vw;
+  border-radius: 15px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.Image {
+  border-radius: 10px;
+}
+
+.Project {
+  border-radius: 10px;
+  margin: 2vh 2vw;
+  height: calc(48vw * 0.5625);
+  width: 48vw;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.Description {
+  border-radius: 10px 10px 0 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  left: 0;
+  transition: 0.3s;
+  transform: translate3d(24vw, 0, 0);
+  height: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.Description h1 {
+  margin: 0 2vw;
+  margin-top: 2vh;
+}
+.Description p {
+  margin: 1vh 2vw;
+}
+
+.Button {
+  border-radius: 0 0 10px 10px;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  height: 30%;
+  transition: 0.3s;
+  transform: translate3d(-24vw, 0, 0);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Project:hover .Description {
+  z-index: 1;
+  transition: 0.5s ease;
+  transform: translate3d(0, 0, 0);
+}
+
+.Project:hover .Button {
+  z-index: 1;
+  transition: 0.5s ease;
+  transform: translate3d(0, 0, 0);
+}
+
+@media screen and (max-width: 800px) {
+  .Description,
+  .Button {
+    z-index: 1;
+    transform: translate3d(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .ImageContainer,
+  .Project {
+    min-height: 35vh;
+    min-width: 80vw;
+    line-height: 2.5vh;
+  }
+}
