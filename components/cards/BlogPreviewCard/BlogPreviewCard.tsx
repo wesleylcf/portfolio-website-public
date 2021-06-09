@@ -27,20 +27,20 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
         ) : null}
       </div>
       <div className={styles.Content}>
-        <p>
-          <span className={`${utilStyles.ColorP} ${styles.CoverTags}`}>
+        <p className={styles.ContentInfo}>
+          <span className={`${styles.CoverDate} ${utilStyles.ColorP}`}>
+            {date}
+          </span>
+          <span className={`${utilStyles.ColorA} ${styles.CoverTags}`}>
             {tags.reduce((prev, cur) => {
               prev += cur;
               prev += ' / ';
               return prev;
             }, '')}
           </span>
-          <span className={`${styles.CoverDate} ${utilStyles.ColorP}`}>
-            {date}
-          </span>
         </p>
         <h2 className={utilStyles.ColorT}>{title}</h2>
-        <p className={utilStyles.ColorA}>{description}</p>
+        <p>{description}</p>
       </div>
     </Card>
   );

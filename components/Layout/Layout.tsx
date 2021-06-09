@@ -21,6 +21,9 @@ const Layout: React.FC = ({ children }) => {
     if (typeof scrollY === 'undefined') return undefined;
     return false;
   });
+  const [timeSinceLastHide, setTimeSinceLastHide] = useState(
+    new Date().getTime()
+  );
   useEffect(() => {
     const viewportListener = () => {
       if (window.innerWidth < 800) {
@@ -31,6 +34,13 @@ const Layout: React.FC = ({ children }) => {
         setIsModal(false);
       }
     };
+    window.addEventListener('resize', viewportListener);
+    return () => {
+      window.removeEventListener('resize', viewportListener);
+    };
+  }, [isMobile, isModal]);
+  useEffect(() => {
+    let timer: any;
     const scrollListener = () => {
       if (window.scrollY > scrollY) {
         setHideComponents(true);
@@ -38,14 +48,28 @@ const Layout: React.FC = ({ children }) => {
         setHideComponents(false);
       }
       setScrollY(window.scrollY);
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        setTimeSinceLastHide(new Date().getTime());
+      }, 1500);
     };
-    window.addEventListener('resize', viewportListener);
     window.addEventListener('scroll', scrollListener);
     return () => {
-      window.removeEventListener('resize', viewportListener);
       window.removeEventListener('scroll', scrollListener);
+      clearTimeout(timer);
     };
-  }, [isMobile, hideComponents, isModal, scrollY]);
+  }, [hideComponents, scrollY]);
+
+  useEffect(() => {
+    let timer: any;
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      setHideComponents(false);
+    }, 1500);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [timeSinceLastHide]);
   const onClickMenu = () => {
     setIsModal(!isModal);
   };
@@ -54,12 +78,7 @@ const Layout: React.FC = ({ children }) => {
       className={`${isModal ? styles.ModalOpen : ''}`}
       suppressHydrationWarning={true}
     >
-      <NavBar
-        isMobile={isMobile}
-        isModal={isModal}
-        onClickMenu={onClickMenu}
-        hide={hideComponents}
-      />
+      <NavBar isMobile={isMobile} hide={hideComponents} />
 
       <div className={styles.Container}>{children}</div>
       {typeof isMobile === 'undefined' || isMobile ? null : (

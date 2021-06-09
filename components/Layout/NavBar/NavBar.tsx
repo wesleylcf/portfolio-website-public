@@ -3,22 +3,14 @@ import Image from 'next/image';
 import utilStyles from '../../../styles/utils.module.css';
 import styles from './navBar.module.css';
 import Links from '../Links/Links';
-import Menu from '../../buttons/Menu/Menu';
 import Link from 'next/link';
 
 interface NavBarProps {
   isMobile: boolean;
-  isModal: boolean;
-  onClickMenu: () => void;
   hide: boolean;
 }
 
-const NavBar: React.FC<NavBarProps> = ({
-  isMobile,
-  isModal,
-  onClickMenu,
-  hide,
-}) => {
+const NavBar: React.FC<NavBarProps> = ({ isMobile, hide }) => {
   let links = (
     <div className={styles.Links}>
       <Links />
