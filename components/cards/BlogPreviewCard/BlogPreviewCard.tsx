@@ -22,7 +22,11 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
   return (
     <Card showBackground minHeight="40vh">
       <div className={styles.Cover}>
-        {previewImage ? <Image src={previewImage} layout="fill" /> : null}
+        {previewImage ? (
+          <Image src={`/images/${previewImage}`} layout="fill" />
+        ) : null}
+      </div>
+      <div className={styles.Content}>
         <p>
           <span className={`${utilStyles.ColorP} ${styles.CoverTags}`}>
             {tags.reduce((prev, cur) => {
@@ -35,8 +39,6 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
             {date}
           </span>
         </p>
-      </div>
-      <div className={styles.Content}>
         <h2 className={utilStyles.ColorT}>{title}</h2>
         <p className={utilStyles.ColorA}>{description}</p>
       </div>

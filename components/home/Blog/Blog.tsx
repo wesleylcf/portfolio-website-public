@@ -45,6 +45,7 @@ const Blog = () => {
               date={post.date}
               tags={post.tags}
               description={post.description}
+              previewImage="profile.jpg"
               key={index}
             />
           );
