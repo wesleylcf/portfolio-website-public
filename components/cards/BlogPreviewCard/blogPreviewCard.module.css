@@ -1,0 +1,33 @@
+.Cover {
+  height: 16vh;
+  width: 100%;
+  border-bottom: 1px solid turquoise;
+  position: relative;
+}
+
+.Cover p {
+  margin: 0;
+}
+
+.CoverDate {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  text-align: right;
+}
+
+.CoverTags {
+  display: inline-block;
+  width: 50%;
+  overflow: hidden;
+}
+
+.Content {
+  width: 100%;
+}
+
+.Content h1 {
+  margin: 0 auto;
+}

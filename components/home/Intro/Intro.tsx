@@ -30,8 +30,7 @@ const intro = () => {
             <br /> I am passionate about web development, and
             software-engineering in general.
             <br />
-            The stack I'm most experienced in is MERN(Mongo, Express, React,
-            NodeJS)
+            Currently, I'm waiting for the university term to start !
           </p>
           <ImportantButton href="mailto:wesleylim.work@gmail.com">
             Get in touch!

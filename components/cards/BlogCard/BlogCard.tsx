@@ -2,16 +2,15 @@ import React from 'react';
 import Card from '../Card/Card';
 import utilStyles from '../../../styles/utils.module.css';
 
-interface BlogProps {
-  title: string;
-  date: string;
-  sections: {
+interface BlogCardProps {
+  blogs: {
     heading: string;
-    content: string;
+    content: string[];
+    image?: string;
   }[];
 }
 
-const BlogCard: React.FC<BlogProps> = () => {
+const BlogCard: React.FC<BlogCardProps> = ({ blogs }) => {
   return (
     <Card>
       <header>

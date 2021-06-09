@@ -18,7 +18,7 @@ const About = () => {
           <h1 className={utilStyles.ColorT}>Technologies/Languages</h1>
           <ul className={utilStyles.Unordered}>
             <li>
-              For most of my projects I use the MERN(
+              For my projects I use the MERN(
               <span className={utilStyles.ColorP}>
                 Mongodb, Express, React, Nodejs
               </span>
@@ -45,13 +45,14 @@ const About = () => {
             consider the relationships between each component, and ensuring
             components can be easily changed in the future.
           </p>
-          <h1 className={utilStyles.ColorP}>The journey</h1>
+          <h1 className={utilStyles.ColorP}>Genesis</h1>
           <p>
-            I picked up programming while serving my National Service in the Air
+            I picked up programming while serving National Service in the Air
             Force, where I took several introductory courses to get a sense of
-            direction on the skills I should pick up. Ultimately, I decided on
-            web development, as I found the concept of creating web applications
-            from reusable components interesting.
+            direction with regards to which area was most compelling to me.
+            Ultimately, I decided on web development, as I found the concept of
+            designing web applications from reusable components challenging yet
+            fulfilling.
           </p>
           <ImportantButton href="/about">More about me</ImportantButton>
         </main>

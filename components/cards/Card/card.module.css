@@ -5,14 +5,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
   max-width: 50vw;
-  height: 100%;
+  flex: 1;
+}
+
+.ShowBackground {
+  background-color: #262626;
+  border-radius: 10px;
 }
 
 .Card:hover {
   background-color: #262626;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1400px) {
+  .Card {
+    flex-basis: 33%;
+  }
 }
 
 @media screen and (max-width: 800px) {

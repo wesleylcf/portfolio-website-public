@@ -2,8 +2,34 @@ import React from 'react';
 import Section from '../../Layout/Section/Section';
 import Card from '../../cards/Card/Card';
 import utilStyles from '../../../styles/utils.module.css';
+import BlogPreviewCard, {
+  BlogPreviewCardProps as BlogPost,
+} from '../../cards/BlogPreviewCard/BlogPreviewCard';
 
-const Contact = () => {
+const Blog = () => {
+  const blogPosts: BlogPost[] = [
+    {
+      title: 'blog post 1',
+      date: '09/06/2000',
+      tags: ['React', 'Typescript'],
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+    },
+    {
+      title: 'blog post 2',
+      date: '09/06/2000',
+      tags: ['React', 'Typescript'],
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+    },
+    {
+      title: 'blog post 3',
+      date: '09/06/2000',
+      tags: ['React', 'Typescript'],
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+    },
+  ];
   return (
     <>
       <header>
@@ -12,24 +38,20 @@ const Contact = () => {
         </h1>
       </header>
       <Section>
-        <Card>
-          <header>
-            <h1 className={utilStyles.ColorT}>Blog post 1</h1>
-          </header>
-        </Card>
-        <Card>
-          <header>
-            <h1 className={utilStyles.ColorP}>Blog post 2</h1>
-          </header>
-        </Card>
-        <Card>
-          <header>
-            <h1 className={utilStyles.ColorA}>Blog post 3</h1>
-          </header>
-        </Card>
+        {blogPosts.map((post, index) => {
+          return (
+            <BlogPreviewCard
+              title={post.title}
+              date={post.date}
+              tags={post.tags}
+              description={post.description}
+              key={index}
+            />
+          );
+        })}
       </Section>
     </>
   );
 };
 
-export default Contact;
+export default Blog;
