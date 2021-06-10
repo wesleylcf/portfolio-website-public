@@ -37,7 +37,6 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
           ) : null}
         </div>
         <Card
-          showBackground
           minHeight="30vh"
           side="center"
           flexBasis={flexBasis}

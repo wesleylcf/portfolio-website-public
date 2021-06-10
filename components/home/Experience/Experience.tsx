@@ -48,15 +48,15 @@ const Experience = () => {
               Graphql, Sequelize, Mongoose
             </span>
           </p>
-          <div className={styles.ButtonContainer}>
-            <ImportantButton href="mailto:wesleylim.work@gmail.com">
-              Get in touch!
-            </ImportantButton>
-            <ImportantButton href="mailto:wesleylim.work@gmail.com">
-              Grab a copy of my resume!
-            </ImportantButton>
-          </div>
         </Card>
+        <div className={styles.ButtonContainer}>
+          <ImportantButton href="mailto:wesleylim.work@gmail.com">
+            Get in touch!
+          </ImportantButton>
+          <ImportantButton href="mailto:wesleylim.work@gmail.com">
+            Grab a copy of my resume!
+          </ImportantButton>
+        </div>
       </Main>
       <Aside order={1}>
         <div

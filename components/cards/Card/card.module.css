@@ -7,11 +7,12 @@
   justify-content: space-between;
   position: relative;
   max-width: calc(0.58 * 80vw);
-}
-
-.ShowBackground {
   background-color: #272727;
   border-radius: 10px;
+}
+
+.HideBackground {
+  background-color: #222222;
 }
 
 @media screen and (max-width: 1400px) {

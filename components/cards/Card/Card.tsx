@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './card.module.css';
 
 interface CardProps {
-  showBackground?: boolean;
+  hideBackground?: boolean;
   minHeight?: string;
   flexBasis?: string;
   side: 'center' | 'flex-start' | 'flex-end';
@@ -12,7 +12,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({
   children,
-  showBackground,
+  hideBackground,
   minHeight,
   flexBasis,
   side,
@@ -41,7 +41,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <article
       className={`${styles.Card} ${
-        showBackground ? styles.ShowBackground : ''
+        hideBackground ? styles.HideBackground : ''
       }`}
       style={style}
     >

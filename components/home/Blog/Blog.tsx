@@ -34,7 +34,7 @@ const Blog = () => {
   return (
     <div className={styles.Container}>
       <HeadingCard number="04" content="Blog" order={0} />
-      <Section>
+      <Section width="70%">
         {blogPosts.map((post, index) => {
           return (
             <BlogPreviewCard
@@ -48,6 +48,7 @@ const Blog = () => {
             />
           );
         })}
+
         <ImportantButton href="/blog">See all posts</ImportantButton>
       </Section>
     </div>

@@ -8,7 +8,7 @@ import Section from '../../Layout/Section/Section';
 const intro = () => {
   return (
     <Section>
-      <Card side="center">
+      <Card side="center" hideBackground>
         <header className={`${styles.Header} slide-right`}>
           <h1 className={utilStyles.headingXl} style={{ color: 'turquoise' }}>
             Hi,
