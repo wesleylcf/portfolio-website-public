@@ -2,22 +2,24 @@ import React from 'react';
 import styles from './card.module.css';
 
 interface CardProps {
-  hideBackground?: boolean;
+  showBackground?: boolean;
   minHeight?: string;
   flexBasis?: string;
   side: 'center' | 'flex-start' | 'flex-end';
   margin?: string;
   borderRadius?: string;
+  padding?: string;
 }
 
 const Card: React.FC<CardProps> = ({
   children,
-  hideBackground,
+  showBackground,
   minHeight,
   flexBasis,
   side,
   margin,
   borderRadius,
+  padding,
 }) => {
   let style = {
     minHeight,
@@ -25,6 +27,7 @@ const Card: React.FC<CardProps> = ({
     justifyContent: side,
     margin,
     borderRadius,
+    padding,
   };
   if (minHeight) {
     style.minHeight = minHeight;
@@ -38,10 +41,13 @@ const Card: React.FC<CardProps> = ({
   if (borderRadius) {
     style.borderRadius = borderRadius;
   }
+  if (padding) {
+    style.padding = padding;
+  }
   return (
     <article
       className={`${styles.Card} ${
-        hideBackground ? styles.HideBackground : ''
+        showBackground ? styles.ShowBackground : ''
       }`}
       style={style}
     >

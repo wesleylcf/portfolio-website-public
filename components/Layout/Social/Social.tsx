@@ -9,7 +9,7 @@ interface SocialProps {
 
 const social: React.FC<SocialProps> = ({ width, hide }) => {
   return (
-    <>
+    <div className={styles.Container}>
       <div className={`${styles.SocialIcon1} ${hide ? styles.Hide1 : ''}`}>
         <SocialIcon
           style={{
@@ -27,7 +27,6 @@ const social: React.FC<SocialProps> = ({ width, hide }) => {
           bgColor="#ffafaf"
           style={{
             marginBottom: '1vh',
-
             width: width,
             height: width,
           }}
@@ -45,7 +44,7 @@ const social: React.FC<SocialProps> = ({ width, hide }) => {
           }}
         />
       </div>
-    </>
+    </div>
   );
 };
 

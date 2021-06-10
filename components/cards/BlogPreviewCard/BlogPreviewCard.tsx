@@ -25,43 +25,45 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
   margin,
 }) => {
   return (
-    <Link href={`/blog/${title.replace(' ', '')}`}>
-      <a className={styles.Container}>
-        <div className={styles.Cover}>
-          {previewImage ? (
-            <Image
-              src={`/images/${previewImage}`}
-              layout="fill"
-              className={styles.Image}
-            />
-          ) : null}
-        </div>
-        <Card
-          minHeight="30vh"
-          side="center"
-          flexBasis={flexBasis}
-          margin={margin}
-          borderRadius="0 0 15px 15px"
-        >
-          <div className={styles.Content}>
-            <p className={styles.ContentInfo}>
-              <span className={`${styles.CoverDate} ${utilStyles.ColorP}`}>
-                {date}
-              </span>
-              <span className={`${utilStyles.ColorA} ${styles.CoverTags}`}>
-                {tags.reduce((prev, cur) => {
-                  prev += cur;
-                  prev += ' / ';
-                  return prev;
-                }, '')}
-              </span>
-            </p>
-            <h2 className={utilStyles.ColorT}>{title}</h2>
-            <p className={styles.Description}>{description}</p>
+    <div className={styles.Container}>
+      <Link href={`/blog/${title.replace(' ', '')}`}>
+        <a className={styles.Post}>
+          <div className={styles.Cover}>
+            {previewImage ? (
+              <Image
+                src={`/images/${previewImage}`}
+                layout="fill"
+                className={styles.Image}
+              />
+            ) : null}
           </div>
-        </Card>
-      </a>
-    </Link>
+          <Card
+            minHeight="30vh"
+            side="center"
+            margin={margin}
+            borderRadius="0 0 15px 15px"
+            showBackground
+          >
+            <div className={styles.Content}>
+              <p className={styles.ContentInfo}>
+                <span className={`${styles.CoverDate} ${utilStyles.ColorP}`}>
+                  {date}
+                </span>
+                <span className={`${utilStyles.ColorA} ${styles.CoverTags}`}>
+                  {tags.reduce((prev, cur) => {
+                    prev += cur;
+                    prev += ' / ';
+                    return prev;
+                  }, '')}
+                </span>
+              </p>
+              <h2 className={utilStyles.ColorT}>{title}</h2>
+              <p className={styles.Description}>{description}</p>
+            </div>
+          </Card>
+        </a>
+      </Link>
+    </div>
   );
 };
 

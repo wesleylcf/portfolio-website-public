@@ -1,16 +1,17 @@
 .Container {
-  margin: 0 10vw 0 9vw;
+  margin: 10vh 0 0 0;
   word-wrap: break-word;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  position: relative;
 }
 
 .Social {
-  position: sticky;
-  bottom: 10vh;
-  width: 100px;
+  position: fixed;
+  bottom: 5vh;
+  width: 60px;
+  margin-left: 2vw;
   display: flex;
   flex-direction: column;
   align-items: center;

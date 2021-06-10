@@ -19,14 +19,16 @@
 }
 
 .Button {
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: blanchedalmond;
-  padding: 0 1vw;
+
+  height: 6vh;
 }
 
 .ButtonWrapper:hover {
   background-color: rgba(255, 235, 205, 0.5);
-  transform: translate3d(0, -1vh, 0);
+  transform: translate3d(0, -0.5vh, 0);
 }

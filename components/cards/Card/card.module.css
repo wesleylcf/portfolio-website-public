@@ -1,17 +1,28 @@
 .Card {
-  padding: 2vh 2vw;
+  padding: 0 1vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: stretch;
   justify-content: space-between;
   position: relative;
-  max-width: calc(0.58 * 80vw);
+  max-width: calc(0.48 * 80vw);
+}
+.ShowBackground {
   background-color: #272727;
   border-radius: 10px;
 }
 
+/* .Card:hover {
+  background-color: #272727;
+  border-radius: 10px;
+} */
+
 .HideBackground {
+  background-color: #222222;
+}
+
+.HideBackground:hover {
   background-color: #222222;
 }
 
@@ -25,8 +36,6 @@
   .Card {
     min-width: 80vw;
     min-height: 20vw;
-  }
-  .Card:hover {
-    background-color: #222222;
+    padding: 0vh 7vw 7vh 7vw;
   }
 }

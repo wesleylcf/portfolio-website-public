@@ -1,11 +1,12 @@
 import React from 'react';
-import Section from '../../Layout/Section/Section';
+import HorizontalSection from '../../Layout/HorizontalSection/HorizontalSection';
 import BlogPreviewCard, {
   BlogPreviewCardProps as BlogPost,
 } from '../../cards/BlogPreviewCard/BlogPreviewCard';
 import HeadingCard from '../../cards/HeadingCard/HeadingCard';
-import styles from './blog.module.css';
+
 import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
+import VerticalSection from '../../Layout/VerticalSection/VerticalSection';
 
 const Blog = () => {
   const blogPosts: BlogPost[] = [
@@ -32,9 +33,9 @@ const Blog = () => {
     },
   ];
   return (
-    <div className={styles.Container}>
+    <VerticalSection width="60vw">
       <HeadingCard number="04" content="Blog" order={0} />
-      <Section width="70%">
+      <HorizontalSection width="60vw" hideBorder margin="0">
         {blogPosts.map((post, index) => {
           return (
             <BlogPreviewCard
@@ -44,14 +45,13 @@ const Blog = () => {
               description={post.description}
               previewImage="profile.jpg"
               key={index}
-              margin="0 0.5vw 0 0.5vw"
+              margin="0 0.5vw 2vh 0.5vw"
             />
           );
         })}
-
         <ImportantButton href="/blog">See all posts</ImportantButton>
-      </Section>
-    </div>
+      </HorizontalSection>
+    </VerticalSection>
   );
 };
 

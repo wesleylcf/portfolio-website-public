@@ -1,5 +1,5 @@
 import React from 'react';
-import Section from '../../Layout/Section/Section';
+import Section from '../../Layout/HorizontalSection/HorizontalSection';
 import Card from '../../cards/Card/Card';
 import styles from './experience.module.css';
 import utilStyles from '../../../styles/utils.module.css';
@@ -29,18 +29,18 @@ const Experience = () => {
     <Section>
       <Main order={0}>
         <HeadingCard number="03" content="Experience" order={0}></HeadingCard>
-        <Card side="center">
+        <Card side="center" padding="0 5vw">
           <p>
             I'm currently waiting to start my university term/in year one, and
             have no prior internships. However, I'm
             <span className={utilStyles.ColorT}>
               {' '}
               actively looking for internships for this summer!
-            </span>
+            </span>{' '}
             The libraries I've recently worked with are
             <span className={utilStyles.ColorP}>
               {' '}
-              React, Next, Redux, Express, Commander.
+              React, Next, Redux, Express, Commander.{' '}
             </span>
             The libraries I've worked with in the past are
             <span className={utilStyles.ColorPMild}>
@@ -61,11 +61,14 @@ const Experience = () => {
       <Aside order={1}>
         <div
           style={{
-            width: '30vw',
+            width: '20vw',
             height: '30vh',
             backgroundColor: 'slategrey',
+            color: 'black',
           }}
-        ></div>
+        >
+          Insert Something!
+        </div>
       </Aside>
     </Section>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import utilStyles from '../../../styles/utils.module.css';
 import styles from './about.module.css';
-import Section from '../../Layout/Section/Section';
+import Section from '../../Layout/HorizontalSection/HorizontalSection';
 import Card from '../../cards/Card/Card';
 import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
 import HeadingCard from '../../cards/HeadingCard/HeadingCard';
@@ -13,7 +13,7 @@ const About = () => {
     <Section>
       <Main order={0}>
         <HeadingCard number="01" content="About me" order={0} />
-        <Card side="flex-end" flexBasis="60%">
+        <Card side="flex-end" flexBasis="60%" padding="0 5vw">
           <div className={styles.Container}>
             <p>
               I picked up programming while serving National Service in the Air
@@ -24,11 +24,10 @@ const About = () => {
             </p>
             <q className={utilStyles.Quote}>
               Always leave the campground cleaner than you found it
-            </q>
-
+            </q>{' '}
             <p>
               For my projects I use the MERN stack ( Mongodb, Express, React,
-              Nodejs ), with Typescript. For general programming, I use Python
+              Nodejs), with Typescript. For general programming, I use Python
               and C++, and I'm familiar with Java.
             </p>
           </div>
@@ -40,11 +39,14 @@ const About = () => {
       <Aside order={1}>
         <div
           style={{
-            width: '30vw',
+            width: '20vw',
             height: '40vh',
             backgroundColor: 'slategrey',
+            color: 'black',
           }}
-        ></div>
+        >
+          Insert Something!
+        </div>
       </Aside>
     </Section>
   );

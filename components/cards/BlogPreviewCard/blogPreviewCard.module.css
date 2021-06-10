@@ -1,10 +1,15 @@
 .Container {
-  text-decoration: none;
-  color: slategray;
+  flex-basis: 33%;
+  transition: 0.3s;
+
+  max-height: 70vh;
+}
+
+.Post {
   display: flex;
   flex-direction: column;
-  transition: 0.3s;
-  flex-basis: 33%;
+  text-decoration: none;
+  color: slategray;
 }
 
 .Container:hover {
@@ -37,7 +42,10 @@
 
 .ContentInfo {
   margin: 1vh 0 0 0;
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: c;
+  align-items: center;
 }
 
 .Content {
@@ -64,5 +72,8 @@
 @media screen and (max-width: 800px) {
   .Cover {
     height: calc(60vw * 0.6);
+  }
+  .Container {
+    margin: 2 vh auto;
   }
 }

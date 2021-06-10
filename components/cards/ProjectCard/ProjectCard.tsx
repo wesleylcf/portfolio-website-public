@@ -32,7 +32,7 @@ const projectCard: React.FC<ProjectCardProps> = ({
         </div>
         <div className={styles.Button}>
           <ImportantButton href={`/projects/${heading}`}>
-            Learn more
+            See Project
           </ImportantButton>
         </div>
         <Image
