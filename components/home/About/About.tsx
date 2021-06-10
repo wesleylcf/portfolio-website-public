@@ -32,11 +32,10 @@ const About = () => {
               and C++, and I'm familiar with Java.
             </p>
           </div>
-
-          <div className={styles.ButtonContainer}>
-            <ImportantButton href="/about">More about me</ImportantButton>
-          </div>
         </Card>
+        <div className={styles.ButtonContainer}>
+          <ImportantButton href="/about">More about me</ImportantButton>
+        </div>
       </Main>
       <Aside order={1}>
         <div

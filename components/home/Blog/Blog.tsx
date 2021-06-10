@@ -5,6 +5,7 @@ import BlogPreviewCard, {
 } from '../../cards/BlogPreviewCard/BlogPreviewCard';
 import HeadingCard from '../../cards/HeadingCard/HeadingCard';
 import styles from './blog.module.css';
+import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
 
 const Blog = () => {
   const blogPosts: BlogPost[] = [
@@ -43,11 +44,11 @@ const Blog = () => {
               description={post.description}
               previewImage="profile.jpg"
               key={index}
-              flexBasis="32%"
               margin="0 0.5vw 0 0.5vw"
             />
           );
         })}
+        <ImportantButton href="/blog">See all posts</ImportantButton>
       </Section>
     </div>
   );

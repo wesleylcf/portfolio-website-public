@@ -9,13 +9,13 @@
   height: 6vh;
   width: calc(6vh * 5);
   transition: 0.3s ease-in-out;
-  margin: 2vh 1vw;
+  margin: 6vh 1vw;
 }
 
 .ListItem {
   width: 100%;
   list-style: none;
-  height: fit-content;
+  margin: 0;
 }
 
 .Button {
@@ -28,4 +28,5 @@
 
 .ButtonWrapper:hover {
   background-color: rgba(255, 235, 205, 0.5);
+  transform: translate3d(0, -1vh, 0);
 }
