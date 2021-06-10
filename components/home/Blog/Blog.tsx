@@ -1,10 +1,10 @@
 import React from 'react';
 import Section from '../../Layout/Section/Section';
-import Card from '../../cards/Card/Card';
-import utilStyles from '../../../styles/utils.module.css';
 import BlogPreviewCard, {
   BlogPreviewCardProps as BlogPost,
 } from '../../cards/BlogPreviewCard/BlogPreviewCard';
+import HeadingCard from '../../cards/HeadingCard/HeadingCard';
+import styles from './blog.module.css';
 
 const Blog = () => {
   const blogPosts: BlogPost[] = [
@@ -13,30 +13,26 @@ const Blog = () => {
       date: '09/06/2000',
       tags: ['React', 'Typescript'],
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s... ",
     },
     {
       title: 'blog post 2',
       date: '09/06/2000',
       tags: ['React', 'Typescript'],
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500... ",
     },
     {
       title: 'blog post 3',
       date: '09/06/2000',
       tags: ['React', 'Typescript'],
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...",
     },
   ];
   return (
-    <>
-      <header>
-        <h1 className={utilStyles.headingLg}>
-          <span className={utilStyles.ColorT}>4.</span> Blog
-        </h1>
-      </header>
+    <div className={styles.Container}>
+      <HeadingCard number="04" content="Blog" order={0} />
       <Section>
         {blogPosts.map((post, index) => {
           return (
@@ -47,11 +43,13 @@ const Blog = () => {
               description={post.description}
               previewImage="profile.jpg"
               key={index}
+              flexBasis="32%"
+              margin="0 0.5vw 0 0.5vw"
             />
           );
         })}
       </Section>
-    </>
+    </div>
   );
 };
 

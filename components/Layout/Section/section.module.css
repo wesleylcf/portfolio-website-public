@@ -2,11 +2,11 @@
   border-bottom: 0.2vh solid slategray;
   padding-bottom: 5%;
   margin-bottom: 5%;
-  min-height: 80vh;
+  text-align: left;
   justify-content: center;
   align-items: center;
-  text-align: left;
-  min-width: 80vw;
-  min-height: 80vh;
+  width: 100%;
   flex-wrap: wrap;
+  flex-direction: row;
+  min-height: 80vh;
 }

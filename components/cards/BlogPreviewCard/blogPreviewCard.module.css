@@ -1,8 +1,24 @@
+.Container {
+  text-decoration: none;
+  color: slategray;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.Container:hover {
+  margin-bottom: 2vh;
+  transition: 0.3s;
+}
+
 .Cover {
-  height: calc(40vw * 0.3);
-  width: 100%;
-  border-bottom: 1px solid turquoise;
+  height: 20vh;
   position: relative;
+  margin: 0 0.5vw;
+}
+
+.Image {
+  border-radius: 15px 15px 0 0;
 }
 
 .CoverDate {
@@ -31,9 +47,21 @@
 .Content h1 {
   margin: 0 auto;
 }
+.Description {
+  max-height: 30%;
+}
+
+@media screen and (max-width: 1400px) {
+  .Container {
+    flex-basis: 33%;
+  }
+  .Cover {
+    height: calc(40vw * 0.6);
+  }
+}
 
 @media screen and (max-width: 800px) {
   .Cover {
-    height: calc(80vw * 0.6);
+    height: calc(60vw * 0.6);
   }
 }

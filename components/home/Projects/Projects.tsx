@@ -4,35 +4,42 @@ import ProjectCard from '../../cards/ProjectCard/ProjectCard';
 import Card from '../../cards/Card/Card';
 import Section from '../../Layout/Section/Section';
 import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
+import HeadingCard from '../../cards/HeadingCard/HeadingCard';
+import Main from '../../Layout/Main/Main';
+import Aside from '../../Layout/Aside/Aside';
 
 const Projects = () => {
   return (
     <Section>
-      <Card>
-        <header>
-          <h1 className={utilStyles.headingLg}>
-            <span className={utilStyles.ColorT}>2.</span> Projects
-          </h1>
-        </header>
-
-        <ProjectCard
-          heading="Journalify"
-          languages={['React', 'Express']}
-          description="A code/markdown editor that has an offline version which is
-              launched from the CLI and saves to the user's machine, and an
-              online version which allows users to share their journals."
-          imageSrc="jj.jpg"
-        />
-        <ProjectCard
-          heading="Journalify"
-          languages={['React', 'Express']}
-          description="A code/markdown editor that has an offline version which is
-              launched from the CLI and saves to the user's machine, and an
-              online version which allows users to share their journals."
-          imageSrc="jj.jpg"
-        />
-        <ImportantButton href="/Projects">See all projects</ImportantButton>
-      </Card>
+      <Main order={1}>
+        <HeadingCard number="02" content="Projects" order={0} />
+        <Card side="center">
+          <ProjectCard
+            heading="Journalify"
+            languages={['React', 'Express']}
+            description="A code/markdown editor that can be
+            launched from the CLI or online"
+            imageSrc="jj.jpg"
+          />
+          <ProjectCard
+            heading="Journalify"
+            languages={['React', 'Express']}
+            description="A code/markdown editor that can be
+              launched from the CLI or online"
+            imageSrc="jj.jpg"
+          />
+          <ImportantButton href="/Projects">See all projects</ImportantButton>
+        </Card>
+      </Main>
+      <Aside order={0}>
+        <div
+          style={{
+            width: '30vw',
+            height: '40vh',
+            backgroundColor: 'slategrey',
+          }}
+        ></div>
+      </Aside>
     </Section>
   );
 };

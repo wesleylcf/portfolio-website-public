@@ -4,59 +4,49 @@ import styles from './about.module.css';
 import Section from '../../Layout/Section/Section';
 import Card from '../../cards/Card/Card';
 import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
+import HeadingCard from '../../cards/HeadingCard/HeadingCard';
+import Main from '../../Layout/Main/Main';
+import Aside from '../../Layout/Aside/Aside';
 
 const About = () => {
   return (
     <Section>
-      <Card>
-        <header>
-          <h1 className={utilStyles.headingLg}>
-            <span className={utilStyles.ColorT}>1.</span> About me
-          </h1>
-        </header>
-        <main>
-          <h1 className={utilStyles.ColorT}>Technologies/Languages</h1>
-          <ul className={utilStyles.Unordered}>
-            <li>
-              For my projects I use the MERN(
-              <span className={utilStyles.ColorP}>
-                Mongodb, Express, React, Nodejs
-              </span>
-              ) stack, with{' '}
-              <span className={utilStyles.ColorP}>Typescript</span>
-            </li>
-            <li>
-              For general programming, I use{' '}
-              <span className={utilStyles.ColorP}>Python and C++</span>, and I'm
-              familiar with <span className={utilStyles.ColorP}>Java</span>
-            </li>
-          </ul>
-          <h1 className={utilStyles.ColorA}>Work ethic</h1>
-          <p>
-            I am a huge fan of Robert C. Martin and live by the Boy Scouts Rule
-            :
-          </p>
-          <div className={utilStyles.Quote}>
-            <q>Always leave the campground cleaner than you found it</q>
+      <Main order={0}>
+        <HeadingCard number="01" content="About me" order={0} />
+        <Card side="flex-end" flexBasis="60%">
+          <div className={styles.Container}>
+            <p>
+              I picked up programming while serving National Service in the Air
+              Force. Eventually, I decided on web development, as I found
+              designing applications from reusable components challenging yet
+              fulfilling. I am a huge fan of Robert C. Martin and my work
+              philosophy is:
+            </p>
+            <q className={utilStyles.Quote}>
+              Always leave the campground cleaner than you found it
+            </q>
+
+            <p>
+              For my projects I use the MERN stack ( Mongodb, Express, React,
+              Nodejs ), with Typescript. For general programming, I use Python
+              and C++, and I'm familiar with Java.
+            </p>
           </div>
-          <p>
-            As an aspiring software engineer, I believe in the virtue of not
-            rushing to roll out feature after feature, but taking time to really
-            consider the relationships between each component, and ensuring
-            components can be easily changed in the future.
-          </p>
-          <h1 className={utilStyles.ColorP}>Genesis</h1>
-          <p>
-            I picked up programming while serving National Service in the Air
-            Force, where I took several introductory courses to get a sense of
-            direction with regards to which area was most compelling to me.
-            Ultimately, I decided on web development, as I found the concept of
-            designing web applications from reusable components challenging yet
-            fulfilling.
-          </p>
-          <ImportantButton href="/about">More about me</ImportantButton>
-        </main>
-      </Card>
+
+          <div className={styles.ButtonContainer}>
+            <ImportantButton href="/about">More about me</ImportantButton>
+          </div>
+        </Card>
+      </Main>
+      <Aside order={1}>
+        <div
+          style={{
+            width: '30vw',
+            height: '40vh',
+            backgroundColor: 'slategrey',
+          }}
+        ></div>
+      </Aside>
     </Section>
   );
 };

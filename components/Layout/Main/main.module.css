@@ -1,0 +1,9 @@
+.Main {
+  flex-basis: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 80vh;
+  max-width: calc(0.6 * 80vw);
+}

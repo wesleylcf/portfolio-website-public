@@ -8,10 +8,10 @@ import Section from '../../Layout/Section/Section';
 const intro = () => {
   return (
     <Section>
-      <Card>
+      <Card side="center">
         <header className={`${styles.Header} slide-right`}>
           <h1 className={utilStyles.headingXl} style={{ color: 'turquoise' }}>
-            Hi
+            Hi,
           </h1>
           <h1 className={utilStyles.heading2Xl} style={{ color: '#ffafaf' }}>
             I'm
@@ -22,7 +22,7 @@ const intro = () => {
         </header>
       </Card>
 
-      <Card>
+      <Card side="center" flexBasis="50%">
         <article>
           <p>
             I am first-year at the Nanyang Technological University in

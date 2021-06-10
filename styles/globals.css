@@ -4,7 +4,7 @@ body {
   margin: 0 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.7;
+  line-height: 1.5;
   font-size: 1.7vh;
   background-color: #222222;
   color: slategray;
@@ -12,6 +12,24 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0.5vw;
+  height: 100vh;
+  z-index: 2;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: slategray;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: blanchedalmond;
 }
 
 img {
@@ -54,5 +72,9 @@ article li {
   section {
     flex-direction: column;
     justify-content: flex-start;
+  }
+  ::-webkit-scrollbar {
+    width: 1vw;
+    height: 100vh;
   }
 }

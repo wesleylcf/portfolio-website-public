@@ -1,3 +1,12 @@
+.DividerR {
+  flex: 1;
+  border-bottom: 0.4vh solid #ffafaf;
+}
+.DividerL {
+  border-bottom: 0.4vh solid blanchedalmond;
+  flex: 1;
+}
+
 .heading3Xl {
   font-size: 10vw;
   line-height: 1.2;
@@ -22,7 +31,7 @@
 }
 
 .headingLg {
-  font-size: 4vw;
+  font-size: 3vw;
   line-height: 1.4;
   margin: 1rem 0;
 }
@@ -75,6 +84,14 @@
   .headingMd {
     font-size: 7vw;
   }
+  .DividerL,
+  .DividerR {
+    width: 10%;
+  }
+}
+
+.Segment {
+  margin: 2vh 0;
 }
 
 .ColorT {
