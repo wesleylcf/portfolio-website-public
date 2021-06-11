@@ -7,21 +7,31 @@ import HorizontalSection from '../../Layout/HorizontalSection/HorizontalSection'
 import Main from '../../Layout/Main/Main';
 import Aside from '../../Layout/Aside/Aside';
 
-const intro = () => {
+const intro = ({ darkMode }) => {
   return (
     <HorizontalSection>
       <Main order={0}>
         <Card side="center">
           <header className={`slide-right`}>
-            <h1 className={utilStyles.headingXl} style={{ color: 'turquoise' }}>
+            <h1
+              className={utilStyles.headingXl}
+              style={darkMode ? { color: 'turquoise' } : { color: 'teal' }}
+            >
               Hi,
             </h1>
-            <h1 className={utilStyles.heading2Xl} style={{ color: '#ffafaf' }}>
+            <h1
+              className={utilStyles.heading2Xl}
+              style={darkMode ? { color: '#ffafaf' } : { color: '#ce8e8e' }}
+            >
               I'm
             </h1>
             <h1
               className={utilStyles.heading3Xl}
-              style={{ color: 'slate-grey' }}
+              style={
+                darkMode
+                  ? { color: 'slate-grey' }
+                  : { color: 'rgb(61, 69, 77)' }
+              }
             >
               Wesley
             </h1>
@@ -40,7 +50,10 @@ const intro = () => {
             <p>Currently, I'm waiting for the university term to start !</p>
           </div>
 
-          <ImportantButton href="mailto:wesleylim.work@gmail.com">
+          <ImportantButton
+            darkMode={darkMode}
+            href="mailto:wesleylim.work@gmail.com"
+          >
             Get in touch!
           </ImportantButton>
         </Card>

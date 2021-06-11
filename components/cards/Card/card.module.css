@@ -8,9 +8,17 @@
   position: relative;
   max-width: calc(0.48 * 80vw);
 }
-.ShowBackground {
-  background-color: #272727;
+.ShowDarkBackground {
   border-radius: 10px;
+  background-color: #272727;
+}
+
+.ShowLightBackground {
+  background-color: rgb(226, 210, 183);
+}
+
+.Light {
+  background-color: rgb(255, 178, 76);
 }
 
 /* .Card:hover {
@@ -28,6 +36,10 @@
 
 .MediumWidth {
   margin: 0 0.5vw;
+}
+
+.ShowBackground .Light {
+  background-color: burlywood;
 }
 
 @media screen and (max-width: 800px) {

@@ -5,7 +5,16 @@ import styles from './layout.module.css';
 import Social from './Social/Social';
 import ToggleButton from '../buttons/ToggleButton/ToggleButton';
 
-const Layout: React.FC = ({ children }) => {
+interface LayoutProps {
+  darkMode: boolean;
+  onChangeColor: () => void;
+}
+
+const Layout: React.FC<LayoutProps> = ({
+  children,
+  darkMode,
+  onChangeColor,
+}) => {
   const [isMobile, setIsMobile] = useState(() => {
     if (typeof window === 'undefined') return undefined;
     return window.innerWidth < 800;
@@ -25,6 +34,7 @@ const Layout: React.FC = ({ children }) => {
   const [timeSinceLastHide, setTimeSinceLastHide] = useState(
     new Date().getTime()
   );
+
   useEffect(() => {
     const viewportListener = () => {
       if (window.innerWidth < 800) {
@@ -74,20 +84,23 @@ const Layout: React.FC = ({ children }) => {
   const onClickMenu = () => {
     setIsModal(!isModal);
   };
+
   return (
     <div
-      className={`${isModal ? styles.ModalOpen : ''}`}
+      className={`${darkMode ? 'dark' : 'light'} ${
+        isModal ? styles.ModalOpen : ''
+      }`}
       suppressHydrationWarning={true}
     >
-      <NavBar isMobile={isMobile} hide={hideComponents} />
+      <NavBar isMobile={isMobile} hide={hideComponents} darkMode={darkMode} />
 
       <div className={styles.Container}>{children}</div>
       {typeof isMobile === 'undefined' || isMobile ? null : (
         <>
           <div className={styles.Social}>
-            <Social width="60px" hide={hideComponents} />
+            <Social width="60px" hide={hideComponents} darkMode={darkMode} />
           </div>
-          <ToggleButton hide={hideComponents} />
+          <ToggleButton hide={hideComponents} onChangeColor={onChangeColor} />
         </>
       )}
       {isMobile ? (

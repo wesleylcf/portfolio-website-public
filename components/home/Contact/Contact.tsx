@@ -5,7 +5,7 @@ import VerticalSection from '../../Layout/VerticalSection/VerticalSection';
 import Card from '../../cards/Card/Card';
 import HeadingCard from '../../cards/HeadingCard/HeadingCard';
 
-const Contact = () => {
+const Contact = ({ darkMode }) => {
   return (
     <div>
       <VerticalSection width="60%" hideBorder>

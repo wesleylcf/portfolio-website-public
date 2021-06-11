@@ -9,7 +9,7 @@ import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
 import VerticalSection from '../../Layout/VerticalSection/VerticalSection';
 import Main from '../../Layout/Main/Main';
 
-const Blog = () => {
+const Blog = ({ darkMode }) => {
   const blogPosts: BlogPost[] = [
     {
       title: 'blog post 1',
@@ -35,7 +35,7 @@ const Blog = () => {
   ];
   return (
     <VerticalSection>
-      <HeadingCard number="04" content="Blog" order={0} />
+      <HeadingCard number="04" content="Blog" order={0} darkMode={darkMode} />
       <HorizontalSection hideBorder margin="0" blog>
         {blogPosts.map((post, index) => {
           return (
@@ -47,11 +47,14 @@ const Blog = () => {
               previewImage="profile.jpg"
               key={index}
               margin="0 0.5vw 2vh 0.5vw"
+              darkMode={darkMode}
             />
           );
         })}
       </HorizontalSection>
-      <ImportantButton href="/blog">See all posts</ImportantButton>
+      <ImportantButton darkMode={darkMode} href="/blog">
+        See all posts
+      </ImportantButton>
     </VerticalSection>
   );
 };

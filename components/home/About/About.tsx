@@ -8,11 +8,16 @@ import HeadingCard from '../../cards/HeadingCard/HeadingCard';
 import Main from '../../Layout/Main/Main';
 import Aside from '../../Layout/Aside/Aside';
 
-const About = () => {
+const About = ({ darkMode }) => {
   return (
     <Section>
       <Main order={0}>
-        <HeadingCard number="01" content="About me" order={0} />
+        <HeadingCard
+          number="01"
+          content="About me"
+          order={0}
+          darkMode={darkMode}
+        />
         <Card side="flex-end" flexBasis="60%" padding="0 5vw">
           <div className={styles.Container}>
             <p>
@@ -33,7 +38,9 @@ const About = () => {
           </div>
         </Card>
         <div className={styles.ButtonContainer}>
-          <ImportantButton href="/about">More about me</ImportantButton>
+          <ImportantButton darkMode={darkMode} href="/about">
+            More about me
+          </ImportantButton>
         </div>
       </Main>
       <Aside order={1}>

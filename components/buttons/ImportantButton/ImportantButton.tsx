@@ -4,14 +4,29 @@ import styles from './button.module.css';
 
 interface ButtonProps {
   href: string;
+  darkMode: boolean;
 }
 
-const ImportantButton: React.FC<ButtonProps> = ({ children, href }) => {
+const ImportantButton: React.FC<ButtonProps> = ({
+  children,
+  href,
+  darkMode,
+}) => {
   return (
-    <div className={styles.ButtonWrapper}>
+    <div
+      className={`${styles.ButtonWrapper} ${
+        darkMode ? styles.Dark : styles.Light
+      }`}
+    >
       <li className={styles.ListItem}>
         <Link href={href}>
-          <a className={styles.Button}>{children}</a>
+          <a
+            className={`${styles.Button} ${
+              darkMode ? styles.Dark : styles.Light
+            }`}
+          >
+            {children}
+          </a>
         </Link>
       </li>
     </div>

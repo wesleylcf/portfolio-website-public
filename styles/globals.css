@@ -6,9 +6,6 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.5;
   font-size: 1.7vh;
-  background-color: #222222;
-  /* background-color: papayawhip; */
-  color: slategray;
 }
 
 * {
@@ -18,6 +15,13 @@ body {
 ::-webkit-scrollbar {
   width: 0.5vw;
   z-index: 2;
+  background-color: #222222;
+}
+
+::-webkit-scrollbar + .light {
+  width: 0.5vw;
+  z-index: 2;
+  background-color: papayawhip;
 }
 
 /* Handle */
@@ -68,6 +72,35 @@ section {
 
 article li {
   margin: 1vh;
+}
+.light {
+  background-color: papayawhip;
+  color: rgb(61, 69, 77);
+}
+
+.dark {
+  background-color: #222222;
+  color: slategray;
+}
+
+.dark a {
+  color: slategray;
+}
+
+.light a {
+  color: rgb(61, 69, 77);
+}
+
+.Quote .dark {
+  text-align: center;
+  font-size: 2vh;
+  color: blanchedalmond;
+}
+
+.Quote .light {
+  text-align: center;
+  font-size: 2vh;
+  color: rgba(252, 203, 130);
 }
 
 @media screen and (max-width: 800px) {

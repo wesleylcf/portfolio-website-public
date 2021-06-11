@@ -13,6 +13,7 @@ export interface BlogPreviewCardProps {
   description: string;
   flexBasis?: string;
   margin?: string;
+  darkMode?: boolean;
 }
 
 const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
@@ -23,6 +24,7 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
   description,
   flexBasis,
   margin,
+  darkMode,
 }) => {
   return (
     <div className={styles.Container}>
@@ -37,13 +39,27 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
               />
             ) : null}
           </div>
-          <Card side="center" borderRadius="0 0 15px 15px" showBackground blog>
+          <Card
+            side="center"
+            borderRadius="0 0 15px 15px"
+            showBackground
+            blog
+            darkMode={darkMode}
+          >
             <div className={styles.Content}>
               <p className={styles.ContentInfo}>
-                <span className={`${styles.CoverDate} ${utilStyles.ColorP}`}>
+                <span
+                  className={`${styles.CoverDate} ${
+                    darkMode ? utilStyles.ColorP : utilStyles.ColorPLight
+                  }`}
+                >
                   {date}
                 </span>
-                <span className={`${utilStyles.ColorA} ${styles.CoverTags}`}>
+                <span
+                  className={`${
+                    darkMode ? utilStyles.ColorA : utilStyles.ColorALight
+                  } ${styles.CoverTags}`}
+                >
                   {tags.reduce((prev, cur) => {
                     prev += cur;
                     prev += ' / ';
@@ -51,7 +67,13 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
                   }, '')}
                 </span>
               </p>
-              <h2 className={utilStyles.ColorT}>{title}</h2>
+              <h2
+                className={
+                  darkMode ? utilStyles.ColorT : utilStyles.ColorTLight
+                }
+              >
+                {title}
+              </h2>
               <p className={styles.Description}>{description}</p>
             </div>
           </Card>

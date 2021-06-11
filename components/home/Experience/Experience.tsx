@@ -9,7 +9,7 @@ import Main from '../../Layout/Main/Main';
 import Aside from '../../Layout/Aside/Aside';
 import SkillBar from 'react-skillbars';
 
-const Experience = () => {
+const Experience = ({ darkMode }) => {
   const skills = [
     {
       type: 'React',
@@ -28,17 +28,30 @@ const Experience = () => {
   return (
     <Section>
       <Main order={0}>
-        <HeadingCard number="03" content="Experience" order={0}></HeadingCard>
+        <HeadingCard
+          number="03"
+          content="Experience"
+          order={0}
+          darkMode={darkMode}
+        ></HeadingCard>
         <Card side="center" padding="0 5vw">
           <p>
             I'm currently waiting to start my university term/in year one, and
             have no prior internships. However, I'm
-            <span className={utilStyles.ColorT}>
+            <span
+              className={`${
+                darkMode ? utilStyles.ColorT : utilStyles.ColorTLight
+              }`}
+            >
               {' '}
               actively looking for internships for this summer!
             </span>{' '}
             The libraries I've recently worked with are
-            <span className={utilStyles.ColorP}>
+            <span
+              className={`${
+                darkMode ? utilStyles.ColorP : utilStyles.ColorPLight
+              }`}
+            >
               {' '}
               React, Next, Redux, Express, Commander.{' '}
             </span>
@@ -50,10 +63,16 @@ const Experience = () => {
           </p>
         </Card>
         <div className={styles.ButtonContainer}>
-          <ImportantButton href="mailto:wesleylim.work@gmail.com">
+          <ImportantButton
+            darkMode={darkMode}
+            href="mailto:wesleylim.work@gmail.com"
+          >
             Get in touch!
           </ImportantButton>
-          <ImportantButton href="mailto:wesleylim.work@gmail.com">
+          <ImportantButton
+            darkMode={darkMode}
+            href="mailto:wesleylim.work@gmail.com"
+          >
             Grab a copy of my resume!
           </ImportantButton>
         </div>

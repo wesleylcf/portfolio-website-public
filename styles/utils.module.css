@@ -1,9 +1,9 @@
 .DividerR {
   flex: 1;
-  border-bottom: 0.4vh solid #ffafaf;
+  border-bottom: 0.4vh solid;
 }
 .DividerL {
-  border-bottom: 0.4vh solid blanchedalmond;
+  border-bottom: 0.4vh solid;
   flex: 1;
 }
 
@@ -98,8 +98,16 @@
   color: turquoise;
 }
 
+.ColorTLight {
+  color: teal;
+}
+
 .ColorP {
   color: #ffafaf;
+}
+
+.ColorPLight {
+  color: #ce8e8e;
 }
 
 .ColorPMild {
@@ -109,6 +117,11 @@
 .ColorA {
   color: blanchedalmond;
 }
+
+.ColorALight {
+  color: rgb(109, 101, 89);
+}
+
 .Quote {
   text-align: center;
   font-size: 2vh;

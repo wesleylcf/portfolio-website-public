@@ -68,4 +68,6 @@ input:checked + .Slider:before {
   -ms-transform: translateY(-26px);
   transform: translateY(-26px);
   background-color: papayawhip;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }

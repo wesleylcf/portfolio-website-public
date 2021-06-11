@@ -2,7 +2,7 @@ import React from 'react';
 import StyledLink from '../../buttons/StyledLink/StyledLink';
 import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
 
-const Links = () => {
+const Links = ({ darkMode }) => {
   return (
     <>
       <StyledLink url="/about" content="About" />
@@ -10,7 +10,9 @@ const Links = () => {
       <StyledLink url="/experience" content="Experience" />
       <StyledLink url="/contact" content="Contact" />
       <div style={{ margin: '1vh 2vw' }}>
-        <ImportantButton href="/blog">Blog</ImportantButton>
+        <ImportantButton href="/blog" darkMode={darkMode}>
+          Blog
+        </ImportantButton>
       </div>
     </>
   );

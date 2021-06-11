@@ -8,12 +8,13 @@ import Link from 'next/link';
 interface NavBarProps {
   isMobile: boolean;
   hide: boolean;
+  darkMode: boolean;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ isMobile, hide }) => {
+const NavBar: React.FC<NavBarProps> = ({ isMobile, hide, darkMode }) => {
   let links = (
     <div className={styles.Links}>
-      <Links />
+      <Links darkMode={darkMode} />
     </div>
   );
   if (typeof isMobile === 'undefined' || isMobile) {
@@ -22,7 +23,9 @@ const NavBar: React.FC<NavBarProps> = ({ isMobile, hide }) => {
 
   return (
     <nav
-      className={`${styles.Nav} ${hide && !isMobile ? styles.HideNav : ''}`}
+      className={`${styles.Nav} ${!darkMode ? 'light' : 'dark'}  ${
+        hide && !isMobile ? styles.HideNav : ''
+      }`}
       suppressHydrationWarning={true}
     >
       <Link href="/" passHref>
@@ -31,8 +34,8 @@ const NavBar: React.FC<NavBarProps> = ({ isMobile, hide }) => {
             priority
             src="/images/V.svg"
             className={utilStyles.borderCircle}
-            height={100}
-            width={100}
+            height={70}
+            width={70}
             alt="Home"
           />
         </a>

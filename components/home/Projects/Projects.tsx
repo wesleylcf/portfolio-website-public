@@ -8,7 +8,7 @@ import HeadingCard from '../../cards/HeadingCard/HeadingCard';
 import Main from '../../Layout/Main/Main';
 import Aside from '../../Layout/Aside/Aside';
 
-const Projects = () => {
+const Projects = ({ darkMode }) => {
   return (
     <Section>
       <Main>
@@ -27,7 +27,9 @@ const Projects = () => {
             description="A web app version of Journalify that allows sharing of Journals"
             imageSrc="jj.jpg"
           />
-          <ImportantButton href="/Projects">All Projects</ImportantButton>
+          <ImportantButton darkMode={darkMode} href="/Projects">
+            All Projects
+          </ImportantButton>
         </Card>
       </Main>
       <Aside>
