@@ -47,7 +47,9 @@ const intro = ({ darkMode }) => {
               Singapore, studying Computer Science. I am passionate about web
               development, and software-engineering in general.
             </p>
-            <p>Currently, I'm waiting for the university term to start !</p>
+            <p className={utilStyles.ColorT}>
+              Currently, I'm waiting for the university term to start !
+            </p>
           </div>
 
           <ImportantButton

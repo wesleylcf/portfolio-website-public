@@ -11,8 +11,13 @@ import Aside from '../../Layout/Aside/Aside';
 const Projects = ({ darkMode }) => {
   return (
     <Section>
-      <Main>
-        <HeadingCard number="02" content="Projects" order={0} />
+      <Main order={1}>
+        <HeadingCard
+          number="02"
+          content="Projects"
+          order={0}
+          darkMode={darkMode}
+        />
         <Card side="center">
           <ProjectCard
             heading="Journalify"
@@ -32,7 +37,7 @@ const Projects = ({ darkMode }) => {
           </ImportantButton>
         </Card>
       </Main>
-      <Aside>
+      <Aside order={0}>
         <div
           style={{
             width: '20vw',

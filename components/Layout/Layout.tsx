@@ -109,6 +109,8 @@ const Layout: React.FC<LayoutProps> = ({
           onClickMenu={onClickMenu}
           hide={hideComponents}
           isMobile={isMobile}
+          darkMode={darkMode}
+          onChangeColor={onChangeColor}
         />
       ) : null}
     </div>

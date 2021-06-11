@@ -9,7 +9,12 @@ const Contact = ({ darkMode }) => {
   return (
     <div>
       <VerticalSection width="60%" hideBorder>
-        <HeadingCard number="05" content="Contact Me!" order={0} />
+        <HeadingCard
+          number="05"
+          content="Contact Me!"
+          order={0}
+          darkMode={darkMode}
+        />
         <Card side="center"></Card>
       </VerticalSection>
     </div>

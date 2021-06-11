@@ -49,7 +49,6 @@
 }
 
 .Content {
-  width: 100%;
   position: relative;
 }
 
@@ -79,5 +78,9 @@
     margin: 2vh auto;
     max-width: 60vw;
     min-height: 50vh;
+  }
+  .Content {
+    max-height: 25vh;
+    overflow: hidden;
   }
 }

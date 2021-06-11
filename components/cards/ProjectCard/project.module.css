@@ -90,6 +90,9 @@
     min-width: 70vw;
     line-height: 2.5vh;
   }
+  .Description p {
+    text-align: center;
+  }
 }
 
 @media screen {

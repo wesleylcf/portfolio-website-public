@@ -9,6 +9,8 @@ interface SidebarProps {
   onClickMenu: () => void;
   hide: boolean;
   isMobile: boolean;
+  darkMode: boolean;
+  onChangeColor: () => void;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -16,6 +18,8 @@ const Sidebar: React.FC<SidebarProps> = ({
   onClickMenu,
   hide,
   isMobile,
+  darkMode,
+  onChangeColor,
 }) => {
   return (
     <>
@@ -24,10 +28,10 @@ const Sidebar: React.FC<SidebarProps> = ({
         {isModal ? (
           <>
             <ul className={styles.Links}>
-              <Links />
+              <Links darkMode={darkMode} />
             </ul>
             <div className={styles.Social}>
-              <Social width="40px" />
+              <Social width="40px" darkMode={darkMode} />
             </div>
           </>
         ) : null}
