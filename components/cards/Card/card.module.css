@@ -26,16 +26,20 @@
   background-color: #222222;
 }
 
-@media screen and (max-width: 1400px) {
-  .Card {
-    flex-basis: 33%;
-  }
+.MediumWidth {
+  margin: 0 0.5vw;
 }
 
 @media screen and (max-width: 800px) {
   .Card {
-    min-width: 80vw;
-    min-height: 20vw;
-    padding: 0vh 7vw 7vh 7vw;
+    padding: 0vh 5vw;
+    max-width: 80vw;
+  }
+  .MediumWidth {
+    max-height: 20vw;
+    width: 60vw;
+    margin: 0;
+    padding: 0vh 3vw;
+    min-height: 25vh;
   }
 }

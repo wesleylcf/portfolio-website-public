@@ -3,6 +3,7 @@ import Sidebar from './SideBar/Sidebar';
 import NavBar from './NavBar/NavBar';
 import styles from './layout.module.css';
 import Social from './Social/Social';
+import ToggleButton from '../buttons/ToggleButton/ToggleButton';
 
 const Layout: React.FC = ({ children }) => {
   const [isMobile, setIsMobile] = useState(() => {
@@ -82,9 +83,12 @@ const Layout: React.FC = ({ children }) => {
 
       <div className={styles.Container}>{children}</div>
       {typeof isMobile === 'undefined' || isMobile ? null : (
-        <div className={styles.Social}>
-          <Social width="60px" hide={hideComponents} />
-        </div>
+        <>
+          <div className={styles.Social}>
+            <Social width="60px" hide={hideComponents} />
+          </div>
+          <ToggleButton hide={hideComponents} />
+        </>
       )}
       {isMobile ? (
         <Sidebar

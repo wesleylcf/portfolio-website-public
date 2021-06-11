@@ -1,15 +1,14 @@
-.Section {
+.VerticalSection {
   border-bottom: 2px solid slategray;
   padding-bottom: 5%;
   margin-bottom: 5%;
   text-align: left;
   justify-content: center;
   align-items: center;
-  width: 100%;
   flex-wrap: wrap;
   flex-direction: column;
   min-height: 80vh;
-  margin: 0;
+  width: 80vw;
 }
 
 .HideBorder {

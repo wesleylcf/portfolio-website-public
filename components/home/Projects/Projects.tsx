@@ -11,7 +11,7 @@ import Aside from '../../Layout/Aside/Aside';
 const Projects = () => {
   return (
     <Section>
-      <Main order={1}>
+      <Main>
         <HeadingCard number="02" content="Projects" order={0} />
         <Card side="center">
           <ProjectCard
@@ -30,7 +30,7 @@ const Projects = () => {
           <ImportantButton href="/Projects">All Projects</ImportantButton>
         </Card>
       </Main>
-      <Aside order={0}>
+      <Aside>
         <div
           style={{
             width: '20vw',

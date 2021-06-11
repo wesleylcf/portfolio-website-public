@@ -3,16 +3,16 @@ import utilStyles from '../../../styles/utils.module.css';
 import Card from '../../cards/Card/Card';
 import styles from './intro.module.css';
 import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
-import Section from '../../Layout/HorizontalSection/HorizontalSection';
+import HorizontalSection from '../../Layout/HorizontalSection/HorizontalSection';
 import Main from '../../Layout/Main/Main';
 import Aside from '../../Layout/Aside/Aside';
 
 const intro = () => {
   return (
-    <Section>
+    <HorizontalSection>
       <Main order={0}>
         <Card side="center">
-          <header className={`${styles.Header} slide-right`}>
+          <header className={`slide-right`}>
             <h1 className={utilStyles.headingXl} style={{ color: 'turquoise' }}>
               Hi,
             </h1>
@@ -45,7 +45,7 @@ const intro = () => {
           </ImportantButton>
         </Card>
       </Aside>
-    </Section>
+    </HorizontalSection>
   );
 };
 

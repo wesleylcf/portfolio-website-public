@@ -2,27 +2,27 @@ import React from 'react';
 import styles from './section.module.css';
 
 interface SectionProps {
-  width?: string;
   hideBorder?: boolean;
   margin?: string;
+  blog?: boolean;
 }
 
 const section: React.FC<SectionProps> = ({
   children,
-  width,
   hideBorder,
   margin,
+  blog,
 }) => {
-  let style = { width, margin };
-  if (width) {
-    style.width = width;
-  }
+  let style = { margin };
+
   if (margin) {
     style.margin = margin;
   }
   return (
     <section
-      className={`${styles.Section} ${hideBorder ? styles.HideBorder : ''}`}
+      className={`${styles.HorizontalSection} ${
+        hideBorder ? styles.HideBorder : ''
+      } ${blog ? styles.MediumWidth : ''}`}
       style={style}
     >
       {children}

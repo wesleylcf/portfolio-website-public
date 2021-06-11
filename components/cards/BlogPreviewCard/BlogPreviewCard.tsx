@@ -37,13 +37,7 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
               />
             ) : null}
           </div>
-          <Card
-            minHeight="30vh"
-            side="center"
-            margin={margin}
-            borderRadius="0 0 15px 15px"
-            showBackground
-          >
+          <Card side="center" borderRadius="0 0 15px 15px" showBackground blog>
             <div className={styles.Content}>
               <p className={styles.ContentInfo}>
                 <span className={`${styles.CoverDate} ${utilStyles.ColorP}`}>

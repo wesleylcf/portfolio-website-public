@@ -9,6 +9,7 @@ interface CardProps {
   margin?: string;
   borderRadius?: string;
   padding?: string;
+  blog?: boolean;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -20,6 +21,7 @@ const Card: React.FC<CardProps> = ({
   margin,
   borderRadius,
   padding,
+  blog,
 }) => {
   let style = {
     minHeight,
@@ -48,7 +50,7 @@ const Card: React.FC<CardProps> = ({
     <article
       className={`${styles.Card} ${
         showBackground ? styles.ShowBackground : ''
-      }`}
+      } ${blog ? styles.MediumWidth : ''}`}
       style={style}
     >
       {children}

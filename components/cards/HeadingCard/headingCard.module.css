@@ -3,11 +3,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  align-content: stretch;
   justify-content: space-between;
   position: relative;
-  border-radius: 10px;
   margin-bottom: 2vh;
-  width: 40vw;
+  min-width: 35vw;
   height: 20vh;
   justify-self: center;
   align-self: center;
@@ -35,6 +35,7 @@
   .Card {
     min-width: 80vw;
     min-height: 20vw;
+    padding: 2vh 0;
   }
   .Card:hover {
     background-color: #222222;

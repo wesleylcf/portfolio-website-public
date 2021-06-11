@@ -1,8 +1,8 @@
 .Container {
   flex-basis: 33%;
   transition: 0.3s;
-
   max-height: 70vh;
+  margin: 1vh 0;
 }
 
 .Post {
@@ -60,20 +60,24 @@
   max-height: 30%;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1100px) {
   .Container {
     flex-direction: column;
+    flex-basis: 50%;
   }
   .Cover {
-    height: calc(40vw * 0.6);
+    height: calc(40vw * 0.4);
   }
 }
 
 @media screen and (max-width: 800px) {
   .Cover {
-    height: calc(60vw * 0.6);
+    height: 25vh;
+    margin: 0;
   }
   .Container {
-    margin: 2 vh auto;
+    margin: 2vh auto;
+    max-width: 60vw;
+    min-height: 50vh;
   }
 }

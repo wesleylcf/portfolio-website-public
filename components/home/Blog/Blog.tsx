@@ -7,6 +7,7 @@ import HeadingCard from '../../cards/HeadingCard/HeadingCard';
 
 import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
 import VerticalSection from '../../Layout/VerticalSection/VerticalSection';
+import Main from '../../Layout/Main/Main';
 
 const Blog = () => {
   const blogPosts: BlogPost[] = [
@@ -33,9 +34,9 @@ const Blog = () => {
     },
   ];
   return (
-    <VerticalSection width="60vw">
+    <VerticalSection>
       <HeadingCard number="04" content="Blog" order={0} />
-      <HorizontalSection width="60vw" hideBorder margin="0">
+      <HorizontalSection hideBorder margin="0" blog>
         {blogPosts.map((post, index) => {
           return (
             <BlogPreviewCard
@@ -49,8 +50,8 @@ const Blog = () => {
             />
           );
         })}
-        <ImportantButton href="/blog">See all posts</ImportantButton>
       </HorizontalSection>
+      <ImportantButton href="/blog">See all posts</ImportantButton>
     </VerticalSection>
   );
 };

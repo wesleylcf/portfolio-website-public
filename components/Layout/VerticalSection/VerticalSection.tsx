@@ -12,7 +12,9 @@ const VerticalSection: React.FC<SectionProps> = ({
 }) => {
   return (
     <section
-      className={`${styles.Section} ${hideBorder ? styles.HideBorder : ''}`}
+      className={`${styles.VerticalSection} ${
+        hideBorder ? styles.HideBorder : ''
+      }`}
       style={width ? { width: width } : {}}
     >
       {children}

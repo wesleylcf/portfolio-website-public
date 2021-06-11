@@ -9,7 +9,7 @@
   height: 6vh;
   width: calc(6vh * 5);
   transition: 0.3s ease-in-out;
-  margin: 6vh 1vw;
+  margin: 6vh 2vw 6vh 0;
 }
 
 .ListItem {
