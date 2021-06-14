@@ -8,6 +8,7 @@
   position: relative;
   max-width: calc(0.48 * 80vw);
 }
+
 .ShowDarkBackground {
   border-radius: 10px;
   background-color: #272727;

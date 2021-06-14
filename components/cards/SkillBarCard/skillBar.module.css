@@ -1,0 +1,29 @@
+.Article {
+  width: 100%;
+}
+
+.List {
+  padding: 0;
+  width: 100%;
+}
+
+.ListItem {
+  list-style: none;
+  width: 90%;
+  padding: 0 1vw;
+  margin: 2vh 0;
+  height: 4vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.Skill {
+  min-width: 25%;
+}
+.Bar {
+  display: block;
+  height: 100%;
+  margin: 0 1vw;
+}

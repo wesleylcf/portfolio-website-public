@@ -25,12 +25,14 @@ const Projects = ({ darkMode }) => {
             description="A code/markdown editor that is
             launched from the CLI and saves to the user's machine"
             imageSrc="jj.jpg"
+            darkMode
           />
           <ProjectCard
             heading="Journalify"
             languages={['Next.js', 'mongoDB', 'Typescript']}
             description="A web app version of Journalify that allows sharing of Journals"
             imageSrc="jj.jpg"
+            darkMode
           />
           <ImportantButton darkMode={darkMode} href="/Projects">
             All Projects
@@ -38,15 +40,12 @@ const Projects = ({ darkMode }) => {
         </Card>
       </Main>
       <Aside order={0}>
-        <div
-          style={{
-            width: '20vw',
-            height: '40vh',
-            backgroundColor: 'slategrey',
-            color: 'black',
-          }}
-        >
-          Insert Something!
+        <div className={utilStyles.BigQuote}>
+          <q>
+            For the things we have to learn before we can do them, we learn by
+            doing them
+          </q>
+          {` `}- Aristotle
         </div>
       </Aside>
     </Section>

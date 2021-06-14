@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 800px) {
   .Aside {
-    min-height: 40vh;
+    min-height: 25vh;
     min-width: 80vw;
     order: 1;
   }

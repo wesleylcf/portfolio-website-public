@@ -47,7 +47,9 @@ const intro = ({ darkMode }) => {
               Singapore, studying Computer Science. I am passionate about web
               development, and software-engineering in general.
             </p>
-            <p className={utilStyles.ColorT}>
+            <p
+              className={darkMode ? utilStyles.ColorT : utilStyles.ColorTLight}
+            >
               Currently, I'm waiting for the university term to start !
             </p>
           </div>
@@ -55,6 +57,7 @@ const intro = ({ darkMode }) => {
           <ImportantButton
             darkMode={darkMode}
             href="mailto:wesleylim.work@gmail.com"
+            isTextComponent
           >
             Get in touch!
           </ImportantButton>

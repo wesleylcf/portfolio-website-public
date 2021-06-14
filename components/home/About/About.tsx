@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import utilStyles from '../../../styles/utils.module.css';
 import styles from './about.module.css';
 import Section from '../../Layout/HorizontalSection/HorizontalSection';
@@ -11,6 +12,14 @@ import Aside from '../../Layout/Aside/Aside';
 const About = ({ darkMode }) => {
   return (
     <Section>
+      <Aside order={1}>
+        <Image
+          src="/images/me2.jpg"
+          width={100}
+          height={134}
+          className={utilStyles.borderCircle}
+        ></Image>
+      </Aside>
       <Main order={0}>
         <HeadingCard
           number="01"
@@ -27,34 +36,26 @@ const About = ({ darkMode }) => {
               fulfilling. I am a huge fan of Robert C. Martin and my work
               philosophy is:
             </p>
-            <q className={utilStyles.Quote}>
+            <q
+              className={
+                darkMode ? utilStyles.QuoteDark : utilStyles.QuoteLight
+              }
+            >
               Always leave the campground cleaner than you found it
             </q>{' '}
             <p>
-              For my projects I use the MERN stack ( Mongodb, Express, React,
-              Nodejs), with Typescript. For general programming, I use Python
-              and C++, and I'm familiar with Java.
+              I use the MERN stack for my projects (Mongodb, Express, React,
+              Nodejs) with Typescript. For general programming, I use Python and
+              C++, and I'm familiar with Java.
             </p>
           </div>
         </Card>
         <div className={styles.ButtonContainer}>
-          <ImportantButton darkMode={darkMode} href="/about">
+          <ImportantButton darkMode={darkMode} href="/about" isTextComponent>
             More about me
           </ImportantButton>
         </div>
       </Main>
-      <Aside order={1}>
-        <div
-          style={{
-            width: '20vw',
-            height: '40vh',
-            backgroundColor: 'slategrey',
-            color: 'black',
-          }}
-        >
-          Insert Something!
-        </div>
-      </Aside>
     </Section>
   );
 };

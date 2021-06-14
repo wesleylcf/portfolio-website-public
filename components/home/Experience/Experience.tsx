@@ -7,24 +7,28 @@ import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
 import HeadingCard from '../../cards/HeadingCard/HeadingCard';
 import Main from '../../Layout/Main/Main';
 import Aside from '../../Layout/Aside/Aside';
-import SkillBar from 'react-skillbars';
+import SkillBarCard from '../../cards/SkillBarCard/SkillBarCard';
 
 const Experience = ({ darkMode }) => {
   const skills = [
     {
-      type: 'React',
-      level: 80,
+      skill: 'React',
+      confidence: 80,
     },
-    { type: 'Javascript', level: 80 },
-    { type: 'Python', level: 80 },
-    { type: 'Express', level: 80 },
-    { type: 'Node.js', level: 60 },
-    { type: 'C++', level: 60 },
+    {
+      skill: 'Javascript',
+      confidence: 80,
+      color: {
+        bar: 'white',
+        title: { background: 'turquoise', text: 'slate-gray' },
+      },
+    },
+    { skill: 'Python', confidence: 80 },
+    { skill: 'Express', confidence: 80 },
+    { skill: 'Node.js', confidence: 60 },
+    { skill: 'C++', confidence: 60 },
   ];
-  const skillBarColors = {
-    bar: 'blanched-almond',
-    title: { text: '#ffafaf', background: 'slate-gray' },
-  };
+
   return (
     <Section>
       <Main order={0}>
@@ -56,7 +60,9 @@ const Experience = ({ darkMode }) => {
               React, Next, Redux, Express, Commander.{' '}
             </span>
             The libraries I've worked with in the past are
-            <span className={utilStyles.ColorPMild}>
+            <span
+              className={darkMode ? utilStyles.ColorA : utilStyles.ColorALight}
+            >
               {' '}
               Graphql, Sequelize, Mongoose
             </span>
@@ -66,28 +72,21 @@ const Experience = ({ darkMode }) => {
           <ImportantButton
             darkMode={darkMode}
             href="mailto:wesleylim.work@gmail.com"
+            isTextComponent
           >
             Get in touch!
           </ImportantButton>
           <ImportantButton
             darkMode={darkMode}
             href="mailto:wesleylim.work@gmail.com"
+            isTextComponent
           >
             Grab a copy of my resume!
           </ImportantButton>
         </div>
       </Main>
       <Aside order={1}>
-        <div
-          style={{
-            width: '20vw',
-            height: '30vh',
-            backgroundColor: 'slategrey',
-            color: 'black',
-          }}
-        >
-          Insert Something!
-        </div>
+        <SkillBarCard skills={skills} darkMode={darkMode} />
       </Aside>
     </Section>
   );

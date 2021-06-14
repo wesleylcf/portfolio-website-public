@@ -3,11 +3,15 @@
   width: 30vw;
   border-radius: 15px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-shadow: -1vw 0.7vw 20px 2px #4d4d4d;
+  box-shadow: -1vw 0.7vw 10px 2px #4d4d4d;
+  transition: 0.5s ease;
+}
+
+.ImageContainer:hover {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  transition: 0.5s ease;
 }
 
 .Image {
@@ -25,75 +29,110 @@
   margin-bottom: 2vh;
 }
 
-.Description {
-  border-radius: 10px 10px 0 0;
+.Modal {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* transition: 0.5s ease; */
+  border-radius: 10px;
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+}
+
+.Modal:hover,
+.ImageContainer:hover .Modal {
+  background-color: rgba(0, 0, 0, 0);
+
+  filter: none;
+}
+
+/* .Arrow {
   z-index: -1;
-  background-color: rgba(0, 0, 0, 0.7);
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-right: 100px solid turquoise;
+  border-bottom: 50px solid transparent;
+  transform: translate3d(-32vw, 0, 0);
+} */
+
+.Description {
+  z-index: -1;
+  border-radius: 10px 10px 0 0;
   position: absolute;
   left: 0;
-  transform: translate3d(0, 10vh, 0);
-  width: 100%;
+  transform: translate3d(0, 0, 0);
+  width: 40vw;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0;
-  height: 70%;
+  transition: 0.5s ease;
+}
+
+.Description p {
+  margin: 0.5vw auto;
+  text-align: center;
 }
 
 .Description h1 {
   margin: 0 2vw;
-  margin-top: 2vh;
-}
-.Description p {
-  margin: 1vh 2vw;
-}
-
-.Button {
-  border-radius: 0 0 10px 10px;
-  z-index: -1;
-  background-color: rgba(0, 0, 0, 0.7);
-  bottom: 0;
-  position: absolute;
-  left: 0;
-  transform: translate3d(0, -10vh, 0);
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 30%;
 }
 
 .ImageContainer:hover .Description {
   z-index: 1;
   transition: 0.5s ease;
-  transform: translate3d(0, 0, 0);
-}
-
-.ImageContainer:hover .Button {
-  z-index: 1;
-  transition: 0.5s ease;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(-40vw, 0, 0);
+  background-color: rgba(44, 44, 44, 0.8);
 }
 
 @media screen and (max-width: 800px) {
-  .Description,
-  .Button {
-    z-index: 1;
-    transform: translate3d(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.6);
-  }
   .ImageContainer,
   .Project {
-    min-height: 35vh;
+    min-height: calc(70vw * 0.5625);
     min-width: 70vw;
     line-height: 2.5vh;
   }
+  .Description {
+    z-index: 1;
+    width: 70vw;
+  }
   .Description p {
-    text-align: center;
+    margin: 1vh 2vw;
+  }
+  .Modal {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .ImageContainer:hover .Modal,
+  .Modal:hover {
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .ImageContainer:hover .Description {
+    transform: translate3d(0, 0, 0);
   }
 }
 
-@media screen {
+@media screen and (max-width: 1400px) {
+  .ImageContainer,
+  .Project {
+    width: 40vw;
+    height: calc(40vw * 0.5625);
+  }
+  .Project {
+    margin-bottom: 3vh;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .Project {
+    margin-bottom: 4vh;
+  }
 }

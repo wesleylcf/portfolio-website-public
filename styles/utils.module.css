@@ -88,6 +88,12 @@
   .DividerR {
     width: 10%;
   }
+  .BigQuote {
+    width: 70vw;
+  }
+  .BigQuote q {
+    font-size: 3vw;
+  }
 }
 
 .Segment {
@@ -107,7 +113,7 @@
 }
 
 .ColorPLight {
-  color: #ce8e8e;
+  color: #c79191;
 }
 
 .ColorPMild {
@@ -119,13 +125,34 @@
 }
 
 .ColorALight {
-  color: rgb(109, 101, 89);
+  color: rgb(145, 121, 86);
 }
 
-.Quote {
+.ColorDefault {
+  color: slategray;
+}
+
+.ColorDefaultLight {
+  color: rgb(61, 69, 77);
+}
+
+.QuoteDark {
   text-align: center;
   font-size: 2vh;
   color: blanchedalmond;
+}
+
+.QuoteLight {
+  text-align: center;
+  font-size: 2vh;
+  color: rgb(145, 121, 86);
+}
+
+.BigQuote {
+  font-size: 2vw;
+  color: slategray;
+  padding: 0 2vw;
+  text-align: center;
 }
 
 .Unordered li::marker {

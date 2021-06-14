@@ -9,6 +9,7 @@ interface ProjectCardProps {
   languages: string[];
   description: string;
   imageSrc?: string;
+  darkMode: boolean;
 }
 
 const projectCard: React.FC<ProjectCardProps> = ({
@@ -16,6 +17,7 @@ const projectCard: React.FC<ProjectCardProps> = ({
   languages,
   description,
   imageSrc,
+  darkMode,
 }) => {
   let lang = '';
   for (let l of languages) {
@@ -29,12 +31,15 @@ const projectCard: React.FC<ProjectCardProps> = ({
           <h1 className={utilStyles.ColorT}>{heading}</h1>
           <p className={utilStyles.ColorP}>[ {lang} ]</p>
           <p className={utilStyles.ColorA}>{description}</p>
-        </div>
-        <div className={styles.Button}>
-          <ImportantButton href={`/projects/${heading}`}>
+          <ImportantButton
+            href={`/projects/${heading}`}
+            darkMode
+            isProjectComponent
+          >
             See Project
           </ImportantButton>
         </div>
+
         <Image
           priority
           src={`/images/${imageSrc}`}
@@ -42,6 +47,8 @@ const projectCard: React.FC<ProjectCardProps> = ({
           layout="fill"
           className={styles.Image}
         />
+        {}
+        <div className={styles.Modal}></div>
       </div>
     </div>
   );
