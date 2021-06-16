@@ -7,6 +7,7 @@ import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
 import HeadingCard from '../../cards/HeadingCard/HeadingCard';
 import Main from '../../Layout/Main/Main';
 import Aside from '../../Layout/Aside/Aside';
+import Animate from '../../Layout/Animate/Animate';
 
 const Projects = ({ darkMode }) => {
   return (
@@ -43,11 +44,13 @@ const Projects = ({ darkMode }) => {
         <div
           className={darkMode ? utilStyles.BigQuote : utilStyles.BigQuoteLight}
         >
-          <q>
-            For the things we have to learn before we can do them, we learn by
-            doing them
-          </q>
-          {` `}- Aristotle
+          <Animate delay={0.9}>
+            <q>
+              For the things we have to learn before we can do them, we learn by
+              doing them
+            </q>
+            {` `}- Aristotle
+          </Animate>
         </div>
       </Aside>
     </Section>

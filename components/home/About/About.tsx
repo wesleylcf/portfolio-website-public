@@ -14,7 +14,7 @@ const About = ({ darkMode }) => {
   return (
     <Section>
       <Aside order={1}>
-        <Animate delay={0.6}>
+        <Animate delay={0.9}>
           <Image
             src="/images/me2.jpg"
             width={100}
@@ -38,7 +38,7 @@ const About = ({ darkMode }) => {
                 I picked up programming while serving National Service in the
                 Air Force. Eventually, I decided on web development, as I found
                 designing applications from reusable components challenging yet
-                fulfilling. I am a huge fan of Robert C. Martin and my work
+                fulfilling. I am a fan of Robert C. Martin and my work
                 philosophy is:
               </p>
               <q

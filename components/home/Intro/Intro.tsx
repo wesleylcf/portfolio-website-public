@@ -27,7 +27,7 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
                   Hi,
                 </h1>
               </Animate>
-              <Animate delay={isMobile ? 0.3 : 1.3}>
+              <Animate delay={isMobile ? 0.2 : 1.2}>
                 <h1
                   className={utilStyles.heading2Xl}
                   style={darkMode ? { color: '#ffafaf' } : { color: '#ce8e8e' }}
@@ -35,7 +35,7 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
                   I'm
                 </h1>
               </Animate>
-              <Animate delay={isMobile ? 0.6 : 1.6}>
+              <Animate delay={isMobile ? 0.4 : 1.4}>
                 <h1
                   className={utilStyles.heading3Xl}
                   style={
@@ -53,7 +53,7 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
       </Main>
       <Aside order={1}>
         <Card side="center" flexBasis="50%" padding="0 3vw">
-          <Animate delay={isMobile ? 0.7 : 1.8}>
+          <Animate delay={isMobile ? 0.6 : 1.6}>
             <p>
               I am first-year at the Nanyang Technological University in
               Singapore, studying Computer Science. I am passionate about web
@@ -65,7 +65,7 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
               Currently, I'm waiting for the university term to start !
             </p>
           </Animate>
-          <Animate delay={isMobile ? 0.9 : 2}>
+          <Animate delay={isMobile ? 0.8 : 1.8}>
             <ImportantButton
               darkMode={darkMode}
               href="mailto:wesleylim.work@gmail.com"

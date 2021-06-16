@@ -36,7 +36,7 @@ const Layout: React.FC<LayoutProps> = ({
       {typeof isMobile === 'undefined' || isMobile ? null : (
         <>
           <div className={styles.Social}>
-            <Animate delay={isMobile ? 0 : 2.2}>
+            <Animate delay={isMobile ? 0 : 2}>
               <Social width="60px" hide={hideComponents} darkMode={darkMode} />
             </Animate>
           </div>

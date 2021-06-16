@@ -24,11 +24,7 @@ const NavBar: React.FC<NavBarProps> = ({ isMobile, hide, darkMode }) => {
   }
   const [ref, inView] = useInView({ triggerOnce: true });
   return (
-    <motion.nav
-      ref={ref}
-      initial={{ opacity: 0 }}
-      animate={inView ? { opacity: 1 } : { opacity: 0 }}
-      transition={{ duration: isMobile ? 0 : 0.3 }}
+    <nav
       className={`${styles.Nav} ${!darkMode ? 'light' : 'dark'}  ${
         hide && !isMobile ? styles.HideNav : ''
       }`}
@@ -47,7 +43,7 @@ const NavBar: React.FC<NavBarProps> = ({ isMobile, hide, darkMode }) => {
         </a>
       </Link>
       <ol suppressHydrationWarning={true}>{links}</ol>
-    </motion.nav>
+    </nav>
   );
 };
 

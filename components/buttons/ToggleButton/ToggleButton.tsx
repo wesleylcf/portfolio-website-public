@@ -10,7 +10,7 @@ interface ToggleButtonProps {
 const ToggleButton: React.FC<ToggleButtonProps> = ({ hide, onChangeColor }) => {
   return (
     <div className={`${styles.ToggleButton} ${hide ? styles.Hide : ''}`}>
-      <Animate delay={2.4}>
+      <Animate delay={2}>
         <label className={styles.Switch}>
           <input type="checkbox" />
           <span className={styles.Slider} onClick={onChangeColor}></span>

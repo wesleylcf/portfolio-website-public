@@ -3,6 +3,7 @@ import styles from './project.module.css';
 import utilStyles from '../../../styles/utils.module.css';
 import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
 import Image from 'next/image';
+import Animate from '../../Layout/Animate/Animate';
 
 interface ProjectCardProps {
   heading: string;
@@ -26,30 +27,32 @@ const projectCard: React.FC<ProjectCardProps> = ({
   }
   return (
     <div className={styles.Project}>
-      <div className={styles.ImageContainer}>
-        <div className={styles.Description}>
-          <h1 className={utilStyles.ColorT}>{heading}</h1>
-          <p className={utilStyles.ColorP}>[ {lang} ]</p>
-          <p className={utilStyles.ColorA}>{description}</p>
-          <ImportantButton
-            href={`/projects/${heading}`}
-            darkMode
-            isProjectComponent
-          >
-            See Project
-          </ImportantButton>
-        </div>
+      <Animate delay={0.2}>
+        <div className={styles.ImageContainer}>
+          <div className={styles.Description}>
+            <h1 className={utilStyles.ColorT}>{heading}</h1>
+            <p className={utilStyles.ColorP}>[ {lang} ]</p>
+            <p className={utilStyles.ColorA}>{description}</p>
+            <ImportantButton
+              href={`/projects/${heading}`}
+              darkMode
+              isProjectComponent
+            >
+              See Project
+            </ImportantButton>
+          </div>
 
-        <Image
-          priority
-          src={`/images/${imageSrc}`}
-          alt={heading}
-          layout="fill"
-          className={styles.Image}
-        />
-        {}
-        <div className={styles.Modal}></div>
-      </div>
+          <Image
+            priority
+            src={`/images/${imageSrc}`}
+            alt={heading}
+            layout="fill"
+            className={styles.Image}
+          />
+          {}
+          <div className={styles.Modal}></div>
+        </div>
+      </Animate>
     </div>
   );
 };
