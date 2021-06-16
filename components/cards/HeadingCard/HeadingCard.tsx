@@ -1,8 +1,6 @@
 import React from 'react';
 import utilStyles from '../../../styles/utils.module.css';
 import styles from './headingCard.module.css';
-import motion from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 
 interface HeadingCardProps {
   number: string;
