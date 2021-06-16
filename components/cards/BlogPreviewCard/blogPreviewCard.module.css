@@ -41,11 +41,15 @@
 }
 
 .ContentInfo {
-  margin: 1vh 0 0 0;
   display: flex;
   flex-direction: row;
-  justify-content: c;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+.ContentTitle {
+  margin: 1vh 0;
 }
 
 .Content {
@@ -57,6 +61,7 @@
 }
 .Description {
   max-height: 30%;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1100px) {
@@ -75,8 +80,8 @@
     margin: 0;
   }
   .Container {
-    margin: 2vh auto;
-    max-width: 60vw;
+    margin: 2vh 0;
+    min-width: 80vw;
     min-height: 50vh;
   }
   .Content {

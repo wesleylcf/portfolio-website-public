@@ -1,7 +1,8 @@
 import React from 'react';
-import Card from '../Card/Card';
 import utilStyles from '../../../styles/utils.module.css';
 import styles from './headingCard.module.css';
+import motion from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 interface HeadingCardProps {
   number: string;
@@ -27,6 +28,7 @@ const HeadingCard: React.FC<HeadingCardProps> = ({
   if (width) {
     style.width = width;
   }
+
   return (
     <div className={styles.Card} style={style}>
       <div

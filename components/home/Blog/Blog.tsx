@@ -9,7 +9,7 @@ import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
 import VerticalSection from '../../Layout/VerticalSection/VerticalSection';
 import Main from '../../Layout/Main/Main';
 
-const Blog = ({ darkMode }) => {
+const Blog = ({ darkMode, isMobile }) => {
   const blogPosts: BlogPost[] = [
     {
       title: 'blog post 1',
@@ -38,6 +38,9 @@ const Blog = ({ darkMode }) => {
       <HeadingCard number="04" content="Blog" order={0} darkMode={darkMode} />
       <HorizontalSection hideBorder margin="0" blog>
         {blogPosts.map((post, index) => {
+          if (isMobile && index > 1) {
+            return null;
+          }
           return (
             <BlogPreviewCard
               title={post.title}

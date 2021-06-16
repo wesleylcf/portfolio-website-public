@@ -37,7 +37,4 @@
     min-height: 20vw;
     padding: 2vh 0;
   }
-  .Card:hover {
-    background-color: #222222;
-  }
 }

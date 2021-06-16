@@ -7,6 +7,7 @@ import Experience from '../components/home/Experience/Experience';
 import Blog from '../components/home/Blog/Blog';
 import Contact from '../components/home/Contact/Contact';
 import ToggleButton from '../components/buttons/ToggleButton/ToggleButton';
+import Animate from '../components/Layout/Animate/Animate';
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -105,7 +106,6 @@ export default function Home() {
     <div>
       <Layout
         darkMode={isDarkMode}
-        onChangeColor={onChangeColorTheme}
         hideComponents={hideComponents}
         isModal={isModal}
         isMobile={isMobile}
@@ -115,7 +115,7 @@ export default function Home() {
         <About darkMode={isDarkMode} />
         <Projects darkMode={isDarkMode} />
         <Experience darkMode={isDarkMode} />
-        <Blog darkMode={isDarkMode} />
+        <Blog darkMode={isDarkMode} isMobile={isMobile} />
         <Contact darkMode={isDarkMode} />
       </Layout>
       <ToggleButton hide={hideComponents} onChangeColor={onChangeColorTheme} />

@@ -9,8 +9,9 @@ interface CardProps {
   margin?: string;
   borderRadius?: string;
   padding?: string;
-  blog?: boolean;
+
   darkMode?: boolean;
+  blog?: boolean;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -56,7 +57,7 @@ const Card: React.FC<CardProps> = ({
             ? styles.ShowDarkBackground
             : styles.ShowLightBackground
           : ''
-      } ${blog ? styles.MediumWidth : ''} `}
+      } ${blog ? styles.BlogPost : ''} `}
       style={style}
     >
       {children}

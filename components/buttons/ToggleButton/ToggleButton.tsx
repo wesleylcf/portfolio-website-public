@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styles from './toggleButton.module.css';
+import Animate from '../../Layout/Animate/Animate';
 
 interface ToggleButtonProps {
   hide: boolean;
@@ -9,10 +10,12 @@ interface ToggleButtonProps {
 const ToggleButton: React.FC<ToggleButtonProps> = ({ hide, onChangeColor }) => {
   return (
     <div className={`${styles.ToggleButton} ${hide ? styles.Hide : ''}`}>
-      <label className={styles.Switch}>
-        <input type="checkbox" />
-        <span className={styles.Slider} onClick={onChangeColor}></span>
-      </label>
+      <Animate delay={2.4}>
+        <label className={styles.Switch}>
+          <input type="checkbox" />
+          <span className={styles.Slider} onClick={onChangeColor}></span>
+        </label>
+      </Animate>
     </div>
   );
 };

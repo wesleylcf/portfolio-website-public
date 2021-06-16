@@ -1,7 +1,6 @@
 .ToggleButton {
   position: fixed;
   bottom: 5vh;
-  width: 60px;
   right: 2vw;
   transition: 0.4s ease-in-out;
   transform: translate3d(0, 0, 0);
@@ -9,7 +8,7 @@
 
 .Hide {
   transition: 0.4s ease-in-out;
-  transform: translate3d(10vw, 0, 0);
+  transform: translate3d(15vw, 0, 0);
 }
 
 /* The switch - the box around the slider */

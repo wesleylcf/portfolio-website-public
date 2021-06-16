@@ -17,6 +17,20 @@
   transition: 0.3s ease-in-out;
 }
 
+.Light {
+  background-color: papayawhip;
+  color: rgb(61, 69, 77);
+}
+
+.Dark {
+  background-color: #222222;
+  color: slategray;
+}
+
+.Light.SidebarOpen {
+  background-color: rgb(226, 210, 183);
+}
+
 .Social {
   width: 40vw;
   height: 30vh;

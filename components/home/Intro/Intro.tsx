@@ -19,35 +19,41 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
         <Card side="center">
           <header>
             <Animate delay={isMobile ? 0 : 1}>
-              <h1
-                className={utilStyles.headingXl}
-                style={darkMode ? { color: 'turquoise' } : { color: 'teal' }}
-              >
-                Hi,
-              </h1>
-              <h1
-                className={utilStyles.heading2Xl}
-                style={darkMode ? { color: '#ffafaf' } : { color: '#ce8e8e' }}
-              >
-                I'm
-              </h1>
-              <h1
-                className={utilStyles.heading3Xl}
-                style={
-                  darkMode
-                    ? { color: 'slate-grey' }
-                    : { color: 'rgb(61, 69, 77)' }
-                }
-              >
-                Wesley
-              </h1>
+              <Animate delay={isMobile ? 0 : 1}>
+                <h1
+                  className={utilStyles.headingXl}
+                  style={darkMode ? { color: 'turquoise' } : { color: 'teal' }}
+                >
+                  Hi,
+                </h1>
+              </Animate>
+              <Animate delay={isMobile ? 0.3 : 1.3}>
+                <h1
+                  className={utilStyles.heading2Xl}
+                  style={darkMode ? { color: '#ffafaf' } : { color: '#ce8e8e' }}
+                >
+                  I'm
+                </h1>
+              </Animate>
+              <Animate delay={isMobile ? 0.6 : 1.6}>
+                <h1
+                  className={utilStyles.heading3Xl}
+                  style={
+                    darkMode
+                      ? { color: 'slate-grey' }
+                      : { color: 'rgb(61, 69, 77)' }
+                  }
+                >
+                  Wesley
+                </h1>
+              </Animate>
             </Animate>
           </header>
         </Card>
       </Main>
       <Aside order={1}>
         <Card side="center" flexBasis="50%" padding="0 3vw">
-          <Animate delay={isMobile ? 0.5 : 1.25}>
+          <Animate delay={isMobile ? 0.7 : 1.8}>
             <p>
               I am first-year at the Nanyang Technological University in
               Singapore, studying Computer Science. I am passionate about web
@@ -59,7 +65,7 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
               Currently, I'm waiting for the university term to start !
             </p>
           </Animate>
-          <Animate delay={isMobile ? 1 : 1.4}>
+          <Animate delay={isMobile ? 0.9 : 2}>
             <ImportantButton
               darkMode={darkMode}
               href="mailto:wesleylim.work@gmail.com"

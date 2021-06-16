@@ -46,36 +46,34 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
             blog
             darkMode={darkMode}
           >
-            <div className={styles.Content}>
-              <p className={styles.ContentInfo}>
-                <span
-                  className={`${styles.CoverDate} ${
-                    darkMode ? utilStyles.ColorP : utilStyles.ColorPLight
-                  }`}
-                >
-                  {date}
-                </span>
-                <span
-                  className={`${
-                    darkMode ? utilStyles.ColorA : utilStyles.ColorALight
-                  } ${styles.CoverTags}`}
-                >
-                  {tags.reduce((prev, cur) => {
-                    prev += cur;
-                    prev += ' / ';
-                    return prev;
-                  }, '')}
-                </span>
-              </p>
-              <h2
-                className={
-                  darkMode ? utilStyles.ColorT : utilStyles.ColorTLight
-                }
+            <p className={styles.ContentInfo}>
+              <span
+                className={`${styles.CoverDate} ${
+                  darkMode ? utilStyles.ColorP : utilStyles.ColorPLight
+                }`}
               >
-                {title}
-              </h2>
-              <p className={styles.Description}>{description}</p>
-            </div>
+                {date}
+              </span>
+              <span
+                className={`${
+                  darkMode ? utilStyles.ColorA : utilStyles.ColorALight
+                } ${styles.CoverTags}`}
+              >
+                {tags.reduce((prev, cur) => {
+                  prev += cur;
+                  prev += ' / ';
+                  return prev;
+                }, '')}
+              </span>
+            </p>
+            <h2
+              className={`${styles.ContentTitle} ${
+                darkMode ? utilStyles.ColorT : utilStyles.ColorTLight
+              }`}
+            >
+              {title}
+            </h2>
+            <p className={styles.Description}>{description}</p>
           </Card>
         </a>
       </Link>

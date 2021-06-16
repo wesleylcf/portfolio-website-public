@@ -7,6 +7,7 @@ interface SectionProps {
   hideBorder?: boolean;
   margin?: string;
   blog?: boolean;
+  minHeight?: string;
 }
 
 const section: React.FC<SectionProps> = ({
@@ -14,10 +15,14 @@ const section: React.FC<SectionProps> = ({
   hideBorder,
   margin,
   blog,
+  minHeight,
 }) => {
-  let style = { margin };
+  let style = { margin, minHeight };
   if (margin) {
     style.margin = margin;
+  }
+  if (minHeight) {
+    style.minHeight = minHeight;
   }
   const [ref, inView] = useInView({ triggerOnce: true });
   return (

@@ -68,34 +68,6 @@
   color: #666;
 }
 
-@media screen and (max-width: 800px) {
-  .headingXl {
-    font-size: 12vw;
-  }
-  .heading2Xl {
-    font-size: 14vw;
-  }
-  .heading3Xl {
-    font-size: 16vw;
-  }
-  .headingLg {
-    font-size: 10vw;
-  }
-  .headingMd {
-    font-size: 7vw;
-  }
-  .DividerL,
-  .DividerR {
-    width: 10%;
-  }
-  .BigQuote {
-    width: 70vw;
-  }
-  .BigQuote q {
-    font-size: 3vw;
-  }
-}
-
 .Segment {
   margin: 2vh 0;
 }
@@ -156,6 +128,14 @@
   line-height: 4vw;
 }
 
+.BigQuoteLight {
+  font-size: 2vw;
+  color: rgb(61, 69, 77);
+  padding: 0 2vw;
+  text-align: center;
+  line-height: 4vw;
+}
+
 .Unordered li::marker {
   color: slategray;
 }
@@ -171,5 +151,36 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .headingXl {
+    font-size: 12vw;
+  }
+  .heading2Xl {
+    font-size: 14vw;
+  }
+  .heading3Xl {
+    font-size: 16vw;
+  }
+  .headingLg {
+    font-size: 10vw;
+  }
+  .headingMd {
+    font-size: 7vw;
+  }
+  .DividerL,
+  .DividerR {
+    width: 10%;
+  }
+  .BigQuote,
+  .BigQuoteLight {
+    width: 70vw;
+    line-height: 2vh;
+  }
+  .BigQuote q,
+  .BigQuoteLight q {
+    font-size: 2vh;
   }
 }

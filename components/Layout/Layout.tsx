@@ -3,12 +3,11 @@ import Sidebar from './SideBar/Sidebar';
 import NavBar from './NavBar/NavBar';
 import styles from './layout.module.css';
 import Social from './Social/Social';
-import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
+import Animate from './Animate/Animate';
 
 interface LayoutProps {
   darkMode: boolean;
-  onChangeColor: () => void;
+
   hideComponents: boolean;
   isModal: boolean;
   isMobile: boolean;
@@ -18,18 +17,16 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({
   children,
   darkMode,
-  onChangeColor,
+
   hideComponents,
   isModal,
   isMobile,
   onClickMenu,
 }) => {
-  const [ref, inView] = useInView({ triggerOnce: true });
-
   return (
     <div
-      className={`${darkMode ? 'dark' : 'light'} ${
-        isModal ? styles.ModalOpen : ''
+      className={`${styles.Layout} ${isModal ? styles.ModalOpen : ''} ${
+        darkMode ? 'dark' : 'light'
       }`}
       suppressHydrationWarning={true}
     >
@@ -39,7 +36,9 @@ const Layout: React.FC<LayoutProps> = ({
       {typeof isMobile === 'undefined' || isMobile ? null : (
         <>
           <div className={styles.Social}>
-            <Social width="60px" hide={hideComponents} darkMode={darkMode} />
+            <Animate delay={isMobile ? 0 : 2.2}>
+              <Social width="60px" hide={hideComponents} darkMode={darkMode} />
+            </Animate>
           </div>
         </>
       )}
@@ -50,7 +49,6 @@ const Layout: React.FC<LayoutProps> = ({
           hide={hideComponents}
           isMobile={isMobile}
           darkMode={darkMode}
-          onChangeColor={onChangeColor}
         />
       ) : null}
     </div>

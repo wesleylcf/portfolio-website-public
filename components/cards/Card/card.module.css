@@ -37,8 +37,9 @@
   background-color: #222222;
 }
 
-.MediumWidth {
+.BlogPost {
   margin: 0 0.5vw;
+  min-height: 30vh;
 }
 
 .ShowBackground .Light {
@@ -50,9 +51,8 @@
     padding: 0vh 5vw;
     max-width: 80vw;
   }
-  .MediumWidth {
-    max-height: 30vw;
-    width: 60vw;
+  .BlogPost {
+    width: 80vw;
     margin: 0;
     padding: 0vh 3vw;
     min-height: 25vh;

@@ -4,15 +4,18 @@ import styles from './menu.module.css';
 interface MenuProps {
   onClickMenu: () => void;
   isModal: boolean;
+  darkMode: boolean;
 }
 
-const Menu: React.FC<MenuProps> = ({ onClickMenu, isModal }) => {
+const Menu: React.FC<MenuProps> = ({ onClickMenu, isModal, darkMode }) => {
   const onClickHandler = () => {
     onClickMenu();
   };
   return (
     <button
-      className={`${styles.Menu} ${isModal ? styles.Change : ''}`}
+      className={`${styles.Menu} ${isModal ? styles.Change : ''} ${
+        darkMode ? styles.Dark : styles.Light
+      }`}
       onClick={onClickHandler}
     >
       <div className={styles.Bar1}></div>

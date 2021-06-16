@@ -40,7 +40,9 @@ const Projects = ({ darkMode }) => {
         </Card>
       </Main>
       <Aside order={0}>
-        <div className={utilStyles.BigQuote}>
+        <div
+          className={darkMode ? utilStyles.BigQuote : utilStyles.BigQuoteLight}
+        >
           <q>
             For the things we have to learn before we can do them, we learn by
             doing them
