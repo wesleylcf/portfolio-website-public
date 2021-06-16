@@ -67,7 +67,7 @@
   position: absolute;
   left: 0;
   transform: translate3d(0, 0, 0);
-  width: 30vw;
+  width: 40vw;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -91,7 +91,7 @@
   opacity: 1;
   z-index: 1;
   transition: 0.4s ease;
-  transform: translate3d(-30vw, 0, 0);
+  transform: translate3d(-40vw, 0, 0);
   background-color: rgba(44, 44, 44);
 }
 
@@ -133,6 +133,12 @@
   }
   .Project {
     margin-bottom: 3vh;
+  }
+  .Description {
+    width: 30vw;
+  }
+  .Project:hover .Description {
+    transform: translate3d(-30vw, 0, 0);
   }
 }
 

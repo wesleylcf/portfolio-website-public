@@ -8,6 +8,7 @@ import HeadingCard from '../../cards/HeadingCard/HeadingCard';
 import Main from '../../Layout/Main/Main';
 import Aside from '../../Layout/Aside/Aside';
 import SkillBarCard from '../../cards/SkillBarCard/SkillBarCard';
+import Animate from '../../Layout/Animate/Animate';
 
 const Experience = ({ darkMode }) => {
   const skills = [
@@ -39,39 +40,43 @@ const Experience = ({ darkMode }) => {
           darkMode={darkMode}
         ></HeadingCard>
         <Card side="center" padding="0 5vw">
-          <p>
-            I'm currently waiting to start my university term/in year one, and
-            have no prior internships. However, I'm
-            <span
-              className={`${
-                darkMode ? utilStyles.ColorP : utilStyles.ColorTLight
-              }`}
-            >
-              {' '}
-              actively looking for internships for this summer!{' '}
-            </span>
-            The libraries I've recently worked with are{` `}
-            <u>React, Next, Redux, Express, Commander.</u>
-            {` `}
-            The libraries I've worked with in the past are{` `}
-            <u>Graphql, Sequelize, Mongoose</u>
-          </p>
+          <Animate delay={0.3}>
+            <p>
+              I'm currently waiting to start my university term/in year one, and
+              have no prior internships. However, I'm
+              <span
+                className={`${
+                  darkMode ? utilStyles.ColorP : utilStyles.ColorTLight
+                }`}
+              >
+                {' '}
+                actively looking for internships for this summer!{' '}
+              </span>
+              The libraries I've recently worked with are{` `}
+              <u>React, Next, Redux, Express, Commander.</u>
+              {` `}
+              The libraries I've worked with in the past are{` `}
+              <u>Graphql, Sequelize, Mongoose</u>
+            </p>
+          </Animate>
         </Card>
         <div className={styles.ButtonContainer}>
-          <ImportantButton
-            darkMode={darkMode}
-            href="mailto:wesleylim.work@gmail.com"
-            isTextComponent
-          >
-            Get in touch!
-          </ImportantButton>
-          <ImportantButton
-            darkMode={darkMode}
-            href="mailto:wesleylim.work@gmail.com"
-            isTextComponent
-          >
-            Grab a copy of my resume!
-          </ImportantButton>
+          <Animate delay={0.9}>
+            <ImportantButton
+              darkMode={darkMode}
+              href="mailto:wesleylim.work@gmail.com"
+              isTextComponent
+            >
+              Get in touch!
+            </ImportantButton>
+            <ImportantButton
+              darkMode={darkMode}
+              href="mailto:wesleylim.work@gmail.com"
+              isTextComponent
+            >
+              Grab a copy of my resume!
+            </ImportantButton>
+          </Animate>
         </div>
       </Main>
       <Aside order={1}>
