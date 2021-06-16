@@ -4,14 +4,13 @@
   text-decoration: none;
   transition: 0.1s ease-in-out;
   list-style: none !important;
-  width: 100%;
+  min-width: 4.5vw;
 }
 
 .StyledLink:hover {
-  border-top: 2px dashed turquoise;
-  border-bottom: 2px dashed turquoise;
   text-decoration: none;
   color: turquoise;
+  font-weight: bolder;
 }
 .StyledLink::marker {
   display: block;

@@ -7,7 +7,6 @@ import Animate from './Animate/Animate';
 
 interface LayoutProps {
   darkMode: boolean;
-
   hideComponents: boolean;
   isModal: boolean;
   isMobile: boolean;
@@ -17,7 +16,6 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({
   children,
   darkMode,
-
   hideComponents,
   isModal,
   isMobile,

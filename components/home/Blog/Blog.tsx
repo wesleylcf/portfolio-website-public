@@ -7,7 +7,7 @@ import HeadingCard from '../../cards/HeadingCard/HeadingCard';
 
 import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
 import VerticalSection from '../../Layout/VerticalSection/VerticalSection';
-import Main from '../../Layout/Main/Main';
+import Animate from '../../Layout/Animate/Animate';
 
 const Blog = ({ darkMode, isMobile }) => {
   const blogPosts: BlogPost[] = [
@@ -33,11 +33,19 @@ const Blog = ({ darkMode, isMobile }) => {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...",
     },
   ];
+  let animateDelay = 0;
   return (
     <VerticalSection>
-      <HeadingCard number="04" content="Blog" order={0} darkMode={darkMode} />
+      <HeadingCard
+        number="04"
+        content="Blog"
+        order={0}
+        darkMode={darkMode}
+        id="blog"
+      />
       <HorizontalSection hideBorder margin="0" blog>
         {blogPosts.map((post, index) => {
+          animateDelay += 0.25;
           if (isMobile && index > 1) {
             return null;
           }
@@ -49,15 +57,17 @@ const Blog = ({ darkMode, isMobile }) => {
               description={post.description}
               previewImage="profile.jpg"
               key={index}
-              margin="0 0.5vw 2vh 0.5vw"
               darkMode={darkMode}
+              animateDelay={animateDelay}
             />
           );
         })}
       </HorizontalSection>
-      <ImportantButton darkMode={darkMode} href="/blog">
-        See all posts
-      </ImportantButton>
+      <Animate delay={0.75}>
+        <ImportantButton darkMode={darkMode} href="/blog">
+          See all posts
+        </ImportantButton>
+      </Animate>
     </VerticalSection>
   );
 };

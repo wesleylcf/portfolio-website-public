@@ -29,6 +29,7 @@ const About = ({ darkMode }) => {
           content="About me"
           order={0}
           darkMode={darkMode}
+          id="about"
         />
 
         <Card side="center" flexBasis="60%" padding="0 5vw">

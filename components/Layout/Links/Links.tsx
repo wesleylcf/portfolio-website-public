@@ -7,28 +7,28 @@ const Links = ({ darkMode, isMobile }) => {
   return (
     <>
       <StyledLink
-        url="/about"
+        url="#about"
         content="About"
         isMobile={isMobile}
         animationDelay={isMobile ? 0 : 0.2}
       />
 
       <StyledLink
-        url="/projects"
+        url="#projects"
         content="Projects"
         isMobile={isMobile}
         animationDelay={isMobile ? 0 : 0.35}
       />
 
       <StyledLink
-        url="/experience"
+        url="#exp"
         content="Experience"
         isMobile={isMobile}
         animationDelay={isMobile ? 0 : 0.5}
       />
 
       <StyledLink
-        url="/contact"
+        url="#contact"
         content="Contact"
         isMobile={isMobile}
         animationDelay={isMobile ? 0 : 0.65}

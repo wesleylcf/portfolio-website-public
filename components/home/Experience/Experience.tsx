@@ -38,6 +38,7 @@ const Experience = ({ darkMode }) => {
           content="Experience"
           order={0}
           darkMode={darkMode}
+          id="exp"
         ></HeadingCard>
         <Card side="center" padding="0 5vw">
           <Animate delay={0.3}>
@@ -69,6 +70,8 @@ const Experience = ({ darkMode }) => {
             >
               Get in touch!
             </ImportantButton>
+          </Animate>
+          <Animate delay={0.9}>
             <ImportantButton
               darkMode={darkMode}
               href="mailto:wesleylim.work@gmail.com"

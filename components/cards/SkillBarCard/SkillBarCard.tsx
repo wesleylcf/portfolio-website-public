@@ -12,35 +12,37 @@ interface SkillBarCardProps {
 }
 
 const SkillBarCard: React.FC<SkillBarCardProps> = ({ skills, darkMode }) => {
-  let delay = 0.1;
+  // let delay = 0.1;
   return (
     <article className={styles.Article}>
       <ul className={styles.List}>
         {skills.map((skill, index) => {
-          delay += 0.1;
+          // delay += 0.1;
           return (
-            <Animate delay={delay}>
+            <Animate delay={0.2} key={index}>
               <li
-                key={index}
                 className={styles.ListItem}
                 style={{
-                  backgroundColor: darkMode ? '#444444' : 'rgb(226, 210, 183)',
+                  backgroundColor: darkMode ? '#222222' : 'rgb(226, 210, 183)',
                 }}
               >
-                <span
-                  className={`${
+                <div
+                  className={`${styles.Skill} ${
                     darkMode ? utilStyles.ColorA : utilStyles.ColorDefaultLight
-                  } ${styles.Skill}`}
+                  }`}
                 >
                   {skill.skill}
-                </span>
-                <span
-                  className={styles.Bar}
-                  style={{
-                    width: `${skill.confidence - 20}%`,
-                    backgroundColor: darkMode ? 'turquoise' : 'teal',
-                  }}
-                ></span>
+                </div>
+
+                <div className={styles.BarContainer}>
+                  <div
+                    className={styles.Bar}
+                    style={{
+                      minWidth: `${skill.confidence}%`,
+                      backgroundColor: darkMode ? 'turquoise' : 'teal',
+                    }}
+                  ></div>
+                </div>
               </li>
             </Animate>
           );

@@ -46,7 +46,6 @@
 .Modal:hover,
 .ImageContainer:hover .Modal {
   background-color: rgba(0, 0, 0, 0);
-
   filter: none;
 }
 
@@ -63,7 +62,7 @@
 .Description {
   z-index: -1;
   opacity: 0;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 10px 10px;
   position: absolute;
   left: 0;
   transform: translate3d(0, 0, 0);
@@ -95,36 +94,6 @@
   background-color: rgba(44, 44, 44);
 }
 
-@media screen and (max-width: 800px) {
-  .ImageContainer,
-  .Project {
-    min-height: 40vh;
-    min-width: 75vw;
-    line-height: 2.5vh;
-  }
-  .Description {
-    z-index: 1;
-    opacity: 1;
-    width: 75vw;
-  }
-  .Description p {
-    margin: 0.5vh 2vw;
-  }
-  .Modal {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  .ImageContainer:hover .Modal,
-  .Modal:hover {
-    z-index: 1;
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-
-  .ImageContainer:hover .Description {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
 @media screen and (max-width: 1400px) {
   .ImageContainer,
   .Project {
@@ -153,5 +122,38 @@
   .Project {
     width: 40vw;
     height: calc(40vw * 0.7);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .ImageContainer,
+  .Project {
+    min-height: 40vh;
+    min-width: 75vw;
+    line-height: 2.5vh;
+  }
+  .Description {
+    z-index: 1;
+    opacity: 1;
+    min-width: 75vw;
+    transform: translate3d(0, 0, 0);
+  }
+  .Description p {
+    margin: 0.5vh 2vw;
+  }
+  .Modal {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .ImageContainer:hover .Modal,
+  .Modal:hover {
+    z-index: 1;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .Project:hover .Description,
+  .ImageContainer:hover .Description,
+  .Description:hover {
+    transform: translate3d(0, 0, 0);
   }
 }

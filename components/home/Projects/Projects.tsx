@@ -18,6 +18,7 @@ const Projects = ({ darkMode }) => {
           content="Projects"
           order={0}
           darkMode={darkMode}
+          id="projects"
         />
         <Card side="center">
           <ProjectCard

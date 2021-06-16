@@ -17,7 +17,7 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
     <HorizontalSection>
       <Main order={0}>
         <Card side="center">
-          <header>
+          <header id="intro">
             <Animate delay={isMobile ? 0 : 1}>
               <Animate delay={isMobile ? 0 : 1}>
                 <h1

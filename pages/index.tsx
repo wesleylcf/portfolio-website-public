@@ -7,8 +7,6 @@ import Experience from '../components/home/Experience/Experience';
 import Blog from '../components/home/Blog/Blog';
 import Contact from '../components/home/Contact/Contact';
 import ToggleButton from '../components/buttons/ToggleButton/ToggleButton';
-import Animate from '../components/Layout/Animate/Animate';
-
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [scrollY, setScrollY] = useState(() => {
@@ -30,22 +28,9 @@ export default function Home() {
     if (typeof isMobile === 'undefined') return undefined;
     return false;
   });
-  // useEffect(() => {
-  //   // document.body.classList.add('dark');
-  //   if (!isDarkMode) {
-  //     // document.body.classList.add('light');
-  //     // document.body.classList.remove('dark');
-  //     document.getElementsByTagName('body')[0].style.backgroundColor =
-  //       'papayawhip';
-  //     document.getElementsByTagName('body')[0].style.color = 'rgb(61, 69, 77);';
-  //   } else {
-  //     // document.body.classList.add('dark');
-  //     // document.body.classList.remove('light');
-  //     document.getElementsByTagName('body')[0].style.backgroundColor =
-  //       '#222222';
-  //     document.getElementsByTagName('body')[0].style.color = 'slate-gray';
-  //   }
-  // }, [isDarkMode]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const viewportListener = () => {
@@ -78,7 +63,7 @@ export default function Home() {
       clearTimeout(timer);
       timer = setTimeout(() => {
         setTimeSinceLastHide(new Date().getTime());
-      }, 1500);
+      }, 1000);
     };
     window.addEventListener('scroll', scrollListener);
     return () => {
@@ -92,7 +77,7 @@ export default function Home() {
     clearTimeout(timer);
     timer = setTimeout(() => {
       setHideComponents(false);
-    }, 1500);
+    }, 1000);
     return () => {
       clearTimeout(timer);
     };
