@@ -44,28 +44,17 @@ const Experience = ({ darkMode }) => {
             have no prior internships. However, I'm
             <span
               className={`${
-                darkMode ? utilStyles.ColorT : utilStyles.ColorTLight
+                darkMode ? utilStyles.ColorP : utilStyles.ColorTLight
               }`}
             >
               {' '}
-              actively looking for internships for this summer!
-            </span>{' '}
-            The libraries I've recently worked with are
-            <span
-              className={`${
-                darkMode ? utilStyles.ColorP : utilStyles.ColorPLight
-              }`}
-            >
-              {' '}
-              React, Next, Redux, Express, Commander.{' '}
+              actively looking for internships for this summer!{' '}
             </span>
-            The libraries I've worked with in the past are
-            <span
-              className={darkMode ? utilStyles.ColorA : utilStyles.ColorALight}
-            >
-              {' '}
-              Graphql, Sequelize, Mongoose
-            </span>
+            The libraries I've recently worked with are{` `}
+            <u>React, Next, Redux, Express, Commander.</u>
+            {` `}
+            The libraries I've worked with in the past are{` `}
+            <u>Graphql, Sequelize, Mongoose</u>
           </p>
         </Card>
         <div className={styles.ButtonContainer}>

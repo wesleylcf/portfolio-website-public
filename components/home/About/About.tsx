@@ -27,7 +27,8 @@ const About = ({ darkMode }) => {
           order={0}
           darkMode={darkMode}
         />
-        <Card side="flex-end" flexBasis="60%" padding="0 5vw">
+
+        <Card side="center" flexBasis="60%" padding="0 5vw">
           <div className={styles.Container}>
             <p>
               I picked up programming while serving National Service in the Air

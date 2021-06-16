@@ -153,8 +153,23 @@
   color: slategray;
   padding: 0 2vw;
   text-align: center;
+  line-height: 4vw;
 }
 
 .Unordered li::marker {
   color: slategray;
+}
+
+.elementAnimate {
+  animation-name: opac;
+  animation-duration: 2s;
+}
+
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

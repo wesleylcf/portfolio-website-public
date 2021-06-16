@@ -4,6 +4,8 @@ import utilStyles from '../../../styles/utils.module.css';
 import styles from './navBar.module.css';
 import Links from '../Links/Links';
 import Link from 'next/link';
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 
 interface NavBarProps {
   isMobile: boolean;
@@ -14,15 +16,19 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ isMobile, hide, darkMode }) => {
   let links = (
     <div className={styles.Links}>
-      <Links darkMode={darkMode} />
+      <Links darkMode={darkMode} isMobile={isMobile} />
     </div>
   );
   if (typeof isMobile === 'undefined' || isMobile) {
     links = null;
   }
-
+  const [ref, inView] = useInView({ triggerOnce: true });
   return (
-    <nav
+    <motion.nav
+      ref={ref}
+      initial={{ opacity: 0 }}
+      animate={inView ? { opacity: 1 } : { opacity: 0 }}
+      transition={{ duration: isMobile ? 0 : 0.3 }}
       className={`${styles.Nav} ${!darkMode ? 'light' : 'dark'}  ${
         hide && !isMobile ? styles.HideNav : ''
       }`}
@@ -41,7 +47,7 @@ const NavBar: React.FC<NavBarProps> = ({ isMobile, hide, darkMode }) => {
         </a>
       </Link>
       <ol suppressHydrationWarning={true}>{links}</ol>
-    </nav>
+    </motion.nav>
   );
 };
 

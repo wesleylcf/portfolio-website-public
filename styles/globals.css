@@ -6,6 +6,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.5;
   font-size: 1.7vh;
+  background-color: #222222;
 }
 
 * {
@@ -71,6 +72,10 @@ section {
 }
 
 .light {
+  background-color: papayawhip;
+  color: rgb(61, 69, 77);
+}
+body .light {
   background-color: papayawhip;
   color: rgb(61, 69, 77);
 }

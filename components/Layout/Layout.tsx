@@ -3,11 +3,16 @@ import Sidebar from './SideBar/Sidebar';
 import NavBar from './NavBar/NavBar';
 import styles from './layout.module.css';
 import Social from './Social/Social';
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 
 interface LayoutProps {
   darkMode: boolean;
   onChangeColor: () => void;
   hideComponents: boolean;
+  isModal: boolean;
+  isMobile: boolean;
+  onClickMenu: () => void;
 }
 
 const Layout: React.FC<LayoutProps> = ({
@@ -15,35 +20,11 @@ const Layout: React.FC<LayoutProps> = ({
   darkMode,
   onChangeColor,
   hideComponents,
+  isModal,
+  isMobile,
+  onClickMenu,
 }) => {
-  const [isMobile, setIsMobile] = useState(() => {
-    if (typeof window === 'undefined') return undefined;
-    return window.innerWidth < 800;
-  });
-  const [isModal, setIsModal] = useState(() => {
-    if (typeof isMobile === 'undefined') return undefined;
-    return false;
-  });
-
-  useEffect(() => {
-    const viewportListener = () => {
-      if (window.innerWidth < 800) {
-        setIsMobile(true);
-        setIsModal(false);
-      } else {
-        setIsMobile(false);
-        setIsModal(false);
-      }
-    };
-    window.addEventListener('resize', viewportListener);
-    return () => {
-      window.removeEventListener('resize', viewportListener);
-    };
-  }, [isMobile, isModal]);
-
-  const onClickMenu = () => {
-    setIsModal(!isModal);
-  };
+  const [ref, inView] = useInView({ triggerOnce: true });
 
   return (
     <div

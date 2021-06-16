@@ -10,7 +10,6 @@ import ToggleButton from '../components/buttons/ToggleButton/ToggleButton';
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
-
   const [scrollY, setScrollY] = useState(() => {
     if (typeof window === 'undefined') return undefined;
     return window.scrollY;
@@ -22,6 +21,50 @@ export default function Home() {
   const [timeSinceLastHide, setTimeSinceLastHide] = useState(
     new Date().getTime()
   );
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === 'undefined') return undefined;
+    return window.innerWidth < 800;
+  });
+  const [isModal, setIsModal] = useState(() => {
+    if (typeof isMobile === 'undefined') return undefined;
+    return false;
+  });
+  // useEffect(() => {
+  //   // document.body.classList.add('dark');
+  //   if (!isDarkMode) {
+  //     // document.body.classList.add('light');
+  //     // document.body.classList.remove('dark');
+  //     document.getElementsByTagName('body')[0].style.backgroundColor =
+  //       'papayawhip';
+  //     document.getElementsByTagName('body')[0].style.color = 'rgb(61, 69, 77);';
+  //   } else {
+  //     // document.body.classList.add('dark');
+  //     // document.body.classList.remove('light');
+  //     document.getElementsByTagName('body')[0].style.backgroundColor =
+  //       '#222222';
+  //     document.getElementsByTagName('body')[0].style.color = 'slate-gray';
+  //   }
+  // }, [isDarkMode]);
+
+  useEffect(() => {
+    const viewportListener = () => {
+      if (window.innerWidth < 800) {
+        setIsMobile(true);
+        setIsModal(false);
+      } else {
+        setIsMobile(false);
+        setIsModal(false);
+      }
+    };
+    window.addEventListener('resize', viewportListener);
+    return () => {
+      window.removeEventListener('resize', viewportListener);
+    };
+  }, [isMobile, isModal]);
+
+  const onClickMenu = () => {
+    setIsModal(!isModal);
+  };
   useEffect(() => {
     let timer: any;
     const scrollListener = () => {
@@ -53,15 +96,7 @@ export default function Home() {
       clearTimeout(timer);
     };
   }, [timeSinceLastHide]);
-  useEffect(() => {
-    if (!isDarkMode) {
-      document.body.classList.add('light');
-      document.body.classList.remove('dark');
-    } else {
-      document.body.classList.add('dark');
-      document.body.classList.remove('light');
-    }
-  }, [isDarkMode]);
+
   const onChangeColorTheme = () => {
     setIsDarkMode(!isDarkMode);
     console.log('changed mode!');
@@ -72,8 +107,11 @@ export default function Home() {
         darkMode={isDarkMode}
         onChangeColor={onChangeColorTheme}
         hideComponents={hideComponents}
+        isModal={isModal}
+        isMobile={isMobile}
+        onClickMenu={onClickMenu}
       >
-        <Intro darkMode={isDarkMode} />
+        <Intro darkMode={isDarkMode} isMobile={isMobile} />
         <About darkMode={isDarkMode} />
         <Projects darkMode={isDarkMode} />
         <Experience darkMode={isDarkMode} />
