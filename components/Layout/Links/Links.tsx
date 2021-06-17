@@ -21,7 +21,7 @@ const Links = ({ darkMode, isMobile }) => {
       />
 
       <StyledLink
-        url="#exp"
+        url="#experience"
         content="Experience"
         isMobile={isMobile}
         animationDelay={isMobile ? 0 : 0.5}

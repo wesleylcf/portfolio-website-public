@@ -12,14 +12,14 @@ interface SkillBarCardProps {
 }
 
 const SkillBarCard: React.FC<SkillBarCardProps> = ({ skills, darkMode }) => {
-  // let delay = 0.1;
+  let delay = 0.1;
   return (
     <article className={styles.Article}>
       <ul className={styles.List}>
         {skills.map((skill, index) => {
-          // delay += 0.1;
+          delay += 0.1;
           return (
-            <Animate delay={0.2} key={index}>
+            <Animate delay={delay} key={index}>
               <li
                 className={styles.ListItem}
                 style={{

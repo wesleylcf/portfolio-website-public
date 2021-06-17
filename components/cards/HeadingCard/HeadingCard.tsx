@@ -9,7 +9,6 @@ interface HeadingCardProps {
   flexBasis?: string;
   width?: string;
   darkMode: boolean;
-  id: string;
 }
 
 const HeadingCard: React.FC<HeadingCardProps> = ({
@@ -19,7 +18,6 @@ const HeadingCard: React.FC<HeadingCardProps> = ({
   flexBasis,
   width,
   darkMode,
-  id,
 }) => {
   let style = { order: order, flexBasis, width };
   if (flexBasis) {
@@ -30,7 +28,7 @@ const HeadingCard: React.FC<HeadingCardProps> = ({
   }
 
   return (
-    <div className={styles.Card} style={style} id={id}>
+    <div className={styles.Card} style={style}>
       <div
         className={`${utilStyles.DividerL} ${
           darkMode ? utilStyles.ColorA : utilStyles.ColorALight

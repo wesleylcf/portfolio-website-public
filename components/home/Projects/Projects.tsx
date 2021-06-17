@@ -11,14 +11,13 @@ import Animate from '../../Layout/Animate/Animate';
 
 const Projects = ({ darkMode }) => {
   return (
-    <Section>
+    <Section dividerId="experience">
       <Main order={1}>
         <HeadingCard
           number="02"
           content="Projects"
           order={0}
           darkMode={darkMode}
-          id="projects"
         />
         <Card side="center">
           <ProjectCard

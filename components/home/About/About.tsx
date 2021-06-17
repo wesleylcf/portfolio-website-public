@@ -12,7 +12,7 @@ import Animate from '../../Layout/Animate/Animate';
 
 const About = ({ darkMode }) => {
   return (
-    <Section>
+    <Section dividerId="projects">
       <Aside order={1}>
         <Animate delay={0.9}>
           <Image
@@ -29,7 +29,6 @@ const About = ({ darkMode }) => {
           content="About me"
           order={0}
           darkMode={darkMode}
-          id="about"
         />
 
         <Card side="center" flexBasis="60%" padding="0 5vw">

@@ -1,5 +1,4 @@
 .VerticalSection {
-  border-bottom: 2px solid slategray;
   padding-bottom: 5%;
   margin-bottom: 5%;
   text-align: left;
@@ -9,6 +8,7 @@
   flex-direction: column;
   min-height: 80vh;
   width: 80vw;
+  position: relative;
 }
 
 .HideBorder {

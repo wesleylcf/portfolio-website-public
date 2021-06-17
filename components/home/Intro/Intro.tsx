@@ -14,7 +14,7 @@ interface IntroProps {
 
 const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
   return (
-    <HorizontalSection>
+    <HorizontalSection dividerId="about">
       <Main order={0}>
         <Card side="center">
           <header id="intro">

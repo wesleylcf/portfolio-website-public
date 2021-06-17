@@ -34,7 +34,6 @@
 
 .BarContainer {
   background-color: wheat;
-  width: 10%;
   height: 100%;
   display: flex;
   justify-content: flex-start;
@@ -47,5 +46,8 @@
   }
   .Skill {
     min-width: 30%;
+  }
+  .BarContainer {
+    min-width: 70%;
   }
 }

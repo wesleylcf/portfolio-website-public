@@ -31,14 +31,13 @@ const Experience = ({ darkMode }) => {
   ];
 
   return (
-    <Section>
+    <Section dividerId="blog">
       <Main order={0}>
         <HeadingCard
           number="03"
           content="Experience"
           order={0}
           darkMode={darkMode}
-          id="exp"
         ></HeadingCard>
         <Card side="center" padding="0 5vw">
           <Animate delay={0.3}>

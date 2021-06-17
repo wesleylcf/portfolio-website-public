@@ -4,6 +4,7 @@ import NavBar from './NavBar/NavBar';
 import styles from './layout.module.css';
 import Social from './Social/Social';
 import Animate from './Animate/Animate';
+import Footer from './Footer/Footer';
 
 interface LayoutProps {
   darkMode: boolean;
@@ -30,7 +31,10 @@ const Layout: React.FC<LayoutProps> = ({
     >
       <NavBar isMobile={isMobile} hide={hideComponents} darkMode={darkMode} />
 
-      <div className={styles.Container}>{children}</div>
+      <div className={styles.Container}>
+        {children}
+        <Footer />
+      </div>
       {typeof isMobile === 'undefined' || isMobile ? null : (
         <>
           <div className={styles.Social}>

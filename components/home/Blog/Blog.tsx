@@ -35,14 +35,8 @@ const Blog = ({ darkMode, isMobile }) => {
   ];
   let animateDelay = 0;
   return (
-    <VerticalSection>
-      <HeadingCard
-        number="04"
-        content="Blog"
-        order={0}
-        darkMode={darkMode}
-        id="blog"
-      />
+    <VerticalSection dividerId="contact">
+      <HeadingCard number="04" content="Blog" order={0} darkMode={darkMode} />
       <HorizontalSection hideBorder margin="0" blog>
         {blogPosts.map((post, index) => {
           animateDelay += 0.25;

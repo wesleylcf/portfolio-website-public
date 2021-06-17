@@ -2,12 +2,14 @@ import React from 'react';
 import styles from './section.module.css';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
+import SectionDivider from '../SectionDivider/SectionDivider';
 
 interface SectionProps {
   hideBorder?: boolean;
   margin?: string;
   blog?: boolean;
   minHeight?: string;
+  dividerId?: string;
 }
 
 const section: React.FC<SectionProps> = ({
@@ -16,6 +18,7 @@ const section: React.FC<SectionProps> = ({
   margin,
   blog,
   minHeight,
+  dividerId,
 }) => {
   let style = { margin, minHeight };
   if (margin) {
@@ -37,6 +40,7 @@ const section: React.FC<SectionProps> = ({
       style={style}
     >
       {children}
+      {dividerId ? <SectionDivider id={dividerId} /> : null}
     </motion.section>
   );
 };
