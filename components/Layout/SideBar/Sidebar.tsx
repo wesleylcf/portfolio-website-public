@@ -10,6 +10,11 @@ interface SidebarProps {
   hide: boolean;
   isMobile: boolean;
   darkMode: boolean;
+  links: {
+    navLinks: { linkTo: string; content: string; button?: boolean }[];
+    linkInitialAnimateDelay?: number;
+    linkAnimateDelayIncrement?: number;
+  };
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -18,6 +23,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   hide,
   isMobile,
   darkMode,
+  links,
 }) => {
   return (
     <>
@@ -30,7 +36,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         {isModal ? (
           <>
             <ul className={styles.Links}>
-              <Links darkMode={darkMode} isMobile={isMobile} />
+              <Links darkMode={darkMode} isMobile={isMobile} {...links} />
             </ul>
             <div className={styles.Social}>
               <Social width="40px" darkMode={darkMode} />

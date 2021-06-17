@@ -13,6 +13,7 @@ export default function Home() {
   const theme = useContext(ThemeContext);
   const isDarkMode = theme.darkMode;
   const changeColorTheme = theme.changeColorTheme;
+
   const [scrollY, setScrollY] = useState(() => {
     if (typeof window === 'undefined') return undefined;
     return window.scrollY;
@@ -32,9 +33,17 @@ export default function Home() {
     if (typeof isMobile === 'undefined') return undefined;
     return false;
   });
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const links = {
+    navLinks: [
+      { linkTo: '#about', content: 'About' },
+      { linkTo: '#projects', content: 'Projects' },
+      { linkTo: '#experience', content: 'Experience' },
+      { linkTo: '#contact', content: 'Contact' },
+      { button: true, linkTo: '/blog', content: 'Blog' },
+    ],
+    linkInitialAnimateDelay: 0.05,
+    linkAnimateDelayIncrement: 0.15,
+  };
 
   useEffect(() => {
     const viewportListener = () => {
@@ -95,6 +104,7 @@ export default function Home() {
         isModal={isModal}
         isMobile={isMobile}
         onClickMenu={onClickMenu}
+        links={links}
       >
         <Intro darkMode={isDarkMode} isMobile={isMobile} />
         <About darkMode={isDarkMode} />

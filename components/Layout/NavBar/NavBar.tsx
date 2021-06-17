@@ -11,18 +11,22 @@ interface NavBarProps {
   isMobile: boolean;
   hide: boolean;
   darkMode: boolean;
+  links: {
+    navLinks: { linkTo: string; content: string; button?: boolean }[];
+    linkInitialAnimateDelay?: number;
+    linkAnimateDelayIncrement?: number;
+  };
 }
 
-const NavBar: React.FC<NavBarProps> = ({ isMobile, hide, darkMode }) => {
-  let links = (
-    <div className={styles.Links}>
-      <Links darkMode={darkMode} isMobile={isMobile} />
-    </div>
+const NavBar: React.FC<NavBarProps> = ({ isMobile, hide, darkMode, links }) => {
+  let linksPlaceHolder = (
+    <ol className={styles.Links}>
+      <Links darkMode={darkMode} isMobile={isMobile} {...links} />
+    </ol>
   );
   if (typeof isMobile === 'undefined' || isMobile) {
-    links = null;
+    linksPlaceHolder = null;
   }
-  const [ref, inView] = useInView({ triggerOnce: true });
   return (
     <nav
       className={`${styles.Nav} ${!darkMode ? 'light' : 'dark'}  ${
@@ -42,7 +46,7 @@ const NavBar: React.FC<NavBarProps> = ({ isMobile, hide, darkMode }) => {
           />
         </a>
       </Link>
-      <ol suppressHydrationWarning={true}>{links}</ol>
+      {linksPlaceHolder}
     </nav>
   );
 };

@@ -6,14 +6,14 @@ import { useInView } from 'react-intersection-observer';
 
 interface StyledLinkProps {
   content: string;
-  url: string;
+  linkTo: string;
   isMobile: boolean;
   animationDelay: number;
 }
 
 const StyledLink: React.FC<StyledLinkProps> = ({
   content,
-  url,
+  linkTo,
   isMobile,
   animationDelay,
 }) => {
@@ -22,7 +22,7 @@ const StyledLink: React.FC<StyledLinkProps> = ({
     return (
       <div className={styles.ListItemWrapper}>
         <li>
-          <Link href={url}>
+          <Link href={linkTo}>
             <a className={styles.StyledLink}>{content}</a>
           </Link>
         </li>
@@ -41,7 +41,7 @@ const StyledLink: React.FC<StyledLinkProps> = ({
       className={styles.ListItemWrapper}
     >
       <li>
-        <Link href={url}>
+        <Link href={linkTo}>
           <a className={styles.StyledLink}>{content}</a>
         </Link>
       </li>

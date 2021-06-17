@@ -12,6 +12,11 @@ interface LayoutProps {
   isModal: boolean;
   isMobile: boolean;
   onClickMenu: () => void;
+  links: {
+    navLinks: { linkTo: string; content: string; button?: boolean }[];
+    linkInitialAnimateDelay?: number;
+    linkAnimateDelayIncrement?: number;
+  };
 }
 
 const Layout: React.FC<LayoutProps> = ({
@@ -21,6 +26,7 @@ const Layout: React.FC<LayoutProps> = ({
   isModal,
   isMobile,
   onClickMenu,
+  links,
 }) => {
   return (
     <div
@@ -29,7 +35,12 @@ const Layout: React.FC<LayoutProps> = ({
       }`}
       suppressHydrationWarning={true}
     >
-      <NavBar isMobile={isMobile} hide={hideComponents} darkMode={darkMode} />
+      <NavBar
+        isMobile={isMobile}
+        hide={hideComponents}
+        darkMode={darkMode}
+        links={links}
+      />
 
       <div className={styles.Container}>
         {children}
@@ -51,6 +62,7 @@ const Layout: React.FC<LayoutProps> = ({
           hide={hideComponents}
           isMobile={isMobile}
           darkMode={darkMode}
+          links={links}
         />
       ) : null}
     </div>
