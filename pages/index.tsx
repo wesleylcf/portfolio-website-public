@@ -1,5 +1,5 @@
 import Layout from '../components/Layout/Layout';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Intro from '../components/home/Intro/Intro';
 import About from '../components/home/About/About';
 import Projects from '../components/home/Projects/Projects';
@@ -7,8 +7,12 @@ import Experience from '../components/home/Experience/Experience';
 import Blog from '../components/home/Blog/Blog';
 import Contact from '../components/home/Contact/Contact';
 import ToggleButton from '../components/buttons/ToggleButton/ToggleButton';
+import ThemeContext from '../contexts/ThemeContext';
+
 export default function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const theme = useContext(ThemeContext);
+  const isDarkMode = theme.darkMode;
+  const changeColorTheme = theme.changeColorTheme;
   const [scrollY, setScrollY] = useState(() => {
     if (typeof window === 'undefined') return undefined;
     return window.scrollY;
@@ -83,10 +87,6 @@ export default function Home() {
     };
   }, [timeSinceLastHide]);
 
-  const onChangeColorTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    console.log('changed mode!');
-  };
   return (
     <div>
       <Layout
@@ -103,7 +103,7 @@ export default function Home() {
         <Blog darkMode={isDarkMode} isMobile={isMobile} />
         <Contact darkMode={isDarkMode} />
       </Layout>
-      <ToggleButton hide={hideComponents} onChangeColor={onChangeColorTheme} />
+      <ToggleButton hide={hideComponents} onChangeColor={changeColorTheme} />
     </div>
   );
 }

@@ -10,7 +10,6 @@ interface ProjectCardProps {
   languages: string[];
   description: string;
   imageSrc?: string;
-  darkMode: boolean;
 }
 
 const projectCard: React.FC<ProjectCardProps> = ({
@@ -18,7 +17,6 @@ const projectCard: React.FC<ProjectCardProps> = ({
   languages,
   description,
   imageSrc,
-  darkMode,
 }) => {
   let lang = '';
   for (let l of languages) {

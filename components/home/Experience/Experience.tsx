@@ -67,15 +67,6 @@ const Experience = ({ darkMode }) => {
               href="mailto:wesleylim.work@gmail.com"
               isTextComponent
             >
-              Get in touch!
-            </ImportantButton>
-          </Animate>
-          <Animate delay={0.9}>
-            <ImportantButton
-              darkMode={darkMode}
-              href="mailto:wesleylim.work@gmail.com"
-              isTextComponent
-            >
               Grab a copy of my resume!
             </ImportantButton>
           </Animate>

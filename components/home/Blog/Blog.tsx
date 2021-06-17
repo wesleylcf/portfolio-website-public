@@ -58,7 +58,7 @@ const Blog = ({ darkMode, isMobile }) => {
         })}
       </HorizontalSection>
       <Animate delay={0.75}>
-        <ImportantButton darkMode={darkMode} href="/blog">
+        <ImportantButton darkMode={darkMode} href="/blog/posts">
           See all posts
         </ImportantButton>
       </Animate>

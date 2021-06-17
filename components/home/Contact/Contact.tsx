@@ -57,7 +57,7 @@ const Contact = ({ darkMode }) => {
             Thanks for reading up till here! If you're interested, I write a lot
             more at my blog!
           </p>
-          <ImportantButton href="/blog/me" darkMode={darkMode}>
+          <ImportantButton href="/blog/posts" darkMode={darkMode}>
             Blog
           </ImportantButton>
         </Card>

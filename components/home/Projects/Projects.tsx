@@ -26,16 +26,14 @@ const Projects = ({ darkMode }) => {
             description="A code/markdown editor that is
             launched from the CLI and saves to the user's machine"
             imageSrc="jj.jpg"
-            darkMode
           />
           <ProjectCard
             heading="Journalify"
             languages={['Next.js', 'mongoDB', 'Typescript']}
             description="A web app version of Journalify that allows sharing of Journals"
             imageSrc="jj.jpg"
-            darkMode
           />
-          <ImportantButton darkMode={darkMode} href="/Projects">
+          <ImportantButton darkMode={darkMode} href="/blog/p    rojects">
             All Projects
           </ImportantButton>
         </Card>
