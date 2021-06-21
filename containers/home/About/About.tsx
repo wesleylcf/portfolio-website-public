@@ -2,13 +2,13 @@ import React from 'react';
 import Image from 'next/image';
 import utilStyles from '../../../styles/utils.module.css';
 import styles from './about.module.css';
-import Section from '../../Layout/HorizontalSection/HorizontalSection';
-import Card from '../../cards/Card/Card';
-import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
-import HeadingCard from '../../cards/HeadingCard/HeadingCard';
-import Main from '../../Layout/Main/Main';
-import Aside from '../../Layout/Aside/Aside';
-import Animate from '../../Layout/Animate/Animate';
+import Section from '../../../components/Layout/HorizontalSection/HorizontalSection';
+import Card from '../../../components/cards/Card/Card';
+import ImportantButton from '../../../components/buttons/ImportantButton/ImportantButton';
+import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
+import Main from '../../../components/Layout/Main/Main';
+import Aside from '../../../components/Layout/Aside/Aside';
+import Animate from '../../../components/Layout/Animate/Animate';
 
 const About = ({ darkMode }) => {
   return (

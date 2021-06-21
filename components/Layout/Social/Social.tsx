@@ -9,6 +9,7 @@ interface SocialProps {
 }
 
 const social: React.FC<SocialProps> = ({ width, hide, darkMode }) => {
+  console.log('socialrender');
   return (
     <div className={styles.Container}>
       <div className={`${styles.SocialIcon1} ${hide ? styles.Hide1 : ''} `}>

@@ -1,11 +1,11 @@
 import React from 'react';
 import utilStyles from '../../../styles/utils.module.css';
-import VerticalSection from '../../Layout/VerticalSection/VerticalSection';
-import HorizontalSection from '../../Layout/HorizontalSection/HorizontalSection';
-import Card from '../../cards/Card/Card';
-import HeadingCard from '../../cards/HeadingCard/HeadingCard';
-import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
-import Animate from '../../Layout/Animate/Animate';
+import VerticalSection from '../../../components/Layout/VerticalSection/VerticalSection';
+import HorizontalSection from '../../../components/Layout/HorizontalSection/HorizontalSection';
+import Card from '../../../components/cards/Card/Card';
+import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
+import ImportantButton from '../../../components/buttons/ImportantButton/ImportantButton';
+import Animate from '../../../components/Layout/Animate/Animate';
 
 const Contact = ({ darkMode }) => {
   return (
@@ -23,6 +23,8 @@ const Contact = ({ darkMode }) => {
           darkMode={darkMode}
           borderRadius="15px 15px 15px 15px"
           margin="1vh 1vw"
+          flexBasis="45%"
+          padding="0 2vw"
         >
           <h1
             className={`${utilStyles.headingMd} ${
@@ -45,6 +47,8 @@ const Contact = ({ darkMode }) => {
           darkMode={darkMode}
           borderRadius="15px 15px 15px 15px"
           margin="1vh 1vw"
+          flexBasis="45%"
+          padding="0 2vw"
         >
           <h1
             className={`${utilStyles.headingMd} ${

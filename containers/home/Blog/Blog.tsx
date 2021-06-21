@@ -1,13 +1,13 @@
 import React from 'react';
-import HorizontalSection from '../../Layout/HorizontalSection/HorizontalSection';
+import HorizontalSection from '../../../components/Layout/HorizontalSection/HorizontalSection';
 import BlogPreviewCard, {
   BlogPreviewCardProps as BlogPost,
-} from '../../cards/BlogPreviewCard/BlogPreviewCard';
-import HeadingCard from '../../cards/HeadingCard/HeadingCard';
+} from '../../../components/cards/BlogPreviewCard/BlogPreviewCard';
+import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
 
-import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
-import VerticalSection from '../../Layout/VerticalSection/VerticalSection';
-import Animate from '../../Layout/Animate/Animate';
+import ImportantButton from '../../../components/buttons/ImportantButton/ImportantButton';
+import VerticalSection from '../../../components/Layout/VerticalSection/VerticalSection';
+import Animate from '../../../components/Layout/Animate/Animate';
 
 const Blog = ({ darkMode, isMobile }) => {
   const blogPosts: BlogPost[] = [

@@ -1,11 +1,11 @@
 import React from 'react';
 import utilStyles from '../../../styles/utils.module.css';
-import Card from '../../cards/Card/Card';
-import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
-import HorizontalSection from '../../Layout/HorizontalSection/HorizontalSection';
-import Main from '../../Layout/Main/Main';
-import Aside from '../../Layout/Aside/Aside';
-import Animate from '../../Layout/Animate/Animate';
+import Card from '../../../components/cards/Card/Card';
+import ImportantButton from '../../../components/buttons/ImportantButton/ImportantButton';
+import HorizontalSection from '../../../components/Layout/HorizontalSection/HorizontalSection';
+import Main from '../../../components/Layout/Main/Main';
+import Aside from '../../../components/Layout/Aside/Aside';
+import Animate from '../../../components/Layout/Animate/Animate';
 
 interface IntroProps {
   darkMode: boolean;

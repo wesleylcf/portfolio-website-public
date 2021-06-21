@@ -6,7 +6,6 @@
   align-content: stretch;
   justify-content: space-between;
   position: relative;
-  max-width: calc(0.48 * 80vw);
   min-height: 40vh;
   margin: 0 1vw;
 }

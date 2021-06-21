@@ -22,13 +22,16 @@
   color: rgb(61, 69, 77);
 }
 
-.Dark {
+.Dark .SideBar {
   background-color: #222222;
   color: slategray;
 }
 
 .Light.SidebarOpen {
   background-color: rgb(226, 210, 183);
+}
+.Dark .SidebarOpen {
+  background-color: #333333;
 }
 
 .Social {
