@@ -9,6 +9,7 @@ interface LinkProps {
   navLinks: { linkTo: string; content: string; button?: boolean }[];
   linkInitialAnimateDelay?: number;
   linkAnimateDelayIncrement?: number;
+  atPage: string;
 }
 
 const Links: React.FC<LinkProps> = ({
@@ -17,15 +18,20 @@ const Links: React.FC<LinkProps> = ({
   navLinks,
   linkInitialAnimateDelay,
   linkAnimateDelayIncrement,
+  atPage,
 }) => {
   let delay = linkInitialAnimateDelay;
+
   return (
     <>
       {navLinks.map((link, index) => {
         delay += linkAnimateDelayIncrement;
         if (link.button) {
           return (
-            <Animate delay={isMobile ? 0 : delay} key={index}>
+            <Animate
+              delay={isMobile ? 0 : delay}
+              key={atPage === '/blog' ? 'blog' + index : index}
+            >
               <ImportantButton href={link.linkTo} darkMode={darkMode}>
                 {link.content}
               </ImportantButton>
@@ -38,7 +44,7 @@ const Links: React.FC<LinkProps> = ({
             content={link.content}
             isMobile={isMobile}
             animationDelay={isMobile ? 0 : delay}
-            key={index}
+            key={atPage === '/blog' ? 'blog' + index : index}
           />
         );
       })}

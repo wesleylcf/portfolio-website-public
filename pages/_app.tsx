@@ -10,7 +10,6 @@ function MyApp({ Component, pageProps }) {
     return window.innerWidth < 800;
   });
   const router = useRouter();
-  console.log(router);
   useEffect(() => {
     console.log(router.pathname);
     window.history.scrollRestoration = 'manual';
@@ -20,6 +19,7 @@ function MyApp({ Component, pageProps }) {
     console.log('changed mode!');
   };
   let links;
+  let socialLinks;
   if (router.pathname === '/') {
     links = {
       navLinks: [
@@ -32,23 +32,34 @@ function MyApp({ Component, pageProps }) {
       linkInitialAnimateDelay: 0.05,
       linkAnimateDelayIncrement: 0.15,
     };
+    socialLinks = [
+      'https://www.linkedin.com/in/wesley-lim-cher-fong/',
+      'https://www.instagram.com/wesleylcf/',
+      'https://github.com/wesleylcf',
+    ];
   } else if ((router.pathname = '/blog')) {
     links = {
       navLinks: [
         { linkTo: '#about', content: 'About' },
         { linkTo: '#projects', content: 'Projects' },
-        { linkTo: '#posts', content: 'Experience' },
+        { linkTo: '#posts', content: 'Posts' },
         ,
         {
           button: true,
-          linkTo: 'mailto:wesleylim.work@gmail.com',
-          content: 'Contact me!',
+          linkTo: '/',
+          content: 'Home',
         },
       ],
       linkInitialAnimateDelay: 0.05,
       linkAnimateDelayIncrement: 0.15,
     };
+    socialLinks = [
+      'https://www.linkedin.com/in/wesley-lim-cher-fong/',
+      'https://www.instagram.com/wesleylcf/',
+      'https://github.com/wesleylcf',
+    ];
   }
+
   console.log('pagerender');
   return (
     <Layout
@@ -57,6 +68,8 @@ function MyApp({ Component, pageProps }) {
       isMobile={isMobile}
       setIsMobile={(bool) => setIsMobile(bool)}
       onChangeColorTheme={onChangeColorTheme}
+      atPage={router.pathname}
+      socialLinks={socialLinks}
     >
       <Component {...pageProps} isDarkMode={isDarkMode} isMobile={isMobile} />
     </Layout>

@@ -15,6 +15,8 @@ interface SidebarProps {
     linkInitialAnimateDelay?: number;
     linkAnimateDelayIncrement?: number;
   };
+  socialLinks: string[];
+  atPage: string;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -24,6 +26,8 @@ const Sidebar: React.FC<SidebarProps> = ({
   isMobile,
   darkMode,
   links,
+  socialLinks,
+  atPage,
 }) => {
   return (
     <>
@@ -36,10 +40,20 @@ const Sidebar: React.FC<SidebarProps> = ({
         {isModal ? (
           <>
             <ul className={styles.Links}>
-              <Links darkMode={darkMode} isMobile={isMobile} {...links} />
+              <Links
+                darkMode={darkMode}
+                isMobile={isMobile}
+                {...links}
+                atPage={atPage}
+              />
             </ul>
             <div className={styles.Social}>
-              <Social width="40px" darkMode={darkMode} />
+              <Social
+                width="40px"
+                darkMode={darkMode}
+                links={socialLinks}
+                atPage={atPage}
+              />
             </div>
           </>
         ) : null}

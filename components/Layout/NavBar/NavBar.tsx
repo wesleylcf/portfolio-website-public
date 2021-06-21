@@ -16,12 +16,24 @@ interface NavBarProps {
     linkInitialAnimateDelay?: number;
     linkAnimateDelayIncrement?: number;
   };
+  atPage: string;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ isMobile, hide, darkMode, links }) => {
+const NavBar: React.FC<NavBarProps> = ({
+  isMobile,
+  hide,
+  darkMode,
+  links,
+  atPage,
+}) => {
   let linksPlaceHolder = (
     <ol className={styles.Links}>
-      <Links darkMode={darkMode} isMobile={isMobile} {...links} />
+      <Links
+        darkMode={darkMode}
+        isMobile={isMobile}
+        {...links}
+        atPage={atPage}
+      />
     </ol>
   );
   if (typeof isMobile === 'undefined' || isMobile) {

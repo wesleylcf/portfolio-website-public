@@ -17,6 +17,8 @@ interface LayoutProps {
   isMobile: boolean;
   onChangeColorTheme: () => void;
   setIsMobile: (bool) => void;
+  atPage: string;
+  socialLinks: string[];
 }
 
 const Layout: React.FC<LayoutProps> = ({
@@ -26,6 +28,8 @@ const Layout: React.FC<LayoutProps> = ({
   onChangeColorTheme,
   isMobile,
   setIsMobile,
+  atPage,
+  socialLinks,
 }) => {
   const [scrollY, setScrollY] = useState(() => {
     if (typeof window === 'undefined') return undefined;
@@ -109,6 +113,7 @@ const Layout: React.FC<LayoutProps> = ({
         hide={hideComponents}
         darkMode={isDarkMode}
         links={links}
+        atPage={atPage}
       />
 
       <div className={styles.Container}>
@@ -124,13 +129,19 @@ const Layout: React.FC<LayoutProps> = ({
           isMobile={isMobile}
           darkMode={isDarkMode}
           links={links}
+          socialLinks={socialLinks}
+          atPage={atPage}
         />
       ) : null}
       {typeof isMobile === 'undefined' || isMobile ? null : (
         <div className={styles.Social}>
-          <Animate delay={isMobile ? 0 : 2}>
-            <Social width="60px" hide={hideComponents} darkMode={isDarkMode} />
-          </Animate>
+          <Social
+            width="60px"
+            hide={hideComponents}
+            darkMode={isDarkMode}
+            atPage={atPage}
+            links={socialLinks}
+          />
         </div>
       )}
     </div>

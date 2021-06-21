@@ -41,8 +41,11 @@ img {
   max-width: 100%;
   display: block;
 }
-::marker {
+.dark ::marker {
   color: turquoise;
+}
+.light ::marker {
+  color: teal;
 }
 .slide-right {
   width: 100%;

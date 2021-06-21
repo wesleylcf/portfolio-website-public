@@ -4,10 +4,15 @@ import { motion } from 'framer-motion';
 
 interface AnimateProps {
   delay: number;
+  notTriggerOnce?: boolean;
 }
 
-const Animate: React.FC<AnimateProps> = ({ children, delay = 0 }) => {
-  const [ref, inView] = useInView({ triggerOnce: true });
+const Animate: React.FC<AnimateProps> = ({
+  children,
+  delay = 0,
+  notTriggerOnce,
+}) => {
+  const [ref, inView] = useInView(notTriggerOnce ? {} : { triggerOnce: true });
   return (
     <motion.div
       ref={ref}
