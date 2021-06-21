@@ -62,7 +62,6 @@ const About = ({ darkMode }) => {
                 I play the guitar pretty well (though the genre is a bit unique
                 @Tommy Emmanuel)
               </li>
-              <li>I am single (shameless plug)</li>
             </ul>
           </Animate>
         </Card>

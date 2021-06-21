@@ -28,9 +28,9 @@ const Projects = ({ darkMode }) => {
             imageSrc="jj.jpg"
           />
           <ProjectCard
-            heading="Journalify"
+            heading="Journalify (web app)"
             languages={['Next.js', 'mongoDB', 'Typescript']}
-            description="A web app version of Journalify that allows sharing of Journals"
+            description="A web app version of Journalify which allows users share their Journals"
             imageSrc="jj.jpg"
           />
           <ImportantButton darkMode={darkMode} href="/blog/p    rojects">

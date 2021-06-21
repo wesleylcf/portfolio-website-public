@@ -8,6 +8,7 @@
   position: relative;
   min-height: 40vh;
   margin: 0 1vw;
+  max-width: 40vw;
 }
 
 .ShowDarkBackground {
@@ -39,10 +40,17 @@
 .BlogPost {
   margin: 0 0.5vw;
   min-height: 30vh;
+  min-width: 0vw;
 }
 
 .ShowBackground .Light {
   background-color: burlywood;
+}
+
+@media screen and (max-width: 1200px) {
+  .Card {
+    max-width: 60vw;
+  }
 }
 
 @media screen and (max-width: 800px) {

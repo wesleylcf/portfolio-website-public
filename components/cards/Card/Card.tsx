@@ -9,7 +9,6 @@ interface CardProps {
   margin?: string;
   borderRadius?: string;
   padding?: string;
-
   darkMode?: boolean;
   blog?: boolean;
 }

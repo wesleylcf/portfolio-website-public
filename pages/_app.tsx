@@ -40,9 +40,9 @@ function MyApp({ Component, pageProps }) {
   } else if ((router.pathname = '/blog')) {
     links = {
       navLinks: [
-        { linkTo: '#about', content: 'About' },
-        { linkTo: '#projects', content: 'Projects' },
-        { linkTo: '#posts', content: 'Posts' },
+        { linkTo: '/blog/about', content: 'About' },
+        { linkTo: '/blog/projects', content: 'Projects' },
+        { linkTo: '/blog/posts', content: 'Posts' },
         ,
         {
           button: true,

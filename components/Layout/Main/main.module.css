@@ -8,6 +8,12 @@
   max-width: calc(0.6 * 80vw);
 }
 
+@media screen and (max-width: 1200px) {
+  .Main {
+    min-width: 60vw;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .Main {
     min-height: 40vh;
