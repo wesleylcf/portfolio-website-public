@@ -23,8 +23,6 @@ const social: React.FC<SocialProps> = ({
     `${styles.SocialIcon2} ${hide ? styles.Hide2 : ''}`,
     `${styles.SocialIcon3} ${hide ? styles.Hide3 : ''}`,
   ];
-  console.log('socialrender');
-  console.log(links);
   return (
     <Animate delay={2}>
       {links.map((link, index) => {

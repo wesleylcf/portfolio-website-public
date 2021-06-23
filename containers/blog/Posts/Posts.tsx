@@ -1,17 +1,50 @@
 import React from 'react';
+import Main from '../../../components/Layout/Main/Main';
+import VerticalSection from '../../../components/Layout/VerticalSection/VerticalSection';
+import Card from '../../../components/cards/Card/Card';
+import utilStyles from '../../../styles/utils.module.css';
 
-const Posts = () => {
-  return <div></div>;
-};
-
-export async function getStaticProps(context) {
-  const db = fetch(
-    `https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID}/query`
+const Posts = ({ posts, darkMode }) => {
+  console.log(posts);
+  return (
+    <VerticalSection>
+      <Main>
+        {posts.map(({ title, createdAt, tags }, index) => {
+          return (
+            <Card
+              key={index}
+              side="center"
+              darkMode={darkMode}
+              showBackground
+              margin="2vh 0"
+              minHeight="30vh"
+              isPreview
+              previewLink={`http://localhost:3000/blog/posts/${title.replaceAll(
+                ' ',
+                '-'
+              )}`}
+            >
+              <h1
+                className={`${utilStyles.headingMd} ${
+                  darkMode ? utilStyles.ColorT : utilStyles.ColorTLight
+                }`}
+              >
+                {title}
+              </h1>
+              <p
+                className={
+                  darkMode ? utilStyles.ColorP : utilStyles.ColorPLight
+                }
+              >
+                {createdAt}
+              </p>
+              <p>{tags.replaceAll(',', ' / ')}</p>
+            </Card>
+          );
+        })}
+      </Main>
+    </VerticalSection>
   );
-  console.log(db);
-  return {
-    props: {}, // will be passed to the page component as props
-  };
-}
+};
 
 export default Posts;

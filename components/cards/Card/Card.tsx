@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './card.module.css';
+import Link from 'next/link';
 
 interface CardProps {
   showBackground?: boolean;
@@ -11,6 +12,8 @@ interface CardProps {
   padding?: string;
   darkMode?: boolean;
   blog?: boolean;
+  isPreview?: boolean;
+  previewLink?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -24,6 +27,8 @@ const Card: React.FC<CardProps> = ({
   padding,
   blog,
   darkMode,
+  isPreview,
+  previewLink,
 }) => {
   let style = {
     minHeight,
@@ -48,6 +53,26 @@ const Card: React.FC<CardProps> = ({
   if (padding) {
     style.padding = padding;
   }
+  if (isPreview) {
+    return (
+      <article className={styles.Preview}>
+        <Link href={previewLink}>
+          <a
+            className={`${styles.Card} ${
+              showBackground
+                ? darkMode
+                  ? styles.ShowDarkBackground
+                  : styles.ShowLightBackground
+                : ''
+            }`}
+            style={style}
+          >
+            {children}
+          </a>
+        </Link>
+      </article>
+    );
+  }
   return (
     <article
       className={`${styles.Card} ${
@@ -56,7 +81,7 @@ const Card: React.FC<CardProps> = ({
             ? styles.ShowDarkBackground
             : styles.ShowLightBackground
           : ''
-      } ${blog ? styles.BlogPost : ''} `}
+      } ${blog ? styles.BlogPost : ''} ${isPreview ? styles.Preview : ''}`}
       style={style}
     >
       {children}

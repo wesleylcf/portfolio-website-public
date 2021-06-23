@@ -10,7 +10,7 @@ export interface BlogPreviewCardProps {
   title: string;
   date: string;
   previewImage?: string;
-  tags: string[];
+  tags: string;
   description: string;
   darkMode?: boolean;
   animateDelay?: number;
@@ -59,11 +59,7 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
                     darkMode ? utilStyles.ColorA : utilStyles.ColorALight
                   } ${styles.CoverTags}`}
                 >
-                  {tags.reduce((prev, cur) => {
-                    prev += cur;
-                    prev += ' / ';
-                    return prev;
-                  }, '')}
+                  {tags.replaceAll(',', ' / ')}
                 </span>
               </p>
               <h2

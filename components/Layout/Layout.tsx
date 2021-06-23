@@ -99,8 +99,6 @@ const Layout: React.FC<LayoutProps> = ({
   const onClickMenu = () => {
     setIsModal(!isModal);
   };
-
-  console.log('layoutrender');
   return (
     <div
       className={`${styles.Layout} ${isModal ? styles.ModalOpen : ''} ${

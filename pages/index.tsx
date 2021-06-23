@@ -9,7 +9,6 @@ import Contact from '../containers/home/Contact/Contact';
 import ThemeContext from '../contexts/ThemeContext';
 
 export default function Home({ isDarkMode, isMobile }) {
-  console.log('indexrender');
   return (
     <>
       <Intro darkMode={isDarkMode} isMobile={isMobile} />

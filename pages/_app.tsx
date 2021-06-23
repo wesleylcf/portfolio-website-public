@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
   } else if ((router.pathname = '/blog')) {
     links = {
       navLinks: [
-        { linkTo: '/blog/about', content: 'About' },
+        { linkTo: '/blog', content: 'About' },
         { linkTo: '/blog/projects', content: 'Projects' },
         { linkTo: '/blog/posts', content: 'Posts' },
         ,
@@ -60,7 +60,6 @@ function MyApp({ Component, pageProps }) {
     ];
   }
 
-  console.log('pagerender');
   return (
     <Layout
       links={links}

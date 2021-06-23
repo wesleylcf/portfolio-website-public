@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import VerticalSection from '../../../components/Layout/VerticalSection/VerticalSection';
 import Card from '../../../components/cards/Card/Card';
 import Main from '../../../components/Layout/Main/Main';
@@ -44,11 +44,10 @@ const Projects: React.FC<ProjectsProps> = ({ projects, darkMode }) => {
             heading = null;
           }
           return (
-            <>
+            <Fragment key={index}>
               {heading}
               <Card
                 side="center"
-                key={index}
                 showBackground
                 darkMode={darkMode}
                 borderRadius="15px"
@@ -72,7 +71,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects, darkMode }) => {
                   View Project
                 </ImportantButton>
               </Card>
-            </>
+            </Fragment>
           );
         })}
       </Main>

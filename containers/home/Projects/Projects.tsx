@@ -33,7 +33,7 @@ const Projects = ({ darkMode }) => {
             description="A web app version of Journalify which allows users share their Journals"
             imageSrc="jj.jpg"
           />
-          <ImportantButton darkMode={darkMode} href="/blog/p    rojects">
+          <ImportantButton darkMode={darkMode} href="/blog/projects">
             All Projects
           </ImportantButton>
         </Card>

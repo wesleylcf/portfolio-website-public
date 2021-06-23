@@ -4,7 +4,6 @@ import BlogPreviewCard, {
   BlogPreviewCardProps as BlogPost,
 } from '../../../components/cards/BlogPreviewCard/BlogPreviewCard';
 import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
-
 import ImportantButton from '../../../components/buttons/ImportantButton/ImportantButton';
 import VerticalSection from '../../../components/Layout/VerticalSection/VerticalSection';
 import Animate from '../../../components/Layout/Animate/Animate';
@@ -14,21 +13,21 @@ const Blog = ({ darkMode, isMobile }) => {
     {
       title: 'blog post 1',
       date: '09/06/2000',
-      tags: ['React', 'Typescript'],
+      tags: 'React,Typescript',
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s... ",
     },
     {
       title: 'blog post 2',
       date: '09/06/2000',
-      tags: ['React', 'Typescript'],
+      tags: 'React,Typescript',
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500... ",
     },
     {
       title: 'blog post 3',
       date: '09/06/2000',
-      tags: ['React', 'Typescript'],
+      tags: 'React,Typescript',
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...",
     },

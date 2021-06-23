@@ -32,7 +32,7 @@ const projectCard: React.FC<ProjectCardProps> = ({
             <p className={utilStyles.ColorP}>[ {lang} ]</p>
             <p className={utilStyles.ColorA}>{description}</p>
             <ImportantButton
-              href={`/projects/${heading}`}
+              href={`/blog/projects/${heading}`}
               darkMode
               isProjectComponent
             >
