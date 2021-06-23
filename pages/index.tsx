@@ -1,22 +1,32 @@
-import Layout from '../components/Layout/Layout';
-import React, { useState, useEffect, useContext } from 'react';
+import React from 'react';
 import Intro from '../containers/home/Intro/Intro';
 import About from '../containers/home/About/About';
 import Projects from '../containers/home/Projects/Projects';
 import Experience from '../containers/home/Experience/Experience';
 import Blog from '../containers/home/Blog/Blog';
 import Contact from '../containers/home/Contact/Contact';
-import ThemeContext from '../contexts/ThemeContext';
+import getPosts from './api/posts/getPosts';
+import getProjects from './api/projects';
 
-export default function Home({ isDarkMode, isMobile }) {
+const Home = ({ isDarkMode, isMobile, posts, projects }) => {
   return (
     <>
       <Intro darkMode={isDarkMode} isMobile={isMobile} />
       <About darkMode={isDarkMode} />
-      <Projects darkMode={isDarkMode} />
+      <Projects darkMode={isDarkMode} projects={projects} />
       <Experience darkMode={isDarkMode} />
-      <Blog darkMode={isDarkMode} isMobile={isMobile} />
+      <Blog darkMode={isDarkMode} isMobile={isMobile} posts={posts} />
       <Contact darkMode={isDarkMode} />
     </>
   );
+};
+
+export async function getStaticProps(context) {
+  const posts = await getPosts();
+  const projects = await getProjects();
+  return {
+    props: { posts: posts, projects: projects },
+  };
 }
+
+export default Home;

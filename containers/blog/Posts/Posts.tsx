@@ -5,7 +5,6 @@ import Card from '../../../components/cards/Card/Card';
 import utilStyles from '../../../styles/utils.module.css';
 
 const Posts = ({ posts, darkMode }) => {
-  console.log(posts);
   return (
     <VerticalSection>
       <Main>
@@ -13,6 +12,7 @@ const Posts = ({ posts, darkMode }) => {
           return (
             <Card
               key={index}
+              borderRadius="15px"
               side="center"
               darkMode={darkMode}
               showBackground
@@ -28,6 +28,7 @@ const Posts = ({ posts, darkMode }) => {
                 className={`${utilStyles.headingMd} ${
                   darkMode ? utilStyles.ColorT : utilStyles.ColorTLight
                 }`}
+                style={{ textAlign: 'center', textDecoration: 'underline' }}
               >
                 {title}
               </h1>

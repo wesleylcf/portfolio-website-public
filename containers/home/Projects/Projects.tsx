@@ -8,8 +8,14 @@ import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
 import Main from '../../../components/Layout/Main/Main';
 import Aside from '../../../components/Layout/Aside/Aside';
 import Animate from '../../../components/Layout/Animate/Animate';
+import { Project } from '../../../pages/api/projects';
 
-const Projects = ({ darkMode }) => {
+interface ProjectsProps {
+  darkMode: boolean;
+  projects: Project[];
+}
+
+const Projects: React.FC<ProjectsProps> = ({ darkMode, projects }) => {
   return (
     <Section dividerId="experience">
       <Main order={1}>
@@ -20,19 +26,17 @@ const Projects = ({ darkMode }) => {
           darkMode={darkMode}
         />
         <Card side="center">
-          <ProjectCard
-            heading="Journalify"
-            languages={['React', 'Express', 'Typescript', 'Commander']}
-            description="A code/markdown editor that is
-            launched from the CLI and saves to the user's machine"
-            imageSrc="jj.jpg"
-          />
-          <ProjectCard
-            heading="Journalify (web app)"
-            languages={['Next.js', 'mongoDB', 'Typescript']}
-            description="A web app version of Journalify which allows users share their Journals"
-            imageSrc="jj.jpg"
-          />
+          {projects.map(({ title, tags, description }, index) => {
+            return (
+              <ProjectCard
+                heading={title}
+                languages={tags}
+                description={description}
+                imageSrc="journalify.jpg"
+                key={index}
+              />
+            );
+          })}
           <ImportantButton darkMode={darkMode} href="/blog/projects">
             All Projects
           </ImportantButton>

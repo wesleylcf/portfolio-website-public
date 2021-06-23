@@ -1,7 +1,6 @@
 import React from 'react';
 import Posts from '../../../containers/blog/Posts/Posts';
-
-import getPosts from '../../api/posts/index';
+import getPosts from '../../api/posts/getPosts';
 
 const index = ({ posts, isDarkMode }) => {
   return (

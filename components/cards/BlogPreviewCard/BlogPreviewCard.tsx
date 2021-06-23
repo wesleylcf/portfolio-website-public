@@ -33,7 +33,7 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
             <div className={styles.Cover}>
               {previewImage ? (
                 <Image
-                  src={`/images/${previewImage}`}
+                  src={previewImage}
                   layout="fill"
                   className={styles.Image}
                 />

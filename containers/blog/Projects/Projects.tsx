@@ -5,14 +5,10 @@ import Main from '../../../components/Layout/Main/Main';
 import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
 import utilStyles from '../../../styles/utils.module.css';
 import ImportantButton from '../../../components/buttons/ImportantButton/ImportantButton';
+import { Project } from '../../../pages/api/projects';
 
 interface ProjectsProps {
-  projects: {
-    url: string;
-    heading: string;
-    languages: string;
-    description: string;
-  }[];
+  projects: Project[];
   darkMode: boolean;
 }
 
@@ -57,17 +53,23 @@ const Projects: React.FC<ProjectsProps> = ({ projects, darkMode }) => {
                     darkMode ? utilStyles.ColorT : utilStyles.ColorTLight
                   }`}
                 >
-                  {project.heading}
+                  {project.title}
                 </h1>
                 <p
                   className={
                     darkMode ? utilStyles.ColorP : utilStyles.ColorPLight
                   }
                 >
-                  {project.languages}
+                  {project.tags.replaceAll(' ', ' / ')}
                 </p>
                 <p>{project.description}</p>
-                <ImportantButton href={project.url} darkMode={darkMode}>
+                <ImportantButton
+                  href={`http://localhost:3000/blog/projects/${project.title.replaceAll(
+                    ' ',
+                    '-'
+                  )}`}
+                  darkMode={darkMode}
+                >
                   View Project
                 </ImportantButton>
               </Card>

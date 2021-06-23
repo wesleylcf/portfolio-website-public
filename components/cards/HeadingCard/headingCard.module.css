@@ -11,6 +11,7 @@
   height: 20vh;
   justify-self: center;
   align-self: center;
+  max-width: 60%;
 }
 
 .Header {
