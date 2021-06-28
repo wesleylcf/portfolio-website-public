@@ -45,6 +45,7 @@ const Links: React.FC<LinkProps> = ({
             isMobile={isMobile}
             animationDelay={isMobile ? 0 : delay}
             key={atPage === '/blog' ? 'blog' + index : index}
+            darkMode={darkMode}
           />
         );
       })}

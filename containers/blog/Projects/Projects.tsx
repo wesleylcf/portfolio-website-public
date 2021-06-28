@@ -21,8 +21,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects, darkMode }) => {
           if (index === 0) {
             heading = (
               <HeadingCard
-                number="Current"
-                content="project"
+                number=""
+                content="Current"
                 darkMode={darkMode}
                 order={0}
               />
@@ -30,8 +30,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects, darkMode }) => {
           } else if (index === 1) {
             heading = (
               <HeadingCard
-                number="Completed"
-                content="projects"
+                number=""
+                content="Completed"
                 darkMode={darkMode}
                 order={0}
               />

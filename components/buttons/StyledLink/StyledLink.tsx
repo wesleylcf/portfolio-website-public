@@ -9,6 +9,7 @@ interface StyledLinkProps {
   linkTo: string;
   isMobile: boolean;
   animationDelay: number;
+  darkMode: boolean;
 }
 
 const StyledLink: React.FC<StyledLinkProps> = ({
@@ -16,6 +17,7 @@ const StyledLink: React.FC<StyledLinkProps> = ({
   linkTo,
   isMobile,
   animationDelay,
+  darkMode,
 }) => {
   const [ref, inView] = useInView({ triggerOnce: true });
   if (isMobile) {
@@ -23,7 +25,14 @@ const StyledLink: React.FC<StyledLinkProps> = ({
       <div className={styles.ListItemWrapper}>
         <li>
           <Link href={linkTo}>
-            <a className={styles.StyledLink}>{content}</a>
+            <a
+              className={`${styles.StyledLink} ${
+                darkMode ? styles.Dark : styles.Light
+              }`}
+            >
+              <span className={styles.underline}></span>
+              {content}
+            </a>
           </Link>
         </li>
       </div>
@@ -42,7 +51,14 @@ const StyledLink: React.FC<StyledLinkProps> = ({
     >
       <li>
         <Link href={linkTo}>
-          <a className={styles.StyledLink}>{content}</a>
+          <a
+            className={`${styles.StyledLink} ${
+              darkMode ? styles.Dark : styles.Light
+            }`}
+          >
+            {content}
+            <div className={styles.underline}></div>
+          </a>
         </Link>
       </li>
     </motion.div>

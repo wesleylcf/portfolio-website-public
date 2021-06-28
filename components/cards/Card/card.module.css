@@ -22,15 +22,6 @@
   background-color: rgb(226, 210, 183);
 }
 
-.Light {
-  background-color: rgb(255, 178, 76);
-}
-
-/* .Card:hover {
-  background-color: #272727;
-  border-radius: 10px;
-} */
-
 .HideBackground {
   background-color: #222222;
 }
@@ -45,14 +36,16 @@
   min-width: 0vw;
 }
 
-.ShowBackground .Light {
-  background-color: burlywood;
+.Preview .Card:hover {
+  cursor: pointer;
 }
 
-.Preview .Card:hover {
+.Preview .ShowDarkBackground:hover {
   background-color: #333333;
-  transform: translate3d(0, -0.5vh, 0);
-  cursor: pointer;
+}
+
+.Preview .ShowLightBackground:hover {
+  background-color: rgb(224, 201, 160);
 }
 
 .Preview a {
@@ -60,15 +53,18 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .Card {
+  .Card,
+  .Preview {
     max-width: 60vw;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .Card {
+  .Card,
+  .Preview {
     padding: 0vh 5vw;
-    max-width: 80vw;
+    min-width: 80vw;
+    min-height: 30vh;
   }
   .BlogPost {
     width: 80vw;

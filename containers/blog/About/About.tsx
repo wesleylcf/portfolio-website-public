@@ -26,10 +26,12 @@ const About = ({ darkMode }) => {
           <Animate delay={0.95}>
             <p>
               Hi there! My name is Wesley and I'm currently pursuing Computer
-              Science at the Nanyang Technological Unviersity(2021-2024). I
-              picked up programming as I was influenced by my siblings and while
-              serving National Service, I took up a bunch of courses in a sort
-              of BFS manner to find a direction I can work towards.
+              Science at the Nanyang Technological Unviersity(2021-2024).
+            </p>
+            <p>
+              I picked up programming as I was influenced by my siblings and
+              while serving National Service, I took up a bunch of courses in a
+              sort of BFS manner to find a direction I can work towards.
             </p>
           </Animate>
           <Animate delay={1.1}>
@@ -44,7 +46,7 @@ const About = ({ darkMode }) => {
           </Animate>
           <Animate delay={1.25}>
             <p>
-              In the future, I hope to be able to work in a big tech company,
+              In the future, I hope to be able to work in companies like Google,
               which I think would be an invaluable experience and asset to my
               growth as a software engineer.
             </p>

@@ -55,7 +55,9 @@ const Card: React.FC<CardProps> = ({
   }
   if (isPreview) {
     return (
-      <article className={styles.Preview}>
+      <article
+        className={`${styles.Preview} ${darkMode ? styles.Dark : styles.Light}`}
+      >
         <Link href={previewLink}>
           <a
             className={`${styles.Card} ${

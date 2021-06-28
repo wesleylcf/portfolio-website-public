@@ -21,6 +21,7 @@
   height: 20vh;
   position: relative;
   margin: 0 0.5vw;
+  border-radius: 15px 15px 0 0;
 }
 
 .Image {

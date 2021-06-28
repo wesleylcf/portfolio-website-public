@@ -17,7 +17,6 @@ export default async function getPosts() {
   const pages = await notion.databases.query({
     database_id: databaseId,
   });
-  console.log(pages.results[0].properties.name);
   const posts: Post[] = [];
   let postsAdded = 0;
   for (let page of pages.results) {

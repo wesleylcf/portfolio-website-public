@@ -4,19 +4,23 @@ import { useEffect, useState } from 'react';
 import Layout from '../components/Layout/Layout';
 
 function MyApp({ Component, pageProps }) {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMobile, setIsMobile] = useState(() => {
     if (typeof window === 'undefined') return undefined;
     return window.innerWidth < 800;
   });
   const router = useRouter();
-  useEffect(() => {
-    console.log(router.pathname);
-    window.history.scrollRestoration = 'manual';
-  }, [router.pathname]);
+  // useEffect(() => {
+  //   console.log(router.pathname);
+  //   window.history.scrollRestoration = 'manual';
+  // }, [router.pathname]);
   const onChangeColorTheme = () => {
+    if (isDarkMode) {
+      document.body.classList.remove('dark');
+    } else {
+      document.body.classList.add('dark');
+    }
     setIsDarkMode(!isDarkMode);
-    console.log('changed mode!');
   };
   let links;
   let socialLinks;

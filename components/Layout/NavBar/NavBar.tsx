@@ -50,7 +50,7 @@ const NavBar: React.FC<NavBarProps> = ({
         <a className={styles.ProfileWrapper}>
           <Image
             priority
-            src="/images/V.svg"
+            src={`/images/${darkMode ? 'Vdark.svg' : 'Vlight.svg'}`}
             className={utilStyles.borderCircle}
             height={70}
             width={70}

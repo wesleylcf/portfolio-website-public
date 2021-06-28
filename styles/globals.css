@@ -6,35 +6,32 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.5;
   font-size: 1.7vh;
-  background-color: #222222;
 }
 
 * {
   box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 0.5vw;
-  z-index: 2;
-  background-color: #222222;
-}
-
-::-webkit-scrollbar + .light {
-  width: 0.5vw;
-  z-index: 2;
   background-color: papayawhip;
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: slategray;
+.dark::-webkit-scrollbar-track {
+  background: #222222;
+}
+body::-webkit-scrollbar-track {
+  background: papayawhip;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(61, 69, 77);
   border-radius: 10px;
   z-index: 2;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: blanchedalmond;
+.dark body::-webkit-scrollbar-thumb:hover {
+  background: slategray;
 }
 
 img {

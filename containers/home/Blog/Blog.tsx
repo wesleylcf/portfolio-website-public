@@ -32,7 +32,11 @@ const Blog: React.FC<BlogProps> = ({ darkMode, isMobile, posts }) => {
               date={post.createdAt}
               tags={post.tags}
               description=""
-              previewImage={post.imageUrl}
+              previewImage={
+                post.tags.includes('Personal')
+                  ? `/images/${darkMode ? 'Vdark.svg' : 'Vlight.svg'}`
+                  : post.imageUrl
+              }
               key={index}
               darkMode={darkMode}
               animateDelay={animateDelay}

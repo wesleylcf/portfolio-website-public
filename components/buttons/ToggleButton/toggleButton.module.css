@@ -35,8 +35,6 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
   border-radius: 34px;
   -webkit-transform: translateY(0px);
   -ms-transform: translateY(0px);
@@ -51,8 +49,6 @@
   left: 4px;
   bottom: 4px;
   background-color: #333333;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
   -webkit-transform: translateY(0px);
   -ms-transform: translateY(0px);
   transform: translateY(0px);
@@ -72,6 +68,4 @@ input:checked + .Slider:before {
   -ms-transform: translateY(-26px);
   transform: translateY(-26px);
   background-color: papayawhip;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
 }

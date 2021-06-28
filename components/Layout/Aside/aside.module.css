@@ -8,6 +8,12 @@
   max-width: calc(0.4 * 80vw);
 }
 
+@media screen and (max-width: 1200px) {
+  .Aside {
+    min-height: 50vh;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .Aside {
     min-height: 25vh;

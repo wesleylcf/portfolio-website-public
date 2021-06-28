@@ -29,7 +29,7 @@ const SkillBarCard: React.FC<SkillBarCardProps> = ({ skills, darkMode }) => {
                 <div
                   className={`${styles.Skill} ${
                     darkMode ? utilStyles.ColorA : utilStyles.ColorDefaultLight
-                  }`}
+                  } ${darkMode ? styles.Dark : styles.Light}`}
                 >
                   {skill.skill}
                 </div>

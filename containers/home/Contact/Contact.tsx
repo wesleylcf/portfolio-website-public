@@ -58,10 +58,10 @@ const Contact = ({ darkMode }) => {
             For the curious Visitor
           </h1>
           <p>
-            Thanks for reading up till here! If you're interested, I write a lot
-            more at my blog!
+            Thanks for reading up till here! If you're interested I write a lot
+            more at my blog:
           </p>
-          <ImportantButton href="/blog/posts" darkMode={darkMode}>
+          <ImportantButton href="/blog" darkMode={darkMode}>
             Blog
           </ImportantButton>
         </Card>

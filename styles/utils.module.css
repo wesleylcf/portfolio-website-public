@@ -125,7 +125,7 @@
   color: slategray;
   padding: 0 2vw;
   text-align: center;
-  line-height: 4vw;
+  line-height: 4.5vw;
 }
 
 .BigQuoteLight {
@@ -133,7 +133,7 @@
   color: rgb(61, 69, 77);
   padding: 0 2vw;
   text-align: center;
-  line-height: 4vw;
+  line-height: 4.5vw;
 }
 
 .Unordered li::marker {
