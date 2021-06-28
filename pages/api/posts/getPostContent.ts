@@ -58,6 +58,5 @@ export default async function getPostContent(name) {
     }
     pageContent.push(pageBlock);
   }
-  console.log(pageContent);
   return pageContent;
 }

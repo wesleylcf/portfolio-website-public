@@ -2,6 +2,7 @@ import styles from './notionBlock.module.css';
 import React from 'react';
 import { PageBlock } from '../../../pages/api/posts/getPostContent';
 import utilStyles from '../../../styles/utils.module.css';
+import NotionText from '../NotionText/NotionText';
 
 interface NotionBlockProps {
   pageBlocks: PageBlock[];
@@ -30,16 +31,40 @@ const NotionBlock: React.FC<NotionBlockProps> = ({
       switch (type) {
         case 'bulleted_list_item':
         case 'numbered_list_item':
-          return <li>{content}</li>;
+          return (
+            <li>
+              <NotionText href={href} link={link} annotations={annotations}>
+                {content}
+              </NotionText>
+            </li>
+          );
         case 'heading_1':
         case 'heading_2':
-          return <span key={index}>{content}</span>;
+          return (
+            <span key={index}>
+              <NotionText href={href} link={link} annotations={annotations}>
+                {content}
+              </NotionText>
+            </span>
+          );
 
         case 'paragraph':
-          return <span key={index}>{content}</span>;
+          return (
+            <span key={index}>
+              <NotionText href={href} link={link} annotations={annotations}>
+                {content}
+              </NotionText>
+            </span>
+          );
 
         default:
-          return <p>{content}</p>;
+          return (
+            <p>
+              <NotionText href={href} link={link} annotations={annotations}>
+                {content}
+              </NotionText>
+            </p>
+          );
       }
     }
   );

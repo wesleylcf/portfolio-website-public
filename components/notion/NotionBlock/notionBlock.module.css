@@ -1,0 +1,9 @@
+.Heading {
+  align-self: flex-start;
+  margin-top: 7vh;
+}
+
+.Paragraph {
+  margin-left: 2.5%;
+  align-self: flex-start;
+}

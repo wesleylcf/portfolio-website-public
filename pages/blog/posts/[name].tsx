@@ -4,7 +4,7 @@ import getNames from '../../api/posts/getNames';
 import Main from '../../../components/Layout/Main/Main';
 import VerticalSection from '../../../components/Layout/VerticalSection/VerticalSection';
 import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
-import NotionBlock from '../../../components/Layout/NotionText/NotionBlock';
+import NotionBlock from '../../../components/notion/NotionBlock/NotionBlock';
 
 interface PostProps {
   pageContent: PageBlock[][];
