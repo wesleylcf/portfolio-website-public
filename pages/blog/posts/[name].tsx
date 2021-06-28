@@ -1,30 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import getPostContent, { PageBlock } from '../../api/posts/getPostContent';
 import getNames from '../../api/posts/getNames';
 import Main from '../../../components/Layout/Main/Main';
 import VerticalSection from '../../../components/Layout/VerticalSection/VerticalSection';
 import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
-import Card from '../../../components/cards/Card/Card';
-import utilStyles from '../../../styles/utils.module.css';
+import NotionBlock from '../../../components/Layout/NotionText/NotionBlock';
 
 interface PostProps {
-  pageContent: PageBlock[];
+  pageContent: PageBlock[][];
   title: string;
   isDarkMode: boolean;
 }
 
-const headingColorMap = {
-  darkMode: [utilStyles.ColorT, utilStyles.ColorP, utilStyles.ColorA],
-  lightMode: [
-    utilStyles.ColorTLight,
-    utilStyles.ColorPLight,
-    utilStyles.ColorALight,
-  ],
-};
-
 const Post: React.FC<PostProps> = ({ pageContent, title, isDarkMode }) => {
   if (typeof pageContent !== 'undefined' && typeof title !== 'undefined') {
-    let switchHeadingColor = 0;
+    let headingColorNumber = 0;
     return (
       <VerticalSection>
         <HeadingCard
@@ -34,36 +24,27 @@ const Post: React.FC<PostProps> = ({ pageContent, title, isDarkMode }) => {
           darkMode={isDarkMode}
         />
         <Main>
-          {pageContent.map(({ type, content }, index) => {
-            if (type === 'heading_2') {
-              switchHeadingColor =
-                switchHeadingColor === 2 ? 0 : switchHeadingColor + 1;
-              return (
-                <h1
-                  key={index}
-                  className={
-                    isDarkMode
-                      ? headingColorMap.darkMode[switchHeadingColor]
-                      : headingColorMap.lightMode[switchHeadingColor]
-                  }
-                  style={{ alignSelf: 'flex-start', marginTop: '7vh' }}
-                >
-                  {content}
-                </h1>
-              );
+          {pageContent.map((pageBlocks, index) => {
+            if (
+              pageBlocks[0].type === 'heading_1' ||
+              pageBlocks[0].type === 'heading_2'
+            ) {
+              headingColorNumber =
+                headingColorNumber === 2 ? 0 : headingColorNumber + 1;
             }
-            if (type === 'paragraph') {
-              return (
-                <p key={index} style={{ maxWidth: '95%', alignSelf: 'center' }}>
-                  {content}
-                </p>
-              );
-            }
+            return (
+              <NotionBlock
+                key={index}
+                pageBlocks={pageBlocks}
+                isDarkMode={isDarkMode}
+                headingColor={headingColorNumber}
+              />
+            );
           })}
         </Main>
-        <p>
-          If you have any feedback or spot a bug you can reach me{' '}
-          <a href="mailto:wesleylim.work@gmail.com">here</a>
+        <p style={{ marginTop: '7vh' }}>
+          If you have any feedback, spot a bug/error, or just want to talk, you
+          can reach me <a href="mailto:wesleylim.work@gmail.com">here</a>
         </p>
       </VerticalSection>
     );

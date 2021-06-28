@@ -1,0 +1,32 @@
+.Heading {
+  align-self: flex-start;
+  margin-top: 7vh;
+}
+
+.Paragraph {
+  margin-left: 2.5%;
+  align-self: flex-start;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.code {
+  font-family: monospace;
+  background-color: rgb(242, 242, 242);
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.underline {
+  text-decoration: underline;
+}

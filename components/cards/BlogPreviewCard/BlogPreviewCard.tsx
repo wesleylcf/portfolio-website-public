@@ -28,7 +28,7 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
   return (
     <div className={styles.Container}>
       <Animate delay={animateDelay}>
-        <Link href={`/blog/${title.replace(' ', '')}`}>
+        <Link href={`/blog/posts/${title.replaceAll(' ', '-')}`}>
           <a className={styles.Post}>
             <div className={styles.Cover}>
               {previewImage ? (

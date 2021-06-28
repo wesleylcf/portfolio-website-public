@@ -6,7 +6,7 @@
   align-content: stretch;
   justify-content: space-between;
   position: relative;
-  margin-bottom: 2vh;
+  margin: 2vh 0;
   min-width: 35vw;
   height: 20vh;
   justify-self: center;

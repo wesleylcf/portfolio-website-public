@@ -9,9 +9,14 @@ const notion = new Client({
   auth: process.env.NOTION_KEY,
 });
 
+export type Annotation = Array<string | boolean | unknown>;
+
 export interface PageBlock {
-  type: string;
-  content: string;
+  type: Block['type'] | 'line_spacing';
+  content?: string;
+  link?: string | null;
+  href?: string | null;
+  annotations?: Annotation[];
 }
 
 export default async function getPostContent(name) {
@@ -29,18 +34,30 @@ export default async function getPostContent(name) {
     BASE_NOTION_URL_LENGTH
   );
   const blocks = await notion.blocks.children.list({ block_id: pageId });
-  let pageContent: PageBlock[] = [];
+  let pageContent: PageBlock[][] = [];
   for (let block of blocks.results) {
-    let pageBlock;
+    let pageBlock: PageBlock[] = [];
     if (block[`${block.type}`].text.length === 0) {
-      pageBlock = { type: 'line_spacing' };
+      pageBlock.push({ type: 'line_spacing' });
     } else {
-      pageBlock = {
-        type: block.type,
-        content: block[`${block.type}`].text[0].plain_text,
-      };
+      for (let textBlock of block[`${block.type}`].text) {
+        pageBlock.push({
+          type: block.type,
+          content: textBlock.plain_text,
+          link: textBlock.text.link,
+          annotations: Object.entries(textBlock.annotations).filter(
+            ([key, value]) => {
+              if (value !== false && value !== 'default') {
+                return { key, value };
+              }
+            }
+          ),
+          href: textBlock.href,
+        });
+      }
     }
     pageContent.push(pageBlock);
   }
+  console.log(pageContent);
   return pageContent;
 }
