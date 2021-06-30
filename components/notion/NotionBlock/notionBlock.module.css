@@ -1,9 +1,42 @@
 .Heading {
   align-self: flex-start;
-  margin-top: 7vh;
+  margin-top: 4vh;
 }
 
 .Paragraph {
   margin-left: 2.5%;
   align-self: flex-start;
+}
+
+.Code {
+  /* white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap; */
+  overflow: auto;
+  -moz-tab-size: 3;
+  -o-tab-size: 3;
+  tab-size: 3;
+  word-wrap: break-word;
+  width: 95%;
+  padding: 15px 25px;
+  background-color: rgb(226, 210, 183);
+  border-radius: 15px;
+  margin-bottom: 7vh;
+}
+.Code::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+  padding: 2px;
+}
+.Code::-webkit-scrollbar-track {
+  border-radius: 10px;
+  width: 5px;
+}
+
+.Code::-webkit-scrollbar-thumb {
+  background: rgb(61, 69, 77);
+  width: 5px;
+  border-radius: 10px;
+  margin: 2px 0;
 }

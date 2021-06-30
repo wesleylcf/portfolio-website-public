@@ -3,8 +3,6 @@ import { Block } from '@notionhq/client/build/src/api-types';
 
 const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
 
-const BASE_NOTION_URL_LENGTH = 22;
-
 const notion = new Client({
   auth: process.env.NOTION_KEY,
 });
@@ -12,39 +10,28 @@ const notion = new Client({
 export type Annotation = Array<string | boolean | unknown>;
 
 export interface PageBlock {
-  type: Block['type'] | 'line_spacing';
+  type: Block['type'] | 'line_spacing' | 'code';
   content?: string;
   link?: string | null;
   href?: string | null;
   annotations?: Annotation[];
 }
 
-export default async function getPostContent(name) {
-  const rowData = await notion.databases.query({
-    database_id: databaseId,
-    // filter: {
-    //   property: 'name',
-    //   text: {
-    //     contains: name,
-    //   },
-    // },
-  });
-  const pageId = rowData.results[0].properties.name['title'][0].mention.page.id;
-  const blocks = await notion.blocks.children.list({ block_id: pageId });
-  console.log(blocks);
-  let pageContent: PageBlock[][] = [];
+async function getBlock(blockId, isCodeBlock) {
+  let isCode = isCodeBlock;
+  const blocks = await notion.blocks.children.list({ block_id: blockId });
+  let result = [];
   for (let block of blocks.results) {
-    let pageBlock: PageBlock[] = [];
-    if (
-      block.type === 'unsupported' ||
-      block[`${block.type}`].text.length === 0
-    ) {
-      pageBlock.push({ type: 'line_spacing' });
-    } else {
+    let blocks = [];
+    if (block.type === 'unsupported') {
+      blocks.push({ type: 'unsupported' });
+    } else if (block[`${block.type}`].text.length === 0) {
+      blocks.push({ type: 'line_spacing' });
+    } else if (!block.has_children) {
       for (let textBlock of block[block.type].text) {
-        pageBlock.push({
-          type: block.type,
-          content: textBlock.plain_text,
+        blocks.push({
+          type: isCode ? 'code' : block.type,
+          content: isCode ? textBlock.plain_text : textBlock.plain_text,
           link: textBlock.text.link,
           annotations: Object.entries(textBlock.annotations).filter(
             ([key, value]) => {
@@ -56,9 +43,32 @@ export default async function getPostContent(name) {
           href: textBlock.href,
         });
       }
+    } else {
+      if (isCode) {
+        const child = await getBlock(block.id, true);
+        blocks = child[0];
+      } else {
+        const child = await getBlock(block.id, false);
+        blocks.push(child);
+      }
     }
-    pageContent.push(pageBlock);
+    result.push(blocks);
+    isCode = block.type === 'unsupported' ? true : false;
   }
-  console.log(pageContent);
+  return result;
+}
+
+export default async function getPostContent(name) {
+  const rowData = await notion.databases.query({
+    database_id: databaseId,
+    filter: {
+      property: 'name',
+      text: {
+        contains: name,
+      },
+    },
+  });
+  const pageId = rowData.results[0].properties.name['title'][0].mention.page.id;
+  const pageContent = await getBlock(pageId, false);
   return pageContent;
 }

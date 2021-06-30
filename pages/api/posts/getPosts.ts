@@ -47,6 +47,5 @@ export default async function getPosts() {
       NOTION_DATE_LENGTH
     );
   }
-  console.log(posts);
   return posts;
 }

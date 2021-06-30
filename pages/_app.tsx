@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import 'prismjs/themes/prism-tomorrow.css';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Layout from '../components/Layout/Layout';
@@ -10,10 +11,6 @@ function MyApp({ Component, pageProps }) {
     return window.innerWidth < 800;
   });
   const router = useRouter();
-  // useEffect(() => {
-  //   console.log(router.pathname);
-  //   window.history.scrollRestoration = 'manual';
-  // }, [router.pathname]);
   const onChangeColorTheme = () => {
     if (isDarkMode) {
       document.body.classList.remove('dark');

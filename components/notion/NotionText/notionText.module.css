@@ -2,9 +2,18 @@
   font-weight: bold;
 }
 
-.code {
+.codeLight {
   font-family: monospace;
-  background-color: rgb(242, 242, 242);
+  padding: 2px 4px;
+  border-radius: 2px;
+  background-color: rgba(248, 188, 90, 0.356);
+  color: rgb(59, 55, 55);
+}
+
+.codeDark {
+  background-color: rgba(157, 167, 177, 0.336);
+  color: lightgray;
+  font-family: monospace;
   padding: 2px 4px;
   border-radius: 2px;
 }
