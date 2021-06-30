@@ -29,9 +29,9 @@ const About = ({ darkMode }) => {
               Science at the Nanyang Technological Unviersity(2021-2024).
             </p>
             <p>
-              I picked up programming as I was influenced by my siblings and
-              while serving National Service, I took up a bunch of courses in a
-              sort of BFS manner to find a direction I can work towards.
+              I picked up programming as I was influenced by my siblings, and
+              while serving National Service, I decided to take up a bunch of
+              courses in a BFS manner to find a direction I could work towards.
             </p>
           </Animate>
           <Animate delay={1.1}>

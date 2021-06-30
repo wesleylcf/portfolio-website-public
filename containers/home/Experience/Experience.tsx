@@ -10,7 +10,7 @@ import Aside from '../../../components/Layout/Aside/Aside';
 import SkillBarCard from '../../../components/cards/SkillBarCard/SkillBarCard';
 import Animate from '../../../components/Layout/Animate/Animate';
 
-const Experience = ({ darkMode }) => {
+const Experience = ({ darkMode, isMobile }) => {
   const skills = [
     {
       skill: 'React',
@@ -61,7 +61,7 @@ const Experience = ({ darkMode }) => {
           </Animate>
         </Card>
         <div className={styles.ButtonContainer}>
-          <Animate delay={0.9}>
+          <Animate delay={isMobile ? 0.4 : 0.9}>
             <ImportantButton
               darkMode={darkMode}
               href="mailto:wesleylim.work@gmail.com"
@@ -73,7 +73,7 @@ const Experience = ({ darkMode }) => {
         </div>
       </Main>
       <Aside order={1}>
-        <SkillBarCard skills={skills} darkMode={darkMode} />
+        <SkillBarCard skills={skills} darkMode={darkMode} isMobile={isMobile} />
       </Aside>
     </Section>
   );

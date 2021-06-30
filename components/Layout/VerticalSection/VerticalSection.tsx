@@ -20,6 +20,7 @@ const VerticalSection: React.FC<SectionProps> = ({
         hideBorder ? styles.HideBorder : ''
       }`}
       style={width ? { width: width } : {}}
+      suppressHydrationWarning
     >
       {children}
       {dividerId ? <SectionDivider id={dividerId} /> : null}

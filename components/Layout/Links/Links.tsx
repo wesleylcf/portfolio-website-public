@@ -10,6 +10,7 @@ interface LinkProps {
   linkInitialAnimateDelay?: number;
   linkAnimateDelayIncrement?: number;
   atPage: string;
+  onClickMenu: () => void;
 }
 
 const Links: React.FC<LinkProps> = ({
@@ -19,6 +20,7 @@ const Links: React.FC<LinkProps> = ({
   linkInitialAnimateDelay,
   linkAnimateDelayIncrement,
   atPage,
+  onClickMenu,
 }) => {
   let delay = linkInitialAnimateDelay;
 
@@ -46,43 +48,12 @@ const Links: React.FC<LinkProps> = ({
             animationDelay={isMobile ? 0 : delay}
             key={atPage === '/blog' ? 'blog' + index : index}
             darkMode={darkMode}
+            onClickMenu={onClickMenu}
           />
         );
       })}
     </>
   );
-  // return (
-  //   <>
-  //     <StyledLink
-  //       linkTo="#about"
-  //       content="About"
-  //       isMobile={isMobile}
-  //       animationDelay={isMobile ? 0 : 0.2}
-  //     />
-
-  //     <StyledLink
-  //       linkTo="#projects"
-  //       content="Projects"
-  //       isMobile={isMobile}
-  //       animationDelay={isMobile ? 0 : 0.35}
-  //     />
-
-  //     <StyledLink
-  //       linkTo="#experience"
-  //       content="Experience"
-  //       isMobile={isMobile}
-  //       animationDelay={isMobile ? 0 : 0.5}
-  //     />
-
-  //     <StyledLink
-  //       linkTo="#contact"
-  //       content="Contact"
-  //       isMobile={isMobile}
-  //       animationDelay={isMobile ? 0 : 0.65}
-  //     />
-
-  //   </.>
-  // );
 };
 
 export default Links;

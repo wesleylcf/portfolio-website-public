@@ -14,33 +14,7 @@ const NotionText: React.FC<NotionTextProps> = ({
   href,
   link,
 }) => {
-  if (href || link) {
-    return (
-      <a
-        href={href || link}
-        className={annotations
-          .map((annotation) => {
-            switch (annotation[0]) {
-              case 'bold':
-                return 'styles.bold';
-              case 'code':
-                return styles.code;
-              case 'underline':
-                return styles.underline;
-              case 'strikethrough':
-                return styles.strikethrough;
-              case 'italic':
-                return styles.italic;
-              default:
-                return '';
-            }
-          })
-          .join(' ')}
-      >
-        {children}
-      </a>
-    );
-  }
+  const child = href || link ? <a href={href || link}>{children}</a> : children;
   return (
     <span
       className={annotations
@@ -62,7 +36,7 @@ const NotionText: React.FC<NotionTextProps> = ({
         })
         .join(' ')}
     >
-      {children}
+      {child}
     </span>
   );
 };

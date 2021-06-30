@@ -5,6 +5,7 @@ import Main from '../../../components/Layout/Main/Main';
 import VerticalSection from '../../../components/Layout/VerticalSection/VerticalSection';
 import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
 import NotionBlock from '../../../components/notion/NotionBlock/NotionBlock';
+import utilStyles from '../../../styles/utils.module.css';
 
 interface PostProps {
   pageContent: PageBlock[][];
@@ -32,7 +33,7 @@ const Post: React.FC<PostProps> = ({ pageContent, title, isDarkMode }) => {
               headingColorNumber =
                 headingColorNumber === 2 ? 0 : headingColorNumber + 1;
             }
-            return (
+            const child = (
               <NotionBlock
                 key={index}
                 pageBlocks={pageBlocks}
@@ -40,6 +41,13 @@ const Post: React.FC<PostProps> = ({ pageContent, title, isDarkMode }) => {
                 headingColor={headingColorNumber}
               />
             );
+            if (pageBlocks[0].type === 'bulleted_list_item') {
+              return <ul className={utilStyles.List}>{child}</ul>;
+            }
+            if (pageBlocks[0].type === 'numbered_list_item') {
+              return <ol className={utilStyles.List}>{child}</ol>;
+            }
+            return child;
           })}
         </Main>
         <p style={{ marginTop: '7vh' }}>

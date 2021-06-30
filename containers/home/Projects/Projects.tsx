@@ -13,9 +13,14 @@ import { Project } from '../../../pages/api/projects';
 interface ProjectsProps {
   darkMode: boolean;
   projects: Project[];
+  isMobile: boolean;
 }
 
-const Projects: React.FC<ProjectsProps> = ({ darkMode, projects }) => {
+const Projects: React.FC<ProjectsProps> = ({
+  darkMode,
+  projects,
+  isMobile,
+}) => {
   return (
     <Section dividerId="experience">
       <Main order={1}>
@@ -37,16 +42,18 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode, projects }) => {
               />
             );
           })}
-          <ImportantButton darkMode={darkMode} href="/blog/projects">
-            All Projects
-          </ImportantButton>
+          <Animate delay={0.2}>
+            <ImportantButton darkMode={darkMode} href="/blog/projects">
+              All Projects
+            </ImportantButton>
+          </Animate>
         </Card>
       </Main>
       <Aside order={0}>
         <div
           className={darkMode ? utilStyles.BigQuote : utilStyles.BigQuoteLight}
         >
-          <Animate delay={0.9}>
+          <Animate delay={isMobile ? 0.3 : 0.9}>
             <q>
               For the things we have to learn before we can do them, we learn by
               doing them

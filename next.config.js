@@ -5,6 +5,6 @@ module.exports = {
     NOTION_PROJECTS_DATABASE_ID: '19c6efbc027243c78dcaed54c8e01b79',
   },
   images: {
-    domains: ['www.flaticon.com', 'img.flaticon.com'],
+    domains: ['www.flaticon.com', 'img.flaticon.com', 'logos-download.com'],
   },
 };

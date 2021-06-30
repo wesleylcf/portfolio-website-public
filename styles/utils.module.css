@@ -145,6 +145,11 @@
   animation-duration: 2s;
 }
 
+.List {
+  margin: 1vh 0 1vh 2vw;
+  align-self: flex-start;
+}
+
 @keyframes opac {
   from {
     opacity: 0;

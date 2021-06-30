@@ -2,12 +2,12 @@
   position: fixed;
   bottom: 5vh;
   right: 2vw;
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-in-out;
   transform: translate3d(0, 0, 0);
 }
 
 .Hide {
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-in-out;
   transform: translate3d(15vw, 0, 0);
 }
 
@@ -34,11 +34,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: slategray;
   border-radius: 34px;
   -webkit-transform: translateY(0px);
   -ms-transform: translateY(0px);
   transform: translateY(0px);
+  transition: 0.3s ease-in-out;
 }
 
 .Slider:before {
@@ -48,24 +49,26 @@
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: #333333;
+  background-color: papayawhip;
   -webkit-transform: translateY(0px);
   -ms-transform: translateY(0px);
   transform: translateY(0px);
   border-radius: 50%;
+  transition: 0.3s ease-in-out;
 }
 
 input:checked + .Slider {
-  background-color: #333333;
+  background-color: papayawhip;
 }
 
 input:focus + .Slider {
-  box-shadow: 0 0 1px #333333;
+  box-shadow: 0 0 1px papayawhip;
 }
 
 input:checked + .Slider:before {
+  transition: 0.3s ease-in-out;
   -webkit-transform: translateY(-26px);
   -ms-transform: translateY(-26px);
   transform: translateY(-26px);
-  background-color: papayawhip;
+  background-color: #333333;
 }

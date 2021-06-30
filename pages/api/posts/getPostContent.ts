@@ -22,25 +22,26 @@ export interface PageBlock {
 export default async function getPostContent(name) {
   const rowData = await notion.databases.query({
     database_id: databaseId,
-    filter: {
-      property: 'name',
-      text: {
-        contains: name,
-      },
-    },
+    // filter: {
+    //   property: 'name',
+    //   text: {
+    //     contains: name,
+    //   },
+    // },
   });
-
-  const pageId = rowData.results[0].properties.name['title'][0].href.substring(
-    BASE_NOTION_URL_LENGTH
-  );
+  const pageId = rowData.results[0].properties.name['title'][0].mention.page.id;
   const blocks = await notion.blocks.children.list({ block_id: pageId });
+  console.log(blocks);
   let pageContent: PageBlock[][] = [];
   for (let block of blocks.results) {
     let pageBlock: PageBlock[] = [];
-    if (block[`${block.type}`].text.length === 0) {
+    if (
+      block.type === 'unsupported' ||
+      block[`${block.type}`].text.length === 0
+    ) {
       pageBlock.push({ type: 'line_spacing' });
     } else {
-      for (let textBlock of block[`${block.type}`].text) {
+      for (let textBlock of block[block.type].text) {
         pageBlock.push({
           type: block.type,
           content: textBlock.plain_text,
@@ -58,5 +59,6 @@ export default async function getPostContent(name) {
     }
     pageContent.push(pageBlock);
   }
+  console.log(pageContent);
   return pageContent;
 }

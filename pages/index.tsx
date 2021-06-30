@@ -12,9 +12,9 @@ const Home = ({ isDarkMode, isMobile, posts, projects }) => {
   return (
     <>
       <Intro darkMode={isDarkMode} isMobile={isMobile} />
-      <About darkMode={isDarkMode} />
-      <Projects darkMode={isDarkMode} projects={projects} />
-      <Experience darkMode={isDarkMode} />
+      <About darkMode={isDarkMode} isMobile={isMobile} />
+      <Projects darkMode={isDarkMode} projects={projects} isMobile={isMobile} />
+      <Experience darkMode={isDarkMode} isMobile={isMobile} />
       <Blog darkMode={isDarkMode} isMobile={isMobile} posts={posts} />
       <Contact darkMode={isDarkMode} />
     </>

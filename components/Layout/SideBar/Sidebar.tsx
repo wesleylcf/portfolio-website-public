@@ -45,6 +45,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                 isMobile={isMobile}
                 {...links}
                 atPage={atPage}
+                onClickMenu={onClickMenu}
               />
             </ul>
             <div className={styles.Social}>

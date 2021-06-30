@@ -10,11 +10,11 @@ import Main from '../../../components/Layout/Main/Main';
 import Aside from '../../../components/Layout/Aside/Aside';
 import Animate from '../../../components/Layout/Animate/Animate';
 
-const About = ({ darkMode }) => {
+const About = ({ darkMode, isMobile }) => {
   return (
     <Section dividerId="projects">
       <Aside order={1}>
-        <Animate delay={0.9}>
+        <Animate delay={isMobile ? 0.25 : 0.9}>
           <Image
             src="/images/me2.jpg"
             width={100}
@@ -33,7 +33,7 @@ const About = ({ darkMode }) => {
 
         <Card side="center" flexBasis="60%" padding="0 5vw">
           <div className={styles.Content}>
-            <Animate delay={0.3}>
+            <Animate delay={0.25}>
               <p>
                 I picked up programming while serving National Service in the
                 Air Force. Eventually, I decided on web development, as I found
@@ -57,7 +57,7 @@ const About = ({ darkMode }) => {
           </div>
         </Card>
         <div className={styles.ButtonContainer}>
-          <Animate delay={0.3}>
+          <Animate delay={0.25}>
             <ImportantButton
               darkMode={darkMode}
               href="/blog/about"

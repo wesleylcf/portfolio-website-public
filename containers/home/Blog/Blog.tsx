@@ -44,7 +44,7 @@ const Blog: React.FC<BlogProps> = ({ darkMode, isMobile, posts }) => {
           );
         })}
       </HorizontalSection>
-      <Animate delay={0.75}>
+      <Animate delay={isMobile ? 0.3 : 0.75}>
         <ImportantButton darkMode={darkMode} href="/blog/posts">
           See all posts
         </ImportantButton>

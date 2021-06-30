@@ -13,9 +13,9 @@ const Menu: React.FC<MenuProps> = ({ onClickMenu, isModal, darkMode }) => {
   };
   return (
     <button
-      className={`${styles.Menu} ${isModal ? styles.Change : ''} ${
-        darkMode ? styles.Dark : styles.Light
-      }`}
+      className={`${styles.Menu} ${darkMode ? styles.Dark : styles.Light} ${
+        isModal ? styles.Change : ''
+      } `}
       onClick={onClickHandler}
     >
       <div className={styles.Bar1}></div>

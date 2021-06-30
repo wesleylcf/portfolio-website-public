@@ -20,23 +20,21 @@ const headingColorMap = {
 };
 
 const NotionBlock: React.FC<NotionBlockProps> = ({
-  children,
   pageBlocks,
   isDarkMode,
   headingColor,
 }) => {
-  let switchHeadingColor = 0;
   const childrenBlocks = pageBlocks.map(
     ({ type, content, href, link, annotations }, index) => {
       switch (type) {
         case 'bulleted_list_item':
         case 'numbered_list_item':
           return (
-            <li>
+            <span>
               <NotionText href={href} link={link} annotations={annotations}>
                 {content}
               </NotionText>
-            </li>
+            </span>
           );
         case 'heading_1':
         case 'heading_2':
@@ -70,9 +68,8 @@ const NotionBlock: React.FC<NotionBlockProps> = ({
   );
   switch (pageBlocks[0].type) {
     case 'bulleted_list_item':
-      return <ul>{childrenBlocks}</ul>;
     case 'numbered_list_item':
-      return <ol>{childrenBlocks}</ol>;
+      return <li>{childrenBlocks}</li>;
     case 'heading_1':
       return (
         <h1

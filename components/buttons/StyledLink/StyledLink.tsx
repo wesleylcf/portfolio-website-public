@@ -10,6 +10,7 @@ interface StyledLinkProps {
   isMobile: boolean;
   animationDelay: number;
   darkMode: boolean;
+  onClickMenu: () => void;
 }
 
 const StyledLink: React.FC<StyledLinkProps> = ({
@@ -18,6 +19,7 @@ const StyledLink: React.FC<StyledLinkProps> = ({
   isMobile,
   animationDelay,
   darkMode,
+  onClickMenu,
 }) => {
   const [ref, inView] = useInView({ triggerOnce: true });
   if (isMobile) {
@@ -29,6 +31,7 @@ const StyledLink: React.FC<StyledLinkProps> = ({
               className={`${styles.StyledLink} ${
                 darkMode ? styles.Dark : styles.Light
               }`}
+              onClick={onClickMenu}
             >
               <span className={styles.underline}></span>
               {content}

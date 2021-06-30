@@ -38,6 +38,7 @@ const section: React.FC<SectionProps> = ({
         hideBorder ? styles.HideBorder : ''
       } ${blog ? styles.MediumWidth : ''}`}
       style={style}
+      suppressHydrationWarning
     >
       {children}
       {dividerId ? <SectionDivider id={dividerId} /> : null}
