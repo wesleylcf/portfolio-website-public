@@ -1,11 +1,18 @@
 .Heading {
   align-self: flex-start;
-  margin-top: 4vh;
+  margin: 4vh 0 0 0;
 }
 
 .Paragraph {
-  margin-left: 2.5%;
   align-self: flex-start;
+}
+
+.ImageContainer {
+  width: calc(48vw);
+  height: calc(48vw / 1.91);
+  display: block;
+  position: relative;
+  margin: 1vh 0;
 }
 
 .Code {
@@ -18,7 +25,7 @@
   -o-tab-size: 3;
   tab-size: 3;
   word-wrap: break-word;
-  width: 95%;
+  width: 48vw;
   padding: 15px 25px;
   background-color: rgb(226, 210, 183);
   border-radius: 15px;
@@ -35,8 +42,15 @@
 }
 
 .Code::-webkit-scrollbar-thumb {
-  background: rgb(61, 69, 77);
+  background: slategray;
   width: 5px;
   border-radius: 10px;
   margin: 2px 0;
+}
+
+@media screen and (max-width: 800px) {
+  .ImageContainer {
+    width: calc(80vw - 2.5%);
+    height: calc(80vw / 1.91);
+  }
 }

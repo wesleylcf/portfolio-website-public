@@ -19,8 +19,8 @@ const Post: React.FC<PostProps> = ({ pageContent, title, isDarkMode }) => {
     return (
       <VerticalSection>
         <HeadingCard
-          number={title}
-          content=""
+          number=""
+          content={title}
           order={0}
           darkMode={isDarkMode}
         />
@@ -42,17 +42,26 @@ const Post: React.FC<PostProps> = ({ pageContent, title, isDarkMode }) => {
               />
             );
             if (pageBlocks[0].type === 'bulleted_list_item') {
-              return <ul className={utilStyles.List}>{child}</ul>;
+              return (
+                <ul className={utilStyles.List} key={index}>
+                  {child}
+                </ul>
+              );
             }
             if (pageBlocks[0].type === 'numbered_list_item') {
-              return <ol className={utilStyles.List}>{child}</ol>;
+              return (
+                <ol className={utilStyles.List} key={index}>
+                  {child}
+                </ol>
+              );
             }
             return child;
           })}
         </Main>
         <p style={{ marginTop: '7vh' }}>
-          If you have any feedback, spot a bug/error, or just want to talk, you
-          can reach me <a href="mailto:wesleylim.work@gmail.com">here</a>
+          Thanks for reading this post! If you have any feedback, spot a
+          bug/error, or just want to talk, you can reach me{' '}
+          <a href="mailto:wesleylim.work@gmail.com">here</a>
         </p>
       </VerticalSection>
     );

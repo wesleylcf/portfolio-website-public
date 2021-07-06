@@ -5,17 +5,19 @@ import { useEffect, useState } from 'react';
 import Layout from '../components/Layout/Layout';
 
 function MyApp({ Component, pageProps }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMobile, setIsMobile] = useState(() => {
     if (typeof window === 'undefined') return undefined;
     return window.innerWidth < 800;
   });
   const router = useRouter();
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const onChangeColorTheme = () => {
-    if (isDarkMode) {
-      document.body.classList.remove('dark');
-    } else {
+    if (!isDarkMode) {
+      document.body.classList.remove('light');
       document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+      document.body.classList.add('light');
     }
     setIsDarkMode(!isDarkMode);
   };
@@ -41,7 +43,7 @@ function MyApp({ Component, pageProps }) {
   } else if ((router.pathname = '/blog')) {
     links = {
       navLinks: [
-        { linkTo: '/blog', content: 'About' },
+        { linkTo: '/blog/about', content: 'About' },
         { linkTo: '/blog/projects', content: 'Projects' },
         { linkTo: '/blog/posts', content: 'Posts' },
         ,
@@ -60,7 +62,6 @@ function MyApp({ Component, pageProps }) {
       'https://github.com/wesleylcf',
     ];
   }
-
   return (
     <Layout
       links={links}

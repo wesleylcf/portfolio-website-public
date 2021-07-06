@@ -4,6 +4,7 @@ import { PageBlock } from '../../../pages/api/posts/getPostContent';
 import utilStyles from '../../../styles/utils.module.css';
 import NotionText from '../NotionText/NotionText';
 import Prism from 'prismjs';
+import Image from 'next/image';
 
 interface NotionBlockProps {
   pageBlocks: PageBlock[];
@@ -26,60 +27,46 @@ const NotionBlock: React.FC<NotionBlockProps> = ({
   headingColor,
 }) => {
   const childrenBlocks: any = pageBlocks.map(
-    ({ type, content, href, link, annotations }, index) => {
+    ({ type, content, href, link, annotations, indentLevel }, index) => {
       switch (type) {
-        case 'bulleted_list_item':
-        case 'numbered_list_item':
-          return (
-            <span>
-              <NotionText
-                href={href}
-                link={link}
-                annotations={annotations}
-                isDarkMode={isDarkMode}
-              >
-                {content}
-              </NotionText>
-            </span>
-          );
-        case 'heading_1':
-        case 'heading_2':
-          return (
-            <span key={index}>
-              <NotionText
-                href={href}
-                link={link}
-                annotations={annotations}
-                isDarkMode={isDarkMode}
-              >
-                {content}
-              </NotionText>
-            </span>
-          );
-
-        case 'paragraph':
-          return (
-            <span key={index}>
-              <NotionText
-                href={href}
-                link={link}
-                annotations={annotations}
-                isDarkMode={isDarkMode}
-              >
-                {content}
-              </NotionText>
-            </span>
-          );
         case 'code':
           const code: string = Prism.highlight(
             content,
             Prism.languages.javascript,
             'javascript'
           );
-          return code;
+          return (
+            <pre
+              className={[
+                styles.Code,
+                isDarkMode ? styles.Dark : styles.Light,
+                'language-jsx',
+              ].join(' ')}
+              style={{ marginLeft: `${indentLevel}vw` }}
+            >
+              <code
+                className={'language-jsx'}
+                dangerouslySetInnerHTML={{ __html: code }}
+              ></code>
+            </pre>
+          );
+        case 'image':
+          return (
+            <div
+              className={styles.ImageContainer}
+              style={{ marginLeft: `${indentLevel}vw` }}
+            >
+              <Image
+                key={index}
+                priority
+                layout="fill"
+                src={`/images/${content}.png`}
+              />
+            </div>
+          );
         default:
           return (
-            <span>
+            <span key={index} style={{ marginLeft: `${indentLevel}vw` }}>
               <NotionText
                 href={href}
                 link={link}
@@ -124,22 +111,11 @@ const NotionBlock: React.FC<NotionBlockProps> = ({
     case 'paragraph':
       return <p className={styles.Paragraph}>{childrenBlocks}</p>;
     case 'code':
-      return (
-        <pre
-          className={[
-            styles.Code,
-            isDarkMode ? styles.Dark : styles.Light,
-            'language-jsx',
-          ].join(' ')}
-        >
-          <code
-            className={'language-jsx'}
-            dangerouslySetInnerHTML={{ __html: childrenBlocks }}
-          ></code>
-        </pre>
-      );
+      return childrenBlocks;
     case 'line_spacing':
       return <p style={{ margin: '1vh' }}></p>;
+    case 'image':
+      return childrenBlocks;
     default:
       return null;
   }

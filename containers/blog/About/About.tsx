@@ -31,7 +31,8 @@ const About = ({ darkMode }) => {
             <p>
               I picked up programming as I was influenced by my siblings, and
               while serving National Service, I decided to take up a bunch of
-              courses in a BFS manner to find a direction I could work towards.
+              courses in a breadth-first manner to find a direction I could work
+              towards.
             </p>
           </Animate>
           <Animate delay={1.1}>
@@ -52,12 +53,12 @@ const About = ({ darkMode }) => {
             </p>
           </Animate>
           <Animate delay={1.4}>
-            <p>Some cool facts:</p>
+            <p style={{ width: '38vw' }}>Some cool facts:</p>
             <ul>
               <li>I did gymnastics for around 13 years</li>
               <li>
-                I play the guitar pretty well (though the genre is a bit unique
-                @Tommy Emmanuel)
+                I play the guitar(though the genre is a bit unique @Tommy
+                Emmanuel)
               </li>
               <li> I have a twin brother </li>
               <li>

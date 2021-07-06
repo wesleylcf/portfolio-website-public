@@ -13,7 +13,6 @@ const notion = new Client({
 });
 const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
 const MAX_POSTS_PER_VIEW = 3;
-const BASE_NOTION_URL_LENGTH = 22;
 const NOTION_DATE_LENGTH = 10;
 
 export default async function getPosts() {
@@ -31,9 +30,7 @@ export default async function getPosts() {
       createdAt: undefined,
       tags: page.properties.tags['rich_text'][0].plain_text,
       imageUrl: page.properties.imageUrl['rich_text'][0].plain_text,
-      link: page.properties.name['title'][0].href.substring(
-        BASE_NOTION_URL_LENGTH
-      ),
+      link: page.properties.name['title'][0].mention.page.id,
     });
     postsAdded += 1;
   }

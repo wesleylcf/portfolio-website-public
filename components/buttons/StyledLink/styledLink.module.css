@@ -8,6 +8,13 @@
   position: relative;
 }
 
+.Dark {
+  color: lightgray;
+}
+.Light {
+  color: rgb(61, 69, 77);
+}
+
 .Dark .underline {
   background-color: white;
 }

@@ -62,13 +62,7 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
                   {tags.replaceAll(',', ' / ')}
                 </span>
               </p>
-              <h2
-                className={`${styles.ContentTitle} ${
-                  darkMode ? utilStyles.ColorT : utilStyles.ColorTLight
-                }`}
-              >
-                {title}
-              </h2>
+              <h2 className={`${styles.ContentTitle}`}>{title}</h2>
               <p className={styles.Description}>{description}</p>
             </Card>
           </a>

@@ -34,7 +34,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: slategray;
+  background-color: lightgray;
   border-radius: 34px;
   -webkit-transform: translateY(0px);
   -ms-transform: translateY(0px);
@@ -49,7 +49,7 @@
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: papayawhip;
+  background-color: #222222;
   -webkit-transform: translateY(0px);
   -ms-transform: translateY(0px);
   transform: translateY(0px);
@@ -58,7 +58,7 @@
 }
 
 input:checked + .Slider {
-  background-color: papayawhip;
+  background-color: rgb(61, 69, 77);
 }
 
 input:focus + .Slider {
@@ -70,5 +70,5 @@ input:checked + .Slider:before {
   -webkit-transform: translateY(-26px);
   -ms-transform: translateY(-26px);
   transform: translateY(-26px);
-  background-color: #333333;
+  background-color: papayawhip;
 }

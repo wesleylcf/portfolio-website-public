@@ -40,7 +40,7 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
                   className={utilStyles.heading3Xl}
                   style={
                     darkMode
-                      ? { color: 'slate-grey' }
+                      ? { color: 'lightgray' }
                       : { color: 'rgb(61, 69, 77)' }
                   }
                 >

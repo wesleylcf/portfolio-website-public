@@ -10,7 +10,7 @@ interface LinkProps {
   linkInitialAnimateDelay?: number;
   linkAnimateDelayIncrement?: number;
   atPage: string;
-  onClickMenu: () => void;
+  onClickMenu?: () => void;
 }
 
 const Links: React.FC<LinkProps> = ({
