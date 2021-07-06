@@ -25,15 +25,27 @@ const ImportantButton: React.FC<ButtonProps> = ({
       }`}
     >
       <li className={styles.ListItem}>
-        <Link href={href}>
+        {isProjectComponent ? (
           <a
             className={`${styles.Button} ${
               darkMode ? styles.Dark : styles.Light
             } ${isProjectComponent ? styles.ProjectComponent : ''}`}
+            href={href}
+            target="_blank"
           >
             {children}
           </a>
-        </Link>
+        ) : (
+          <Link href={href}>
+            <a
+              className={`${styles.Button} ${
+                darkMode ? styles.Dark : styles.Light
+              } ${isProjectComponent ? styles.ProjectComponent : ''}`}
+            >
+              {children}
+            </a>
+          </Link>
+        )}
       </li>
     </div>
   );

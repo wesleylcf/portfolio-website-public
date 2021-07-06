@@ -31,14 +31,15 @@ const Projects: React.FC<ProjectsProps> = ({
           darkMode={darkMode}
         />
         <Card side="center">
-          {projects.map(({ title, tags, description }, index) => {
+          {projects.map(({ title, tags, description, link }, index) => {
             return (
               <ProjectCard
                 heading={title}
                 languages={tags}
                 description={description}
-                imageSrc="journalify.jpg"
+                imageSrc={title.replaceAll(' ', '-')}
                 key={index}
+                linkTo={link}
               />
             );
           })}

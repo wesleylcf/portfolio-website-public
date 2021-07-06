@@ -4,6 +4,7 @@ export interface Project {
   title: string;
   tags: string;
   description: string;
+  link: string;
 }
 
 const notion = new Client({
@@ -26,8 +27,10 @@ export default async function getProjects() {
       title: project.properties.name['title'][0].plain_text,
       tags: project.properties.tags['rich_text'][0].plain_text,
       description: project.properties.description['rich_text'][0].plain_text,
+      link: project.properties.link['rich_text'][0].plain_text,
     });
     itemsAdded += 1;
   }
+  console.log(projects);
   return projects;
 }
