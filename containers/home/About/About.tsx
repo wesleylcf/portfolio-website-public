@@ -16,10 +16,12 @@ const About = ({ darkMode, isMobile }) => {
       <Aside order={1}>
         <Animate delay={isMobile ? 0.25 : 0.9}>
           <Image
-            src="/images/me2.jpg"
+            src="/images/me.jpg"
             width={100}
             height={134}
             className={utilStyles.borderCircle}
+            alt="insert handsome guy"
+            title="handsome guy"
           ></Image>
         </Animate>
       </Aside>
@@ -35,11 +37,10 @@ const About = ({ darkMode, isMobile }) => {
           <div className={styles.Content}>
             <Animate delay={0.25}>
               <p>
-                I picked up programming while serving National Service in the
-                Air Force. Eventually, I decided on web development, as I found
-                designing applications from reusable components challenging yet
-                fulfilling. I am a fan of Robert C. Martin and my work
-                philosophy is:
+                I picked up programming serving National Service in the Air
+                Force. Eventually, I decided on web development, as I found
+                building web applications challenging yet fun. I am a fan of
+                Robert C. Martin and my work philosophy is:
               </p>
               <q
                 className={

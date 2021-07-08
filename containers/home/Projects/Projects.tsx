@@ -2,7 +2,7 @@ import React from 'react';
 import utilStyles from '../../../styles/utils.module.css';
 import ProjectCard from '../../../components/cards/ProjectCard/ProjectCard';
 import Card from '../../../components/cards/Card/Card';
-import Section from '../../../components/Layout/HorizontalSection/HorizontalSection';
+import HorizontalSection from '../../../components/Layout/HorizontalSection/HorizontalSection';
 import ImportantButton from '../../../components/buttons/ImportantButton/ImportantButton';
 import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
 import Main from '../../../components/Layout/Main/Main';
@@ -22,7 +22,7 @@ const Projects: React.FC<ProjectsProps> = ({
   isMobile,
 }) => {
   return (
-    <Section dividerId="experience">
+    <HorizontalSection dividerId="experience" project>
       <Main order={1}>
         <HeadingCard
           number="02"
@@ -63,7 +63,7 @@ const Projects: React.FC<ProjectsProps> = ({
           </Animate>
         </div>
       </Aside>
-    </Section>
+    </HorizontalSection>
   );
 };
 

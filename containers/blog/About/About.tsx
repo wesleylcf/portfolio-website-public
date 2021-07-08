@@ -14,10 +14,12 @@ const About = ({ darkMode }) => {
         <div style={{ margin: '4vh auto' }}>
           <Animate delay={0.8}>
             <Image
-              src="/images/me2.jpg"
+              src="/images/me.jpg"
               width={100}
               height={134}
               className={utilStyles.borderCircle}
+              alt="insert handsome guy"
+              title="handsome guy"
             ></Image>
           </Animate>
         </div>
@@ -25,13 +27,14 @@ const About = ({ darkMode }) => {
         <Card side="center">
           <Animate delay={0.95}>
             <p>
-              Hi there! My name is Wesley and I'm currently pursuing Computer
-              Science at the Nanyang Technological Unviersity(2021-2024).
+              Hi there, and welcome to my blog! My name is Wesley and I'm 21
+              this year. I'm currently pursuing Computer Science at the Nanyang
+              Technological Unviersity(2021-2024).
             </p>
             <p>
               I picked up programming as I was influenced by my siblings, and
-              while serving National Service, I decided to take up a bunch of
-              courses in a breadth-first manner to find a direction I could work
+              while serving National Service, I took a bunch of courses in a
+              breadth-first manner to find a direction that I could work
               towards.
             </p>
           </Animate>
@@ -41,31 +44,48 @@ const About = ({ darkMode }) => {
               time doing projects that I find interesting, or provide insight.
               You can check out my recent projects{' '}
               <Link href="/blog/projects">
-                <a style={{ color: darkMode ? 'turquoise' : 'teal' }}>here</a>
+                <a
+                  style={{ color: darkMode ? 'turquoise' : 'teal' }}
+                  target="_blank"
+                >
+                  here
+                </a>
               </Link>
             </p>
           </Animate>
           <Animate delay={1.25}>
             <p>
-              In the future, I hope to be able to work in companies like Google,
-              which I think would be an invaluable experience and asset to my
-              growth as a software engineer.
+              In the future, I hope to be able to work in a tech company with an
+              awesome culture like Google, which I think would be an invaluable
+              experience and asset to my growth as a software engineer.
             </p>
           </Animate>
-          <Animate delay={1.4}>
-            <p style={{ width: '38vw' }}>Some cool facts:</p>
+          <Animate delay={1.4} minWidth="100%">
+            <p>Some cool facts:</p>
             <ul>
               <li>I did gymnastics for around 13 years</li>
-              <li>
-                I play the guitar(though the genre is a bit unique @Tommy
-                Emmanuel)
-              </li>
-              <li> I have a twin brother </li>
+              <li>I play the guitar, and my idol is Tommy Emmanuel!</li>
+              <li> I have a twin brother (meh.) </li>
               <li>
                 I have three siblings and all of us are current or future
                 software engineers
               </li>
             </ul>
+          </Animate>
+          <Animate delay={1.6} minWidth="100%">
+            <p>Stuff I hope to accomplish while in university</p>
+            <ol>
+              <li>Get a girlfriend (please?)</li>
+              <li>Make lots of awesome friends</li>
+              <li>
+                Stay in hall for as long as I can ( I live like 1h45mins away )
+              </li>
+              <li>
+                Consistently work on this website, practice the guitar, and keep
+                fit
+              </li>
+              <li>Get good enough for people to stalk me here</li>
+            </ol>
           </Animate>
         </Card>
       </Main>

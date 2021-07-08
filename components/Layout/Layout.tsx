@@ -101,9 +101,11 @@ const Layout: React.FC<LayoutProps> = ({
   };
   return (
     <div
-      className={`${styles.Layout} ${isModal ? styles.ModalOpen : ''} ${
-        isDarkMode ? 'dark' : 'light'
-      }`}
+      className={[
+        styles.Layout,
+        isModal ? styles.ModalOpen : '',
+        isDarkMode ? 'dark' : 'light',
+      ].join(' ')}
       suppressHydrationWarning={true}
     >
       <NavBar

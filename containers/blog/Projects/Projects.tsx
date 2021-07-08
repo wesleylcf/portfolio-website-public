@@ -6,6 +6,7 @@ import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
 import utilStyles from '../../../styles/utils.module.css';
 import ImportantButton from '../../../components/buttons/ImportantButton/ImportantButton';
 import { Project } from '../../../pages/api/projects';
+import NotionText from '../../../components/notion/NotionText/NotionText';
 
 interface ProjectsProps {
   projects: Project[];
@@ -63,15 +64,17 @@ const Projects: React.FC<ProjectsProps> = ({ projects, darkMode }) => {
                   {project.tags.replaceAll(' ', ' / ')}
                 </p>
                 <p>{project.description}</p>
-                <ImportantButton
-                  href={`http://localhost:3000/blog/projects/${project.title.replaceAll(
-                    ' ',
-                    '-'
-                  )}`}
-                  darkMode={darkMode}
-                >
-                  View Project
-                </ImportantButton>
+                {project.link === 'not deployed' ? (
+                  <p>(Not deployed)</p>
+                ) : (
+                  <ImportantButton
+                    href={project.link}
+                    darkMode={darkMode}
+                    isProjectComponent
+                  >
+                    View Project
+                  </ImportantButton>
+                )}
               </Card>
             </Fragment>
           );

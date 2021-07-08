@@ -18,6 +18,7 @@ const NOTION_DATE_LENGTH = 10;
 export default async function getPosts() {
   const pages = await notion.databases.query({
     database_id: databaseId,
+    sorts: [{ timestamp: 'last_edited_time', direction: 'descending' }],
   });
   const posts: Post[] = [];
   let postsAdded = 0;

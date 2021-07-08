@@ -8,9 +8,9 @@
   justify-content: space-between;
   position: relative;
   min-height: 40vh;
-  margin: 0 1vw;
-  min-width: 35vw;
-  max-width: 40vw;
+  margin: 2vh 1vw;
+  min-width: 38vw;
+  max-width: 38vw;
 }
 
 .ShowDarkBackground {
@@ -52,19 +52,13 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 1200px) {
-  .Card,
-  .Preview {
-    max-width: 60vw;
-  }
-}
-
 @media screen and (max-width: 800px) {
   .Card,
   .Preview {
     padding: 0vh 5vw;
     min-width: 80vw;
     min-height: 30vh;
+    max-width: 100vw;
   }
   .BlogPost {
     width: 80vw;

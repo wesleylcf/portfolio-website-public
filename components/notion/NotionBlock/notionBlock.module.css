@@ -1,6 +1,14 @@
-.Heading {
+.Heading1 {
   align-self: flex-start;
   margin: 4vh 0 0 0;
+  font-size: 4vh;
+  text-decoration: underline;
+}
+
+.Heading2 {
+  align-self: flex-start;
+  margin: 4vh 0 0 0;
+  font-size: 2vh;
 }
 
 .Paragraph {

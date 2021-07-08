@@ -32,10 +32,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80vw;
+    min-width: 80vw;
     margin-bottom: 10vh;
   }
   .MediumWidth {
-    width: 80vw;
+    min-width: 80vw;
   }
 }

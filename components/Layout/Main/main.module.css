@@ -8,18 +8,12 @@
   max-width: calc(0.6 * 80vw);
 }
 
-@media screen and (max-width: 1200px) {
-  .Main {
-    min-width: 60vw;
-    max-width: 50vh;
-  }
-}
-
 @media screen and (max-width: 800px) {
   .Main {
     min-height: 40vh;
     min-width: 80vw;
     order: 0;
+    width: 80vw;
   }
   .Main p {
     line-height: 3vh;

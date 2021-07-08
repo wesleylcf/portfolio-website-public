@@ -43,6 +43,7 @@ const NotionBlock: React.FC<NotionBlockProps> = ({
                 'language-jsx',
               ].join(' ')}
               style={{ marginLeft: `${indentLevel}vw` }}
+              key={index}
             >
               <code
                 className={'language-jsx'}
@@ -55,13 +56,9 @@ const NotionBlock: React.FC<NotionBlockProps> = ({
             <div
               className={styles.ImageContainer}
               style={{ marginLeft: `${indentLevel}vw` }}
+              key={index}
             >
-              <Image
-                key={index}
-                priority
-                layout="fill"
-                src={`/images/${content}.png`}
-              />
+              <Image priority layout="fill" src={`/images/${content}.png`} />
             </div>
           );
         default:
@@ -85,21 +82,11 @@ const NotionBlock: React.FC<NotionBlockProps> = ({
     case 'numbered_list_item':
       return <li>{childrenBlocks}</li>;
     case 'heading_1':
-      return (
-        <h1
-          className={`${styles.Heading} ${
-            isDarkMode
-              ? headingColorMap.darkMode[headingColor]
-              : headingColorMap.lightMode[headingColor]
-          }`}
-        >
-          {childrenBlocks}
-        </h1>
-      );
+      return <h1 className={styles.Heading1}>{childrenBlocks}</h1>;
     case 'heading_2':
       return (
         <h2
-          className={`${styles.Heading} ${
+          className={`${styles.Heading2} ${
             isDarkMode
               ? headingColorMap.darkMode[headingColor]
               : headingColorMap.lightMode[headingColor]

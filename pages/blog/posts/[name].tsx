@@ -58,11 +58,6 @@ const Post: React.FC<PostProps> = ({ pageContent, title, isDarkMode }) => {
             return child;
           })}
         </Main>
-        <p style={{ marginTop: '7vh' }}>
-          Thanks for reading this post! If you have any feedback, spot a
-          bug/error, or just want to talk, you can reach me{' '}
-          <a href="mailto:wesleylim.work@gmail.com">here</a>
-        </p>
       </VerticalSection>
     );
   }

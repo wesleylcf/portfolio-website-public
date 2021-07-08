@@ -11,7 +11,7 @@ const projectsPage = ({ isDarkMode, projects }) => {
 };
 
 export async function getStaticProps(context) {
-  const projects = await getProjects();
+  const projects = await getProjects(10);
   return {
     props: { projects: projects },
   };

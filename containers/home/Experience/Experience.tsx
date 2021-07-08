@@ -62,11 +62,7 @@ const Experience = ({ darkMode, isMobile }) => {
         </Card>
         <div className={styles.ButtonContainer}>
           <Animate delay={isMobile ? 0.4 : 0.9}>
-            <ImportantButton
-              darkMode={darkMode}
-              href="mailto:wesleylim.work@gmail.com"
-              isTextComponent
-            >
+            <ImportantButton darkMode={darkMode} href="/resume" isTextComponent>
               Grab a copy of my resume!
             </ImportantButton>
           </Animate>

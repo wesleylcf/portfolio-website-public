@@ -25,9 +25,7 @@ const Posts = ({ posts, darkMode }) => {
               )}`}
             >
               <h1
-                className={`${utilStyles.headingMd} ${
-                  darkMode ? utilStyles.ColorT : utilStyles.ColorTLight
-                }`}
+                className={utilStyles.headingMd}
                 style={{ textAlign: 'center', textDecoration: 'underline' }}
               >
                 {title}
@@ -39,7 +37,13 @@ const Posts = ({ posts, darkMode }) => {
               >
                 {createdAt}
               </p>
-              <p>{tags.replaceAll(',', ' / ')}</p>
+              <p
+                className={
+                  darkMode ? utilStyles.ColorT : utilStyles.ColorTLight
+                }
+              >
+                {tags.replaceAll(',', ' / ')}
+              </p>
             </Card>
           );
         })}

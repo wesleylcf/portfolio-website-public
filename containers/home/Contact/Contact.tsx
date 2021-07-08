@@ -66,12 +66,6 @@ const Contact = ({ darkMode }) => {
           </ImportantButton>
         </Card>
       </HorizontalSection>
-      <Animate delay={0.6}>
-        <p>
-          If you have any feedback or spot a bug you can reach me{' '}
-          <a href="mailto:wesleylim.work@gmail.com">here</a>!
-        </p>
-      </Animate>
     </VerticalSection>
   );
 };

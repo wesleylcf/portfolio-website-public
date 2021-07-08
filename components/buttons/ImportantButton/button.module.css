@@ -9,7 +9,6 @@
   margin-left: 0;
 }
 .ProjectComponent {
-  margin: 0.5vw 0;
   height: 2vh;
 }
 .ButtonWrapper .Dark {
@@ -62,6 +61,7 @@
 @media screen and (max-width: 1500px) {
   .ProjectComponent {
     height: 3vw;
+    margin: 0.5vh 0;
   }
 }
 

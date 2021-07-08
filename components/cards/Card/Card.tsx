@@ -77,13 +77,16 @@ const Card: React.FC<CardProps> = ({
   }
   return (
     <article
-      className={`${styles.Card} ${
+      className={[
+        styles.Card,
         showBackground
           ? darkMode
             ? styles.ShowDarkBackground
             : styles.ShowLightBackground
-          : ''
-      } ${blog ? styles.BlogPost : ''} ${isPreview ? styles.Preview : ''}`}
+          : '',
+        blog ? styles.BlogPost : '',
+        isPreview ? styles.Preview : '',
+      ].join(' ')}
       style={style}
     >
       {children}

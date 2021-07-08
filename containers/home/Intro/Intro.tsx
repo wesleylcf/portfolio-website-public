@@ -55,8 +55,8 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
         <Card side="center" flexBasis="50%" padding="0 3vw">
           <Animate delay={isMobile ? 0.8 : 1.6}>
             <p>
-              I am first-year at the Nanyang Technological University in
-              Singapore, studying Computer Science. I am passionate about web
+              I am first-year studying Computer Science at the Nanyang
+              Technological University in Singapore. I am passionate about web
               development, and software-engineering in general.
             </p>
             <p

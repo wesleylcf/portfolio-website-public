@@ -11,11 +11,12 @@ const notion = new Client({
   auth: process.env.NOTION_KEY,
 });
 const databaseId = process.env.NOTION_PROJECTS_DATABASE_ID;
-const MAX_ITEMS_PER_VIEW = 3;
 
-export default async function getProjects() {
+export default async function getProjects(maxItems) {
+  const MAX_ITEMS_PER_VIEW = maxItems;
   const response = await notion.databases.query({
     database_id: databaseId,
+    sorts: [{ property: 'name', direction: 'descending' }],
   });
   const projects: Project[] = [];
   let itemsAdded = 0;
@@ -31,6 +32,5 @@ export default async function getProjects() {
     });
     itemsAdded += 1;
   }
-  console.log(projects);
   return projects;
 }
