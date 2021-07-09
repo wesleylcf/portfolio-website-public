@@ -7,6 +7,7 @@ interface SocialProps {
   width: string;
   hide?: boolean;
   darkMode: boolean;
+  isMobile?: boolean;
   atPage: string;
   links: string[];
 }
@@ -17,6 +18,7 @@ const social: React.FC<SocialProps> = ({
   darkMode,
   atPage,
   links,
+  isMobile,
 }) => {
   const classNames = [
     `${styles.SocialIcon1} ${hide ? styles.Hide1 : ''}`,
@@ -24,7 +26,7 @@ const social: React.FC<SocialProps> = ({
     `${styles.SocialIcon3} ${hide ? styles.Hide3 : ''}`,
   ];
   return (
-    <Animate delay={2}>
+    <Animate delay={isMobile ? 0 : 2}>
       {links.map((link, index) => {
         return (
           <div className={classNames[index]} key={atPage + index}>

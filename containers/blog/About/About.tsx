@@ -75,8 +75,7 @@ const About = ({ darkMode }) => {
           <Animate delay={1.6} minWidth="100%">
             <p>Stuff I hope to accomplish while in university</p>
             <ol>
-              <li>Get a girlfriend (please?)</li>
-              <li>Make lots of awesome friends</li>
+              <li>Make lots of awesome friends and find my S/O</li>
               <li>
                 Stay in hall for as long as I can ( I live like 1h45mins away )
               </li>

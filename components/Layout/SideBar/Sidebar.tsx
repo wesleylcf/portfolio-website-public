@@ -54,6 +54,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                 darkMode={darkMode}
                 links={socialLinks}
                 atPage={atPage}
+                isMobile={isMobile}
               />
             </div>
           </>

@@ -29,7 +29,7 @@ const ImportantButton: React.FC<ButtonProps> = ({
           <a
             className={`${styles.Button} ${
               darkMode ? styles.Dark : styles.Light
-            } ${isProjectComponent ? styles.ProjectComponent : ''}`}
+            }`}
             href={href}
             target="_blank"
           >
