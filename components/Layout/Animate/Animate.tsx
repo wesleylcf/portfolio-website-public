@@ -7,6 +7,7 @@ interface AnimateProps {
   delay: number;
   notTriggerOnce?: boolean;
   isMobile?: boolean;
+  minWidth?: string;
 }
 
 const Animate: React.FC<AnimateProps> = ({
@@ -14,6 +15,7 @@ const Animate: React.FC<AnimateProps> = ({
   delay = 0,
   notTriggerOnce,
   isMobile,
+  minWidth,
 }) => {
   const [ref, inView] = useInView(notTriggerOnce ? {} : { triggerOnce: true });
   return (

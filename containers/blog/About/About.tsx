@@ -7,7 +7,7 @@ import utilStyles from '../../../styles/utils.module.css';
 import Main from '../../../components/Layout/Main/Main';
 import Link from 'next/link';
 
-const About = ({ darkMode }) => {
+const About = ({ darkMode, isMobile }) => {
   return (
     <VerticalSection>
       <Main>
@@ -62,6 +62,8 @@ const About = ({ darkMode }) => {
           </Animate>
           <Animate delay={1.4} minWidth="100%">
             <p>Some cool facts:</p>
+          </Animate>
+          <Animate delay={1.4} minWidth="100%">
             <ul>
               <li>I did gymnastics for around 13 years</li>
               <li>I play the guitar, and my idol is Tommy Emmanuel!</li>
@@ -74,6 +76,8 @@ const About = ({ darkMode }) => {
           </Animate>
           <Animate delay={1.6} minWidth="100%">
             <p>Stuff I hope to accomplish while in university</p>
+          </Animate>
+          <Animate delay={1.4} minWidth="100%">
             <ol>
               <li>Make lots of awesome friends and find my S/O</li>
               <li>
