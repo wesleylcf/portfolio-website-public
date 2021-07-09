@@ -19,10 +19,7 @@ const Posts = ({ posts, darkMode }) => {
               margin="2vh 0"
               minHeight="30vh"
               isPreview
-              previewLink={`http://localhost:3000/blog/posts/${title.replace(
-                /\s+/g,
-                '-'
-              )}`}
+              previewLink={`/blog/posts/${title.replace(/\s+/g, '-')}`}
             >
               <h1
                 className={utilStyles.headingMd}
