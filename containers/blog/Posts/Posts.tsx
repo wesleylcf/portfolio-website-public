@@ -19,8 +19,8 @@ const Posts = ({ posts, darkMode }) => {
               margin="2vh 0"
               minHeight="30vh"
               isPreview
-              previewLink={`http://localhost:3000/blog/posts/${title.replaceAll(
-                ' ',
+              previewLink={`http://localhost:3000/blog/posts/${title.replace(
+                /\s+/g,
                 '-'
               )}`}
             >
@@ -42,7 +42,7 @@ const Posts = ({ posts, darkMode }) => {
                   darkMode ? utilStyles.ColorT : utilStyles.ColorTLight
                 }
               >
-                {tags.replaceAll(',', ' / ')}
+                {tags.replace(/,/g, ' / ')}
               </p>
             </Card>
           );

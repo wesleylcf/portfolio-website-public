@@ -27,7 +27,7 @@ const projectCard: React.FC<ProjectCardProps> = ({
           <div className={styles.Description}>
             <h1 className={utilStyles.ColorT}>{heading}</h1>
             <p className={utilStyles.ColorP}>
-              [ {languages.replaceAll(',', ' / ')} ]
+              [ {languages.replace(/,/g, ' / ')} ]
             </p>
             <p className={utilStyles.ColorA}>{description}</p>
             <ImportantButton href={linkTo} darkMode isProjectComponent>

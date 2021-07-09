@@ -72,7 +72,7 @@ const Post: React.FC<PostProps> = ({ pageContent, title, isDarkMode }) => {
 export default Post;
 
 export async function getStaticProps({ params }) {
-  const name = params.name.replaceAll('-', ' ');
+  const name = params.name.replace(/-/g, ' ');
   const pageContent = await getPostContent(name);
   return {
     props: {

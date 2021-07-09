@@ -37,7 +37,7 @@ const Projects: React.FC<ProjectsProps> = ({
                 heading={title}
                 languages={tags}
                 description={description}
-                imageSrc={title.replaceAll(' ', '-')}
+                imageSrc={title.replace(/\s+/g, '-')}
                 key={index}
                 linkTo={link}
               />

@@ -61,7 +61,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects, darkMode }) => {
                     darkMode ? utilStyles.ColorP : utilStyles.ColorPLight
                   }
                 >
-                  {project.tags.replaceAll(' ', ' / ')}
+                  {project.tags.replace(/,/g, ' / ')}
                 </p>
                 <p>{project.description}</p>
                 {project.link === 'not deployed' ? (

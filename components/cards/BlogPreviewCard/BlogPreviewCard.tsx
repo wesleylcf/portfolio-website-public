@@ -28,7 +28,7 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
   return (
     <div className={styles.Container}>
       <Animate delay={animateDelay}>
-        <Link href={`/blog/posts/${title.replaceAll(' ', '-')}`}>
+        <Link href={`/blog/posts/${title.replace(/\s+/g, '-')}`}>
           <a className={styles.Post}>
             <div className={styles.Cover}>
               {previewImage ? (
@@ -59,7 +59,7 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
                     darkMode ? utilStyles.ColorA : utilStyles.ColorALight
                   } ${styles.CoverTags}`}
                 >
-                  {tags.replaceAll(',', ' / ')}
+                  {tags.replace(/,/g, ' / ')}
                 </span>
               </p>
               <h2 className={`${styles.ContentTitle}`}>{title}</h2>
