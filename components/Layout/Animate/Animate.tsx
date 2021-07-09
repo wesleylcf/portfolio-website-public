@@ -22,7 +22,9 @@ const Animate: React.FC<AnimateProps> = ({
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.3, delay: delay }}
-      className={isMobile ? styles.Mobile : styles.Desktop}
+      className={
+        isMobile ? (isMobile === true ? styles.Mobile : styles.Desktop) : ''
+      }
     >
       {children}
     </motion.div>

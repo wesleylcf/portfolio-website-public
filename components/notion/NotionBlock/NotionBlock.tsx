@@ -10,6 +10,7 @@ interface NotionBlockProps {
   pageBlocks: PageBlock[];
   isDarkMode: boolean;
   headingColor: number;
+  isMobile: boolean;
 }
 
 const headingColorMap = {
@@ -25,6 +26,7 @@ const NotionBlock: React.FC<NotionBlockProps> = ({
   pageBlocks,
   isDarkMode,
   headingColor,
+  isMobile,
 }) => {
   const childrenBlocks: any = pageBlocks.map(
     ({ type, content, href, link, annotations, indentLevel }, index) => {
@@ -40,6 +42,7 @@ const NotionBlock: React.FC<NotionBlockProps> = ({
               className={[
                 styles.Code,
                 isDarkMode ? styles.Dark : styles.Light,
+                isMobile ? styles.MobileWidth : styles.DesktopWidth,
                 'language-jsx',
               ].join(' ')}
               style={{ marginLeft: `${indentLevel}vw` }}

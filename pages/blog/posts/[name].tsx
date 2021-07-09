@@ -12,9 +12,15 @@ interface PostProps {
   pageContent: PageBlock[][];
   title: string;
   isDarkMode: boolean;
+  isMobile: boolean;
 }
 
-const Post: React.FC<PostProps> = ({ pageContent, title, isDarkMode }) => {
+const Post: React.FC<PostProps> = ({
+  pageContent,
+  title,
+  isDarkMode,
+  isMobile,
+}) => {
   const router = useRouter();
   if (router.isFallback) {
     return <p>Loading...</p>;
@@ -44,6 +50,7 @@ const Post: React.FC<PostProps> = ({ pageContent, title, isDarkMode }) => {
                 pageBlocks={pageBlocks}
                 isDarkMode={isDarkMode}
                 headingColor={headingColorNumber}
+                isMobile={isMobile}
               />
             );
             if (pageBlocks[0].type === 'bulleted_list_item') {
