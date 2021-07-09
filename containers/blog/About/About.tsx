@@ -60,10 +60,8 @@ const About = ({ darkMode, isMobile }) => {
               experience and asset to my growth as a software engineer.
             </p>
           </Animate>
-          <Animate delay={1.4} minWidth="100%">
-            <p>Some cool facts:</p>
-          </Animate>
-          <Animate delay={1.4} minWidth="100%">
+          <Animate delay={1.4}>
+            <p style={{ minWidth: '36vw' }}>Some cool facts:</p>
             <ul>
               <li>I did gymnastics for around 13 years</li>
               <li>I play the guitar, and my idol is Tommy Emmanuel!</li>
@@ -73,11 +71,7 @@ const About = ({ darkMode, isMobile }) => {
                 software engineers
               </li>
             </ul>
-          </Animate>
-          <Animate delay={1.6} minWidth="100%">
             <p>Stuff I hope to accomplish while in university</p>
-          </Animate>
-          <Animate delay={1.4} minWidth="100%">
             <ol>
               <li>Make lots of awesome friends and find my S/O</li>
               <li>

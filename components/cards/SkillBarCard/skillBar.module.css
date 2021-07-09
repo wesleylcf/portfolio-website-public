@@ -1,5 +1,5 @@
 .Article {
-  width: 100%;
+  min-width: 35vw;
 }
 
 .List {
