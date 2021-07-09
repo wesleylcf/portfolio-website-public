@@ -13,7 +13,7 @@ interface CardProps {
   darkMode?: boolean;
   blog?: boolean;
   isPreview?: boolean;
-  previewLink?: string;
+  previewPostTitle?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -28,7 +28,7 @@ const Card: React.FC<CardProps> = ({
   blog,
   darkMode,
   isPreview,
-  previewLink,
+  previewPostTitle,
 }) => {
   let style = {
     minHeight,
@@ -58,7 +58,7 @@ const Card: React.FC<CardProps> = ({
       <article
         className={`${styles.Preview} ${darkMode ? styles.Dark : styles.Light}`}
       >
-        <Link href={previewLink}>
+        <Link href={`/blog/post/${previewPostTitle.replace(/\s+/g, '-')}`}>
           <a
             className={`${styles.Card} ${
               showBackground
