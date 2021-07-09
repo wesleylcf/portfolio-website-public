@@ -3,6 +3,7 @@ import 'prismjs/themes/prism-tomorrow.css';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Layout from '../components/Layout/Layout';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
   const [isMobile, setIsMobile] = useState(() => {
@@ -72,17 +73,24 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
   return (
-    <Layout
-      links={links}
-      isDarkMode={isDarkMode}
-      isMobile={isMobile}
-      setIsMobile={(bool) => setIsMobile(bool)}
-      onChangeColorTheme={onChangeColorTheme}
-      atPage={router.pathname}
-      socialLinks={socialLinks}
-    >
-      <Component {...pageProps} isDarkMode={isDarkMode} isMobile={isMobile} />
-    </Layout>
+    <>
+      <Head>
+        <title>Wesley Lim</title>
+        <meta property="og:title" content="My page title" key="title" />
+        <link rel="icon" href="/favicon.svg"></link>
+      </Head>
+      <Layout
+        links={links}
+        isDarkMode={isDarkMode}
+        isMobile={isMobile}
+        setIsMobile={(bool) => setIsMobile(bool)}
+        onChangeColorTheme={onChangeColorTheme}
+        atPage={router.pathname}
+        socialLinks={socialLinks}
+      >
+        <Component {...pageProps} isDarkMode={isDarkMode} isMobile={isMobile} />
+      </Layout>
+    </>
   );
 }
 
