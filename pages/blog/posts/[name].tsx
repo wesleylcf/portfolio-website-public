@@ -6,6 +6,7 @@ import VerticalSection from '../../../components/Layout/VerticalSection/Vertical
 import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
 import NotionBlock from '../../../components/notion/NotionBlock/NotionBlock';
 import utilStyles from '../../../styles/utils.module.css';
+import { useRouter } from 'next/router';
 
 interface PostProps {
   pageContent: PageBlock[][];
@@ -14,6 +15,10 @@ interface PostProps {
 }
 
 const Post: React.FC<PostProps> = ({ pageContent, title, isDarkMode }) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <p>Loading...</p>;
+  }
   if (typeof pageContent !== 'undefined' && typeof title !== 'undefined') {
     let headingColorNumber = 0;
     return (
