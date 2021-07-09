@@ -58,7 +58,7 @@ const Card: React.FC<CardProps> = ({
       <article
         className={`${styles.Preview} ${darkMode ? styles.Dark : styles.Light}`}
       >
-        <Link href={`/blog/post/${previewPostTitle.replace(/\s+/g, '-')}`}>
+        <Link href={`/blog/posts/${previewPostTitle.replace(/\s+/g, '-')}`}>
           <a
             className={`${styles.Card} ${
               showBackground
