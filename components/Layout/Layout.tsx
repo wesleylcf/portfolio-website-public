@@ -105,6 +105,7 @@ const Layout: React.FC<LayoutProps> = ({
         styles.Layout,
         isModal ? styles.ModalOpen : '',
         isDarkMode ? 'dark' : 'light',
+        isMobile ? styles.Mobile : '',
       ].join(' ')}
       suppressHydrationWarning={true}
     >

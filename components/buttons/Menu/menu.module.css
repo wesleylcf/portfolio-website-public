@@ -3,7 +3,7 @@
   height: 3px;
   background-color: slategray;
   margin: 3px 2px;
-  transition: 0.4s;
+  transition: 0.1s linear;
 }
 
 .Bar2 {
@@ -11,7 +11,7 @@
   height: 3px;
   background-color: slategray;
   margin: 3px 2px;
-  transition: 0.4s;
+  transition: 0.1s linear;
 }
 
 .Bar3 {
@@ -19,7 +19,7 @@
   height: 3px;
   background-color: slategray;
   margin: 3px 2px;
-  transition: 0.4s;
+  transition: 0.1s linear;
 }
 
 .Menu {
@@ -32,7 +32,6 @@
   height: 6vh;
   width: 50px;
   margin: 1.5vh 3.5vw;
-  transition: 0.3s ease-in-out;
   position: fixed;
   right: 0;
   top: 0;

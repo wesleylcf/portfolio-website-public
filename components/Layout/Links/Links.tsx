@@ -34,7 +34,11 @@ const Links: React.FC<LinkProps> = ({
               delay={isMobile ? 0 : delay}
               key={atPage === '/blog' ? 'blog' + index : index}
             >
-              <ImportantButton href={link.linkTo} darkMode={darkMode}>
+              <ImportantButton
+                href={link.linkTo}
+                darkMode={darkMode}
+                isMobile={isMobile}
+              >
                 {link.content}
               </ImportantButton>
             </Animate>

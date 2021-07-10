@@ -7,6 +7,7 @@ interface ButtonProps {
   darkMode: boolean;
   isTextComponent?: boolean;
   isProjectComponent?: boolean;
+  isMobile?: boolean;
 }
 
 const ImportantButton: React.FC<ButtonProps> = ({
@@ -15,14 +16,15 @@ const ImportantButton: React.FC<ButtonProps> = ({
   darkMode,
   isTextComponent,
   isProjectComponent,
+  isMobile,
 }) => {
   return (
     <div
-      className={`${styles.ButtonWrapper} ${
-        isTextComponent ? styles.TextComponent : ''
-      } ${isProjectComponent ? styles.ProjectComponent : ''} ${
-        darkMode ? styles.Dark : styles.Light
-      }`}
+      className={[
+        styles.ButtonWrapper,
+        isProjectComponent ? styles.ProjectComponent : '',
+        darkMode ? styles.Dark : styles.Light,
+      ].join(' ')}
     >
       <li className={styles.ListItem}>
         {isProjectComponent ? (

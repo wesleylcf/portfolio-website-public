@@ -41,3 +41,15 @@
   -ms-filter: blur(1px);
   filter: blur(1px);
 }
+
+.Mobile {
+  transition: none;
+}
+
+@media screen and(max-width: 800px) {
+  .Layout,
+  .Social,
+  .Container {
+    transition: 0s none;
+  }
+}

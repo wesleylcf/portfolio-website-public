@@ -41,9 +41,12 @@ const NavBar: React.FC<NavBarProps> = ({
   }
   return (
     <nav
-      className={`${styles.Nav} ${!darkMode ? 'light' : 'dark'}  ${
-        hide && !isMobile ? styles.HideNav : ''
-      }`}
+      className={[
+        styles.Nav,
+        !darkMode ? 'light' : 'dark',
+        hide && !isMobile ? styles.HideNav : '',
+        isMobile ? styles.Mobile : '',
+      ].join(' ')}
       suppressHydrationWarning={true}
     >
       <Link href="/" passHref>

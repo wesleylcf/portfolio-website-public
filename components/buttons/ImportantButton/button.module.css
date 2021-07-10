@@ -2,7 +2,6 @@
   text-decoration: none;
   float: left;
   height: 6vh;
-  transition: 0.3s ease-in-out;
   margin: 6vh 2vw 6vh 2vw;
 }
 .TextComponent {
@@ -76,5 +75,9 @@
   .ProjectComponent {
     height: 6vh;
     margin: 1vh auto;
+  }
+  .Dark,
+  .Light {
+    transition: none;
   }
 }
