@@ -110,6 +110,9 @@ body .light {
     line-height: 1.5;
   }
   p {
-    font-size: 1.7vh;
+    font-size: 2vh;
+  }
+  small {
+    font-size: 1.5vh;
   }
 }

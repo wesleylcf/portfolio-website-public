@@ -1,24 +1,24 @@
 .Bar1 {
-  width: 6vw;
-  height: 7%;
+  width: 25px;
+  height: 3px;
   background-color: slategray;
-  margin: 0.4vh 2vw;
+  margin: 3px 2px;
   transition: 0.4s;
 }
 
 .Bar2 {
-  width: 6vw;
-  height: 7%;
+  width: 25px;
+  height: 3px;
   background-color: slategray;
-  margin: 0.4vh 2vw;
+  margin: 3px 2px;
   transition: 0.4s;
 }
 
 .Bar3 {
-  width: 6vw;
-  height: 7%;
+  width: 25px;
+  height: 3px;
   background-color: slategray;
-  margin: 0.4vh 2vw;
+  margin: 3px 2px;
   transition: 0.4s;
 }
 
@@ -30,7 +30,7 @@
   padding: 0;
   align-items: center;
   height: 6vh;
-  width: 12.5vw;
+  width: 50px;
   margin: 1.5vh 3.5vw;
   transition: 0.3s ease-in-out;
   position: fixed;
@@ -54,8 +54,8 @@
 }
 
 .Change .Bar1 {
-  -webkit-transform: rotate(-45deg) translate(-7px, 2px);
-  transform: rotate(-45deg) translate(-7px, 2vw);
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
 }
 
 .Change .Bar2 {
@@ -63,6 +63,6 @@
 }
 
 .Change .Bar3 {
-  -webkit-transform: rotate(45deg) translate(-7px, -2vw);
-  transform: rotate(45deg) translate(-7px, -2vw);
+  -webkit-transform: rotate(45deg) translate(-6px, -6px);
+  transform: rotate(45deg) translate(-6px, -6px);
 }

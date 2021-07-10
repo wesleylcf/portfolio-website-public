@@ -11,15 +11,18 @@ import Link from 'next/link';
 const About = ({ darkMode }) => {
   return (
     <VerticalSection>
-      <HeadingCard
-        darkMode={darkMode}
-        order={0}
-        number="Hi"
-        content="Welcome to my blog!"
-      />
+      <Animate delay={0.25}>
+        <HeadingCard
+          darkMode={darkMode}
+          order={0}
+          number="Hi"
+          content="Welcome to my blog!"
+        />
+      </Animate>
+
       <Main>
         <div style={{ margin: '4vh auto' }}>
-          <Animate delay={0.8}>
+          <Animate delay={0.5}>
             <Image
               src="/images/me.jpg"
               width={100}
@@ -31,7 +34,7 @@ const About = ({ darkMode }) => {
           </Animate>
         </div>
         <Card side="center">
-          <Animate delay={0.95}>
+          <Animate delay={0.75}>
             <p>
               My name is Wesley and I'm 21 this year. I'm currently pursuing
               Computer Science at the Nanyang Technological
@@ -43,8 +46,7 @@ const About = ({ darkMode }) => {
               breadth-first manner to find a direction that I could work
               towards.
             </p>
-          </Animate>
-          <Animate delay={1.1}>
+
             <p>
               Currently, I'm inclined towards Web development, and spend my free
               time doing projects that I find interesting, or provide insight.
@@ -58,15 +60,13 @@ const About = ({ darkMode }) => {
                 </a>
               </Link>
             </p>
-          </Animate>
-          <Animate delay={0.2}>
+
             <p>
               In the future, I hope to be able to work in a tech company with an
               awesome culture like Google, which I think would be an invaluable
               experience and asset to my growth as a software engineer.
             </p>
-          </Animate>
-          <Animate delay={0.2}>
+
             <p style={{ minWidth: '36vw' }}>Some cool facts:</p>
             <ul>
               <li>I did gymnastics for around 13 years</li>
