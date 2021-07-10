@@ -1,10 +1,10 @@
 import React from 'react';
 import About from '../../containers/blog/About/About';
 
-const index = ({ isDarkMode, isMobile }) => {
+const index = ({ isDarkMode }) => {
   return (
     <>
-      <About darkMode={isDarkMode} isMobile={isMobile} />
+      <About darkMode={isDarkMode} />
     </>
   );
 };
