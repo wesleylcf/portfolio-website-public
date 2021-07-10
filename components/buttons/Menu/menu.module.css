@@ -54,8 +54,8 @@
 }
 
 .Change .Bar1 {
-  -webkit-transform: rotate(-45deg) translate(-7px, 8px);
-  transform: rotate(-45deg) translate(-7px, 8px);
+  -webkit-transform: rotate(-45deg) translate(-7px, 2px);
+  transform: rotate(-45deg) translate(-7px, 2vw);
 }
 
 .Change .Bar2 {
@@ -63,6 +63,6 @@
 }
 
 .Change .Bar3 {
-  -webkit-transform: rotate(45deg) translate(-7px, -8px);
-  transform: rotate(45deg) translate(-7px, -8px);
+  -webkit-transform: rotate(45deg) translate(-7px, -2vw);
+  transform: rotate(45deg) translate(-7px, -2vw);
 }

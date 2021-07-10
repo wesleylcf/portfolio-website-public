@@ -1,5 +1,5 @@
 .Article {
-  min-width: 35vw;
+  width: 35vw;
 }
 
 .List {
@@ -55,5 +55,8 @@
   }
   .BarContainer {
     min-width: 70%;
+  }
+  .Article {
+    min-width: 80vw;
   }
 }

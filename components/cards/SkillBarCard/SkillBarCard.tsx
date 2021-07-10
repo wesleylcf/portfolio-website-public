@@ -19,7 +19,7 @@ const SkillBarCard: React.FC<SkillBarCardProps> = ({
 }) => {
   let delay = 0.1;
   return (
-    <Animate delay={isMobile ? 0.6 : 0} isMobile={isMobile}>
+    <Animate delay={isMobile ? 0.6 : 0}>
       <article className={styles.Article}>
         <ul className={styles.List}>
           {skills.map((skill, index) => {

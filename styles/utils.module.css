@@ -161,13 +161,13 @@
 
 @media screen and (max-width: 800px) {
   .headingXl {
-    font-size: 12vw;
+    font-size: 18vw;
   }
   .heading2Xl {
-    font-size: 14vw;
+    font-size: 20vw;
   }
   .heading3Xl {
-    font-size: 16vw;
+    font-size: 22vw;
   }
   .headingLg {
     font-size: 10vw;

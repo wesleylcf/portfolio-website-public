@@ -5,11 +5,18 @@ import Animate from '../../../components/Layout/Animate/Animate';
 import Image from 'next/image';
 import utilStyles from '../../../styles/utils.module.css';
 import Main from '../../../components/Layout/Main/Main';
+import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
 import Link from 'next/link';
 
-const About = ({ darkMode, isMobile }) => {
+const About = ({ darkMode }) => {
   return (
     <VerticalSection>
+      <HeadingCard
+        darkMode={darkMode}
+        order={0}
+        number="Hi"
+        content="Welcome to my blog!"
+      />
       <Main>
         <div style={{ margin: '4vh auto' }}>
           <Animate delay={0.8}>
@@ -18,18 +25,17 @@ const About = ({ darkMode, isMobile }) => {
               width={100}
               height={134}
               className={utilStyles.borderCircle}
-              alt="insert handsome guy"
-              title="handsome guy"
+              alt="insert dashing photo of wesley lim"
+              title="wesley lim"
             ></Image>
           </Animate>
         </div>
-
         <Card side="center">
           <Animate delay={0.95}>
             <p>
-              Hi there, and welcome to my blog! My name is Wesley and I'm 21
-              this year. I'm currently pursuing Computer Science at the Nanyang
-              Technological Unviersity(2021-2024).
+              My name is Wesley and I'm 21 this year. I'm currently pursuing
+              Computer Science at the Nanyang Technological
+              Unviersity(2021-2024).
             </p>
             <p>
               I picked up programming as I was influenced by my siblings, and
@@ -53,14 +59,14 @@ const About = ({ darkMode, isMobile }) => {
               </Link>
             </p>
           </Animate>
-          <Animate delay={1.25}>
+          <Animate delay={0.2}>
             <p>
               In the future, I hope to be able to work in a tech company with an
               awesome culture like Google, which I think would be an invaluable
               experience and asset to my growth as a software engineer.
             </p>
           </Animate>
-          <Animate delay={1.4}>
+          <Animate delay={0.2}>
             <p style={{ minWidth: '36vw' }}>Some cool facts:</p>
             <ul>
               <li>I did gymnastics for around 13 years</li>
