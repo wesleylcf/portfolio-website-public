@@ -9,8 +9,7 @@
   position: relative;
   min-height: 40vh;
   margin: 2vh 1vw;
-  min-width: 30vw;
-  max-width: 38vw;
+  width: 38vw;
 }
 
 .ShowDarkBackground {
