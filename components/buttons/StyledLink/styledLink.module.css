@@ -31,7 +31,6 @@
 }
 
 .StyledLink:hover .underline {
-  z-index: 1;
   width: 100%;
   transition: 0.2s ease-in-out;
 }
