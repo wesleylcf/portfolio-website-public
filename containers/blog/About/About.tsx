@@ -25,8 +25,8 @@ const About = ({ darkMode }) => {
           <Animate delay={0.5}>
             <Image
               src="/images/me.jpg"
-              width={100}
-              height={134}
+              width={110}
+              height={125}
               className={utilStyles.borderCircle}
               alt="insert dashing photo of wesley lim"
               title="wesley lim"
@@ -50,13 +50,13 @@ const About = ({ darkMode }) => {
             <p>
               Currently, I'm inclined towards Web development, and spend my free
               time doing projects that I find interesting, or provide insight.
-              You can check out my recent projects{' '}
+              Check out{' '}
               <Link href="/blog/projects">
                 <a
                   style={{ color: darkMode ? 'turquoise' : 'teal' }}
                   target="_blank"
                 >
-                  here
+                  my recent projects
                 </a>
               </Link>
             </p>

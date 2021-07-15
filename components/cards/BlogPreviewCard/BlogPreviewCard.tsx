@@ -36,6 +36,7 @@ const BlogPreviewCard: React.FC<BlogPreviewCardProps> = ({
                   src={previewImage}
                   layout="fill"
                   className={styles.Image}
+                  alt={tags.split(',')[0]}
                 />
               ) : null}
             </div>

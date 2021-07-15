@@ -34,6 +34,7 @@ const ImportantButton: React.FC<ButtonProps> = ({
             }`}
             href={href}
             target="_blank"
+            rel="noopener"
           >
             {children}
           </a>

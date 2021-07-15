@@ -17,8 +17,8 @@ const About = ({ darkMode, isMobile }) => {
         <Animate delay={isMobile ? 0.25 : 0.9}>
           <Image
             src="/images/me.jpg"
-            width={100}
-            height={134}
+            width={110}
+            height={125}
             className={utilStyles.borderCircle}
             alt="insert handsome guy"
             title="handsome guy"
