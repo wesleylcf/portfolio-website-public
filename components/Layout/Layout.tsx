@@ -97,6 +97,11 @@ const Layout: React.FC<LayoutProps> = ({
   }, [isMobile, isModal]);
 
   const onClickMenu = () => {
+    if (!isModal) {
+      document.body.classList.add('freeze');
+    } else {
+      document.body.classList.remove('freeze');
+    }
     setIsModal(!isModal);
   };
   return (
