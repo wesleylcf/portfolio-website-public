@@ -2,12 +2,11 @@
   flex-basis: 33%;
   transition: 0.3s;
   max-height: 70vh;
-  margin: 1vh 0;
+  margin: 1vh 0.5vw;
+  max-width: 30%;
 }
 
 .Post {
-  display: flex;
-  flex-direction: column;
   text-decoration: none;
 }
 
@@ -18,9 +17,10 @@
 
 .Cover {
   height: 20vh;
+  width: 100%;
   position: relative;
-  margin: 0 0.5vw;
   border-radius: 15px 15px 0 0;
+  margin: 0 1vw;
 }
 
 .Image {
@@ -68,6 +68,7 @@
   .Container {
     flex-direction: column;
     flex-basis: 50%;
+    max-width: 48%;
   }
   .Cover {
     height: calc(40vw * 0.4);

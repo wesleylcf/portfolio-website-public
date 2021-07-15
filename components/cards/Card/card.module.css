@@ -30,9 +30,9 @@
 }
 
 .BlogPost {
-  margin: 0 0.5vw;
+  margin: 0 1vw;
   min-height: 30vh;
-  min-width: 0vw;
+  width: 100%;
 }
 
 .Preview .Card:hover {
