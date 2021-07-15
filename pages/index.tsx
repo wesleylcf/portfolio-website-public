@@ -22,7 +22,7 @@ const Home = ({ isDarkMode, isMobile, posts, projects }) => {
 };
 
 export async function getStaticProps(context) {
-  const posts = await getPosts();
+  const posts = await getPosts(3);
   const projects = await getProjects(2);
   return {
     props: { posts: posts, projects: projects },

@@ -12,10 +12,9 @@ const notion = new Client({
   auth: process.env.NOTION_KEY,
 });
 const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
-const MAX_POSTS_PER_VIEW = 3;
 const NOTION_DATE_LENGTH = 10;
 
-export default async function getPosts() {
+export default async function getPosts(MAX_POSTS_PER_VIEW: number = 10) {
   const pages = await notion.databases.query({
     database_id: databaseId,
     sorts: [{ timestamp: 'last_edited_time', direction: 'descending' }],
