@@ -1,17 +1,13 @@
 .ImageContainer {
-  height: calc(30vw * 0.5625);
-  width: 30vw;
-  border-radius: 15px;
-  margin: 0 auto;
-  -webkit-box-shadow: -1vw 0.7vw 20px 2px #4d4d4d;
-  box-shadow: -1vw 0.7vw 10px 2px #4d4d4d;
-  transition: 0.5s ease;
-}
-
-.ImageContainer:hover {
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  transition: 0.5s ease;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  -webkit-filter: blur(0.8px);
+  -moz-filter: blur(0.8px);
+  -o-filter: blur(0.8px);
+  -ms-filter: blur(0.8px);
+  filter: blur(0.8px);
 }
 
 .Image {
@@ -28,36 +24,6 @@
   position: relative;
   margin-bottom: 2vh;
 }
-
-.Modal {
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
-  /* transition: 0.5s ease; */
-  border-radius: 10px;
-  -webkit-filter: blur(1px);
-  -moz-filter: blur(1px);
-  -o-filter: blur(1px);
-  -ms-filter: blur(1px);
-  filter: blur(1px);
-}
-
-.Modal:hover,
-.ImageContainer:hover .Modal {
-  background-color: rgba(0, 0, 0, 0);
-  filter: none;
-}
-
-/* .Arrow {
-  z-index: -1;
-  width: 0;
-  height: 0;
-  border-top: 50px solid transparent;
-  border-right: 100px solid turquoise;
-  border-bottom: 50px solid transparent;
-  transform: translate3d(-32vw, 0, 0);
-} */
 
 .Description {
   z-index: -1;
@@ -93,6 +59,13 @@
   transform: translate3d(-40vw, 0, 0);
   background-color: rgba(44, 44, 44);
 }
+.Project:hover .ImageContainer {
+  -webkit-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  -ms-filter: none;
+  filter: none;
+}
 
 @media screen and (max-width: 1400px) {
   .ImageContainer,
@@ -126,7 +99,16 @@
 }
 
 @media screen and (max-width: 800px) {
-  .ImageContainer,
+  .ImageContainer {
+    min-height: 40vh;
+    min-width: 75vw;
+    line-height: 2.5vh;
+    -webkit-filter: none;
+    -moz-filter: none;
+    -o-filter: none;
+    -ms-filter: none;
+    filter: none;
+  }
   .Project {
     min-height: 40vh;
     min-width: 75vw;
@@ -137,23 +119,16 @@
     opacity: 1;
     min-width: 75vw;
     transform: translate3d(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
   }
   .Description p {
     margin: 0.5vh 2vw;
-  }
-  .Modal {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  .ImageContainer:hover .Modal,
-  .Modal:hover {
-    z-index: 1;
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.7);
   }
 
   .Project:hover .Description,
   .ImageContainer:hover .Description,
   .Description:hover {
     transform: translate3d(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
   }
 }

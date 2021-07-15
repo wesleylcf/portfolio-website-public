@@ -21,20 +21,19 @@ const projectCard: React.FC<ProjectCardProps> = ({
   linkTo,
 }) => {
   return (
-    <div className={styles.Project}>
-      <Animate delay={0.2}>
+    <Animate delay={0.2}>
+      <div className={styles.Project}>
+        <div className={styles.Description}>
+          <h1 className={utilStyles.ColorT}>{heading}</h1>
+          <p className={utilStyles.ColorP}>
+            [ {languages.replace(/,/g, ' / ')} ]
+          </p>
+          <p className={utilStyles.ColorA}>{description}</p>
+          <ImportantButton href={linkTo} darkMode isProjectComponent>
+            See Project
+          </ImportantButton>
+        </div>
         <div className={styles.ImageContainer}>
-          <div className={styles.Description}>
-            <h1 className={utilStyles.ColorT}>{heading}</h1>
-            <p className={utilStyles.ColorP}>
-              [ {languages.replace(/,/g, ' / ')} ]
-            </p>
-            <p className={utilStyles.ColorA}>{description}</p>
-            <ImportantButton href={linkTo} darkMode isProjectComponent>
-              See Project
-            </ImportantButton>
-          </div>
-
           <Image
             priority
             src={`/images/${imageSrc}.png`}
@@ -42,11 +41,9 @@ const projectCard: React.FC<ProjectCardProps> = ({
             layout="fill"
             className={styles.Image}
           />
-          {}
-          <div className={styles.Modal}></div>
         </div>
-      </Animate>
-    </div>
+      </div>
+    </Animate>
   );
 };
 
