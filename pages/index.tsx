@@ -7,10 +7,21 @@ import Blog from '../containers/home/Blog/Blog';
 import Contact from '../containers/home/Contact/Contact';
 import getPosts from './api/posts/getPosts';
 import getProjects from './api/projects';
+import Head from 'next/head';
 
 const Home = ({ isDarkMode, isMobile, posts, projects }) => {
   return (
     <>
+      <Head>
+        <meta
+          name="description"
+          content="Wesley Lim is a software engineer based in Singapore, with experience in web development using React."
+        />
+        <meta
+          name="keywords"
+          content="Wesley Lim, software engineer, React, Singapore, NTU, computer science"
+        />
+      </Head>
       <Intro darkMode={isDarkMode} isMobile={isMobile} />
       <About darkMode={isDarkMode} isMobile={isMobile} />
       <Projects darkMode={isDarkMode} projects={projects} isMobile={isMobile} />

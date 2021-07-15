@@ -7,6 +7,7 @@ import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
 import NotionBlock from '../../../components/notion/NotionBlock/NotionBlock';
 import utilStyles from '../../../styles/utils.module.css';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 interface PostProps {
   pageContent: PageBlock[][];
@@ -28,49 +29,61 @@ const Post: React.FC<PostProps> = ({
   if (typeof pageContent !== 'undefined' && typeof title !== 'undefined') {
     let headingColorNumber = 0;
     return (
-      <VerticalSection>
-        <HeadingCard
-          number=""
-          content={title}
-          order={0}
-          darkMode={isDarkMode}
-        />
-        <Main>
-          {pageContent.map((pageBlocks, index) => {
-            if (
-              pageBlocks[0].type === 'heading_1' ||
-              pageBlocks[0].type === 'heading_2'
-            ) {
-              headingColorNumber =
-                headingColorNumber === 2 ? 0 : headingColorNumber + 1;
-            }
-            const child = (
-              <NotionBlock
-                key={index}
-                pageBlocks={pageBlocks}
-                isDarkMode={isDarkMode}
-                headingColor={headingColorNumber}
-                isMobile={isMobile}
-              />
-            );
-            if (pageBlocks[0].type === 'bulleted_list_item') {
-              return (
-                <ul className={utilStyles.List} key={index}>
-                  {child}
-                </ul>
+      <>
+        <Head>
+          <meta name="description" content={title} />
+          <meta
+            name="keywords"
+            content={`Wesley Lim, software engineer, React, Singapore, NTU, computer science, ${title.replace(
+              /\s+/g,
+              ','
+            )} ${title}`}
+          />
+        </Head>
+        <VerticalSection>
+          <HeadingCard
+            number=""
+            content={title}
+            order={0}
+            darkMode={isDarkMode}
+          />
+          <Main>
+            {pageContent.map((pageBlocks, index) => {
+              if (
+                pageBlocks[0].type === 'heading_1' ||
+                pageBlocks[0].type === 'heading_2'
+              ) {
+                headingColorNumber =
+                  headingColorNumber === 2 ? 0 : headingColorNumber + 1;
+              }
+              const child = (
+                <NotionBlock
+                  key={index}
+                  pageBlocks={pageBlocks}
+                  isDarkMode={isDarkMode}
+                  headingColor={headingColorNumber}
+                  isMobile={isMobile}
+                />
               );
-            }
-            if (pageBlocks[0].type === 'numbered_list_item') {
-              return (
-                <ol className={utilStyles.List} key={index}>
-                  {child}
-                </ol>
-              );
-            }
-            return child;
-          })}
-        </Main>
-      </VerticalSection>
+              if (pageBlocks[0].type === 'bulleted_list_item') {
+                return (
+                  <ul className={utilStyles.List} key={index}>
+                    {child}
+                  </ul>
+                );
+              }
+              if (pageBlocks[0].type === 'numbered_list_item') {
+                return (
+                  <ol className={utilStyles.List} key={index}>
+                    {child}
+                  </ol>
+                );
+              }
+              return child;
+            })}
+          </Main>
+        </VerticalSection>
+      </>
     );
   }
   return null;

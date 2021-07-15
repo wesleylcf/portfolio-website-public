@@ -72,11 +72,24 @@ function MyApp({ Component, pageProps }) {
       document.body.classList.add('light');
     }
   }, []);
+  let title = 'Wesley Lim - Home';
+
+  if (router.pathname !== '/') {
+    const routeArray = router.route.split('/');
+    const requiredTitle = routeArray[routeArray.length - 1];
+    const processedTitle =
+      requiredTitle.charAt(0).toUpperCase() + requiredTitle.slice(1);
+    if (processedTitle === 'Posts') {
+      title = 'Wesley Lim - ' + 'Blog ' + processedTitle;
+    } else {
+      title = 'Wesley Lim - ' + processedTitle;
+    }
+  }
   return (
     <>
       <Head>
-        <title>Wesley Lim</title>
-        <meta property="og:title" content="My page title" key="title" />
+        <title>{title}</title>
+        <meta name="author" content="Wesley Lim Cher Fong" />
         <link rel="icon" href="/favicon.svg"></link>
       </Head>
       <Layout
