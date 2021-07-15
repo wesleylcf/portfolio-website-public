@@ -17,8 +17,8 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
     <HorizontalSection dividerId="about">
       <Main order={0}>
         <Card side="center">
-          <Animate delay={isMobile ? 0 : 1}>
-            <Animate delay={isMobile ? 0.2 : 1}>
+          <div>
+            <Animate delay={isMobile ? 0.2 : 0.6}>
               <h1
                 className={utilStyles.headingXl}
                 style={darkMode ? { color: 'turquoise' } : { color: 'teal' }}
@@ -26,7 +26,7 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
                 Hi,
               </h1>
             </Animate>
-            <Animate delay={isMobile ? 0.4 : 1.2}>
+            <Animate delay={isMobile ? 0.4 : 0.7}>
               <h1
                 className={utilStyles.heading2Xl}
                 style={darkMode ? { color: '#ffafaf' } : { color: '#ce8e8e' }}
@@ -34,7 +34,7 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
                 I'm
               </h1>
             </Animate>
-            <Animate delay={isMobile ? 0.6 : 1.4}>
+            <Animate delay={isMobile ? 0.6 : 0.8}>
               <h1
                 className={utilStyles.heading3Xl}
                 style={
@@ -46,12 +46,12 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
                 Wesley
               </h1>
             </Animate>
-          </Animate>
+          </div>
         </Card>
       </Main>
       <Aside order={1}>
         <Card side="center" flexBasis="50%" padding="0">
-          <Animate delay={isMobile ? 0.8 : 1.6}>
+          <Animate delay={isMobile ? 0.8 : 0.9}>
             <p>
               I am a first-year studying Computer Science at the Nanyang
               Technological University in Singapore. I am passionate about web
@@ -63,7 +63,7 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
               Currently, I'm waiting for the university term to start !
             </p>
           </Animate>
-          <Animate delay={isMobile ? 1 : 1.8}>
+          <Animate delay={isMobile ? 1 : 1}>
             <ImportantButton
               darkMode={darkMode}
               href="mailto:wesleylim.work@gmail.com"

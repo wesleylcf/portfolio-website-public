@@ -11,7 +11,7 @@ import Link from 'next/link';
 const About = ({ darkMode }) => {
   return (
     <VerticalSection>
-      <Animate delay={0.25}>
+      <Animate delay={0.15}>
         <HeadingCard
           darkMode={darkMode}
           order={0}
@@ -22,7 +22,7 @@ const About = ({ darkMode }) => {
 
       <Main>
         <div style={{ margin: '4vh auto' }}>
-          <Animate delay={0.5}>
+          <Animate delay={0.3}>
             <Image
               src="/images/me.jpg"
               width={110}
@@ -34,7 +34,7 @@ const About = ({ darkMode }) => {
           </Animate>
         </div>
         <Card side="center">
-          <Animate delay={0.75}>
+          <Animate delay={0.45}>
             <p>
               My name is Wesley and I'm 21 this year. I'm currently pursuing
               Computer Science at the Nanyang Technological

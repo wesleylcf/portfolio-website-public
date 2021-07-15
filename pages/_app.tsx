@@ -54,8 +54,8 @@ function MyApp({ Component, pageProps }) {
           content: 'Home',
         },
       ],
-      linkInitialAnimateDelay: 0.05,
-      linkAnimateDelayIncrement: 0.15,
+      linkInitialAnimateDelay: 0,
+      linkAnimateDelayIncrement: 0.1,
     };
     socialLinks = [
       'https://www.linkedin.com/in/wesley-lim-cher-fong/',

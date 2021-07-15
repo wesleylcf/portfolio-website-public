@@ -26,7 +26,7 @@ const social: React.FC<SocialProps> = ({
     `${styles.SocialIcon3} ${hide ? styles.Hide3 : ''}`,
   ];
   return (
-    <Animate delay={isMobile ? 0 : 2}>
+    <Animate delay={isMobile ? 0 : 1.2}>
       {links.map((link, index) => {
         return (
           <div className={classNames[index]} key={atPage + index}>
@@ -43,42 +43,6 @@ const social: React.FC<SocialProps> = ({
           </div>
         );
       })}
-      {/* <div className={`${styles.SocialIcon1} ${hide ? styles.Hide1 : ''} `}>
-        <SocialIcon
-          style={{
-            marginBottom: '1vh',
-            width: width,
-            height: width,
-          }}
-          url="https://www.linkedin.com/in/wesley-lim-cher-fong/"
-          bgColor={`${darkMode ? '#ffafaf' : '#ce8e8e'}`}
-          fgColor={`${darkMode ? '#222222' : 'papayawhip'}`}
-        />
-      </div>
-      <div className={`${styles.SocialIcon2} ${hide ? styles.Hide2 : ''}`}>
-        <SocialIcon
-          url="https://www.instagram.com/wesleylcf/"
-          bgColor={`${darkMode ? '#ffafaf' : '#ce8e8e'}`}
-          style={{
-            marginBottom: '1vh',
-            width: width,
-            height: width,
-          }}
-          fgColor={`${darkMode ? '#222222' : 'papayawhip'}`}
-        />
-      </div>
-      <div className={`${styles.SocialIcon3} ${hide ? styles.Hide3 : ''}`}>
-        <SocialIcon
-          url="https://github.com/wesleylcf"
-          bgColor={`${darkMode ? '#ffafaf' : '#ce8e8e'}`}
-          style={{
-            marginBottom: '1vh',
-            width: width,
-            height: width,
-          }}
-          fgColor={`${darkMode ? '#222222' : 'papayawhip'}`}
-        />
-      </div> */}
     </Animate>
   );
 };
