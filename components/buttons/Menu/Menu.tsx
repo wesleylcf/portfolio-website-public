@@ -17,10 +17,36 @@ const Menu: React.FC<MenuProps> = ({ onClickMenu, isModal, darkMode }) => {
         isModal ? styles.Change : ''
       } `}
       onClick={onClickHandler}
+      style={
+        isModal
+          ? { backgroundColor: darkMode ? '#333333' : 'rgb(226, 210, 183)' }
+          : {}
+      }
     >
-      <div className={styles.Bar1}></div>
-      <div className={styles.Bar2}></div>
-      <div className={styles.Bar3}></div>
+      <div
+        className={styles.Bar1}
+        style={
+          darkMode
+            ? { backgroundColor: 'lightgray' }
+            : { backgroundColor: 'rgb(61, 69, 77)' }
+        }
+      ></div>
+      <div
+        className={styles.Bar2}
+        style={
+          darkMode
+            ? { backgroundColor: 'lightgray' }
+            : { backgroundColor: 'rgb(61, 69, 77)' }
+        }
+      ></div>
+      <div
+        className={styles.Bar3}
+        style={
+          darkMode
+            ? { backgroundColor: 'lightgray' }
+            : { backgroundColor: 'rgb(61, 69, 77)' }
+        }
+      ></div>
     </button>
   );
 };
