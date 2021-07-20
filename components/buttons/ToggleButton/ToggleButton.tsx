@@ -5,9 +5,14 @@ import Animate from '../../Layout/Animate/Animate';
 interface ToggleButtonProps {
   hide: boolean;
   onChangeColor: () => void;
+  isDarkMode: boolean;
 }
 
-const ToggleButton: React.FC<ToggleButtonProps> = ({ hide, onChangeColor }) => {
+const ToggleButton: React.FC<ToggleButtonProps> = ({
+  hide,
+  onChangeColor,
+  isDarkMode,
+}) => {
   return (
     <div className={`${styles.ToggleButton} ${hide ? styles.Hide : ''}`}>
       <Animate delay={1.2}>
@@ -15,7 +20,9 @@ const ToggleButton: React.FC<ToggleButtonProps> = ({ hide, onChangeColor }) => {
           <input type="checkbox" />
           <span
             id="toggleColorTheme"
-            className={styles.Slider}
+            className={[styles.Slider, !isDarkMode ? styles.Checked : ''].join(
+              ' '
+            )}
             onClick={onChangeColor}
           ></span>
         </label>

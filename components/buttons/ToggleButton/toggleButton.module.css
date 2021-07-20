@@ -57,15 +57,30 @@
   transition: 0.3s ease-in-out;
 }
 
-input:checked + .Slider {
+/* input:checked + .Slider {
   background-color: rgb(61, 69, 77);
-}
+  -webkit-transform: translateY(-26px);
+  -ms-transform: translateY(-26px);
+  transform: translateY(-26px);
+} */
 
 input:focus + .Slider {
   box-shadow: 0 0 1px papayawhip;
 }
 
-input:checked + .Slider:before {
+/* input:checked + .Slider:before {
+  transition: 0.3s ease-in-out;
+  -webkit-transform: translateY(-26px);
+  -ms-transform: translateY(-26px);
+  transform: translateY(-26px);
+  background-color: papayawhip;
+} */
+
+.Checked {
+  background-color: rgb(61, 69, 77);
+}
+
+.Checked:before {
   transition: 0.3s ease-in-out;
   -webkit-transform: translateY(-26px);
   -ms-transform: translateY(-26px);

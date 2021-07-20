@@ -126,7 +126,11 @@ const Layout: React.FC<LayoutProps> = ({
         {children}
         <Footer />
       </div>
-      <ToggleButton hide={hideComponents} onChangeColor={onChangeColorTheme} />
+      <ToggleButton
+        hide={hideComponents}
+        onChangeColor={onChangeColorTheme}
+        isDarkMode={isDarkMode}
+      />
       {isMobile ? (
         <Sidebar
           isModal={isModal}
