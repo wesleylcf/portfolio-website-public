@@ -2,14 +2,20 @@ import React from 'react';
 import Projects from '../../containers/blog/Projects/Projects';
 import getProjects from '../api/projects';
 import Head from 'next/head';
+import { Project } from '../../pages/api/projects';
 
-const projectsPage = ({ isDarkMode, projects }) => {
+interface ProjectsProps {
+  projects: Project[];
+  isDarkMode: boolean;
+}
+
+const projectsPage: React.FC<ProjectsProps> = ({ isDarkMode, projects }) => {
   return (
     <>
       <Head>
         <meta
           name="description"
-          content={`A list of project's I've built so far. Currently working on ${projects[0].title}`}
+          content={`Wesley Lim's Projects - A list of projects completed so far. Currently working on ${projects[0].title} - ${projects[0].description}`}
         />
         <meta
           name="keywords"

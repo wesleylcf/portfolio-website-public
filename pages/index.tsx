@@ -15,11 +15,11 @@ const Home = ({ isDarkMode, isMobile, posts, projects }) => {
       <Head>
         <meta
           name="description"
-          content="Wesley Lim is a software engineer based in Singapore, with experience in web development using React."
+          content="Wesley Lim is a software engineer experienced in web development using React/Next with Typescript, currently pursuing Computer Science at the Nanyang Technological University(year 1) in Singapore..."
         />
         <meta
           name="keywords"
-          content="Wesley Lim, software engineer, React, Singapore, NTU, computer science"
+          content="Wesley Lim, software engineer, React, Singapore, NTU, computer science, nanyang technological university"
         />
       </Head>
       <Intro darkMode={isDarkMode} isMobile={isMobile} />

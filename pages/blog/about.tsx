@@ -8,11 +8,11 @@ const index = ({ isDarkMode }) => {
       <Head>
         <meta
           name="description"
-          content="A short desciption about me and my aspirations for the future"
+          content="Wesley Lim's blog - All about me, my accomplishments, and my aspirations for the future"
         />
         <meta
           name="keywords"
-          content="Wesley Lim, software engineer, React, Singapore, NTU, computer science, projects, blog, about me"
+          content="Wesley Lim blog, software engineer, React, Singapore, NTU, computer science, projects, blog, about me"
         />
       </Head>
       <About darkMode={isDarkMode} />

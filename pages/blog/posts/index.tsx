@@ -9,7 +9,7 @@ const index = ({ posts, isDarkMode }) => {
       <Head>
         <meta
           name="description"
-          content="A list of all my blog Posts. I write about technologies that interest me, and occasionally pen down my thoughts."
+          content="Wesley Lim's Blog posts - I write about technologies that interest me, and occasionally pen down my thoughts."
         />
         <meta
           name="keywords"
