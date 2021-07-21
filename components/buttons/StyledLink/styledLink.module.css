@@ -2,7 +2,7 @@
   display: block;
   text-align: center;
   text-decoration: none;
-  transition: 0.2s ease-in-out;
+  transition: 0.2s ease-out;
   list-style: none !important;
   min-width: 4.5vw;
   position: relative;
@@ -32,7 +32,7 @@
 
 .StyledLink:hover .underline {
   width: 100%;
-  transition: 0.2s ease-in-out;
+  transition: 0.2s ease-out;
 }
 
 .StyledLink::marker {

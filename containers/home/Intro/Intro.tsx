@@ -67,7 +67,6 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
             <ImportantButton
               darkMode={darkMode}
               href="mailto:wesleylim.work@gmail.com"
-              isTextComponent
             >
               Get in touch!
             </ImportantButton>

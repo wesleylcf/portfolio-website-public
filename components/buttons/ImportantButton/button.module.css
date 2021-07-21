@@ -37,24 +37,24 @@
 
 .Dark {
   color: blanchedalmond !important;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-out;
 }
 
 .Light {
   color: #333333;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-out;
 }
 
 .ButtonWrapper:hover .Dark {
   background-color: rgba(255, 235, 205, 0.5);
   transform: translate3d(0, -0.5vh, 0);
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-out;
 }
 
 .ButtonWrapper:hover .Light {
   background-color: rgba(252, 203, 130, 0.5);
   transform: translate3d(0, -0.5vh, 0);
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-out;
 }
 
 @media screen and (max-width: 1500px) {

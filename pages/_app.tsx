@@ -1,11 +1,14 @@
 import '../styles/globals.css';
-import 'prismjs/themes/prism-tomorrow.css';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Layout from '../components/Layout/Layout';
 import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
+  const [scrollY, setScrollY] = useState(() => {
+    if (typeof window === 'undefined') return undefined;
+    return window.scrollY;
+  });
   const [isMobile, setIsMobile] = useState(() => {
     if (typeof window === 'undefined') return undefined;
     return window.innerWidth < 800;
@@ -104,8 +107,15 @@ function MyApp({ Component, pageProps }) {
         onChangeColorTheme={onChangeColorTheme}
         atPage={router.pathname}
         socialLinks={socialLinks}
+        scrollY={scrollY}
+        setScrollY={setScrollY}
       >
-        <Component {...pageProps} isDarkMode={isDarkMode} isMobile={isMobile} />
+        <Component
+          {...pageProps}
+          isDarkMode={isDarkMode}
+          isMobile={isMobile}
+          scrollY={scrollY}
+        />
       </Layout>
     </>
   );

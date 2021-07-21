@@ -1,7 +1,6 @@
 import React from 'react';
 import VerticalSection from '../components/Layout/VerticalSection/VerticalSection';
 import HeadingCard from '../components/cards/HeadingCard/HeadingCard';
-import Contact from '../containers/home/Contact/Contact';
 
 export default function PageNotFound({ isDarkMode }) {
   return (

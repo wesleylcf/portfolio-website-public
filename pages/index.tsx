@@ -1,21 +1,31 @@
 import React from 'react';
 import Intro from '../containers/home/Intro/Intro';
+import AboutLazy from '../containers/home/About/About';
 import getPosts from './api/posts/getPosts';
 import getProjects from './api/projects';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
-const AboutLazy = dynamic(() => import('../containers/home/About/About'));
-const ProjectsLazy = dynamic(
-  () => import('../containers/home/Projects/Projects')
-);
-const ExperienceLazy = dynamic(
-  () => import('../containers/home/Experience/Experience')
-);
-const BlogLazy = dynamic(() => import('../containers/home/Blog/Blog'));
-const ContactLazy = dynamic(() => import('../containers/home/Contact/Contact'));
+const BaseScrollYToImport = 999;
 
-const Home = ({ isDarkMode, isMobile, posts, projects }) => {
+const ProjectsLazy = dynamic(
+  () => import('../containers/home/Projects/Projects'),
+  { ssr: false }
+);
+
+const ExperienceLazy = dynamic(
+  () => import('../containers/home/Experience/Experience'),
+  { ssr: false }
+);
+const BlogLazy = dynamic(() => import('../containers/home/Blog/Blog'), {
+  ssr: false,
+});
+const ContactLazy = dynamic(
+  () => import('../containers/home/Contact/Contact'),
+  { ssr: false }
+);
+
+const Home = ({ isDarkMode, isMobile, posts, projects, scrollY }) => {
   return (
     <>
       <Head>
@@ -30,14 +40,22 @@ const Home = ({ isDarkMode, isMobile, posts, projects }) => {
       </Head>
       <Intro darkMode={isDarkMode} isMobile={isMobile} />
       <AboutLazy darkMode={isDarkMode} isMobile={isMobile} />
-      <ProjectsLazy
-        darkMode={isDarkMode}
-        projects={projects}
-        isMobile={isMobile}
-      />
-      <ExperienceLazy darkMode={isDarkMode} isMobile={isMobile} />
-      <BlogLazy darkMode={isDarkMode} isMobile={isMobile} posts={posts} />
-      <ContactLazy darkMode={isDarkMode} />
+      {scrollY > BaseScrollYToImport ? (
+        <ProjectsLazy
+          darkMode={isDarkMode}
+          projects={projects}
+          isMobile={isMobile}
+        />
+      ) : null}
+      {scrollY > BaseScrollYToImport * 2 ? (
+        <ExperienceLazy darkMode={isDarkMode} isMobile={isMobile} />
+      ) : null}
+      {scrollY > BaseScrollYToImport * 3 ? (
+        <BlogLazy darkMode={isDarkMode} isMobile={isMobile} posts={posts} />
+      ) : null}
+      {scrollY > BaseScrollYToImport * 4 ? (
+        <ContactLazy darkMode={isDarkMode} />
+      ) : null}
     </>
   );
 };

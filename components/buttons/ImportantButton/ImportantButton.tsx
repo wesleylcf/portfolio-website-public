@@ -5,25 +5,21 @@ import styles from './button.module.css';
 interface ButtonProps {
   href: string;
   darkMode: boolean;
-  isTextComponent?: boolean;
   isProjectComponent?: boolean;
-  isMobile?: boolean;
 }
 
 const ImportantButton: React.FC<ButtonProps> = ({
   children,
   href,
   darkMode,
-  isTextComponent,
   isProjectComponent,
-  isMobile,
 }) => {
   return (
     <div
       className={[
         styles.ButtonWrapper,
         isProjectComponent ? styles.ProjectComponent : '',
-        darkMode ? styles.Dark : styles.Light,
+        darkMode ? 'dark' : 'light',
       ].join(' ')}
     >
       <li className={styles.ListItem}>

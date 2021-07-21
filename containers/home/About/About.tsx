@@ -59,11 +59,7 @@ const About = ({ darkMode, isMobile }) => {
         </Card>
         <div className={styles.ButtonContainer}>
           <Animate delay={0.25}>
-            <ImportantButton
-              darkMode={darkMode}
-              href="/blog/about"
-              isTextComponent
-            >
+            <ImportantButton darkMode={darkMode} href="/blog/about">
               More about me
             </ImportantButton>
           </Animate>

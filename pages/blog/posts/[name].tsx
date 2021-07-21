@@ -8,6 +8,7 @@ import NotionBlock from '../../../components/notion/NotionBlock/NotionBlock';
 import utilStyles from '../../../styles/utils.module.css';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import 'prismjs/themes/prism-tomorrow.css';
 
 interface PostProps {
   pageContent: PageBlock[][];

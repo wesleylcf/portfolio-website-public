@@ -1,6 +1,6 @@
 .Container {
   flex-basis: 33%;
-  transition: 0.3s;
+  transition: 0.2s ease-out;
   max-height: 70vh;
   margin: 1vh 1vw;
   max-width: 30%;
@@ -13,7 +13,7 @@
 
 .Container:hover {
   transform: translate3d(0, -1vh, 0);
-  transition: 0.3s linear;
+  transition: 0.2s ease-out;
 }
 
 .Cover {

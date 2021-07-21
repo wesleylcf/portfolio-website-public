@@ -19,6 +19,8 @@ interface LayoutProps {
   setIsMobile: (bool) => void;
   atPage: string;
   socialLinks: string[];
+  setScrollY: (number) => void;
+  scrollY: number;
 }
 
 const Layout: React.FC<LayoutProps> = ({
@@ -30,11 +32,9 @@ const Layout: React.FC<LayoutProps> = ({
   setIsMobile,
   atPage,
   socialLinks,
+  scrollY,
+  setScrollY,
 }) => {
-  const [scrollY, setScrollY] = useState(() => {
-    if (typeof window === 'undefined') return undefined;
-    return window.scrollY;
-  });
   const [hideComponents, setHideComponents] = useState(() => {
     if (typeof scrollY === 'undefined') return undefined;
     return false;
@@ -104,6 +104,7 @@ const Layout: React.FC<LayoutProps> = ({
     }
     setIsModal(!isModal);
   };
+
   return (
     <div
       className={[
