@@ -31,6 +31,7 @@ const Post: React.FC<PostProps> = ({
     return (
       <>
         <Head>
+          <title>{title}</title>
           <meta name="description" content={title} />
           <meta
             name="keywords"

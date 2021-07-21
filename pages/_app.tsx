@@ -77,18 +77,22 @@ function MyApp({ Component, pageProps }) {
   if (router.pathname !== '/') {
     const routeArray = router.route.split('/');
     const requiredTitle = routeArray[routeArray.length - 1];
-    const processedTitle =
-      requiredTitle.charAt(0).toUpperCase() + requiredTitle.slice(1);
-    if (processedTitle === 'Posts') {
-      title = 'Wesley Lim - ' + 'Blog ' + processedTitle;
+    if (requiredTitle === '[name]') {
+      title = undefined;
     } else {
-      title = 'Wesley Lim - ' + processedTitle;
+      const processedTitle =
+        requiredTitle.charAt(0).toUpperCase() + requiredTitle.slice(1);
+      if (processedTitle === 'Posts') {
+        title = 'Wesley Lim - ' + 'Blog ' + processedTitle;
+      } else {
+        title = 'Wesley Lim - ' + processedTitle;
+      }
     }
   }
   return (
     <>
       <Head>
-        <title>{title}</title>
+        {title ? <title>{title}</title> : null}
         <meta name="author" content="Wesley Lim Cher Fong" />
         <link rel="icon" href="/favicon.svg"></link>
       </Head>
