@@ -98,9 +98,9 @@ const Layout: React.FC<LayoutProps> = ({
 
   const onClickMenu = () => {
     if (!isModal) {
-      document.body.classList.add('freeze');
+      document.body.style.overflowY = 'hidden';
     } else {
-      document.body.classList.remove('freeze');
+      document.body.style.overflowY = 'auto';
     }
     setIsModal(!isModal);
   };
@@ -136,7 +136,6 @@ const Layout: React.FC<LayoutProps> = ({
         <Sidebar
           isModal={isModal}
           onClickMenu={onClickMenu}
-          hide={hideComponents}
           isMobile={isMobile}
           darkMode={isDarkMode}
           links={links}

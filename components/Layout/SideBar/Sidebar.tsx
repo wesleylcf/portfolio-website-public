@@ -7,7 +7,6 @@ import Social from '../Social/Social';
 interface SidebarProps {
   isModal: boolean;
   onClickMenu: () => void;
-  hide: boolean;
   isMobile: boolean;
   darkMode: boolean;
   links: {
@@ -22,7 +21,6 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({
   isModal,
   onClickMenu,
-  hide,
   isMobile,
   darkMode,
   links,
@@ -60,9 +58,10 @@ const Sidebar: React.FC<SidebarProps> = ({
           </>
         ) : null}
       </div>
-      {isModal ? (
-        <div className={styles.Modal} onClick={onClickMenu}></div>
-      ) : null}
+      <div
+        className={[styles.Modal, isModal ? styles.ModalOpen : ''].join(' ')}
+        onClick={onClickMenu}
+      />
     </>
   );
 };
