@@ -17,9 +17,8 @@ const ToggleButton: React.FC<ToggleButtonProps> = ({
     <div className={`${styles.ToggleButton} ${hide ? styles.Hide : ''}`}>
       <Animate delay={1.2}>
         <label className={styles.Switch} htmlFor="toggleColorTheme">
-          <input type="checkbox" />
+          <input type="checkbox" id="toggleColorTheme" />
           <span
-            id="toggleColorTheme"
             className={[styles.Slider, !isDarkMode ? styles.Checked : ''].join(
               ' '
             )}

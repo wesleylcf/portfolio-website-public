@@ -1,13 +1,19 @@
 import React from 'react';
 import Intro from '../containers/home/Intro/Intro';
-import About from '../containers/home/About/About';
-import Projects from '../containers/home/Projects/Projects';
-import Experience from '../containers/home/Experience/Experience';
-import Blog from '../containers/home/Blog/Blog';
-import Contact from '../containers/home/Contact/Contact';
 import getPosts from './api/posts/getPosts';
 import getProjects from './api/projects';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
+
+const AboutLazy = dynamic(() => import('../containers/home/About/About'));
+const ProjectsLazy = dynamic(
+  () => import('../containers/home/Projects/Projects')
+);
+const ExperienceLazy = dynamic(
+  () => import('../containers/home/Experience/Experience')
+);
+const BlogLazy = dynamic(() => import('../containers/home/Blog/Blog'));
+const ContactLazy = dynamic(() => import('../containers/home/Contact/Contact'));
 
 const Home = ({ isDarkMode, isMobile, posts, projects }) => {
   return (
@@ -23,11 +29,15 @@ const Home = ({ isDarkMode, isMobile, posts, projects }) => {
         />
       </Head>
       <Intro darkMode={isDarkMode} isMobile={isMobile} />
-      <About darkMode={isDarkMode} isMobile={isMobile} />
-      <Projects darkMode={isDarkMode} projects={projects} isMobile={isMobile} />
-      <Experience darkMode={isDarkMode} isMobile={isMobile} />
-      <Blog darkMode={isDarkMode} isMobile={isMobile} posts={posts} />
-      <Contact darkMode={isDarkMode} />
+      <AboutLazy darkMode={isDarkMode} isMobile={isMobile} />
+      <ProjectsLazy
+        darkMode={isDarkMode}
+        projects={projects}
+        isMobile={isMobile}
+      />
+      <ExperienceLazy darkMode={isDarkMode} isMobile={isMobile} />
+      <BlogLazy darkMode={isDarkMode} isMobile={isMobile} posts={posts} />
+      <ContactLazy darkMode={isDarkMode} />
     </>
   );
 };
