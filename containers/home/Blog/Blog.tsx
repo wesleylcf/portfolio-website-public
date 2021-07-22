@@ -1,54 +1,38 @@
 import React from 'react';
-import HorizontalSection from '../../../components/Layout/HorizontalSection/HorizontalSection';
-import BlogPreviewCard, {
-  BlogPreviewCardProps as BlogPost,
-} from '../../../components/cards/BlogPreviewCard/BlogPreviewCard';
-import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
-import ImportantButton from '../../../components/buttons/ImportantButton/ImportantButton';
+import dynamic from 'next/dynamic';
 import VerticalSection from '../../../components/Layout/VerticalSection/VerticalSection';
-import Animate from '../../../components/Layout/Animate/Animate';
 import { Post } from '../../../pages/api/posts/getPosts';
+import LoaderCard from '../../../components/cards/LoaderCard/LoaderCard';
+
+const BlogContent = dynamic(() => import('./BlogContent'), {
+  ssr: false,
+  loading: () => <LoaderCard />,
+});
 
 interface BlogProps {
   posts: Post[];
-  darkMode: boolean;
+  isDarkMode: boolean;
   isMobile: boolean;
+  scrollY: number;
+  offsetToRender: number;
 }
 
-const Blog: React.FC<BlogProps> = ({ darkMode, isMobile, posts }) => {
-  let animateDelay = 0;
+const Blog: React.FC<BlogProps> = ({
+  isDarkMode,
+  isMobile,
+  posts,
+  scrollY,
+  offsetToRender,
+}) => {
   return (
     <VerticalSection dividerId="contact">
-      <HeadingCard number="04" content="Blog" order={0} darkMode={darkMode} />
-      <HorizontalSection hideBorder margin="0" blog>
-        {posts.map((post, index) => {
-          animateDelay += 0.25;
-          if (isMobile && index > 1) {
-            return null;
-          }
-          return (
-            <BlogPreviewCard
-              title={post.title}
-              date={post.createdAt}
-              tags={post.tags}
-              description=""
-              previewImage={
-                post.tags.includes('Personal')
-                  ? `/images/${darkMode ? 'Vdark.svg' : 'Vlight.svg'}`
-                  : post.imageUrl
-              }
-              key={index}
-              darkMode={darkMode}
-              animateDelay={animateDelay}
-            />
-          );
-        })}
-      </HorizontalSection>
-      <Animate delay={isMobile ? 0.3 : 0.75}>
-        <ImportantButton darkMode={darkMode} href="/blog/posts">
-          See all posts
-        </ImportantButton>
-      </Animate>
+      {scrollY > offsetToRender ? (
+        <BlogContent
+          isDarkMode={isDarkMode}
+          isMobile={isMobile}
+          posts={posts}
+        />
+      ) : null}
     </VerticalSection>
   );
 };

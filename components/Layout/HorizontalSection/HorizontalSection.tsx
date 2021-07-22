@@ -10,7 +10,6 @@ interface SectionProps {
   blog?: boolean;
   minHeight?: string;
   dividerId?: string;
-  project?: boolean;
 }
 
 const section: React.FC<SectionProps> = ({
@@ -20,7 +19,6 @@ const section: React.FC<SectionProps> = ({
   blog,
   minHeight,
   dividerId,
-  project,
 }) => {
   let style = { margin, minHeight };
   if (margin) {

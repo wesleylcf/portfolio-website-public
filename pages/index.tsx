@@ -1,31 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Intro from '../containers/home/Intro/Intro';
-import AboutLazy from '../containers/home/About/About';
+import About from '../containers/home/About/About';
+import Projects from '../containers/home/Projects/Projects';
+import Experience from '../containers/home/Experience/Experience';
+import Blog from '../containers/home/Blog/Blog';
+import Contact from '../containers/home/Contact/Contact';
 import getPosts from './api/posts/getPosts';
 import getProjects from './api/projects';
 import Head from 'next/head';
-import dynamic from 'next/dynamic';
 
-const BaseScrollYToImport = 999;
-
-const ProjectsLazy = dynamic(
-  () => import('../containers/home/Projects/Projects'),
-  { ssr: false }
-);
-
-const ExperienceLazy = dynamic(
-  () => import('../containers/home/Experience/Experience'),
-  { ssr: false }
-);
-const BlogLazy = dynamic(() => import('../containers/home/Blog/Blog'), {
-  ssr: false,
-});
-const ContactLazy = dynamic(
-  () => import('../containers/home/Contact/Contact'),
-  { ssr: false }
-);
+const BaseOffsetY = 999;
 
 const Home = ({ isDarkMode, isMobile, posts, projects, scrollY }) => {
+  const [maxScrollY, setMaxScrollY] = useState(() => {
+    if (typeof scrollY === 'undefined') return undefined;
+    return scrollY;
+  });
+  useEffect(() => {
+    if (scrollY > maxScrollY) {
+      setMaxScrollY(scrollY);
+    }
+  }, [scrollY]);
   return (
     <>
       <Head>
@@ -39,23 +34,37 @@ const Home = ({ isDarkMode, isMobile, posts, projects, scrollY }) => {
         />
       </Head>
       <Intro darkMode={isDarkMode} isMobile={isMobile} />
-      <AboutLazy darkMode={isDarkMode} isMobile={isMobile} />
-      {scrollY > BaseScrollYToImport ? (
-        <ProjectsLazy
-          darkMode={isDarkMode}
-          projects={projects}
-          isMobile={isMobile}
-        />
-      ) : null}
-      {scrollY > BaseScrollYToImport * 2 ? (
-        <ExperienceLazy darkMode={isDarkMode} isMobile={isMobile} />
-      ) : null}
-      {scrollY > BaseScrollYToImport * 3 ? (
-        <BlogLazy darkMode={isDarkMode} isMobile={isMobile} posts={posts} />
-      ) : null}
-      {scrollY > BaseScrollYToImport * 4 ? (
-        <ContactLazy darkMode={isDarkMode} />
-      ) : null}
+
+      <About darkMode={isDarkMode} isMobile={isMobile} />
+
+      <Projects
+        isDarkMode={isDarkMode}
+        projects={projects}
+        isMobile={isMobile}
+        offsetToRender={BaseOffsetY}
+        scrollY={maxScrollY}
+      />
+
+      <Experience
+        isDarkMode={isDarkMode}
+        isMobile={isMobile}
+        offsetToRender={BaseOffsetY * 2}
+        scrollY={maxScrollY}
+      />
+
+      <Blog
+        isDarkMode={isDarkMode}
+        isMobile={isMobile}
+        posts={posts}
+        scrollY={maxScrollY}
+        offsetToRender={BaseOffsetY * 3}
+      />
+
+      <Contact
+        isDarkMode={isDarkMode}
+        scrollY={maxScrollY}
+        offsetToRender={BaseOffsetY * 4}
+      />
     </>
   );
 };
