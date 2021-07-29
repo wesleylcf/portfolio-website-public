@@ -34,9 +34,7 @@ const Home = ({ isDarkMode, isMobile, posts, projects, scrollY }) => {
         />
       </Head>
       <Intro darkMode={isDarkMode} isMobile={isMobile} />
-
       <About darkMode={isDarkMode} isMobile={isMobile} />
-
       <Projects
         isDarkMode={isDarkMode}
         projects={projects}
@@ -44,14 +42,12 @@ const Home = ({ isDarkMode, isMobile, posts, projects, scrollY }) => {
         offsetToRender={BaseOffsetY}
         scrollY={maxScrollY}
       />
-
       <Experience
         isDarkMode={isDarkMode}
         isMobile={isMobile}
         offsetToRender={BaseOffsetY * 2}
         scrollY={maxScrollY}
       />
-
       <Blog
         isDarkMode={isDarkMode}
         isMobile={isMobile}
@@ -59,7 +55,6 @@ const Home = ({ isDarkMode, isMobile, posts, projects, scrollY }) => {
         scrollY={maxScrollY}
         offsetToRender={BaseOffsetY * 3}
       />
-
       <Contact
         isDarkMode={isDarkMode}
         scrollY={maxScrollY}

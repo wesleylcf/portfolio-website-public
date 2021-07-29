@@ -2,14 +2,12 @@
   text-decoration: none;
   float: left;
   height: 6vh;
-  margin: 6vh 2vw 6vh 2vw;
+  margin: 3vh 2vw 3vh 2vw;
 }
 .TextComponent {
   margin-left: 0;
 }
-.ProjectComponent {
-  height: 2vh;
-}
+
 .ButtonWrapper .Dark {
   border: 0.15vw solid blanchedalmond;
   border-radius: 5px;
@@ -59,14 +57,12 @@
 
 @media screen and (max-width: 1500px) {
   .ProjectComponent {
-    height: 3vw;
     margin: 0.5vh 0;
   }
 }
 
 @media screen and (max-width: 1100px) {
   .ProjectComponent {
-    height: 3vw;
     margin: 1vh 0;
   }
 }
