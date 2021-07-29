@@ -12,7 +12,7 @@ const index = ({ isDarkMode }) => {
         />
         <meta
           name="keywords"
-          content="Wesley Lim blog, software engineer, React, Singapore, NTU, computer science, projects, blog, about me"
+          content="Wesley Lim, blog, wesley lim cher fong, software engineer, React, Singapore, NTU, computer science, projects, blog, about me"
         />
       </Head>
       <About darkMode={isDarkMode} />

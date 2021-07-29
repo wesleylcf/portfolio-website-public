@@ -19,7 +19,7 @@ const projectsPage: React.FC<ProjectsProps> = ({ isDarkMode, projects }) => {
         />
         <meta
           name="keywords"
-          content="Wesley Lim, software engineer, React, Singapore, NTU, computer science, projects, blog"
+          content="Wesley Lim, wesley lim cher fong, software engineer, React, Singapore, NTU, computer science, projects, blog"
         />
       </Head>
       <Projects projects={projects} darkMode={isDarkMode} />

@@ -13,7 +13,7 @@ const index = ({ posts, isDarkMode }) => {
         />
         <meta
           name="keywords"
-          content="Wesley Lim, software engineer, React, Singapore, NTU, computer science, blog, about me"
+          content="Wesley Lim, wesley lim cher fong, software engineer, React, Singapore, NTU, computer science, blog, about me"
         />
       </Head>
       <Posts posts={posts} darkMode={isDarkMode} />

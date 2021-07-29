@@ -30,7 +30,7 @@ const Home = ({ isDarkMode, isMobile, posts, projects, scrollY }) => {
         />
         <meta
           name="keywords"
-          content="Wesley Lim, software engineer, React, Singapore, NTU, computer science, nanyang technological university"
+          content="Wesley Lim, Wesley lim cher fong, software engineer, React, Singapore, NTU, computer science, nanyang technological university"
         />
       </Head>
       <Intro darkMode={isDarkMode} isMobile={isMobile} />
