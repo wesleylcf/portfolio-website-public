@@ -18,13 +18,8 @@ const Experience = ({ isDarkMode, isMobile }) => {
     {
       skill: 'Javascript',
       confidence: 80,
-      color: {
-        bar: 'white',
-        title: { background: 'turquoise', text: 'slate-gray' },
-      },
     },
     { skill: 'Python', confidence: 80 },
-    { skill: 'Express', confidence: 80 },
     { skill: 'Node.js', confidence: 60 },
     { skill: 'C++', confidence: 60 },
   ];

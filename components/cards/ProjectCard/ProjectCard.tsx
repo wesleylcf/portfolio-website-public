@@ -11,6 +11,7 @@ interface ProjectCardProps {
   description: string;
   imageSrc?: string;
   linkTo: string;
+  isDarkMode: boolean;
 }
 
 const projectCard: React.FC<ProjectCardProps> = ({
@@ -19,16 +20,32 @@ const projectCard: React.FC<ProjectCardProps> = ({
   description,
   imageSrc,
   linkTo,
+  isDarkMode,
 }) => {
   return (
     <Animate delay={0.2}>
       <div className={styles.Project}>
-        <div className={styles.Description}>
-          <h1 className={utilStyles.ColorT}>{heading}</h1>
-          <p className={utilStyles.ColorP}>
+        <div
+          className={[
+            styles.Description,
+            isDarkMode ? utilStyles.CardDark : utilStyles.CardLight,
+          ].join(' ')}
+        >
+          <h1
+            className={isDarkMode ? utilStyles.ColorT : utilStyles.ColorTLight}
+          >
+            {heading}
+          </h1>
+          <p
+            className={isDarkMode ? utilStyles.ColorP : utilStyles.ColorPLight}
+          >
             [ {languages.replace(/,/g, ' / ')} ]
           </p>
-          <p className={utilStyles.ColorA}>{description}</p>
+          <p
+            className={isDarkMode ? utilStyles.ColorA : utilStyles.ColorALight}
+          >
+            {description}
+          </p>
           <ImportantButton href={linkTo} darkMode isProjectComponent>
             See Project
           </ImportantButton>

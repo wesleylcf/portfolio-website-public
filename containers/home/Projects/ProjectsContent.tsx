@@ -28,6 +28,7 @@ const Projects = ({ isDarkMode, projects, isMobile }) => {
                 imageSrc={title.replace(/\s+/g, '-')}
                 key={index}
                 linkTo={link}
+                isDarkMode={isDarkMode}
               />
             );
           })}

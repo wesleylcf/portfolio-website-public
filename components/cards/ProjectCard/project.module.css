@@ -57,7 +57,6 @@
   z-index: 1;
   transition: 0.2s ease-out;
   transform: translate3d(-40vw, 0, 0);
-  background-color: rgba(44, 44, 44);
 }
 .Project:hover .ImageContainer {
   -webkit-filter: none;

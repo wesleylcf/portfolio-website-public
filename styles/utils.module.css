@@ -108,6 +108,14 @@
   color: rgb(61, 69, 77);
 }
 
+.CardDark {
+  background-color: #282828;
+}
+
+.CardLight {
+  background-color: rgb(226, 210, 183);
+}
+
 .QuoteDark {
   text-align: center;
   font-size: 2vh;
