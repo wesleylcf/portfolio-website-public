@@ -54,13 +54,13 @@ const Experience = ({ isDarkMode, isMobile }) => {
             </p>
           </Animate>
         </Card>
-        <div className={styles.ButtonContainer}>
+        {/* <div className={styles.ButtonContainer}>
           <Animate delay={isMobile ? 0.4 : 0.7}>
             <ImportantButton darkMode={isDarkMode} href="/resume">
               Grab a copy of my resume!
             </ImportantButton>
           </Animate>
-        </div>
+        </div> */}
       </Main>
       <Aside order={1}>
         <SkillBarCard
