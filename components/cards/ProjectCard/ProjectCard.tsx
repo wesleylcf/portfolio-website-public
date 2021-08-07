@@ -46,9 +46,13 @@ const projectCard: React.FC<ProjectCardProps> = ({
           >
             {description}
           </p>
-          <ImportantButton href={linkTo} darkMode isProjectComponent>
-            See Project
-          </ImportantButton>
+          {linkTo === 'not deployed' ? (
+            <p>(In progress)</p>
+          ) : (
+            <ImportantButton href={linkTo} darkMode isProjectComponent>
+              See Project
+            </ImportantButton>
+          )}
         </div>
         <div className={styles.ImageContainer}>
           <Image
