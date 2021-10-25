@@ -15,6 +15,7 @@ const projectsPage: React.FC<ProjectsProps> = ({ isDarkMode, projects }) => {
       <Head>
         <meta
           name="description"
+          property="description"
           content={`Wesley Lim's Projects - A list of projects I've completed so far. I'm Currently working on ${projects[0].title} - ${projects[0].description}`}
         />
         <meta

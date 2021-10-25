@@ -9,6 +9,7 @@ const index = ({ posts, isDarkMode }) => {
       <Head>
         <meta
           name="description"
+          property="description"
           content="Wesley Lim's Blog posts - I write about technologies that interest me, and occasionally pen down my thoughts."
         />
         <meta

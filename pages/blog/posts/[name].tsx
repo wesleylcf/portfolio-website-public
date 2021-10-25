@@ -33,7 +33,7 @@ const Post: React.FC<PostProps> = ({
       <>
         <Head>
           <title>{title}</title>
-          <meta name="description" content={title} />
+          <meta name="description" property="description" content={title} />
           <meta
             name="keywords"
             content={`${title.replace(
