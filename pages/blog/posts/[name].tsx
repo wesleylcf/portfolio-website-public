@@ -36,10 +36,10 @@ const Post: React.FC<PostProps> = ({
           <meta name="description" content={title} />
           <meta
             name="keywords"
-            content={`Wesley Lim, software engineer, React, Singapore, NTU, computer science, ${title.replace(
+            content={`${title.replace(
               /\s+/g,
               ','
-            )} ${title}`}
+            )} ${title}, Wesley Lim, software engineer, Singapore, NTU, computer science`}
           />
         </Head>
         <VerticalSection>

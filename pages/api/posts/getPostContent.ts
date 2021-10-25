@@ -1,5 +1,6 @@
 import { Client } from '@notionhq/client';
 import { Block } from '@notionhq/client/build/src/api-types';
+import image from 'next/image';
 
 const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
 
@@ -32,6 +33,16 @@ async function getBlock(
     if (block.type === 'unsupported') {
       blocks.push({ type: 'unsupported' });
       isPreviousBlockUnsupported = true;
+      //@ts-ignore
+    } else if (block.type === 'image') {
+      //@content stores caption, @link stores url
+      blocks.push({
+        type: 'image',
+        //@ts-ignore
+        content: block.image.caption[0].plain_text,
+        //@ts-ignore
+        link: block.image.file.url,
+      });
     } else if (block[`${block.type}`].text.length === 0) {
       blocks.push({ type: 'line_spacing' });
     } else {

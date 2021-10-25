@@ -15,11 +15,11 @@ const projectsPage: React.FC<ProjectsProps> = ({ isDarkMode, projects }) => {
       <Head>
         <meta
           name="description"
-          content={`Wesley Lim's Projects - A list of projects completed so far. Currently working on ${projects[0].title} - ${projects[0].description}`}
+          content={`Wesley Lim's Projects - A list of projects I've completed so far. I'm Currently working on ${projects[0].title} - ${projects[0].description}`}
         />
         <meta
           name="keywords"
-          content="Wesley Lim, wesley lim cher fong, software engineer, React, Singapore, NTU, computer science, projects, blog"
+          content="Wesley Lim, Wesley lim cher fong, blog, ntu, nanyang technological university, software engineer, computer science, Singapore"
         />
       </Head>
       <Projects projects={projects} darkMode={isDarkMode} />

@@ -26,11 +26,12 @@ const Home = ({ isDarkMode, isMobile, posts, projects, scrollY }) => {
       <Head>
         <meta
           name="description"
-          content="Wesley Lim is a software engineer experienced in web development using React/Next with Typescript, currently pursuing Computer Science at the Nanyang Technological University(year 1) in Singapore..."
+          property="description"
+          content="Wesley Lim's personal/portfolio site. I am Currently studying computer science at Nanyang Technological University, and hope to be a software engineer in the (near) future"
         />
         <meta
           name="keywords"
-          content="Wesley Lim, Wesley lim cher fong, software engineer, React, Singapore, NTU, computer science, nanyang technological university"
+          content="Wesley Lim, Wesley lim cher fong, personal website, ntu, nanyang technological university, software engineer, computer science, Singapore"
         />
       </Head>
       <Intro darkMode={isDarkMode} isMobile={isMobile} />

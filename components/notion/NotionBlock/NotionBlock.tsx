@@ -61,12 +61,7 @@ const NotionBlock: React.FC<NotionBlockProps> = ({
               style={{ marginLeft: `${indentLevel}vw` }}
               key={index}
             >
-              <Image
-                priority
-                layout="fill"
-                src={`/images/${content}.png`}
-                alt=""
-              />
+              <Image priority layout="fill" src={link} alt={content} />
             </div>
           );
         default:
