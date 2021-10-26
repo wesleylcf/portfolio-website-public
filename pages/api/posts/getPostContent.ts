@@ -1,6 +1,5 @@
 import { Client } from '@notionhq/client';
 import { Block } from '@notionhq/client/build/src/api-types';
-import image from 'next/image';
 
 const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
 
@@ -19,20 +18,14 @@ export interface PageBlock {
   indentLevel: number;
 }
 
-async function getBlock(
-  blockId,
-  type = null,
-  isPreviousBlockUnsupported,
-  indentationLevel
-) {
+async function getBlock(blockId, indentationLevel) {
   const blocks = await notion.blocks.children.list({ block_id: blockId });
-  let result = [];
+  let content = [];
   for (let block of blocks.results) {
     let child = null;
     let blocks = [];
     if (block.type === 'unsupported') {
       blocks.push({ type: 'unsupported' });
-      isPreviousBlockUnsupported = true;
       //@ts-ignore
     } else if (block.type === 'image') {
       //@content stores caption, @link stores url
@@ -43,14 +36,23 @@ async function getBlock(
         //@ts-ignore
         link: block.image.file.url,
       });
+      //@ts-ignore
+    } else if (block.type === 'code') {
+      blocks.push({
+        type: 'code',
+        //@ts-ignore
+        content: block.code.text[0].plain_text,
+      });
     } else if (block[`${block.type}`].text.length === 0) {
       blocks.push({ type: 'line_spacing' });
-    } else {
-      // Push the current block's content
+    }
+    // text-type blocks such as heading and paragraphs can be processed in a similar way
+    else {
       for (let textBlock of block[block.type].text) {
         blocks.push({
-          type: type ? type : block.type,
+          type: block.type,
           content: textBlock.plain_text,
+          //@ts-ignore
           link: textBlock.text.link,
           annotations: Object.entries(textBlock.annotations).filter(
             ([key, value]) => {
@@ -65,48 +67,16 @@ async function getBlock(
         });
       }
     }
-    // if there are children or unsupported blocks
-    if (block.has_children) {
-      if (isPreviousBlockUnsupported) {
-        switch (block[block.type].text[0].plain_text) {
-          case 'code':
-            child = await getBlock(
-              block.id,
-              'code',
-              isPreviousBlockUnsupported,
-              indentationLevel
-            );
-            break;
-          case 'image':
-            child = await getBlock(
-              block.id,
-              'image',
-              isPreviousBlockUnsupported,
-              indentationLevel
-            );
-            break;
-          default:
-            child = { type: 'error' };
-        }
-        blocks = child[0];
-      } else {
-        child = await getBlock(
-          block.id,
-          null,
-          isPreviousBlockUnsupported,
-          indentationLevel + 1
-        );
-      }
-    }
-    result.push(blocks);
-    if (child && !isPreviousBlockUnsupported) {
+    if (block.has_children)
+      child = await getBlock(block.id, indentationLevel + 1);
+    if (child) {
       for (let block of child) {
-        result.push(block);
+        content.push(block);
       }
     }
-    isPreviousBlockUnsupported = block.type === 'unsupported' ? true : false;
+    content.push(blocks);
   }
-  return result;
+  return content;
 }
 
 export default async function getPostContent(name) {
@@ -120,6 +90,6 @@ export default async function getPostContent(name) {
     },
   });
   const pageId = rowData.results[0].properties.name['title'][0].mention.page.id;
-  const pageContent = await getBlock(pageId, null, false, 0);
+  const pageContent = await getBlock(pageId, 0);
   return pageContent;
 }

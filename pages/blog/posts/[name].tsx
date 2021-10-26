@@ -27,7 +27,11 @@ const Post: React.FC<PostProps> = ({
   if (router.isFallback) {
     return <p>Loading...</p>;
   }
-  if (typeof pageContent !== 'undefined' && typeof title !== 'undefined') {
+  if (
+    typeof pageContent !== 'undefined' &&
+    pageContent.length > 0 &&
+    typeof title !== 'undefined'
+  ) {
     let headingColorNumber = 0;
     return (
       <>
