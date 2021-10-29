@@ -27,7 +27,7 @@ const Home = ({ isDarkMode, isMobile, posts, projects, scrollY }) => {
         <meta
           name="description"
           property="description"
-          content="Wesley Lim's personal/portfolio site. I am Currently studying computer science at Nanyang Technological University, and hope to be a software engineer in the (near) future"
+          content="Wesley Lim (Cher Fong)'s personal/portfolio website. I am currently studying computer science at Nanyang Technological University, and aspire to be a software engineer in the (near) future"
         />
         <meta
           name="keywords"

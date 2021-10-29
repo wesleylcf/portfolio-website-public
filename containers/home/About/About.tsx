@@ -20,8 +20,8 @@ const About = ({ darkMode, isMobile }) => {
             width={110}
             height={125}
             className={utilStyles.borderCircle}
-            alt="insert handsome guy"
-            title="handsome guy"
+            alt="photo of a very handsome wesley lim cher fong"
+            title="photo of a very handsome wesley lim cher fong"
           ></Image>
         </Animate>
       </Aside>
