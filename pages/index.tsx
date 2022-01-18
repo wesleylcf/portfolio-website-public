@@ -33,6 +33,12 @@ const Home = ({ isDarkMode, isMobile, posts, projects, scrollY }) => {
           name="keywords"
           content="Wesley Lim, Wesley lim cher fong, personal website, ntu, nanyang technological university, software engineer, computer science, Singapore"
         />
+        <meta
+          property="og:title"
+          content="Wesley's personal/portfolio website"
+        />
+        <meta property="og:url" content="https://wesleylim.com/" />
+        <meta property="og:image" content="/images/Vdark.svg" />
       </Head>
       <Intro darkMode={isDarkMode} isMobile={isMobile} />
       <About darkMode={isDarkMode} isMobile={isMobile} />

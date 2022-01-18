@@ -46,11 +46,11 @@ const Experience = ({ isDarkMode, isMobile }) => {
                 {' '}
                 actively looking for internships for this summer!{' '}
               </span>
-              The libraries I've recently worked with are{` `}
-              <u>React, Next, Redux, Express, Commander.</u>
+              The technologies I often work with are{` `}
+              <u>React/NextJS, Redux, Typescript,</u>
               {` `}
-              The libraries I've worked with in the past are{` `}
-              <u>Graphql, Sequelize, Mongoose</u>
+              while those that I recently explored, or am exploring are{` `}
+              <u>nestJS, Graphql, micro-services</u>
             </p>
           </Animate>
         </Card>

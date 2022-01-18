@@ -50,9 +50,9 @@ const About = ({ darkMode, isMobile }) => {
                 Always leave the campground cleaner than you found it
               </q>{' '}
               <p>
-                I use the MERN stack with Typescript for my projects (Mongodb,
-                Express, React, Nodejs). For general programming, I use Python
-                and C++, and I'm familiar with Java.
+                I most often use the MERN stack with Typescript for my projects
+                (Mongodb, Express, React, Nodejs). For general programming, I
+                use Python and C/C++.
               </p>
             </Animate>
           </div>

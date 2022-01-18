@@ -36,7 +36,7 @@ const Contact = ({ isDarkMode }) => {
             href="mailto:wesleylim.work@gmail.com"
             darkMode={isDarkMode}
           >
-            Say Hi
+            Say Hi!
           </ImportantButton>
         </Card>
         <Card
@@ -56,8 +56,8 @@ const Contact = ({ isDarkMode }) => {
             For the curious Visitor
           </h1>
           <p>
-            Thanks for reading up till here! If you're interested I write a lot
-            more at my blog:
+            Thanks for reading up till here! If you're interested I write more
+            at my blog
           </p>
           <ImportantButton href="/blog" darkMode={isDarkMode}>
             Blog

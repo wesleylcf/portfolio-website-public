@@ -60,7 +60,7 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
             <p
               className={darkMode ? utilStyles.ColorT : utilStyles.ColorTLight}
             >
-              Currently, I'm waiting for the university term to start !
+              Currently, I'm looking for internships for summer!
             </p>
           </Animate>
           <Animate delay={isMobile ? 1 : 1}>
