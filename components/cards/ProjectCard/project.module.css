@@ -3,11 +3,11 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  -webkit-filter: blur(0.8px);
+  /* -webkit-filter: blur(0.8px);
   -moz-filter: blur(0.8px);
   -o-filter: blur(0.8px);
   -ms-filter: blur(0.8px);
-  filter: blur(0.8px);
+  filter: blur(0.8px); */
 }
 
 .Image {
