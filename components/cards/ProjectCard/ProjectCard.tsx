@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './project.module.css';
 import utilStyles from '../../../styles/utils.module.css';
 import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
 import Image from 'next/image';
 import Animate from '../../Layout/Animate/Animate';
+import ExpandCard from '../ExpandCard/ExpandCard';
+import Description from './Description/Description';
 
 interface ProjectCardProps {
   heading: string;
@@ -12,6 +14,7 @@ interface ProjectCardProps {
   imageSrc?: string;
   linkTo: string;
   isDarkMode: boolean;
+  isMobile: boolean;
 }
 
 const projectCard: React.FC<ProjectCardProps> = ({
@@ -21,39 +24,29 @@ const projectCard: React.FC<ProjectCardProps> = ({
   imageSrc,
   linkTo,
   isDarkMode,
+  isMobile,
 }) => {
+  const [showDescription, setShowDescription] = useState(false);
   return (
     <Animate delay={0.2}>
       <div className={styles.Project}>
-        <div
-          className={[
-            styles.Description,
-            isDarkMode ? utilStyles.CardDark : utilStyles.CardLight,
-          ].join(' ')}
-        >
-          <h1
-            className={isDarkMode ? utilStyles.ColorT : utilStyles.ColorTLight}
-          >
-            {heading}
-          </h1>
-          <p
-            className={isDarkMode ? utilStyles.ColorP : utilStyles.ColorPLight}
-          >
-            [ {languages.replace(/,/g, ' / ')} ]
-          </p>
-          <p
-            className={isDarkMode ? utilStyles.ColorA : utilStyles.ColorALight}
-          >
-            {description}
-          </p>
-          {linkTo === 'not deployed' ? (
-            <p>(In progress)</p>
-          ) : (
-            <ImportantButton href={linkTo} darkMode isProjectComponent>
-              See Project
-            </ImportantButton>
-          )}
-        </div>
+        {!isMobile && !showDescription && (
+          <ExpandCard
+            onExpand={() => {
+              setShowDescription(true);
+            }}
+          />
+        )}
+        <Description
+          languages={languages}
+          description={description}
+          isDarkMode={isDarkMode}
+          linkTo={linkTo}
+          heading={heading}
+          show={showDescription}
+          onHide={() => setShowDescription(false)}
+          isMobile={isMobile}
+        />
         <div className={styles.ImageContainer}>
           <Image
             priority

@@ -1,0 +1,19 @@
+.Container {
+  width: 2.5vw;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  z-index: 2;
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 25px 50px 0;
+  border-color: transparent turquoise transparent transparent;
+  margin-left: 0.25vw;
+}

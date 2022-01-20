@@ -25,24 +25,6 @@
   margin-bottom: 2vh;
 }
 
-.Description {
-  z-index: -1;
-  opacity: 0;
-  border-radius: 10px 10px 10px 10px;
-  position: absolute;
-  left: 0;
-  transform: translate3d(0, 0, 0);
-  width: 40vw;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  transition: 0.2s ease-out;
-  padding: 0.5vh 0;
-}
-
 .Description p {
   margin: 0.5vw auto;
   text-align: center;
@@ -52,12 +34,12 @@
   margin: 0 2vw;
 }
 
-.Project:hover .Description {
+/* .Project:hover .Description {
   opacity: 1;
   z-index: 1;
   transition: 0.2s ease-out;
   transform: translate3d(-40vw, 0, 0);
-}
+} */
 .Project:hover .ImageContainer {
   -webkit-filter: none;
   -moz-filter: none;
@@ -77,6 +59,7 @@
   }
   .Description {
     width: 30vw;
+    transform: ();
   }
   .Project:hover .Description {
     transform: translate3d(-30vw, 0, 0);

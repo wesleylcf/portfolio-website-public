@@ -29,6 +29,7 @@ const Projects = ({ isDarkMode, projects, isMobile }) => {
                 key={index}
                 linkTo={link}
                 isDarkMode={isDarkMode}
+                isMobile={isMobile}
               />
             );
           })}
