@@ -1,5 +1,6 @@
-import { Client } from '@notionhq/client';
-import { Block } from '@notionhq/client/build/src/api-types';
+import { Client } from "@notionhq/client";
+import { Block } from "@notionhq/client/build/src/api-types";
+import { id } from "date-fns/locale";
 
 const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
 
@@ -10,7 +11,7 @@ const notion = new Client({
 export type Annotation = Array<string | boolean | unknown>;
 
 export interface PageBlock {
-  type: Block['type'] | 'line_spacing' | 'code' | 'image';
+  type: Block["type"] | "line_spacing" | "code" | "image";
   content?: string;
   link?: string | null;
   href?: string | null;
@@ -24,27 +25,27 @@ async function getBlock(blockId, indentationLevel) {
   for (let block of blocks.results) {
     let child = null;
     let blocks = [];
-    if (block.type === 'unsupported') {
-      blocks.push({ type: 'unsupported' });
+    if (block.type === "unsupported") {
+      blocks.push({ type: "unsupported" });
       //@ts-ignore
-    } else if (block.type === 'image') {
+    } else if (block.type === "image") {
       //@content stores caption, @link stores url
       blocks.push({
-        type: 'image',
+        type: "image",
         //@ts-ignore
         content: block.image.caption[0].plain_text,
         //@ts-ignore
         link: block.image.file.url,
       });
       //@ts-ignore
-    } else if (block.type === 'code') {
+    } else if (block.type === "code") {
       blocks.push({
-        type: 'code',
+        type: "code",
         //@ts-ignore
         content: block.code.text[0].plain_text,
       });
     } else if (block[`${block.type}`].text.length === 0) {
-      blocks.push({ type: 'line_spacing' });
+      blocks.push({ type: "line_spacing" });
     }
     // text-type blocks such as heading and paragraphs can be processed in a similar way
     else {
@@ -56,7 +57,7 @@ async function getBlock(blockId, indentationLevel) {
           link: textBlock.text.link,
           annotations: Object.entries(textBlock.annotations).filter(
             ([key, value]) => {
-              if (value !== false && value !== 'default') {
+              if (value !== false && value !== "default") {
                 return { key, value };
               }
             }
@@ -80,16 +81,17 @@ async function getBlock(blockId, indentationLevel) {
 }
 
 export default async function getPostContent(name) {
-  const rowData = await notion.databases.query({
-    database_id: databaseId,
-    filter: {
-      property: 'name',
-      text: {
-        contains: name,
-      },
-    },
-  });
-  const pageId = rowData.results[0].properties.name['title'][0].mention.page.id;
+  const db_rowArray = await notion.databases
+    .query({ database_id: databaseId })
+    .then((res) => res.results);
+  let pageId = null;
+  let rowTitleObject = null;
+  for (let i = 0; i < db_rowArray.length; i++) {
+    rowTitleObject = db_rowArray[i].properties.name["title"][0];
+    if (rowTitleObject.plain_text === name)
+      pageId = rowTitleObject.mention.page.id;
+  }
+  if (pageId === null) return null;
   const pageContent = await getBlock(pageId, 0);
   return pageContent;
 }

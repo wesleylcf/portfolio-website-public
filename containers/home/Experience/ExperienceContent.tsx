@@ -1,27 +1,27 @@
-import React from 'react';
-import Card from '../../../components/cards/Card/Card';
-import styles from './experience.module.css';
-import utilStyles from '../../../styles/utils.module.css';
-import ImportantButton from '../../../components/buttons/ImportantButton/ImportantButton';
-import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
-import Main from '../../../components/Layout/Main/Main';
-import Aside from '../../../components/Layout/Aside/Aside';
-import SkillBarCard from '../../../components/cards/SkillBarCard/SkillBarCard';
-import Animate from '../../../components/Layout/Animate/Animate';
+import React from "react";
+import Card from "../../../components/cards/Card/Card";
+import styles from "./experience.module.css";
+import utilStyles from "../../../styles/utils.module.css";
+import ImportantButton from "../../../components/buttons/ImportantButton/ImportantButton";
+import HeadingCard from "../../../components/cards/HeadingCard/HeadingCard";
+import Main from "../../../components/Layout/Main/Main";
+import Aside from "../../../components/Layout/Aside/Aside";
+import SkillBarCard from "../../../components/cards/SkillBarCard/SkillBarCard";
+import Animate from "../../../components/Layout/Animate/Animate";
 
 const Experience = ({ isDarkMode, isMobile }) => {
   const skills = [
     {
-      skill: 'React',
+      skill: "React",
       confidence: 80,
     },
     {
-      skill: 'Javascript',
+      skill: "Javascript",
       confidence: 80,
     },
-    { skill: 'Python', confidence: 80 },
-    { skill: 'Node.js', confidence: 60 },
-    { skill: 'C++', confidence: 60 },
+    { skill: "Python", confidence: 80 },
+    { skill: "Node.js", confidence: 60 },
+    { skill: "C++", confidence: 60 },
   ];
 
   return (
@@ -43,10 +43,11 @@ const Experience = ({ isDarkMode, isMobile }) => {
                   isDarkMode ? utilStyles.ColorP : utilStyles.ColorTLight
                 }`}
               >
-                {' '}
-                actively looking for internships for this summer!{' '}
+                {" "}
+                actively looking for internships for this summer!{" "}
               </span>
-              The technologies I often work with are{` `}
+              Outside of practicing algorithms, the technologies I often work
+              with are{` `}
               <u>React/NextJS, Redux, Typescript,</u>
               {` `}
               while those that I recently explored, or am exploring are{` `}
@@ -54,13 +55,6 @@ const Experience = ({ isDarkMode, isMobile }) => {
             </p>
           </Animate>
         </Card>
-        {/* <div className={styles.ButtonContainer}>
-          <Animate delay={isMobile ? 0.4 : 0.7}>
-            <ImportantButton darkMode={isDarkMode} href="/resume">
-              Grab a copy of my resume!
-            </ImportantButton>
-          </Animate>
-        </div> */}
       </Main>
       <Aside order={1}>
         <SkillBarCard
