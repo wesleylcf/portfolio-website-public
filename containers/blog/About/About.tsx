@@ -1,12 +1,12 @@
-import React from 'react';
-import VerticalSection from '../../../components/Layout/VerticalSection/VerticalSection';
-import Card from '../../../components/cards/Card/Card';
-import Animate from '../../../components/Layout/Animate/Animate';
-import Image from 'next/image';
-import utilStyles from '../../../styles/utils.module.css';
-import Main from '../../../components/Layout/Main/Main';
-import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
-import Link from 'next/link';
+import React from "react";
+import VerticalSection from "../../../components/Layout/VerticalSection/VerticalSection";
+import Card from "../../../components/cards/Card/Card";
+import Animate from "../../../components/Layout/Animate/Animate";
+import Image from "next/image";
+import utilStyles from "../../../styles/utils.module.css";
+import Main from "../../../components/Layout/Main/Main";
+import HeadingCard from "../../../components/cards/HeadingCard/HeadingCard";
+import Link from "next/link";
 
 const About = ({ darkMode }) => {
   return (
@@ -21,7 +21,7 @@ const About = ({ darkMode }) => {
       </Animate>
 
       <Main>
-        <div style={{ margin: '4vh auto' }}>
+        <div style={{ margin: "4vh auto" }}>
           <Animate delay={0.3}>
             <Image
               src="/images/me.jpg"
@@ -49,11 +49,11 @@ const About = ({ darkMode }) => {
 
             <p>
               Currently, I'm inclined towards Web development, and spend my free
-              time doing projects that I find interesting, or provide insight.
-              Check out{' '}
+              time doing projects that I find interesting or provide insight.
+              Check out{" "}
               <Link href="/blog/projects">
                 <a
-                  style={{ color: darkMode ? 'turquoise' : 'teal' }}
+                  style={{ color: darkMode ? "turquoise" : "teal" }}
                   target="_blank"
                 >
                   my recent projects
@@ -62,19 +62,22 @@ const About = ({ darkMode }) => {
             </p>
 
             <p>
-              In the future, I hope to be able to work in a tech company with an
-              awesome culture like Google, which I think would be an invaluable
-              experience and asset to my growth as a software engineer.
+              In the future, I hope to be able to work in a software-centric
+              company as I feel that the scale and quality of the code would be
+              something that I could learn alot from.
             </p>
 
-            <p style={{ minWidth: '36vw' }}>Some cool facts:</p>
+            <p style={{ minWidth: "36vw" }}>Some cool facts:</p>
             <ul>
-              <li>I did gymnastics for around 13 years</li>
-              <li>I play the guitar, and my idol is Tommy Emmanuel!</li>
+              <li>
+                I did gymnastics for around 13 years(and spent the following
+                years delaying the decline in fitness)
+              </li>
+              <li>I play fingerstyle guitar and my idol is Tommy Emmanuel!</li>
               <li> I have a twin brother (meh.) </li>
               <li>
                 I have three siblings and all of us are current or future
-                software engineers
+                software engineers(!!)
               </li>
             </ul>
             <p>Stuff I hope to accomplish while in university</p>
@@ -83,11 +86,8 @@ const About = ({ darkMode }) => {
               <li>
                 Stay in hall for as long as I can ( I live like 1h45mins away )
               </li>
-              <li>
-                Consistently work on this website, practice the guitar, and keep
-                fit
-              </li>
-              <li>Get good enough for people to stalk me here</li>
+              <li>CODE CONSISTENLY, practice the guitar, and keep fit</li>
+              <li>Be less judgmental</li>
             </ol>
           </Animate>
         </Card>
