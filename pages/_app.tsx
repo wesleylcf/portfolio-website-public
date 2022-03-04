@@ -36,7 +36,6 @@ function MyApp({ Component, pageProps }) {
     }
     setIsDarkMode(!isDarkMode);
   };
-
   return (
     <>
       <Head>
@@ -69,36 +68,34 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 
 const getLinks = (router) => {
-  switch (router.pathname) {
-    case "/":
-      return {
-        navLinks: [
-          { linkTo: "#about", content: "About" },
-          { linkTo: "#projects", content: "Projects" },
-          { linkTo: "#experience", content: "Experience" },
-          { linkTo: "#contact", content: "Contact" },
-          { button: true, linkTo: "/blog", content: "Blog" },
-        ],
-        linkInitialAnimateDelay: 0.05,
-        linkAnimateDelayIncrement: 0.15,
-      };
-    case "/blog":
-      return {
-        navLinks: [
-          { linkTo: "/blog/about", content: "About" },
-          { linkTo: "/blog/projects", content: "Projects" },
-          { linkTo: "/blog/posts", content: "Posts" },
-          ,
-          {
-            button: true,
-            linkTo: "/",
-            content: "Home",
-          },
-        ],
-        linkInitialAnimateDelay: 0,
-        linkAnimateDelayIncrement: 0.1,
-      };
-  }
+  if (router.pathname.startsWith("/blog"))
+    return {
+      navLinks: [
+        { linkTo: "/blog/about", content: "About" },
+        { linkTo: "/blog/projects", content: "Projects" },
+        { linkTo: "/blog/posts", content: "Posts" },
+        ,
+        {
+          button: true,
+          linkTo: "/",
+          content: "Home",
+        },
+      ],
+      linkInitialAnimateDelay: 0,
+      linkAnimateDelayIncrement: 0.1,
+    };
+  else if (router.pathname.startsWith("/"))
+    return {
+      navLinks: [
+        { linkTo: "#about", content: "About" },
+        { linkTo: "#projects", content: "Projects" },
+        { linkTo: "#experience", content: "Experience" },
+        { linkTo: "#contact", content: "Contact" },
+        { button: true, linkTo: "/blog", content: "Blog" },
+      ],
+      linkInitialAnimateDelay: 0.05,
+      linkAnimateDelayIncrement: 0.15,
+    };
   return {
     navLinks: [],
     linkInitialAnimateDelay: 0.05,
