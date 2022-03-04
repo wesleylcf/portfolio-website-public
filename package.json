@@ -12,6 +12,7 @@
     "date-fns": "^2.22.1",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.3",
+    "lodash": "^4.17.21",
     "next": "10.2.3",
     "notion-types": "^4.10.0",
     "prismjs": "^1.24.0",

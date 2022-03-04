@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import Intro from '../containers/home/Intro/Intro';
-import About from '../containers/home/About/About';
-import Projects from '../containers/home/Projects/Projects';
-import Experience from '../containers/home/Experience/Experience';
-import Blog from '../containers/home/Blog/Blog';
-import Contact from '../containers/home/Contact/Contact';
-import getPosts from './api/posts/getPosts';
-import getProjects from './api/projects';
-import Head from 'next/head';
+import React, { useState, useEffect } from "react";
+import Intro from "../containers/home/Intro/Intro";
+import About from "../containers/home/About/About";
+import Projects from "../containers/home/Projects/Projects";
+import Experience from "../containers/home/Experience/Experience";
+import Blog from "../containers/home/Blog/Blog";
+import Contact from "../containers/home/Contact/Contact";
+import getPosts from "./api/posts/getPosts";
+import getProjects from "./api/projects";
+import Head from "next/head";
 
 const BaseOffsetY = 999;
 
 const Home = ({ isDarkMode, isMobile, posts, projects, scrollY }) => {
   const [maxScrollY, setMaxScrollY] = useState(() => {
-    if (typeof scrollY === 'undefined') return undefined;
+    if (typeof scrollY === "undefined") return undefined;
     return scrollY;
   });
   useEffect(() => {

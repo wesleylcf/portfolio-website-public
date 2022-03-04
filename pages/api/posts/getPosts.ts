@@ -1,4 +1,4 @@
-import { Client } from '@notionhq/client';
+import { Client } from "@notionhq/client";
 
 export interface Post {
   title: string;
@@ -17,7 +17,7 @@ const NOTION_DATE_LENGTH = 10;
 export default async function getPosts(MAX_POSTS_PER_VIEW: number = 10) {
   const pages = await notion.databases.query({
     database_id: databaseId,
-    sorts: [{ timestamp: 'last_edited_time', direction: 'descending' }],
+    sorts: [{ timestamp: "last_edited_time", direction: "descending" }],
   });
   const posts: Post[] = [];
   let postsAdded = 0;
@@ -26,11 +26,11 @@ export default async function getPosts(MAX_POSTS_PER_VIEW: number = 10) {
       break;
     }
     posts.push({
-      title: page.properties.name['title'][0].plain_text,
+      title: page.properties.name["title"][0].plain_text,
       createdAt: undefined,
-      tags: page.properties.tags['rich_text'][0].plain_text,
-      imageUrl: page.properties.imageUrl['rich_text'][0].plain_text,
-      link: page.properties.name['title'][0].mention.page.id,
+      tags: page.properties.tags["rich_text"][0].plain_text,
+      imageUrl: page.properties.imageUrl["rich_text"][0].plain_text,
+      link: page.properties.name["title"][0].mention.page.id,
     });
     postsAdded += 1;
   }

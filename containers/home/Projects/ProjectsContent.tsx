@@ -1,12 +1,12 @@
-import React from 'react';
-import utilStyles from '../../../styles/utils.module.css';
-import ProjectCard from '../../../components/cards/ProjectCard/ProjectCard';
-import Card from '../../../components/cards/Card/Card';
-import ImportantButton from '../../../components/buttons/ImportantButton/ImportantButton';
-import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
-import Main from '../../../components/Layout/Main/Main';
-import Aside from '../../../components/Layout/Aside/Aside';
-import Animate from '../../../components/Layout/Animate/Animate';
+import React from "react";
+import utilStyles from "../../../styles/utils.module.css";
+import ProjectCard from "../../../components/cards/ProjectCard/ProjectCard";
+import Card from "../../../components/cards/Card/Card";
+import ImportantButton from "../../../components/buttons/ImportantButton/ImportantButton";
+import HeadingCard from "../../../components/cards/HeadingCard/HeadingCard";
+import Main from "../../../components/Layout/Main/Main";
+import Aside from "../../../components/Layout/Aside/Aside";
+import Animate from "../../../components/Layout/Animate/Animate";
 
 const Projects = ({ isDarkMode, projects, isMobile }) => {
   return (
@@ -19,20 +19,23 @@ const Projects = ({ isDarkMode, projects, isMobile }) => {
           darkMode={isDarkMode}
         />
         <Card side="center">
-          {projects.map(({ title, tags, description, link }, index) => {
-            return (
-              <ProjectCard
-                heading={title}
-                languages={tags}
-                description={description}
-                imageSrc={title.replace(/\s+/g, '-')}
-                key={index}
-                linkTo={link}
-                isDarkMode={isDarkMode}
-                isMobile={isMobile}
-              />
-            );
-          })}
+          {projects.map(
+            ({ title, tags, description, link, showcaseLink }, index) => {
+              return (
+                <ProjectCard
+                  heading={title}
+                  languages={tags}
+                  description={description}
+                  imageSrc={title.replace(/\s+/g, "-")}
+                  key={index}
+                  linkTo={link}
+                  isDarkMode={isDarkMode}
+                  isMobile={isMobile}
+                  showCaseLink={showcaseLink}
+                />
+              );
+            }
+          )}
           <Animate delay={0.2}>
             <ImportantButton darkMode={isDarkMode} href="/blog/projects">
               All Projects
