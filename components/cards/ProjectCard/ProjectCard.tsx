@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import styles from './project.module.css';
-import utilStyles from '../../../styles/utils.module.css';
-import ImportantButton from '../../buttons/ImportantButton/ImportantButton';
-import Image from 'next/image';
-import Animate from '../../Layout/Animate/Animate';
-import ExpandCard from '../ExpandCard/ExpandCard';
-import Description from './Description/Description';
+import React, { useState } from "react";
+import styles from "./project.module.css";
+import utilStyles from "../../../styles/utils.module.css";
+import ImportantButton from "../../buttons/ImportantButton/ImportantButton";
+import Image from "next/image";
+import Animate from "../../Layout/Animate/Animate";
+import ExpandCard from "../ExpandCard/ExpandCard";
+import Description from "./Description/Description";
 
 interface ProjectCardProps {
   heading: string;
@@ -15,6 +15,7 @@ interface ProjectCardProps {
   linkTo: string;
   isDarkMode: boolean;
   isMobile: boolean;
+  showCaseLink?: string;
 }
 
 const projectCard: React.FC<ProjectCardProps> = ({
@@ -25,6 +26,7 @@ const projectCard: React.FC<ProjectCardProps> = ({
   linkTo,
   isDarkMode,
   isMobile,
+  showCaseLink,
 }) => {
   const [showDescription, setShowDescription] = useState(false);
   return (
@@ -46,6 +48,7 @@ const projectCard: React.FC<ProjectCardProps> = ({
           show={showDescription}
           onHide={() => setShowDescription(false)}
           isMobile={isMobile}
+          showCaseLink={showCaseLink}
         />
         <div className={styles.ImageContainer}>
           <Image
