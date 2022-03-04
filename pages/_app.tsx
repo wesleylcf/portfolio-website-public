@@ -6,9 +6,15 @@ import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const links = getLinks(router);
-  const socialLinks = getSocialLinks(router);
-  const title = getTitle(router);
+  // const links = getLinks(router);
+  const [links, setLinks] = useState(getLinks(router));
+  const [socialLinks, setSocialLinks] = useState(getSocialLinks(router));
+  const [title, setTitle] = useState(getTitle(router));
+  useEffect(() => {
+    setLinks(getLinks(router));
+    setSocialLinks(getSocialLinks(router));
+    setTitle(getTitle(router));
+  }, [router.pathname]);
 
   const [scrollY, setScrollY] = useState(() => {
     if (typeof window === "undefined") return undefined;
@@ -93,6 +99,11 @@ const getLinks = (router) => {
         linkAnimateDelayIncrement: 0.1,
       };
   }
+  return {
+    navLinks: [],
+    linkInitialAnimateDelay: 0.05,
+    linkAnimateDelayIncrement: 0.15,
+  };
 };
 
 const getSocialLinks = (router) => {
@@ -121,17 +132,4 @@ const getTitle = (router) => {
     }
   }
   return title;
-};
-
-const useWindowSize = () => {
-  const [size, setSize] = useState([0, 0]);
-  useLayoutEffect(() => {
-    function updateSize() {
-      setSize([window.innerWidth, window.innerHeight]);
-    }
-    window.addEventListener("resize", updateSize);
-    updateSize();
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
-  return size;
 };
