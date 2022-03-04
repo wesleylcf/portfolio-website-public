@@ -6,9 +6,15 @@ import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const links = getLinks(router);
-  const socialLinks = getSocialLinks(router);
-  const title = getTitle(router);
+  // const links = getLinks(router);
+  const [links, setLinks] = useState(getLinks(router));
+  const [socialLinks, setSocialLinks] = useState(getSocialLinks(router));
+  const [title, setTitle] = useState(getTitle(router));
+  useEffect(() => {
+    setLinks(getLinks(router));
+    setSocialLinks(getSocialLinks(router));
+    setTitle(getTitle(router));
+  }, [router.pathname]);
 
   const [scrollY, setScrollY] = useState(() => {
     if (typeof window === "undefined") return undefined;
@@ -18,7 +24,12 @@ function MyApp({ Component, pageProps }) {
     if (typeof window === "undefined") return undefined;
     return window.innerWidth < 800;
   });
+
   const [isDarkMode, setIsDarkMode] = useState(true);
+  useEffect(() => {
+    document.body.classList.remove("light");
+    document.body.classList.add("dark");
+  }, []);
 
   const onChangeColorTheme = () => {
     if (!isDarkMode) {
@@ -30,7 +41,6 @@ function MyApp({ Component, pageProps }) {
     }
     setIsDarkMode(!isDarkMode);
   };
-
   return (
     <>
       <Head>
@@ -63,36 +73,39 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 
 const getLinks = (router) => {
-  switch (router.pathname) {
-    case "/":
-      return {
-        navLinks: [
-          { linkTo: "#about", content: "About" },
-          { linkTo: "#projects", content: "Projects" },
-          { linkTo: "#experience", content: "Experience" },
-          { linkTo: "#contact", content: "Contact" },
-          { button: true, linkTo: "/blog", content: "Blog" },
-        ],
-        linkInitialAnimateDelay: 0.05,
-        linkAnimateDelayIncrement: 0.15,
-      };
-    case "/blog":
-      return {
-        navLinks: [
-          { linkTo: "/blog/about", content: "About" },
-          { linkTo: "/blog/projects", content: "Projects" },
-          { linkTo: "/blog/posts", content: "Posts" },
-          ,
-          {
-            button: true,
-            linkTo: "/",
-            content: "Home",
-          },
-        ],
-        linkInitialAnimateDelay: 0,
-        linkAnimateDelayIncrement: 0.1,
-      };
-  }
+  if (router.pathname.startsWith("/blog"))
+    return {
+      navLinks: [
+        { linkTo: "/blog/about", content: "About" },
+        { linkTo: "/blog/projects", content: "Projects" },
+        { linkTo: "/blog/posts", content: "Posts" },
+        ,
+        {
+          button: true,
+          linkTo: "/",
+          content: "Home",
+        },
+      ],
+      linkInitialAnimateDelay: 0,
+      linkAnimateDelayIncrement: 0.1,
+    };
+  else if (router.pathname.startsWith("/"))
+    return {
+      navLinks: [
+        { linkTo: "#about", content: "About" },
+        { linkTo: "#projects", content: "Projects" },
+        { linkTo: "#experience", content: "Experience" },
+        { linkTo: "#contact", content: "Contact" },
+        { button: true, linkTo: "/blog", content: "Blog" },
+      ],
+      linkInitialAnimateDelay: 0.05,
+      linkAnimateDelayIncrement: 0.15,
+    };
+  return {
+    navLinks: [],
+    linkInitialAnimateDelay: 0.05,
+    linkAnimateDelayIncrement: 0.15,
+  };
 };
 
 const getSocialLinks = (router) => {
@@ -121,17 +134,4 @@ const getTitle = (router) => {
     }
   }
   return title;
-};
-
-const useWindowSize = () => {
-  const [size, setSize] = useState([0, 0]);
-  useLayoutEffect(() => {
-    function updateSize() {
-      setSize([window.innerWidth, window.innerHeight]);
-    }
-    window.addEventListener("resize", updateSize);
-    updateSize();
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
-  return size;
 };
