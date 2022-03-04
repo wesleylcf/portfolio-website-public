@@ -24,7 +24,12 @@ function MyApp({ Component, pageProps }) {
     if (typeof window === "undefined") return undefined;
     return window.innerWidth < 800;
   });
+
   const [isDarkMode, setIsDarkMode] = useState(true);
+  useEffect(() => {
+    document.body.classList.remove("light");
+    document.body.classList.add("dark");
+  }, []);
 
   const onChangeColorTheme = () => {
     if (!isDarkMode) {
