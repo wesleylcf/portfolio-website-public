@@ -2,8 +2,6 @@ import { Client } from "@notionhq/client";
 import { Block } from "@notionhq/client/build/src/api-types";
 import { id } from "date-fns/locale";
 
-const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
-
 const notion = new Client({
   auth: process.env.NOTION_KEY,
 });
@@ -80,7 +78,7 @@ async function getBlock(blockId, indentationLevel) {
   return content;
 }
 
-export default async function getPostContent(name) {
+export default async function getPostContent(databaseId, name) {
   const db_rowArray = await notion.databases
     .query({ database_id: databaseId })
     .then((res) => res.results);

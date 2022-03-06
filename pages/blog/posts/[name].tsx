@@ -104,7 +104,10 @@ export async function getStaticProps({ params }) {
   const name = params.name.replace(/-/g, " ");
   let pageContent = null;
   try {
-    pageContent = await getPostContent(name);
+    pageContent = await getPostContent(
+      process.env.NOTION_BLOG_DATABASE_ID,
+      name
+    );
     if (pageContent === null)
       return {
         props: {
@@ -124,9 +127,17 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const names = await getNames();
-  const paths = names.map((name) => ({
-    params: { name: name },
-  }));
+  let names = null;
+  let paths = [];
+  try {
+    names = await getNames(process.env.NOTION_BLOG_DATABASE_ID);
+    if (names != null)
+      paths = names.map((name) => ({
+        params: { name: name },
+      }));
+  } catch (e) {
+    console.log("ERR FETCHING BLOG NAMES");
+  }
+
   return { paths, fallback: true };
 }

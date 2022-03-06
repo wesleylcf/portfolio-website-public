@@ -1,11 +1,11 @@
-import React from 'react';
-import utilStyles from '../../../styles/utils.module.css';
-import Card from '../../../components/cards/Card/Card';
-import ImportantButton from '../../../components/buttons/ImportantButton/ImportantButton';
-import HorizontalSection from '../../../components/Layout/HorizontalSection/HorizontalSection';
-import Main from '../../../components/Layout/Main/Main';
-import Aside from '../../../components/Layout/Aside/Aside';
-import Animate from '../../../components/Layout/Animate/Animate';
+import React from "react";
+import utilStyles from "../../../styles/utils.module.css";
+import Card from "../../../components/cards/Card/Card";
+import ImportantButton from "../../../components/buttons/ImportantButton/ImportantButton";
+import HorizontalSection from "../../../components/Layout/HorizontalSection/HorizontalSection";
+import Main from "../../../components/Layout/Main/Main";
+import Aside from "../../../components/Layout/Aside/Aside";
+import Animate from "../../../components/Layout/Animate/Animate";
 
 interface IntroProps {
   darkMode: boolean;
@@ -21,7 +21,7 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
             <Animate delay={isMobile ? 0.2 : 0.6}>
               <h1
                 className={utilStyles.headingXl}
-                style={darkMode ? { color: 'turquoise' } : { color: 'teal' }}
+                style={darkMode ? { color: "turquoise" } : { color: "teal" }}
               >
                 Hi,
               </h1>
@@ -29,7 +29,7 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
             <Animate delay={isMobile ? 0.4 : 0.7}>
               <h1
                 className={utilStyles.heading2Xl}
-                style={darkMode ? { color: '#ffafaf' } : { color: '#ce8e8e' }}
+                style={darkMode ? { color: "#ffafaf" } : { color: "#ce8e8e" }}
               >
                 I'm
               </h1>
@@ -39,8 +39,8 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
                 className={utilStyles.heading3Xl}
                 style={
                   darkMode
-                    ? { color: 'lightgray' }
-                    : { color: 'rgb(61, 69, 77)' }
+                    ? { color: "lightgray" }
+                    : { color: "rgb(61, 69, 77)" }
                 }
               >
                 Wesley
@@ -64,11 +64,8 @@ const intro: React.FC<IntroProps> = ({ darkMode, isMobile }) => {
             </p>
           </Animate>
           <Animate delay={isMobile ? 1 : 1}>
-            <ImportantButton
-              darkMode={darkMode}
-              href="mailto:wesleylim.work@gmail.com"
-            >
-              Get in touch!
+            <ImportantButton darkMode={darkMode} href="/resume">
+              View resume
             </ImportantButton>
           </Animate>
         </Card>
