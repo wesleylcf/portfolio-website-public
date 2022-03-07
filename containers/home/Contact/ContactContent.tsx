@@ -1,9 +1,9 @@
-import React from 'react';
-import utilStyles from '../../../styles/utils.module.css';
-import HorizontalSection from '../../../components/Layout/HorizontalSection/HorizontalSection';
-import Card from '../../../components/cards/Card/Card';
-import HeadingCard from '../../../components/cards/HeadingCard/HeadingCard';
-import ImportantButton from '../../../components/buttons/ImportantButton/ImportantButton';
+import React from "react";
+import utilStyles from "../../../styles/utils.module.css";
+import HorizontalSection from "../../../components/Layout/HorizontalSection/HorizontalSection";
+import Card from "../../../components/cards/Card/Card";
+import HeadingCard from "../../../components/cards/HeadingCard/HeadingCard";
+import ImportantButton from "../../../components/buttons/ImportantButton/ImportantButton";
 
 const Contact = ({ isDarkMode }) => {
   return (
@@ -29,7 +29,7 @@ const Contact = ({ isDarkMode }) => {
               isDarkMode ? utilStyles.ColorP : utilStyles.ColorPLight
             }`}
           >
-            For the interested Recruiter
+            For the interested recruiter
           </h1>
           <p>I'm currently looking for internships for the coming summer! </p>
           <ImportantButton
@@ -53,7 +53,7 @@ const Contact = ({ isDarkMode }) => {
               isDarkMode ? utilStyles.ColorP : utilStyles.ColorPLight
             }`}
           >
-            For the curious Visitor
+            For the curious visitor
           </h1>
           <p>
             Thanks for reading up till here! If you're interested I write more
