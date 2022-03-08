@@ -1,0 +1,55 @@
+.StyledLink {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+  list-style: none !important;
+  min-width: 4.5vw;
+  position: relative;
+}
+
+.Dark {
+  color: lightgray;
+}
+.Light {
+  color: rgb(61, 69, 77);
+}
+
+.Dark .underline {
+  background-color: white;
+}
+
+.Light .underline {
+  background-color: black;
+}
+
+.underline {
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.StyledLink:hover .underline {
+  width: 100%;
+  transition: 0.2s ease-out;
+}
+
+.StyledLink::marker {
+  display: block;
+}
+
+.ListItemWrapper {
+  display: flex;
+  align-items: center;
+  padding: 2vh 2vw;
+  text-decoration: none;
+  float: left;
+  width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  .StyledLink:hover {
+    border: none;
+  }
+}

@@ -1,0 +1,70 @@
+.Sidebar {
+  width: 40vw;
+  min-height: 10vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #222222;
+  z-index: 2;
+}
+
+.SidebarOpen {
+  position: fixed;
+  width: 50vw;
+  height: 100%;
+  background-color: #333333;
+}
+
+.Light {
+  background-color: papayawhip;
+  color: rgb(61, 69, 77);
+}
+
+.Dark .SideBar {
+  background-color: #222222;
+  color: slategray;
+}
+
+.Light.SidebarOpen {
+  background-color: rgb(226, 210, 183);
+}
+.Dark .SidebarOpen {
+  background-color: #333333;
+}
+
+.Social {
+  width: 40vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  margin: 0 auto;
+}
+
+.Links {
+  margin-top: 30vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  height: 30vh;
+  font-size: 1.25rem;
+}
+
+.Modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+}
+.ModalOpen {
+  opacity: 1;
+  pointer-events: auto;
+}

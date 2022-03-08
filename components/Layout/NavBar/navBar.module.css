@@ -1,0 +1,49 @@
+.Nav {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
+  transition: 0.2s ease-out;
+  transform: translate3d(0, 0, 0);
+  z-index: 2;
+}
+
+.HideNav {
+  transition: 0.2s ease-out;
+  transform: translate3d(0, -10vh, 0);
+}
+
+.Nav ol {
+  margin: 0;
+}
+
+.Profile {
+  border: 2px solid turquoise;
+  border-radius: 30%;
+  background-color: turquoise;
+}
+
+.ProfileWrapper {
+  display: flex;
+  float: left;
+  height: 10vh;
+  text-align: center;
+  align-items: center;
+  justify-content: left;
+  margin: 0 2vw;
+}
+
+.Links {
+  float: right;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.Mobile {
+  transition: 0s none;
+}

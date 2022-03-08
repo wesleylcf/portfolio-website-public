@@ -1,0 +1,18 @@
+.Quote {
+  text-align: center;
+  font-size: 2vh;
+  color: blanchedalmond;
+}
+
+.Unordered li::marker {
+  color: slategray;
+}
+
+.ButtonContainer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.Content p {
+  margin: 1vh auto;
+}

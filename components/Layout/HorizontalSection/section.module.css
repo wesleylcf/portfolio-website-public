@@ -1,0 +1,41 @@
+.HorizontalSection {
+  padding-bottom: 5%;
+  margin-bottom: 5%;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  min-height: 80vh;
+  width: 80vw;
+  position: relative;
+}
+
+.MediumWidth {
+  width: 60vw;
+  padding-bottom: 0;
+  min-height: 60vh;
+}
+
+.HideBorder {
+  border: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .MediumWidth {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .HorizontalSection {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 80vw;
+    margin-bottom: 10vh;
+  }
+  .MediumWidth {
+    min-width: 80vw;
+  }
+}

@@ -1,0 +1,199 @@
+.DividerR {
+  flex: 1;
+  border-bottom: 0.4vh solid;
+}
+.DividerL {
+  border-bottom: 0.4vh solid;
+  flex: 1;
+}
+
+.heading3Xl {
+  font-size: 10vw;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1vh 0;
+}
+.heading2Xl {
+  font-size: 8vw;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1vh 0;
+}
+
+.headingXl {
+  font-size: 6vw;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1vh 0;
+}
+
+.headingLg {
+  font-size: 3vw;
+  line-height: 1.4;
+  margin: 1rem 0;
+}
+
+.headingMd {
+  font-size: 2vw;
+  line-height: 1.5;
+}
+
+.borderCircle {
+  border: 2px solid turquoise;
+  border-radius: 9999px;
+}
+
+.colorInherit {
+  color: inherit;
+}
+
+.padding1px {
+  padding-top: 1px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  margin: 0 0 1.25rem;
+}
+
+.lightText {
+  color: #666;
+}
+
+.Segment {
+  margin: 2vh 0;
+}
+
+.ColorT {
+  color: turquoise;
+}
+
+.ColorTLight {
+  color: teal;
+}
+
+.ColorP {
+  color: #ffafaf;
+}
+
+.ColorPLight {
+  color: #ce8e8e;
+}
+
+.ColorPMild {
+  color: rgb(255, 125, 125);
+}
+
+.ColorA {
+  color: blanchedalmond;
+}
+
+.ColorALight {
+  color: rgb(145, 121, 86);
+}
+
+.ColorDefault {
+  color: lightgray;
+}
+
+.ColorDefaultLight {
+  color: rgb(61, 69, 77);
+}
+
+.CardDark {
+  background-color: #282828;
+}
+
+.CardLight {
+  background-color: rgb(226, 210, 183);
+}
+
+.QuoteDark {
+  text-align: center;
+  font-size: 2vh;
+  color: blanchedalmond;
+}
+
+.QuoteLight {
+  text-align: center;
+  font-size: 2vh;
+  color: rgb(145, 121, 86);
+}
+
+.BigQuote {
+  font-size: 2vw;
+  color: slategray;
+  padding: 0 2vw;
+  text-align: center;
+  line-height: 4.5vw;
+}
+
+.BigQuoteLight {
+  font-size: 2vw;
+  color: rgb(61, 69, 77);
+  padding: 0 2vw;
+  text-align: center;
+  line-height: 4.5vw;
+}
+
+.Unordered li::marker {
+  color: slategray;
+}
+
+.elementAnimate {
+  animation-name: opac;
+  animation-duration: 2s;
+}
+
+.List {
+  margin: 1vh 0 1vh 2vw;
+  align-self: flex-start;
+}
+
+@keyframes opac {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .headingXl {
+    font-size: 19vw;
+  }
+  .heading2Xl {
+    font-size: 21vw;
+  }
+  .heading3Xl {
+    font-size: 23vw;
+  }
+  .headingLg {
+    font-size: 10vw;
+  }
+  .headingMd {
+    font-size: 7vw;
+  }
+  .DividerL,
+  .DividerR {
+    width: 10%;
+  }
+  .BigQuote,
+  .BigQuoteLight {
+    width: 70vw;
+    line-height: 2vh;
+  }
+  .BigQuote q,
+  .BigQuoteLight q {
+    font-size: 2vh;
+  }
+}

@@ -1,0 +1,92 @@
+.Container {
+  flex-basis: 33%;
+  transition: 0.2s ease-out;
+  max-height: 70vh;
+  margin: 1vh 1vw;
+  max-width: 30%;
+  border-radius: 15px;
+}
+
+.Post {
+  text-decoration: none;
+}
+
+.Container:hover {
+  transform: translate3d(0, -1vh, 0);
+  transition: 0.2s ease-out;
+}
+
+.Cover {
+  height: 20vh;
+  width: 100%;
+  position: relative;
+  border-radius: 15px 15px 0 0;
+}
+
+.Image {
+  border-radius: 15px 15px 0 0;
+}
+
+.CoverDate {
+  display: inline-block;
+  width: 50%;
+  overflow: hidden;
+}
+
+.CoverTags {
+  display: inline-block;
+  width: 50%;
+  overflow: hidden;
+  text-align: right;
+}
+
+.ContentInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.ContentTitle {
+  margin: 1vh 0;
+}
+
+.Content {
+  position: relative;
+}
+
+.Content h1 {
+  margin: 0 auto;
+}
+.Description {
+  max-height: 30%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1100px) {
+  .Container {
+    flex-direction: column;
+    flex-basis: 50%;
+    max-width: 48%;
+  }
+  .Cover {
+    height: calc(40vw * 0.4);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .Cover {
+    height: 25vh;
+    margin: 0;
+  }
+  .Container {
+    margin: 2vh 0;
+    min-width: 80vw;
+    min-height: 50vh;
+  }
+  .Content {
+    max-height: 25vh;
+    overflow: hidden;
+  }
+}

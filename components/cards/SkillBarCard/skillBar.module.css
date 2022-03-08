@@ -1,0 +1,62 @@
+.Article {
+  width: 35vw;
+}
+
+.List {
+  padding: 0;
+  width: 100%;
+}
+
+.ListItem {
+  list-style: none;
+  width: 90%;
+  margin: 2vh 0;
+  height: 4vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Dark {
+  background-color: #222222;
+}
+.Light {
+  background-color: papayawhip;
+}
+
+.Skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  min-width: 25%;
+  text-align: center;
+}
+.Bar {
+  display: block;
+  height: 100%;
+  border-radius: 0 10px 10px 0;
+}
+
+.BarContainer {
+  background-color: wheat;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  min-width: 75%;
+}
+
+@media screen and (max-width: 800px) {
+  .ListItem {
+    width: 100%;
+  }
+  .Skill {
+    min-width: 30%;
+  }
+  .BarContainer {
+    min-width: 70%;
+  }
+  .Article {
+    min-width: 80vw;
+  }
+}

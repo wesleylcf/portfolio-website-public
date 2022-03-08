@@ -1,0 +1,116 @@
+.ImageContainer {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  /* -webkit-filter: blur(0.8px);
+  -moz-filter: blur(0.8px);
+  -o-filter: blur(0.8px);
+  -ms-filter: blur(0.8px);
+  filter: blur(0.8px); */
+}
+
+.Image {
+  border-radius: 10px;
+  flex: 0;
+}
+
+.Project {
+  border-radius: 10px;
+  height: calc(30vw * 0.5625);
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2vh;
+}
+
+.Description p {
+  margin: 0.5vw auto;
+  text-align: center;
+}
+
+.Description h1 {
+  margin: 0 2vw;
+}
+
+/* .Project:hover .Description {
+  opacity: 1;
+  z-index: 1;
+  transition: 0.2s ease-out;
+  transform: translate3d(-40vw, 0, 0);
+} */
+.Project:hover .ImageContainer {
+  -webkit-filter: none;
+  -moz-filter: none;
+  -o-filter: none;
+  -ms-filter: none;
+  filter: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .ImageContainer,
+  .Project {
+    width: 40vw;
+    height: calc(40vw * 0.5625);
+  }
+  .Project {
+    margin-bottom: 3vh;
+  }
+  .Description {
+    width: 30vw;
+    transform: ();
+  }
+  .Project:hover .Description {
+    transform: translate3d(-30vw, 0, 0);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .Project {
+    margin-bottom: 4vh;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .ImageContainer,
+  .Project {
+    width: 40vw;
+    height: calc(40vw * 0.7);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .ImageContainer {
+    min-height: 40vh;
+    min-width: 75vw;
+    line-height: 2.5vh;
+    -webkit-filter: none;
+    -moz-filter: none;
+    -o-filter: none;
+    -ms-filter: none;
+    filter: none;
+  }
+  .Project {
+    min-height: 40vh;
+    min-width: 75vw;
+    line-height: 2.5vh;
+  }
+  .Description {
+    z-index: 1;
+    opacity: 1;
+    min-width: 75vw;
+    transform: translate3d(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .Description p {
+    margin: 0.5vh 2vw;
+  }
+
+  .Project:hover .Description,
+  .ImageContainer:hover .Description,
+  .Description:hover {
+    transform: translate3d(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}

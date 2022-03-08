@@ -1,0 +1,26 @@
+.VerticalSection {
+  padding-bottom: 5%;
+  margin-bottom: 5%;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  min-height: 80vh;
+  width: 80vw;
+  position: relative;
+}
+
+.HideBorder {
+  border: none;
+}
+
+@media screen and (max-width: 800px) {
+  .VerticalSection {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 80vw;
+    margin-bottom: 10vh;
+  }
+}
