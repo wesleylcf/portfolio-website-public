@@ -33,10 +33,3 @@ yarn-error.log*
 # vercel
 .vercel
 
-#config
-*.config.js
-*.config.ts
-
-#env
-next-env.d.ts
-
