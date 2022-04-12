@@ -91,10 +91,16 @@ const About = ({ darkMode }) => {
             <ol>
               <li>Make lots of awesome friends and find my S/O</li>
               <li>
-                Stay in hall for as long as I can ( I live like 1h45mins away )
+                Gain industry experience in an awesome company (EDITED!)
+                <ul>
+                  <li>
+                    {" "}
+                    <Emoji alt="Tick" emoji="☑️" /> GovTech (Y1)
+                  </li>
+                </ul>
               </li>
               <li>CODE CONSISTENLY, practice the guitar, and keep fit</li>
-              <li>Be less judgmental</li>
+              <li>Be less judgmental & not overthink (MBTI: ISFJ)</li>
             </ol>
           </Animate>
         </Card>

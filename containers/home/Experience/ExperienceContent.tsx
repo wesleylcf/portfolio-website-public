@@ -36,21 +36,23 @@ const Experience = ({ isDarkMode, isMobile }) => {
         <Card side="center" padding="0 5vw">
           <Animate delay={0.3}>
             <p>
-              I'm currently waiting to start my university term/in year one, and
-              have no prior internships. However, I'm
+              I'm currently finishing year one/in year two. My current/past
+              internships are:
               <span
                 className={`${
                   isDarkMode ? utilStyles.ColorP : utilStyles.ColorTLight
                 }`}
               >
-                {" "}
-                actively looking for internships for this summer!{" "}
+                <ul>
+                  <li>GovTech SWE intern (year one)</li>
+                </ul>
               </span>
               Outside of practicing algorithms, the technologies I often work
               with are{` `}
               <u>React/NextJS, Redux, Typescript,</u>
               {` `}
-              while those that I recently explored, or am exploring are{` `}
+              while those that I recently explored, or intend to explore are
+              {` `}
               <u>nestJS, Graphql, micro-services</u>
             </p>
           </Animate>
